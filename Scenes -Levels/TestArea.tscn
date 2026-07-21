@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dnf1ej2wna6et"]
+
+[ext_resource type="Texture2D" uid="uid://dv524cn03yptx" path="res://Textures/grid-square.png" id="1_5omp3"]
+[ext_resource type="PackedScene" uid="uid://eewdly8oh15j" path="res://Scenes - Objects/player.tscn" id="2_hwtxp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_y5qfa"]
+size = Vector3(48, 1, 48)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4flbx"]
+albedo_texture = ExtResource("1_5omp3")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+uv2_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7tbbo"]
+
+[node name="Node3D" type="Node3D" unique_id=881090372]
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=313648461]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=612605019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -1)
+mesh = SubResource("BoxMesh_y5qfa")
+surface_material_override/0 = SubResource("StandardMaterial3D_4flbx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=576058120]
+shape = SubResource("BoxShape3D_7tbbo")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1314461]
+transform = Transform3D(0.7071068, -0.5196631, 0.47953132, 0, 0.67815965, 0.73491466, -0.7071068, -0.5196631, 0.47953132, 45, 68.70383, 45)
+projection = 1
+size = 54.271
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=685437435]
+transform = Transform3D(0.7327859, -0.32673866, 0.5968808, 5.373252e-08, 0.87717354, 0.48017377, -0.68045926, -0.3518645, 0.6427803, 23.942041, 17.40335, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=935553468 instance=ExtResource("2_hwtxp")]
