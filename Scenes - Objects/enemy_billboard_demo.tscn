@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://mkhovd4r8qf5"]
+
+[ext_resource type="Script" uid="uid://bsu3opfror6hn" path="res://Scripts/enemy_billboard_demo.gd" id="1_pycf4"]
+[ext_resource type="Texture2D" uid="uid://dt4bk4pj6l4dw" path="res://Sprites/enemy-billboard-demo.png" id="2_5kkw8"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7tbbo"]
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qx3u3"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("2_5kkw8")
+billboard_mode = 1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7tbbo"]
+height = 1.7001953
+radius = 0.85791016
+
+[node name="EnemyBillboardDemo" type="Node3D" unique_id=533656628 groups=["enemy"]]
+script = ExtResource("1_pycf4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=290637688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4376731, 0)
+mesh = SubResource("QuadMesh_7tbbo")
+surface_material_override/0 = SubResource("StandardMaterial3D_qx3u3")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1926181443]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=119700671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39013672, 0)
+shape = SubResource("CylinderShape3D_7tbbo")
