@@ -7,23 +7,26 @@
 size = Vector3(48, 1, 48)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4flbx"]
+albedo_color = Color(0, 0.29411766, 0.70980394, 1)
 albedo_texture = ExtResource("1_5omp3")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 uv2_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7tbbo"]
+size = Vector3(48, 1, 48)
 
 [node name="Node3D" type="Node3D" unique_id=881090372]
 
 [node name="Ground" type="StaticBody3D" parent="." unique_id=313648461]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=612605019]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh = SubResource("BoxMesh_y5qfa")
 surface_material_override/0 = SubResource("StandardMaterial3D_4flbx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=576058120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("BoxShape3D_7tbbo")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1314461]

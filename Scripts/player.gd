@@ -8,25 +8,50 @@ extends CharacterBody3D
 
 # constants
 const SPEED = 5.0
+const FIRE_RATE = 0.2
 
 # internal variables
 var last_direction = Vector3.FORWARD
+var reload_time = 0
+var alternate_cannon_left = true
 
 # exposed/tunable variables
 @export var rotation_speed = 2
 
 # external references
 @onready var camera = get_viewport().get_camera_3d()
+const LASER_TSCN = preload("res://Scenes - Objects/laser_bolt.tscn")
+
 # internal references
 @onready var legs = $Legs
 @onready var turret = $Turret
+@onready var muzzleA = $Turret/CannonA/FireFromA
+@onready var muzzleB = $Turret/CannonB/FireFromB
 @onready var aim_dot = $AimDot
 
 func _ready() -> void:
 	pass
 	
 func _process(delta):
+	reload_time -= delta
+	
 	look_at_cursor()
+	
+	if Input.is_action_pressed("fire") and reload_time <= 0.0:
+		reload_time = FIRE_RATE
+		fire()
+
+func fire():
+	var laser = LASER_TSCN.instantiate()
+	get_tree().current_scene.add_child(laser)
+	
+	if alternate_cannon_left:
+		laser.global_position = muzzleA.global_position
+		laser.global_rotation = muzzleA.global_rotation
+	else:
+		laser.global_position = muzzleB.global_position
+		laser.global_rotation = muzzleB.global_rotation
+	alternate_cannon_left = !alternate_cannon_left	
 
 func _physics_process(delta: float) -> void:
 	var input_dir = Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
@@ -56,7 +81,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func look_at_cursor():
-	var target_plane_mouse = Plane(Vector3(0,1,0), turret.global_position.y)
+	var target_plane_mouse = Plane(Vector3(0,1,0), position.y)
 	var ray_length = 1000
 	var mouse_position = get_viewport().get_mouse_position()
 	var from = camera.project_ray_origin(mouse_position)

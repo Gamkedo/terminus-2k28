@@ -5,7 +5,7 @@
 [sub_resource type="BoxMesh" id="BoxMesh_7tbbo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25807"]
-albedo_color = Color(0, 0, 0, 1)
+albedo_color = Color(0, 0.627451, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_w7dxp"]
 
@@ -35,6 +35,7 @@ script = ExtResource("1_4flbx")
 rotation_speed = 5
 
 [node name="Legs" type="MeshInstance3D" parent="." unique_id=1286979195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49009085, 0)
 mesh = SubResource("BoxMesh_7tbbo")
 surface_material_override/0 = SubResource("StandardMaterial3D_25807")
 
@@ -44,7 +45,7 @@ mesh = SubResource("BoxMesh_w7dxp")
 surface_material_override/0 = SubResource("StandardMaterial3D_dbkhw")
 
 [node name="Turret" type="MeshInstance3D" parent="." unique_id=1096646795]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.027185, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5172758, 0)
 mesh = SubResource("BoxMesh_7tbbo")
 surface_material_override/0 = SubResource("StandardMaterial3D_y61ny")
 
@@ -53,16 +54,22 @@ transform = Transform3D(0.35355338, -0.35355338, 0, 0.35355338, 0.35355338, 0, 0
 mesh = SubResource("BoxMesh_7tbbo")
 surface_material_override/0 = SubResource("StandardMaterial3D_fgfqk")
 
+[node name="FireFromA" type="Marker3D" parent="Turret/CannonA" unique_id=37253053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.504982)
+
 [node name="CannonB" type="MeshInstance3D" parent="Turret" unique_id=662644248]
 transform = Transform3D(0.35355338, -0.35355338, 0, 0.35355338, 0.35355338, 0, 0, 0, 2, -0.5, 0, -0.75)
 mesh = SubResource("BoxMesh_7tbbo")
 surface_material_override/0 = SubResource("StandardMaterial3D_fgfqk")
 
+[node name="FireFromB" type="Marker3D" parent="Turret/CannonB" unique_id=25099831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5019088)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1486092495]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54003906, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0301299, 0)
 shape = SubResource("CylinderShape3D_7tbbo")
 
 [node name="AimDot" type="MeshInstance3D" parent="." unique_id=249952343]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.7888882, 0.4492321, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.7888882, 0.93932295, 0)
 mesh = SubResource("SphereMesh_4flbx")
 surface_material_override/0 = SubResource("StandardMaterial3D_onrkg")

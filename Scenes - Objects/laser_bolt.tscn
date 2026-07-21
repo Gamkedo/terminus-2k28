@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cblqj4rysl46l"]
+
+[ext_resource type="Script" uid="uid://cm2j6bvbieeve" path="res://Scenes - Levels/laser_bolt.gd" id="1_p5fsa"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7tbbo"]
+size = Vector3(1, 1, 3.717163)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7dxp"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y5qfa"]
+size = Vector3(0.41448975, 0.19262695, 2.0805664)
+
+[node name="LaserBolt" type="Area3D" unique_id=1970496457]
+script = ExtResource("1_p5fsa")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=471367228]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.7, 0, 0, 0)
+mesh = SubResource("BoxMesh_7tbbo")
+surface_material_override/0 = SubResource("StandardMaterial3D_w7dxp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=268590403]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007171631, -0.022583008, -0.10083008)
+shape = SubResource("BoxShape3D_y5qfa")

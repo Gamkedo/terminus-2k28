@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dg14n5bxo33wb"]
+
+[ext_resource type="Script" uid="uid://dylns0kqgemus" path="res://Scripts/particle_remove.gd" id="1_otmap"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_usmkl"]
+lifetime_randomness = 0.3
+emission_shape_scale = Vector3(0.1, 0.1, 0.1)
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+initial_velocity_min = 3.0
+initial_velocity_max = 6.0
+scale_min = 0.099999994
+scale_max = 0.19999999
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5qfa"]
+shading_mode = 0
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_7tbbo"]
+material = SubResource("StandardMaterial3D_y5qfa")
+size = Vector2(0.1, 0.1)
+
+[node name="LaserHit" type="Node3D" unique_id=2136184369]
+script = ExtResource("1_otmap")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=939054033]
+emitting = false
+amount = 25
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_usmkl")
+draw_pass_1 = SubResource("QuadMesh_7tbbo")
