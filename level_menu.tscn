@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c7hc705w0hq2y"]
+
+[ext_resource type="Script" uid="uid://cqaictl8xy27t" path="res://Scripts/menus/level_select.gd" id="1_mcy63"]
+[ext_resource type="Texture2D" uid="uid://orfwumf3qiy1" path="res://Scenes - Levels/Level Select Preview Images/areaA-preview.jpg" id="1_pssaq"]
+
+[node name="LevelMenu" type="Node2D" unique_id=431338942]
+script = ExtResource("1_mcy63")
+
+[node name="Label" type="Label" parent="." unique_id=716597263]
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 800.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 16
+text = "Level Select menu (not just for testing! game will release with a cleaned up version of this)"
+
+[node name="AreaA" type="Button" parent="." unique_id=181493714]
+offset_left = 59.0
+offset_top = 135.0
+offset_right = 284.0
+offset_bottom = 360.0
+icon = ExtResource("1_pssaq")
+expand_icon = true
+
+[node name="AreaB" type="Button" parent="." unique_id=882515598]
+offset_left = 344.0
+offset_top = 135.0
+offset_right = 560.0
+offset_bottom = 351.0
+
+[node name="AreaC" type="Button" parent="." unique_id=1680213156]
+offset_left = 613.0
+offset_top = 135.0
+offset_right = 829.0
+offset_bottom = 351.0
+
+[connection signal="pressed" from="AreaA" to="." method="_on_area_a_pressed"]

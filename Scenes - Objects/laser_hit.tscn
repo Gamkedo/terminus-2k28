@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dg14n5bxo33wb"]
 
-[ext_resource type="Script" uid="uid://dylns0kqgemus" path="res://Scripts/particle_remove.gd" id="1_otmap"]
+[ext_resource type="Script" uid="uid://dylns0kqgemus" path="res://Scripts/gameplay/particle_remove.gd" id="1_otmap"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_usmkl"]
 lifetime_randomness = 0.3
