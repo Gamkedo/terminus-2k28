@@ -45,6 +45,8 @@ func _process(delta):
 	if Input.is_action_pressed("fire") and reload_time <= 0.0:
 		reload_time = FIRE_RATE
 		fire()
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().change_scene_to_file("res://level_menu.tscn")
 
 func fire():
 	var laser := LASER_TSCN.instantiate()
@@ -57,10 +59,6 @@ func fire():
 		laser.global_position = muzzleB.global_position
 		laser.global_rotation = muzzleB.global_rotation
 	alternate_cannon_left = !alternate_cannon_left	
-
-func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		get_tree().change_scene_to_file("res://level_menu.tscn")
 		
 func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
