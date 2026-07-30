@@ -58,6 +58,10 @@ func fire():
 		laser.global_rotation = muzzleB.global_rotation
 	alternate_cannon_left = !alternate_cannon_left	
 
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().change_scene_to_file("res://level_menu.tscn")
+		
 func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
 	

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dv524cn03yptx" path="res://Textures/grid-square.png" id="1_7fg4l"]
 [ext_resource type="Texture2D" uid="uid://bsrs3o1e171q1" path="res://Textures/dirt-ground.png" id="1_hcq85"]
 [ext_resource type="PackedScene" uid="uid://eewdly8oh15j" path="res://Scenes - Objects/player.tscn" id="2_hcq85"]
+[ext_resource type="Script" uid="uid://bap106b6ivci0" path="res://Scripts/camera/iso_tracking.gd" id="3_42ddl"]
 [ext_resource type="PackedScene" uid="uid://k63f3er0k7u7" path="res://Scenes - Objects/enemy_model_demo.tscn" id="4_hcq85"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42ddl"]
@@ -45,6 +46,7 @@ shadow_enabled = true
 transform = Transform3D(0.7071068, -0.5196631, 0.47953132, 0, 0.67815965, 0.73491466, -0.7071068, -0.5196631, 0.47953132, 45, 68.70383, 45)
 projection = 1
 size = 54.271
+script = ExtResource("3_42ddl")
 
 [node name="Player" parent="." unique_id=935553468 instance=ExtResource("2_hcq85")]
 
