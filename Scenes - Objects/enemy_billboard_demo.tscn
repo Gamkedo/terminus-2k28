@@ -20,7 +20,7 @@ radius = 0.85791016
 script = ExtResource("1_pycf4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=290637688]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4376731, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("QuadMesh_7tbbo")
 surface_material_override/0 = SubResource("StandardMaterial3D_qx3u3")
 
