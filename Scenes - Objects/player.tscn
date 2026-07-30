@@ -27,12 +27,14 @@ albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
 emission = Color(1, 0, 0, 1)
 
-[node name="Player" type="CharacterBody3D" unique_id=997444506]
+[node name="Player" type="CharacterBody3D" unique_id=997444506 node_paths=PackedStringArray("follow_cam_move_to", "follow_cam_point_at")]
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("1_4flbx")
 rotation_speed = 5
+follow_cam_move_to = NodePath("Turret/NonIsoCameraMoveToward")
+follow_cam_point_at = NodePath("Turret/NonIsoCameraLookAt")
 
 [node name="Legs" type="MeshInstance3D" parent="." unique_id=1286979195]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49009085, 0)
@@ -65,11 +67,17 @@ surface_material_override/0 = SubResource("StandardMaterial3D_fgfqk")
 [node name="FireFromB" type="Marker3D" parent="Turret/CannonB" unique_id=25099831]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5019088)
 
+[node name="NonIsoCameraMoveToward" type="Marker3D" parent="Turret" unique_id=389098339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.564, 0.93799996, 4.024687)
+
+[node name="NonIsoCameraLookAt" type="Marker3D" parent="Turret" unique_id=1483838191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.1109996, -32.048855)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1486092495]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0301299, 0)
 shape = SubResource("CylinderShape3D_7tbbo")
 
 [node name="AimDot" type="MeshInstance3D" parent="." unique_id=249952343]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.7888882, 0.93932295, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.30974174, 0.93932295, -6.3473606)
 mesh = SubResource("SphereMesh_4flbx")
 surface_material_override/0 = SubResource("StandardMaterial3D_onrkg")

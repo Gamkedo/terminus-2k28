@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://divrqdtp7jrcr"]
+
+[ext_resource type="Material" uid="uid://dkjck5am51jr4" path="res://Materials/placeholder-metal.tres" id="1_lums3"]
+[ext_resource type="Script" uid="uid://bhg5d8mcu38ny" path="res://Scripts/camera/third_person_camera.gd" id="3_itglv"]
+[ext_resource type="PackedScene" uid="uid://eewdly8oh15j" path="res://Scenes - Objects/player.tscn" id="3_mhi1n"]
+[ext_resource type="PackedScene" uid="uid://k63f3er0k7u7" path="res://Scenes - Objects/enemy_model_demo.tscn" id="4_itglv"]
+[ext_resource type="PackedScene" uid="uid://d1grs1gs3wxkx" path="res://Scenes - Objects/example_obstacle.tscn" id="6_mhi1n"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_y5qfa"]
+size = Vector3(128, 1, 128)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7tbbo"]
+size = Vector3(128, 1, 128)
+
+[node name="Node3D" type="Node3D" unique_id=881090372]
+
+[node name="Environment" type="Node3D" parent="." unique_id=1062489120]
+
+[node name="Ground" type="StaticBody3D" parent="Environment" unique_id=313648461]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Ground" unique_id=612605019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = ExtResource("1_lums3")
+mesh = SubResource("BoxMesh_y5qfa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Ground" unique_id=576058120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_7tbbo")
+
+[node name="Sun" type="DirectionalLight3D" parent="Environment" unique_id=685437435]
+transform = Transform3D(0.73278594, -0.32673866, 0.59688085, 5.3732524e-08, 0.8771734, 0.48017368, -0.6804593, -0.35186443, 0.64278036, 23.942041, 17.40335, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1314461]
+transform = Transform3D(0.9983916, -0.028389657, 0.049073208, 0, 0.865588, 0.50075686, -0.056693494, -0.49995145, 0.8641958, -1.8925362, 3.693531, 2.1149712)
+fov = 65.0
+size = 54.271
+script = ExtResource("3_itglv")
+
+[node name="Player" parent="." unique_id=935553468 instance=ExtResource("3_mhi1n")]
+
+[node name="Starter Enemies" type="Node3D" parent="." unique_id=849493121]
+
+[node name="EnemyModelDemo" parent="Starter Enemies" unique_id=533656628 instance=ExtResource("4_itglv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.37533, -3.8146973e-06, -19.88921)
+
+[node name="EnemyModelDemo2" parent="Starter Enemies" unique_id=488020601 instance=ExtResource("4_itglv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.697277, -1.1444092e-05, -3.6301289)
+
+[node name="EnemyModelDemo3" parent="Starter Enemies" unique_id=352471115 instance=ExtResource("4_itglv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.434343, -7.6293945e-06, 14.807894)
+
+[node name="EnemyModelDemo4" parent="Starter Enemies" unique_id=656984093 instance=ExtResource("4_itglv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.292562, -7.6293945e-06, -4.7009735)
+
+[node name="Obstacles" type="Node3D" parent="." unique_id=2079419476]
+
+[node name="Example Obstacle" parent="Obstacles" unique_id=1339867408 instance=ExtResource("6_mhi1n")]
+transform = Transform3D(2.665, 0, 0, 0, 2.665, 0, 0, 0, 2.665, -2.1796741, 1.355027, -15.733051)
+
+[node name="Example Obstacle4" parent="Obstacles" unique_id=2102737658 instance=ExtResource("6_mhi1n")]
+transform = Transform3D(2.665, 0, 0, 0, 2.665, 0, 0, 0, 2.665, -18.500956, 1.355027, -11.143784)
+
+[node name="Example Obstacle5" parent="Obstacles" unique_id=1329000267 instance=ExtResource("6_mhi1n")]
+transform = Transform3D(2.665, 0, 0, 0, 2.665, 0, 0, 0, 2.665, -5.2876606, 1.355027, 14.082211)
+
+[node name="Example Obstacle6" parent="Obstacles" unique_id=1916311063 instance=ExtResource("6_mhi1n")]
+transform = Transform3D(2.665, 0, 0, 0, 2.665, 0, 0, 0, 2.665, 27.303469, 1.355027, 4.2291965)
+
+[node name="Example Obstacle7" parent="Obstacles" unique_id=1870663934 instance=ExtResource("6_mhi1n")]
+transform = Transform3D(2.665, 0, 0, 0, 2.665, 0, 0, 0, 2.665, 20.549458, 1.355027, -20.879082)
+
+[node name="Example Obstacle2" parent="Obstacles" unique_id=859268840 instance=ExtResource("6_mhi1n")]
+transform = Transform3D(2.665, 0, 0, 0, 2.665, 0, 0, 0, 2.665, -12.428353, 1.355025, 4.8602333)
+
+[node name="Example Obstacle3" parent="Obstacles" unique_id=65270144 instance=ExtResource("6_mhi1n")]
+transform = Transform3D(2.665, 0, 0, 0, 2.665, 0, 0, 0, 2.665, 9.485076, 1.3550231, 5.2785163)

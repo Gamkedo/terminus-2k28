@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+class_name Player
+
 # parts of this code began from the educational example available here:
 # https://www.youtube.com/watch?v=OVLJs3QjvR8
 # https://github.com/learnictnow/godot-twin-stick-shooter/
@@ -21,6 +23,8 @@ var alternate_cannon_left := true
 # external references
 @onready var camera := get_viewport().get_camera_3d()
 const LASER_TSCN := preload("res://Scenes - Objects/laser_bolt.tscn")
+@export var follow_cam_move_to: Marker3D
+@export var follow_cam_point_at: Marker3D
 
 # internal references
 @onready var legs := $Legs
@@ -30,7 +34,8 @@ const LASER_TSCN := preload("res://Scenes - Objects/laser_bolt.tscn")
 @onready var aim_dot := $AimDot
 
 func _ready() -> void:
-	pass
+	if camera.has_method("set_player"): # not currently needed in all scenes
+		camera.set_player(self)
 	
 func _process(delta):
 	reload_time -= delta

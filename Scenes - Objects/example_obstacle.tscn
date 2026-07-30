@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d1grs1gs3wxkx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_w7dxp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhi1n"]
+albedo_color = Color(0.6313726, 0.2784314, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y5qfa"]
+
+[node name="Example Obstacle" type="StaticBody3D" unique_id=1339867408]
+transform = Transform3D(2.665, 0, 0, 0, 2.665, 0, 0, 0, 2.665, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1808656214]
+mesh = SubResource("BoxMesh_w7dxp")
+surface_material_override/0 = SubResource("StandardMaterial3D_mhi1n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=467005961]
+shape = SubResource("BoxShape3D_y5qfa")

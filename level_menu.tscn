@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cqaictl8xy27t" path="res://Scripts/menus/level_select.gd" id="1_mcy63"]
 [ext_resource type="Texture2D" uid="uid://orfwumf3qiy1" path="res://Scenes - Levels/Level Select Preview Images/areaA-preview.jpg" id="1_pssaq"]
 [ext_resource type="Texture2D" uid="uid://c3neky7qng2wm" path="res://Scenes - Levels/Level Select Preview Images/areaB-preview.jpg" id="3_g3bd0"]
+[ext_resource type="Texture2D" uid="uid://oaxy71lew71g" path="res://Scenes - Levels/Level Select Preview Images/areaC-preview.jpg" id="4_krrsl"]
 
 [node name="LevelMenu" type="Node2D" unique_id=431338942 node_paths=PackedStringArray("area_a")]
 script = ExtResource("1_mcy63")
@@ -37,6 +38,9 @@ offset_left = 650.0
 offset_top = 135.0
 offset_right = 900.0
 offset_bottom = 385.0
+icon = ExtResource("4_krrsl")
+expand_icon = true
 
 [connection signal="pressed" from="AreaA" to="." method="_on_area_a_pressed"]
 [connection signal="pressed" from="AreaB" to="." method="_on_area_b_pressed"]
+[connection signal="pressed" from="AreaC" to="." method="_on_area_c_pressed"]

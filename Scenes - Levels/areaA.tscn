@@ -24,12 +24,12 @@ size = Vector3(48, 1, 48)
 [node name="Ground" type="StaticBody3D" parent="Environment" unique_id=313648461]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Ground" unique_id=612605019]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("BoxMesh_y5qfa")
 surface_material_override/0 = SubResource("StandardMaterial3D_4flbx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Ground" unique_id=576058120]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_7tbbo")
 
 [node name="Sun" type="DirectionalLight3D" parent="Environment" unique_id=685437435]

@@ -10,3 +10,6 @@ func _on_area_a_pressed() -> void:
 
 func _on_area_b_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes - Levels/areaB.tscn")
+
+func _on_area_c_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes - Levels/areaC.tscn")
