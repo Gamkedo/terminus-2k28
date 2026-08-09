@@ -5,12 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://eewdly8oh15j" path="res://Scenes - Objects/player.tscn" id="2_hcq85"]
 [ext_resource type="Script" uid="uid://bap106b6ivci0" path="res://Scripts/camera/iso_tracking.gd" id="3_42ddl"]
 [ext_resource type="PackedScene" uid="uid://k63f3er0k7u7" path="res://Scenes - Objects/enemy_model_demo.tscn" id="4_hcq85"]
+[ext_resource type="PackedScene" uid="uid://mkhovd4r8qf5" path="res://Scenes - Objects/enemy_billboard_demo.tscn" id="6_mrah0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42ddl"]
 albedo_texture = ExtResource("1_hcq85")
+uv1_scale = Vector3(4, 4, 4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_y5qfa"]
-size = Vector3(128, 1, 128)
+size = Vector3(256, 1, 256)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4flbx"]
 albedo_color = Color(0, 0.29411766, 0.70980394, 1)
@@ -63,3 +65,1629 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.434343, -7.6293945e-06, 14
 
 [node name="EnemyModelDemo4" parent="Starter Enemies" unique_id=656984093 instance=ExtResource("4_hcq85")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.292562, -7.6293945e-06, -4.7009735)
+
+[node name="EnemyModelDemo5" parent="Starter Enemies" unique_id=1474784937 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.751715, -3.8146973e-06, 1.3177624)
+
+[node name="EnemyModelDemo6" parent="Starter Enemies" unique_id=957532859 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.82432, -1.1444092e-05, 17.576843)
+
+[node name="EnemyModelDemo7" parent="Starter Enemies" unique_id=1743588909 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.692701, -7.6293945e-06, 36.014866)
+
+[node name="EnemyModelDemo8" parent="Starter Enemies" unique_id=1607733438 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.834482, -7.6293945e-06, 16.505999)
+
+[node name="EnemyModelDemo9" parent="Starter Enemies" unique_id=571951756 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.613653, -3.8146973e-06, -45.946983)
+
+[node name="EnemyModelDemo10" parent="Starter Enemies" unique_id=1804082916 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.68626, -1.1444092e-05, -29.687904)
+
+[node name="EnemyModelDemo11" parent="Starter Enemies" unique_id=569899855 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.55464, -7.6293945e-06, -11.249882)
+
+[node name="EnemyModelDemo12" parent="Starter Enemies" unique_id=1994597749 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.696421, -7.6293945e-06, -30.758749)
+
+[node name="EnemyModelDemo13" parent="Starter Enemies" unique_id=204092390 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.67195, -3.8146973e-06, -40.793427)
+
+[node name="EnemyModelDemo14" parent="Starter Enemies" unique_id=481884058 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.599346, -1.1444092e-05, -24.534346)
+
+[node name="EnemyModelDemo15" parent="Starter Enemies" unique_id=134532767 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.730965, -7.6293945e-06, -6.096323)
+
+[node name="EnemyModelDemo16" parent="Starter Enemies" unique_id=1673504204 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.589188, -7.6293945e-06, -25.60519)
+
+[node name="EnemyModelDemo17" parent="Starter Enemies" unique_id=1965201664 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.15695, -3.8146973e-06, 9.224815)
+
+[node name="EnemyModelDemo18" parent="Starter Enemies" unique_id=1720593228 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.084347, -1.1444092e-05, 25.483896)
+
+[node name="EnemyModelDemo19" parent="Starter Enemies" unique_id=1998975067 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.215965, -7.6293945e-06, 43.92192)
+
+[node name="EnemyModelDemo20" parent="Starter Enemies" unique_id=257370550 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.07419, -7.6293945e-06, 24.413052)
+
+[node name="EnemyBillboardDemo" parent="Starter Enemies" unique_id=354942837 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.323315, 0, 17.988914)
+
+[node name="EnemyBillboardDemo2" parent="Starter Enemies" unique_id=1051727491 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.818195, 0, 47.07919)
+
+[node name="EnemyBillboardDemo3" parent="Starter Enemies" unique_id=856848431 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7343483, 0, -38.564373)
+
+[node name="EnemyBillboardDemo4" parent="Starter Enemies" unique_id=1925158782 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.407162, 0, -9.474098)
+
+[node name="EnemyBillboardDemo5" parent="Starter Enemies" unique_id=567340920 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.216053, 0, 2.6773224)
+
+[node name="EnemyBillboardDemo6" parent="Starter Enemies" unique_id=2050505531 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.925457, 0, 31.767597)
+
+[node name="EnemyBillboardDemo7" parent="Starter Enemies" unique_id=609029245 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2460175, 1.9073486e-06, -8.871764)
+
+[node name="EnemyBillboardDemo8" parent="Starter Enemies" unique_id=686081498 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.387527, 1.9073486e-06, 20.21851)
+
+[node name="EnemyBillboardDemo9" parent="Starter Enemies" unique_id=1261395203 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9902115, 1.9073486e-06, -39.05124)
+
+[node name="EnemyBillboardDemo10" parent="Starter Enemies" unique_id=291662942 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.13172, 1.9073486e-06, -9.960964)
+
+[node name="EnemyBillboardDemo11" parent="Starter Enemies" unique_id=565928095 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.19038, 1.9073486e-06, 6.833473)
+
+[node name="EnemyBillboardDemo12" parent="Starter Enemies" unique_id=1429678113 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.95113, 1.9073486e-06, 35.923748)
+
+[node name="EnemyBillboardDemo13" parent="Starter Enemies" unique_id=647755671 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.234482, 1.9073486e-06, 14.401211)
+
+[node name="EnemyBillboardDemo14" parent="Starter Enemies" unique_id=778712320 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.162834, 1.9073486e-06, -44.868538)
+
+[node name="EnemyBillboardDemo15" parent="Starter Enemies" unique_id=44028329 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.978676, 1.9073486e-06, -15.778263)
+
+[node name="EnemyBillboardDemo16" parent="Starter Enemies" unique_id=588464912 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.343426, 1.9073486e-06, 1.0161738)
+
+[node name="EnemyBillboardDemo17" parent="Starter Enemies" unique_id=970971997 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.201916, 1.9073486e-06, 30.10645)
+
+[node name="EnemyBillboardDemo18" parent="Starter Enemies" unique_id=1273060381 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.111687, 1.9073486e-06, 25.872879)
+
+[node name="EnemyBillboardDemo19" parent="Starter Enemies" unique_id=443860915 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.285629, 1.9073486e-06, -33.39687)
+
+[node name="EnemyBillboardDemo20" parent="Starter Enemies" unique_id=1084275781 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.85588, 1.9073486e-06, -4.306594)
+
+[node name="EnemyBillboardDemo21" parent="Starter Enemies" unique_id=288531667 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.46622, 1.9073486e-06, 12.487843)
+
+[node name="EnemyBillboardDemo22" parent="Starter Enemies" unique_id=1318863712 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.324711, 1.9073486e-06, 41.578117)
+
+[node name="EnemyModelDemo21" parent="Starter Enemies" unique_id=1845502613 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.767836, -3.8146973e-06, 37.500454)
+
+[node name="EnemyModelDemo22" parent="Starter Enemies" unique_id=962180630 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.840443, -1.1444092e-05, 53.759537)
+
+[node name="EnemyModelDemo23" parent="Starter Enemies" unique_id=2134457294 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.708822, -7.6293945e-06, 72.197556)
+
+[node name="EnemyModelDemo24" parent="Starter Enemies" unique_id=747884059 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.850603, -7.6293945e-06, 52.68869)
+
+[node name="EnemyModelDemo25" parent="Starter Enemies" unique_id=876041615 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.894882, -3.8146973e-06, 58.707428)
+
+[node name="EnemyModelDemo26" parent="Starter Enemies" unique_id=1185702458 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.96748, -1.1444092e-05, 74.96651)
+
+[node name="EnemyModelDemo27" parent="Starter Enemies" unique_id=144897126 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.83587, -7.6293945e-06, 93.404526)
+
+[node name="EnemyModelDemo28" parent="Starter Enemies" unique_id=980130991 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.977646, -7.6293945e-06, 73.89566)
+
+[node name="EnemyModelDemo29" parent="Starter Enemies" unique_id=2143280384 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.75682, -3.8146973e-06, 11.44268)
+
+[node name="EnemyModelDemo30" parent="Starter Enemies" unique_id=2085344369 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.82942, -1.1444092e-05, 27.70176)
+
+[node name="EnemyModelDemo31" parent="Starter Enemies" unique_id=1954474789 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.697807, -7.6293945e-06, 46.139782)
+
+[node name="EnemyModelDemo32" parent="Starter Enemies" unique_id=687542197 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.839584, -7.6293945e-06, 26.630915)
+
+[node name="EnemyModelDemo33" parent="Starter Enemies" unique_id=279633121 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5287857, -3.8146973e-06, 16.596237)
+
+[node name="EnemyModelDemo34" parent="Starter Enemies" unique_id=115009373 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.54382, -1.1444092e-05, 32.855316)
+
+[node name="EnemyModelDemo35" parent="Starter Enemies" unique_id=2072154057 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5877991, -7.6293945e-06, 51.293343)
+
+[node name="EnemyModelDemo36" parent="Starter Enemies" unique_id=1728330599 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.446022, -7.6293945e-06, 31.784473)
+
+[node name="EnemyModelDemo37" parent="Starter Enemies" unique_id=286799440 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0137863, -3.8146973e-06, 66.61448)
+
+[node name="EnemyModelDemo38" parent="Starter Enemies" unique_id=379783884 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.058819, -1.1444092e-05, 82.87356)
+
+[node name="EnemyModelDemo39" parent="Starter Enemies" unique_id=561917128 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0727997, -7.6293945e-06, 101.311584)
+
+[node name="EnemyModelDemo40" parent="Starter Enemies" unique_id=239062960 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.931023, -7.6293945e-06, 81.80272)
+
+[node name="EnemyBillboardDemo23" parent="Starter Enemies" unique_id=760239600 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.81985, 0, 75.37858)
+
+[node name="EnemyBillboardDemo24" parent="Starter Enemies" unique_id=443533547 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.96136, 0, 104.46886)
+
+[node name="EnemyBillboardDemo25" parent="Starter Enemies" unique_id=2134428155 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.408817, 0, 18.82529)
+
+[node name="EnemyBillboardDemo26" parent="Starter Enemies" unique_id=699944053 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.55032, 0, 47.915565)
+
+[node name="EnemyBillboardDemo27" parent="Starter Enemies" unique_id=2130717964 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.927113, 0, 60.066986)
+
+[node name="EnemyBillboardDemo28" parent="Starter Enemies" unique_id=828655007 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.068623, 0, 89.15726)
+
+[node name="EnemyBillboardDemo29" parent="Starter Enemies" unique_id=1506233626 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.389183, 1.9073486e-06, 48.5179)
+
+[node name="EnemyBillboardDemo30" parent="Starter Enemies" unique_id=1143002066 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.53069, 1.9073486e-06, 77.60817)
+
+[node name="EnemyBillboardDemo31" parent="Starter Enemies" unique_id=1341023729 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.133377, 1.9073486e-06, 18.338425)
+
+[node name="EnemyBillboardDemo32" parent="Starter Enemies" unique_id=1200846811 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.27489, 1.9073486e-06, 47.4287)
+
+[node name="EnemyBillboardDemo33" parent="Starter Enemies" unique_id=808405658 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9527855, 1.9073486e-06, 64.22314)
+
+[node name="EnemyBillboardDemo34" parent="Starter Enemies" unique_id=1585745167 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.094296, 1.9073486e-06, 93.313416)
+
+[node name="EnemyBillboardDemo35" parent="Starter Enemies" unique_id=391959479 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.37765, 1.9073486e-06, 71.79088)
+
+[node name="EnemyBillboardDemo36" parent="Starter Enemies" unique_id=807659023 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.98033, 1.9073486e-06, 12.521126)
+
+[node name="EnemyBillboardDemo37" parent="Starter Enemies" unique_id=2008205087 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.12184, 1.9073486e-06, 41.6114)
+
+[node name="EnemyBillboardDemo38" parent="Starter Enemies" unique_id=1502756671 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.20026, 1.9073486e-06, 58.405838)
+
+[node name="EnemyBillboardDemo39" parent="Starter Enemies" unique_id=593543244 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.94125, 1.9073486e-06, 87.49611)
+
+[node name="EnemyBillboardDemo40" parent="Starter Enemies" unique_id=1001928264 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.25485, 1.9073486e-06, 83.26254)
+
+[node name="EnemyBillboardDemo41" parent="Starter Enemies" unique_id=1985194518 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.857536, 1.9073486e-06, 23.992794)
+
+[node name="EnemyBillboardDemo42" parent="Starter Enemies" unique_id=2056213808 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.99905, 1.9073486e-06, 53.08307)
+
+[node name="EnemyBillboardDemo43" parent="Starter Enemies" unique_id=1409279890 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.323055, 1.9073486e-06, 69.8775)
+
+[node name="EnemyBillboardDemo44" parent="Starter Enemies" unique_id=311977819 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.818455, 1.9073486e-06, 98.96778)
+
+[node name="EnemyModelDemo41" parent="Starter Enemies" unique_id=1030710450 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.79799, -3.8146973e-06, -70.89177)
+
+[node name="EnemyModelDemo42" parent="Starter Enemies" unique_id=2089197427 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.87059, -1.1444092e-05, -54.632683)
+
+[node name="EnemyModelDemo43" parent="Starter Enemies" unique_id=1325319792 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.738976, -7.6293945e-06, -36.194664)
+
+[node name="EnemyModelDemo44" parent="Starter Enemies" unique_id=247053214 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.880753, -7.6293945e-06, -55.70353)
+
+[node name="EnemyModelDemo45" parent="Starter Enemies" unique_id=2028707441 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.92503, -3.8146973e-06, -49.68479)
+
+[node name="EnemyModelDemo46" parent="Starter Enemies" unique_id=525225610 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94.997635, -1.1444092e-05, -33.425713)
+
+[node name="EnemyModelDemo47" parent="Starter Enemies" unique_id=1240876375 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.86602, -7.6293945e-06, -14.987694)
+
+[node name="EnemyModelDemo48" parent="Starter Enemies" unique_id=1628320187 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.007797, -7.6293945e-06, -34.49656)
+
+[node name="EnemyModelDemo49" parent="Starter Enemies" unique_id=765071311 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.78697, -3.8146973e-06, -96.94954)
+
+[node name="EnemyModelDemo50" parent="Starter Enemies" unique_id=406187113 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.85957, -1.1444092e-05, -80.69046)
+
+[node name="EnemyModelDemo51" parent="Starter Enemies" unique_id=483811640 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.72796, -7.6293945e-06, -62.252438)
+
+[node name="EnemyModelDemo52" parent="Starter Enemies" unique_id=212268822 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.869736, -7.6293945e-06, -81.76131)
+
+[node name="EnemyModelDemo53" parent="Starter Enemies" unique_id=792456445 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.501366, -3.8146973e-06, -91.79598)
+
+[node name="EnemyModelDemo54" parent="Starter Enemies" unique_id=535321728 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.57397, -1.1444092e-05, -75.5369)
+
+[node name="EnemyModelDemo55" parent="Starter Enemies" unique_id=799995284 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.442352, -7.6293945e-06, -57.098877)
+
+[node name="EnemyModelDemo56" parent="Starter Enemies" unique_id=1021565141 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.584129, -7.6293945e-06, -76.60774)
+
+[node name="EnemyModelDemo57" parent="Starter Enemies" unique_id=880161890 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.016365, -3.8146973e-06, -41.77774)
+
+[node name="EnemyModelDemo58" parent="Starter Enemies" unique_id=124323085 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.08897, -1.1444092e-05, -25.518661)
+
+[node name="EnemyModelDemo59" parent="Starter Enemies" unique_id=1386489236 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.957352, -7.6293945e-06, -7.080635)
+
+[node name="EnemyModelDemo60" parent="Starter Enemies" unique_id=1650509127 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0991287, -7.6293945e-06, -26.5895)
+
+[node name="EnemyBillboardDemo45" parent="Starter Enemies" unique_id=232425572 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.850002, 0, -33.01364)
+
+[node name="EnemyBillboardDemo46" parent="Starter Enemies" unique_id=399144987 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.991516, 0, -3.9233627)
+
+[node name="EnemyBillboardDemo47" parent="Starter Enemies" unique_id=1407027049 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.43897, 0, -89.566925)
+
+[node name="EnemyBillboardDemo48" parent="Starter Enemies" unique_id=955772235 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.580475, 0, -60.476654)
+
+[node name="EnemyBillboardDemo49" parent="Starter Enemies" unique_id=2038228794 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.957264, 0, -48.325233)
+
+[node name="EnemyBillboardDemo50" parent="Starter Enemies" unique_id=1224185955 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.09877, 0, -19.234962)
+
+[node name="EnemyBillboardDemo51" parent="Starter Enemies" unique_id=1123034929 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.419334, 1.9073486e-06, -59.87432)
+
+[node name="EnemyBillboardDemo52" parent="Starter Enemies" unique_id=1843694236 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.560844, 1.9073486e-06, -30.78405)
+
+[node name="EnemyBillboardDemo53" parent="Starter Enemies" unique_id=400603247 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.16353, 1.9073486e-06, -90.053795)
+
+[node name="EnemyBillboardDemo54" parent="Starter Enemies" unique_id=1694748636 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.30504, 1.9073486e-06, -60.96352)
+
+[node name="EnemyBillboardDemo55" parent="Starter Enemies" unique_id=1610796379 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.982937, 1.9073486e-06, -44.169083)
+
+[node name="EnemyBillboardDemo56" parent="Starter Enemies" unique_id=1548442267 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.124447, 1.9073486e-06, -15.078804)
+
+[node name="EnemyBillboardDemo57" parent="Starter Enemies" unique_id=1800376316 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.4078, 1.9073486e-06, -36.60134)
+
+[node name="EnemyBillboardDemo58" parent="Starter Enemies" unique_id=765968620 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.010483, 1.9073486e-06, -95.87109)
+
+[node name="EnemyBillboardDemo59" parent="Starter Enemies" unique_id=1245353724 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.15199, 1.9073486e-06, -66.78082)
+
+[node name="EnemyBillboardDemo60" parent="Starter Enemies" unique_id=130413385 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.829891, 1.9073486e-06, -49.98638)
+
+[node name="EnemyBillboardDemo61" parent="Starter Enemies" unique_id=1181377724 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.9714, 1.9073486e-06, -20.89611)
+
+[node name="EnemyBillboardDemo62" parent="Starter Enemies" unique_id=2019269393 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.285, 1.9073486e-06, -25.129677)
+
+[node name="EnemyBillboardDemo63" parent="Starter Enemies" unique_id=803697056 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.887688, 1.9073486e-06, -84.39943)
+
+[node name="EnemyBillboardDemo64" parent="Starter Enemies" unique_id=2076554453 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.0292, 1.9073486e-06, -55.30915)
+
+[node name="EnemyBillboardDemo65" parent="Starter Enemies" unique_id=1889377775 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.707096, 1.9073486e-06, -38.514717)
+
+[node name="EnemyBillboardDemo66" parent="Starter Enemies" unique_id=1198616482 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.848606, 1.9073486e-06, -9.424438)
+
+[node name="EnemyModelDemo61" parent="Starter Enemies" unique_id=2030160308 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.296257, -3.8146973e-06, -65.156075)
+
+[node name="EnemyModelDemo62" parent="Starter Enemies" unique_id=1729630604 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.223656, -1.1444092e-05, -48.896988)
+
+[node name="EnemyModelDemo63" parent="Starter Enemies" unique_id=835265170 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.35527, -7.6293945e-06, -30.458971)
+
+[node name="EnemyModelDemo64" parent="Starter Enemies" unique_id=1719501632 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.21349, -7.6293945e-06, -49.967834)
+
+[node name="EnemyModelDemo65" parent="Starter Enemies" unique_id=1022672248 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.169212, -3.8146973e-06, -43.949097)
+
+[node name="EnemyModelDemo66" parent="Starter Enemies" unique_id=469411275 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.096611, -1.1444092e-05, -27.69002)
+
+[node name="EnemyModelDemo67" parent="Starter Enemies" unique_id=1649124062 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.228226, -7.6293945e-06, -9.252001)
+
+[node name="EnemyModelDemo68" parent="Starter Enemies" unique_id=2037145438 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.08645, -7.6293945e-06, -28.760866)
+
+[node name="EnemyModelDemo69" parent="Starter Enemies" unique_id=1590412087 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.307274, -3.8146973e-06, -91.213844)
+
+[node name="EnemyModelDemo70" parent="Starter Enemies" unique_id=575662641 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2346725, -1.1444092e-05, -74.954765)
+
+[node name="EnemyModelDemo71" parent="Starter Enemies" unique_id=529647904 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.366287, -7.6293945e-06, -56.516747)
+
+[node name="EnemyModelDemo72" parent="Starter Enemies" unique_id=750659983 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.22451, -7.6293945e-06, -76.02561)
+
+[node name="EnemyModelDemo73" parent="Starter Enemies" unique_id=2031261159 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.59288, -3.8146973e-06, -86.06029)
+
+[node name="EnemyModelDemo74" parent="Starter Enemies" unique_id=196779416 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.520275, -1.1444092e-05, -69.80121)
+
+[node name="EnemyModelDemo75" parent="Starter Enemies" unique_id=1980052425 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.65189, -7.6293945e-06, -51.363182)
+
+[node name="EnemyModelDemo76" parent="Starter Enemies" unique_id=153909075 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.51012, -7.6293945e-06, -70.87205)
+
+[node name="EnemyModelDemo77" parent="Starter Enemies" unique_id=1531607039 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.07788, -3.8146973e-06, -36.042046)
+
+[node name="EnemyModelDemo78" parent="Starter Enemies" unique_id=1395629197 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.00528, -1.1444092e-05, -19.782969)
+
+[node name="EnemyModelDemo79" parent="Starter Enemies" unique_id=740760121 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.136894, -7.6293945e-06, -1.3449421)
+
+[node name="EnemyModelDemo80" parent="Starter Enemies" unique_id=167416010 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.99512, -7.6293945e-06, -20.853807)
+
+[node name="EnemyBillboardDemo67" parent="Starter Enemies" unique_id=1805175443 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.24425, 0, -27.277948)
+
+[node name="EnemyBillboardDemo68" parent="Starter Enemies" unique_id=114105816 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.10273, 0, 1.8123302)
+
+[node name="EnemyBillboardDemo69" parent="Starter Enemies" unique_id=818224048 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.655277, 0, -83.83123)
+
+[node name="EnemyBillboardDemo70" parent="Starter Enemies" unique_id=13661649 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.513771, 0, -54.74096)
+
+[node name="EnemyBillboardDemo71" parent="Starter Enemies" unique_id=683555535 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.13698, 0, -42.58954)
+
+[node name="EnemyBillboardDemo72" parent="Starter Enemies" unique_id=534185506 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.995476, 0, -13.4992695)
+
+[node name="EnemyBillboardDemo73" parent="Starter Enemies" unique_id=1175548940 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.67491, 1.9073486e-06, -54.138626)
+
+[node name="EnemyBillboardDemo74" parent="Starter Enemies" unique_id=1579772239 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5334015, 1.9073486e-06, -25.048357)
+
+[node name="EnemyBillboardDemo75" parent="Starter Enemies" unique_id=1774506277 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.930717, 1.9073486e-06, -84.3181)
+
+[node name="EnemyBillboardDemo76" parent="Starter Enemies" unique_id=1834628751 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7892075, 1.9073486e-06, -55.22783)
+
+[node name="EnemyBillboardDemo77" parent="Starter Enemies" unique_id=1201956990 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.11131, 1.9073486e-06, -38.433388)
+
+[node name="EnemyBillboardDemo78" parent="Starter Enemies" unique_id=628008490 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.9698, 1.9073486e-06, -9.343111)
+
+[node name="EnemyBillboardDemo79" parent="Starter Enemies" unique_id=1015723685 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.686447, 1.9073486e-06, -30.865648)
+
+[node name="EnemyBillboardDemo80" parent="Starter Enemies" unique_id=766549123 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.083763, 1.9073486e-06, -90.1354)
+
+[node name="EnemyBillboardDemo81" parent="Starter Enemies" unique_id=689229756 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.942253, 1.9073486e-06, -61.045128)
+
+[node name="EnemyBillboardDemo82" parent="Starter Enemies" unique_id=2093512944 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.26436, 1.9073486e-06, -44.250687)
+
+[node name="EnemyBillboardDemo83" parent="Starter Enemies" unique_id=1304516361 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.122845, 1.9073486e-06, -15.160418)
+
+[node name="EnemyBillboardDemo84" parent="Starter Enemies" unique_id=1680121595 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.809242, 1.9073486e-06, -19.393984)
+
+[node name="EnemyBillboardDemo85" parent="Starter Enemies" unique_id=1146306111 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.20656, 1.9073486e-06, -78.663734)
+
+[node name="EnemyBillboardDemo86" parent="Starter Enemies" unique_id=1336218617 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.065048, 1.9073486e-06, -49.573456)
+
+[node name="EnemyBillboardDemo87" parent="Starter Enemies" unique_id=600818231 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.387146, 1.9073486e-06, -32.779022)
+
+[node name="EnemyBillboardDemo88" parent="Starter Enemies" unique_id=1778971135 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.24564, 1.9073486e-06, -3.6887455)
+
+[node name="EnemyModelDemo81" parent="Starter Enemies" unique_id=1881109366 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.19695, -3.8146973e-06, 25.366844)
+
+[node name="EnemyModelDemo82" parent="Starter Enemies" unique_id=649835352 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.124348, -1.1444092e-05, 41.62593)
+
+[node name="EnemyModelDemo83" parent="Starter Enemies" unique_id=527662904 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.255962, -7.6293945e-06, 60.06395)
+
+[node name="EnemyModelDemo84" parent="Starter Enemies" unique_id=725045995 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.11418, -7.6293945e-06, 40.555084)
+
+[node name="EnemyModelDemo85" parent="Starter Enemies" unique_id=281387957 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.069904, -3.8146973e-06, 46.573822)
+
+[node name="EnemyModelDemo86" parent="Starter Enemies" unique_id=1747758679 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.997303, -1.1444092e-05, 62.8329)
+
+[node name="EnemyModelDemo87" parent="Starter Enemies" unique_id=1286711061 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.128918, -7.6293945e-06, 81.27092)
+
+[node name="EnemyModelDemo88" parent="Starter Enemies" unique_id=348500180 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.98714, -7.6293945e-06, 61.762054)
+
+[node name="EnemyModelDemo89" parent="Starter Enemies" unique_id=1588621927 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.207966, -3.8146973e-06, -0.6909256)
+
+[node name="EnemyModelDemo90" parent="Starter Enemies" unique_id=1108792138 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1353645, -1.1444092e-05, 15.568153)
+
+[node name="EnemyModelDemo91" parent="Starter Enemies" unique_id=594566954 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.26698, -7.6293945e-06, 34.006172)
+
+[node name="EnemyModelDemo92" parent="Starter Enemies" unique_id=925373045 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.125202, -7.6293945e-06, 14.497307)
+
+[node name="EnemyModelDemo93" parent="Starter Enemies" unique_id=1757513183 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.493576, -3.8146973e-06, 4.462631)
+
+[node name="EnemyModelDemo94" parent="Starter Enemies" unique_id=1192358751 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.420967, -1.1444092e-05, 20.72171)
+
+[node name="EnemyModelDemo95" parent="Starter Enemies" unique_id=1402028466 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.55258, -7.6293945e-06, 39.159737)
+
+[node name="EnemyModelDemo96" parent="Starter Enemies" unique_id=630882927 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.41081, -7.6293945e-06, 19.650871)
+
+[node name="EnemyModelDemo97" parent="Starter Enemies" unique_id=80825553 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.97858, -3.8146973e-06, 54.480873)
+
+[node name="EnemyModelDemo98" parent="Starter Enemies" unique_id=959335054 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.905975, -1.1444092e-05, 70.73995)
+
+[node name="EnemyModelDemo99" parent="Starter Enemies" unique_id=1308563001 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.03758, -7.6293945e-06, 89.17798)
+
+[node name="EnemyModelDemo100" parent="Starter Enemies" unique_id=1308084193 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.89581, -7.6293945e-06, 69.66911)
+
+[node name="EnemyBillboardDemo89" parent="Starter Enemies" unique_id=1448347354 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.14494, 0, 63.244972)
+
+[node name="EnemyBillboardDemo90" parent="Starter Enemies" unique_id=2049431296 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.00342, 0, 92.33525)
+
+[node name="EnemyBillboardDemo91" parent="Starter Enemies" unique_id=2141554934 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.55597, 0, 6.6916885)
+
+[node name="EnemyBillboardDemo92" parent="Starter Enemies" unique_id=1843813945 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.414463, 0, 35.78196)
+
+[node name="EnemyBillboardDemo93" parent="Starter Enemies" unique_id=451777463 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.037674, 0, 47.93338)
+
+[node name="EnemyBillboardDemo94" parent="Starter Enemies" unique_id=867725196 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.896168, 0, 77.02365)
+
+[node name="EnemyBillboardDemo95" parent="Starter Enemies" unique_id=1434907888 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.575603, 1.9073486e-06, 36.384293)
+
+[node name="EnemyBillboardDemo96" parent="Starter Enemies" unique_id=34414079 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4340935, 1.9073486e-06, 65.47456)
+
+[node name="EnemyBillboardDemo97" parent="Starter Enemies" unique_id=720515393 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.83141, 1.9073486e-06, 6.2048187)
+
+[node name="EnemyBillboardDemo98" parent="Starter Enemies" unique_id=1432537749 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6898994, 1.9073486e-06, 35.29509)
+
+[node name="EnemyBillboardDemo99" parent="Starter Enemies" unique_id=387194484 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.01201, 1.9073486e-06, 52.08953)
+
+[node name="EnemyBillboardDemo100" parent="Starter Enemies" unique_id=1597354547 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.87049, 1.9073486e-06, 81.17981)
+
+[node name="EnemyBillboardDemo101" parent="Starter Enemies" unique_id=1392214655 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.58714, 1.9073486e-06, 59.657272)
+
+[node name="EnemyBillboardDemo102" parent="Starter Enemies" unique_id=848891099 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.984455, 1.9073486e-06, 0.38751984)
+
+[node name="EnemyBillboardDemo103" parent="Starter Enemies" unique_id=1654579310 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.842945, 1.9073486e-06, 29.47779)
+
+[node name="EnemyBillboardDemo104" parent="Starter Enemies" unique_id=1144372382 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.165054, 1.9073486e-06, 46.272232)
+
+[node name="EnemyBillboardDemo105" parent="Starter Enemies" unique_id=1320224651 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.023537, 1.9073486e-06, 75.3625)
+
+[node name="EnemyBillboardDemo106" parent="Starter Enemies" unique_id=949339496 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.709934, 1.9073486e-06, 71.12894)
+
+[node name="EnemyBillboardDemo107" parent="Starter Enemies" unique_id=1800750061 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.10725, 1.9073486e-06, 11.859184)
+
+[node name="EnemyBillboardDemo108" parent="Starter Enemies" unique_id=1527027057 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.96574, 1.9073486e-06, 40.949463)
+
+[node name="EnemyBillboardDemo109" parent="Starter Enemies" unique_id=1961615333 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.28784, 1.9073486e-06, 57.743896)
+
+[node name="EnemyBillboardDemo110" parent="Starter Enemies" unique_id=2026883414 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.14633, 1.9073486e-06, 86.834175)
+
+[node name="EnemyModelDemo101" parent="Starter Enemies" unique_id=1456662718 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.86682, -3.8146973e-06, -19.115711)
+
+[node name="EnemyModelDemo102" parent="Starter Enemies" unique_id=1205106579 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.794216, -1.1444092e-05, -2.8566246)
+
+[node name="EnemyModelDemo103" parent="Starter Enemies" unique_id=1400755470 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.92583, -7.6293945e-06, 15.581394)
+
+[node name="EnemyModelDemo104" parent="Starter Enemies" unique_id=1676492338 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.78405, -7.6293945e-06, -3.9274712)
+
+[node name="EnemyModelDemo105" parent="Starter Enemies" unique_id=1338687329 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.739773, -3.8146973e-06, 2.0912666)
+
+[node name="EnemyModelDemo106" parent="Starter Enemies" unique_id=890446336 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.66717, -1.1444092e-05, 18.350346)
+
+[node name="EnemyModelDemo107" parent="Starter Enemies" unique_id=1615581918 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.798786, -7.6293945e-06, 36.788364)
+
+[node name="EnemyModelDemo108" parent="Starter Enemies" unique_id=160817964 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.65701, -7.6293945e-06, 17.2795)
+
+[node name="EnemyModelDemo109" parent="Starter Enemies" unique_id=2109975506 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.877834, -3.8146973e-06, -45.17348)
+
+[node name="EnemyModelDemo110" parent="Starter Enemies" unique_id=900120802 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.805233, -1.1444092e-05, -28.914402)
+
+[node name="EnemyModelDemo111" parent="Starter Enemies" unique_id=1095216179 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.936848, -7.6293945e-06, -10.476383)
+
+[node name="EnemyModelDemo112" parent="Starter Enemies" unique_id=1432235027 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.79507, -7.6293945e-06, -29.985249)
+
+[node name="EnemyModelDemo113" parent="Starter Enemies" unique_id=381377178 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.163445, -3.8146973e-06, -40.019924)
+
+[node name="EnemyModelDemo114" parent="Starter Enemies" unique_id=1646812123 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.090836, -1.1444092e-05, -23.760845)
+
+[node name="EnemyModelDemo115" parent="Starter Enemies" unique_id=192997429 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.22245, -7.6293945e-06, -5.3228188)
+
+[node name="EnemyModelDemo116" parent="Starter Enemies" unique_id=334306125 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.08068, -7.6293945e-06, -24.831684)
+
+[node name="EnemyModelDemo117" parent="Starter Enemies" unique_id=814282910 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.648445, -3.8146973e-06, 9.998318)
+
+[node name="EnemyModelDemo118" parent="Starter Enemies" unique_id=1656747706 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.57584, -1.1444092e-05, 26.257397)
+
+[node name="EnemyModelDemo119" parent="Starter Enemies" unique_id=1377073223 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.70745, -7.6293945e-06, 44.695423)
+
+[node name="EnemyModelDemo120" parent="Starter Enemies" unique_id=1673577963 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120.56568, -7.6293945e-06, 25.186558)
+
+[node name="EnemyBillboardDemo111" parent="Starter Enemies" unique_id=1516713276 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.81481, 0, 18.762417)
+
+[node name="EnemyBillboardDemo112" parent="Starter Enemies" unique_id=1450011439 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.67329, 0, 47.852695)
+
+[node name="EnemyBillboardDemo113" parent="Starter Enemies" unique_id=1315848046 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.22584, 0, -37.790867)
+
+[node name="EnemyBillboardDemo114" parent="Starter Enemies" unique_id=509976130 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.08433, 0, -8.700596)
+
+[node name="EnemyBillboardDemo115" parent="Starter Enemies" unique_id=174957165 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.70754, 0, 3.4508247)
+
+[node name="EnemyBillboardDemo116" parent="Starter Enemies" unique_id=1909525851 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.566036, 0, 32.541096)
+
+[node name="EnemyBillboardDemo117" parent="Starter Enemies" unique_id=1691649043 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.24547, 1.9073486e-06, -8.098263)
+
+[node name="EnemyBillboardDemo118" parent="Starter Enemies" unique_id=1728396511 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.103962, 1.9073486e-06, 20.992008)
+
+[node name="EnemyBillboardDemo119" parent="Starter Enemies" unique_id=132749972 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.50128, 1.9073486e-06, -38.277737)
+
+[node name="EnemyBillboardDemo120" parent="Starter Enemies" unique_id=1802668150 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.359768, 1.9073486e-06, -9.187466)
+
+[node name="EnemyBillboardDemo121" parent="Starter Enemies" unique_id=155855606 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.68188, 1.9073486e-06, 7.6069756)
+
+[node name="EnemyBillboardDemo122" parent="Starter Enemies" unique_id=1612402653 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.54036, 1.9073486e-06, 36.697254)
+
+[node name="EnemyBillboardDemo123" parent="Starter Enemies" unique_id=2038377528 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.257008, 1.9073486e-06, 15.174717)
+
+[node name="EnemyBillboardDemo124" parent="Starter Enemies" unique_id=1920440819 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.65433, 1.9073486e-06, -44.095036)
+
+[node name="EnemyBillboardDemo125" parent="Starter Enemies" unique_id=50457493 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.512814, 1.9073486e-06, -15.004765)
+
+[node name="EnemyBillboardDemo126" parent="Starter Enemies" unique_id=658602354 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.83492, 1.9073486e-06, 1.7896767)
+
+[node name="EnemyBillboardDemo127" parent="Starter Enemies" unique_id=1029411640 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.693405, 1.9073486e-06, 30.879948)
+
+[node name="EnemyBillboardDemo128" parent="Starter Enemies" unique_id=1246799206 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.379803, 1.9073486e-06, 26.646381)
+
+[node name="EnemyBillboardDemo129" parent="Starter Enemies" unique_id=1023622370 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.777115, 1.9073486e-06, -32.62337)
+
+[node name="EnemyBillboardDemo130" parent="Starter Enemies" unique_id=172159698 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.63561, 1.9073486e-06, -3.5330925)
+
+[node name="EnemyBillboardDemo131" parent="Starter Enemies" unique_id=2071498570 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 121.95771, 1.9073486e-06, 13.261341)
+
+[node name="EnemyBillboardDemo132" parent="Starter Enemies" unique_id=1316212361 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.8162, 1.9073486e-06, 42.35162)
+
+[node name="EnemyModelDemo121" parent="Starter Enemies" unique_id=1727913072 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.00801, -3.8146973e-06, -89.50632)
+
+[node name="EnemyModelDemo122" parent="Starter Enemies" unique_id=2138947966 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.064594, -1.1444092e-05, -73.24724)
+
+[node name="EnemyModelDemo123" parent="Starter Enemies" unique_id=1566796121 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.067017, -7.6293945e-06, -54.809216)
+
+[node name="EnemyModelDemo124" parent="Starter Enemies" unique_id=453227709 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.92524, -7.6293945e-06, -74.318085)
+
+[node name="EnemyModelDemo125" parent="Starter Enemies" unique_id=2071932711 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1190376, -3.8146973e-06, -68.29935)
+
+[node name="EnemyModelDemo126" parent="Starter Enemies" unique_id=1892901053 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.19164, -1.1444092e-05, -52.040264)
+
+[node name="EnemyModelDemo127" parent="Starter Enemies" unique_id=1116006290 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0600243, -7.6293945e-06, -33.602245)
+
+[node name="EnemyModelDemo128" parent="Starter Enemies" unique_id=1464284829 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20179749, -7.6293945e-06, -53.11111)
+
+[node name="EnemyModelDemo129" parent="Starter Enemies" unique_id=1638570519 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.980976, -3.8146973e-06, -115.56409)
+
+[node name="EnemyModelDemo130" parent="Starter Enemies" unique_id=1561710194 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.053577, -1.1444092e-05, -99.30501)
+
+[node name="EnemyModelDemo131" parent="Starter Enemies" unique_id=455159388 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.921963, -7.6293945e-06, -80.86699)
+
+[node name="EnemyModelDemo132" parent="Starter Enemies" unique_id=554712671 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0637398, -7.6293945e-06, -100.375854)
+
+[node name="EnemyModelDemo133" parent="Starter Enemies" unique_id=503331120 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.304634, -3.8146973e-06, -110.41054)
+
+[node name="EnemyModelDemo134" parent="Starter Enemies" unique_id=1424737270 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.232025, -1.1444092e-05, -94.15146)
+
+[node name="EnemyModelDemo135" parent="Starter Enemies" unique_id=1784624537 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.36364, -7.6293945e-06, -75.713425)
+
+[node name="EnemyModelDemo136" parent="Starter Enemies" unique_id=617668626 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.22187, -7.6293945e-06, -95.22229)
+
+[node name="EnemyModelDemo137" parent="Starter Enemies" unique_id=1007293072 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.789635, -3.8146973e-06, -60.392292)
+
+[node name="EnemyModelDemo138" parent="Starter Enemies" unique_id=848768858 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.717033, -1.1444092e-05, -44.133213)
+
+[node name="EnemyModelDemo139" parent="Starter Enemies" unique_id=200431436 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.84864, -7.6293945e-06, -25.695187)
+
+[node name="EnemyModelDemo140" parent="Starter Enemies" unique_id=1058514396 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.70687, -7.6293945e-06, -45.204052)
+
+[node name="EnemyBillboardDemo133" parent="Starter Enemies" unique_id=1385168848 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.956001, 0, -51.628193)
+
+[node name="EnemyBillboardDemo134" parent="Starter Enemies" unique_id=302000751 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.18552, 0, -22.537914)
+
+[node name="EnemyBillboardDemo135" parent="Starter Enemies" unique_id=1165779548 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.367027, 0, -108.18147)
+
+[node name="EnemyBillboardDemo136" parent="Starter Enemies" unique_id=104155110 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.774479, 0, -79.0912)
+
+[node name="EnemyBillboardDemo137" parent="Starter Enemies" unique_id=3748223 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.848732, 0, -66.93979)
+
+[node name="EnemyBillboardDemo138" parent="Starter Enemies" unique_id=425237880 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.292774, 0, -37.849514)
+
+[node name="EnemyBillboardDemo139" parent="Starter Enemies" unique_id=2094692376 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3866577, 1.9073486e-06, -78.48888)
+
+[node name="EnemyBillboardDemo140" parent="Starter Enemies" unique_id=81014793 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.75485, 1.9073486e-06, -49.3986)
+
+[node name="EnemyBillboardDemo141" parent="Starter Enemies" unique_id=646246305 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3575287, 1.9073486e-06, -108.66835)
+
+[node name="EnemyBillboardDemo142" parent="Starter Enemies" unique_id=508060118 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.499043, 1.9073486e-06, -79.57808)
+
+[node name="EnemyBillboardDemo143" parent="Starter Enemies" unique_id=1160377400 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.823067, 1.9073486e-06, -62.783634)
+
+[node name="EnemyBillboardDemo144" parent="Starter Enemies" unique_id=709907066 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6815491, 1.9073486e-06, -33.693356)
+
+[node name="EnemyBillboardDemo145" parent="Starter Enemies" unique_id=1051893921 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.601803, 1.9073486e-06, -55.215893)
+
+[node name="EnemyBillboardDemo146" parent="Starter Enemies" unique_id=541948567 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.795517, 1.9073486e-06, -114.48564)
+
+[node name="EnemyBillboardDemo147" parent="Starter Enemies" unique_id=231633464 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.345997, 1.9073486e-06, -85.39537)
+
+[node name="EnemyBillboardDemo148" parent="Starter Enemies" unique_id=2055707287 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.976112, 1.9073486e-06, -68.60094)
+
+[node name="EnemyBillboardDemo149" parent="Starter Enemies" unique_id=1557228023 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.834595, 1.9073486e-06, -39.510662)
+
+[node name="EnemyBillboardDemo150" parent="Starter Enemies" unique_id=919951089 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.479008, 1.9073486e-06, -43.74423)
+
+[node name="EnemyBillboardDemo151" parent="Starter Enemies" unique_id=785738882 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.918304, 1.9073486e-06, -103.01398)
+
+[node name="EnemyBillboardDemo152" parent="Starter Enemies" unique_id=467274576 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.223202, 1.9073486e-06, -73.923706)
+
+[node name="EnemyBillboardDemo153" parent="Starter Enemies" unique_id=542847076 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0989, 1.9073486e-06, -57.12927)
+
+[node name="EnemyBillboardDemo154" parent="Starter Enemies" unique_id=2126850910 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.95739, 1.9073486e-06, -28.03899)
+
+[node name="EnemyModelDemo141" parent="Starter Enemies" unique_id=1544956066 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.74118, -3.8146973e-06, -18.533577)
+
+[node name="EnemyModelDemo142" parent="Starter Enemies" unique_id=1983640077 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.81378, -1.1444092e-05, -2.274498)
+
+[node name="EnemyModelDemo143" parent="Starter Enemies" unique_id=108790191 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.682175, -7.6293945e-06, 16.163525)
+
+[node name="EnemyModelDemo144" parent="Starter Enemies" unique_id=1288109246 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.82395, -7.6293945e-06, -3.3453445)
+
+[node name="EnemyModelDemo145" parent="Starter Enemies" unique_id=782508770 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.868225, -3.8146973e-06, 2.6733932)
+
+[node name="EnemyModelDemo146" parent="Starter Enemies" unique_id=1225915327 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.94083, -1.1444092e-05, 18.932476)
+
+[node name="EnemyModelDemo147" parent="Starter Enemies" unique_id=1383785599 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.80922, -7.6293945e-06, 37.370495)
+
+[node name="EnemyModelDemo148" parent="Starter Enemies" unique_id=1067035645 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.95099, -7.6293945e-06, 17.86163)
+
+[node name="EnemyModelDemo149" parent="Starter Enemies" unique_id=1540154326 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.73016, -3.8146973e-06, -44.591347)
+
+[node name="EnemyModelDemo150" parent="Starter Enemies" unique_id=1075546598 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -113.802765, -1.1444092e-05, -28.332268)
+
+[node name="EnemyModelDemo151" parent="Starter Enemies" unique_id=166543799 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.67116, -7.6293945e-06, -9.894249)
+
+[node name="EnemyModelDemo152" parent="Starter Enemies" unique_id=1255838462 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.81293, -7.6293945e-06, -29.403114)
+
+[node name="EnemyModelDemo153" parent="Starter Enemies" unique_id=845440466 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.444557, -3.8146973e-06, -39.437798)
+
+[node name="EnemyModelDemo154" parent="Starter Enemies" unique_id=1382467492 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.517166, -1.1444092e-05, -23.178719)
+
+[node name="EnemyModelDemo155" parent="Starter Enemies" unique_id=250641445 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.385551, -7.6293945e-06, -4.7406845)
+
+[node name="EnemyModelDemo156" parent="Starter Enemies" unique_id=1801870736 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.52732, -7.6293945e-06, -24.24955)
+
+[node name="EnemyModelDemo157" parent="Starter Enemies" unique_id=1960549613 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.959557, -3.8146973e-06, 10.580448)
+
+[node name="EnemyModelDemo158" parent="Starter Enemies" unique_id=552085286 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.032158, -1.1444092e-05, 26.839527)
+
+[node name="EnemyModelDemo159" parent="Starter Enemies" unique_id=1336279779 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.90055, -7.6293945e-06, 45.277554)
+
+[node name="EnemyModelDemo160" parent="Starter Enemies" unique_id=759016317 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.04232, -7.6293945e-06, 25.768688)
+
+[node name="EnemyBillboardDemo155" parent="Starter Enemies" unique_id=179983463 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.79319, 0, 19.344547)
+
+[node name="EnemyBillboardDemo156" parent="Starter Enemies" unique_id=939982173 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.93471, 0, 48.434826)
+
+[node name="EnemyBillboardDemo157" parent="Starter Enemies" unique_id=509308309 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.382164, 0, -37.208733)
+
+[node name="EnemyBillboardDemo158" parent="Starter Enemies" unique_id=2074181370 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101.52367, 0, -8.118462)
+
+[node name="EnemyBillboardDemo159" parent="Starter Enemies" unique_id=1502563104 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.90046, 0, 4.0329514)
+
+[node name="EnemyBillboardDemo160" parent="Starter Enemies" unique_id=1878709543 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.04196, 0, 33.123226)
+
+[node name="EnemyBillboardDemo161" parent="Starter Enemies" unique_id=1966936858 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.36253, 1.9073486e-06, -7.516136)
+
+[node name="EnemyBillboardDemo162" parent="Starter Enemies" unique_id=1077860543 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -113.50404, 1.9073486e-06, 21.574139)
+
+[node name="EnemyBillboardDemo163" parent="Starter Enemies" unique_id=577545939 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.10672, 1.9073486e-06, -37.69561)
+
+[node name="EnemyBillboardDemo164" parent="Starter Enemies" unique_id=227492272 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -116.24823, 1.9073486e-06, -8.605339)
+
+[node name="EnemyBillboardDemo165" parent="Starter Enemies" unique_id=1156672758 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.926125, 1.9073486e-06, 8.189106)
+
+[node name="EnemyBillboardDemo166" parent="Starter Enemies" unique_id=750437935 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.06764, 1.9073486e-06, 37.279385)
+
+[node name="EnemyBillboardDemo167" parent="Starter Enemies" unique_id=1131133107 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101.351, 1.9073486e-06, 15.756847)
+
+[node name="EnemyBillboardDemo168" parent="Starter Enemies" unique_id=716601111 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.953674, 1.9073486e-06, -43.5129)
+
+[node name="EnemyBillboardDemo169" parent="Starter Enemies" unique_id=316329267 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.095184, 1.9073486e-06, -14.42263)
+
+[node name="EnemyBillboardDemo170" parent="Starter Enemies" unique_id=1199422258 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.773079, 1.9073486e-06, 2.3718033)
+
+[node name="EnemyBillboardDemo171" parent="Starter Enemies" unique_id=988165047 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.914597, 1.9073486e-06, 31.462078)
+
+[node name="EnemyBillboardDemo172" parent="Starter Enemies" unique_id=1968265712 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.228195, 1.9073486e-06, 27.228512)
+
+[node name="EnemyBillboardDemo173" parent="Starter Enemies" unique_id=653544517 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.830887, 1.9073486e-06, -32.041237)
+
+[node name="EnemyBillboardDemo174" parent="Starter Enemies" unique_id=1374518488 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.9724, 1.9073486e-06, -2.950966)
+
+[node name="EnemyBillboardDemo175" parent="Starter Enemies" unique_id=1192573296 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.650291, 1.9073486e-06, 13.843472)
+
+[node name="EnemyBillboardDemo176" parent="Starter Enemies" unique_id=1333489590 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.7918, 1.9073486e-06, 42.93375)
+
+[node name="EnemyModelDemo161" parent="Starter Enemies" unique_id=1025780478 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.422333, -1.9073486e-05, 54.659286)
+
+[node name="EnemyModelDemo162" parent="Starter Enemies" unique_id=2139299545 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6502686, -2.670288e-05, 70.918365)
+
+[node name="EnemyModelDemo163" parent="Starter Enemies" unique_id=53268361 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.481339, -2.2888184e-05, 89.356384)
+
+[node name="EnemyModelDemo164" parent="Starter Enemies" unique_id=1338238665 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.339561, -2.2888184e-05, 69.84752)
+
+[node name="EnemyModelDemo165" parent="Starter Enemies" unique_id=2035029677 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7047119, -1.9073486e-05, 75.86626)
+
+[node name="EnemyModelDemo166" parent="Starter Enemies" unique_id=1568250835 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.777313, -2.670288e-05, 92.125336)
+
+[node name="EnemyModelDemo167" parent="Starter Enemies" unique_id=1406475687 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6457062, -2.2888184e-05, 110.563354)
+
+[node name="EnemyModelDemo168" parent="Starter Enemies" unique_id=1289292920 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2125244, -2.2888184e-05, 91.05449)
+
+[node name="EnemyModelDemo169" parent="Starter Enemies" unique_id=1277730890 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5666504, -1.9073486e-05, 28.601517)
+
+[node name="EnemyModelDemo170" parent="Starter Enemies" unique_id=1950612657 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.639252, -2.670288e-05, 44.860596)
+
+[node name="EnemyModelDemo171" parent="Starter Enemies" unique_id=354465508 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5076447, -2.2888184e-05, 63.298615)
+
+[node name="EnemyModelDemo172" parent="Starter Enemies" unique_id=1355201134 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.350586, -2.2888184e-05, 43.78975)
+
+[node name="EnemyModelDemo173" parent="Starter Enemies" unique_id=876989074 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.718956, -1.9073486e-05, 33.755066)
+
+[node name="EnemyModelDemo174" parent="Starter Enemies" unique_id=260087714 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.646347, -2.670288e-05, 50.014145)
+
+[node name="EnemyModelDemo175" parent="Starter Enemies" unique_id=1608397392 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.77796, -2.2888184e-05, 68.45218)
+
+[node name="EnemyModelDemo176" parent="Starter Enemies" unique_id=1126725423 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.636192, -2.2888184e-05, 48.943314)
+
+[node name="EnemyModelDemo177" parent="Starter Enemies" unique_id=1070758605 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.203957, -1.9073486e-05, 83.773315)
+
+[node name="EnemyModelDemo178" parent="Starter Enemies" unique_id=2054321946 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.131355, -2.670288e-05, 100.032394)
+
+[node name="EnemyModelDemo179" parent="Starter Enemies" unique_id=1395734266 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.262962, -2.2888184e-05, 118.47041)
+
+[node name="EnemyModelDemo180" parent="Starter Enemies" unique_id=148756151 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.121193, -2.2888184e-05, 98.96155)
+
+[node name="EnemyBillboardDemo177" parent="Starter Enemies" unique_id=1800634682 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.370323, -1.5258789e-05, 92.537415)
+
+[node name="EnemyBillboardDemo178" parent="Starter Enemies" unique_id=1469346561 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7711945, -1.5258789e-05, 121.627686)
+
+[node name="EnemyBillboardDemo179" parent="Starter Enemies" unique_id=1502005967 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.78135, -1.5258789e-05, 35.98413)
+
+[node name="EnemyBillboardDemo180" parent="Starter Enemies" unique_id=1901247411 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.360153, -1.5258789e-05, 65.0744)
+
+[node name="EnemyBillboardDemo181" parent="Starter Enemies" unique_id=470908270 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.263054, -1.5258789e-05, 77.225815)
+
+[node name="EnemyBillboardDemo182" parent="Starter Enemies" unique_id=981243431 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8784485, -1.5258789e-05, 106.316086)
+
+[node name="EnemyBillboardDemo183" parent="Starter Enemies" unique_id=1317604547 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8009796, -1.335144e-05, 65.67673)
+
+[node name="EnemyBillboardDemo184" parent="Starter Enemies" unique_id=626820346 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.34053, -1.335144e-05, 94.767)
+
+[node name="EnemyBillboardDemo185" parent="Starter Enemies" unique_id=1281003676 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.056793, -1.335144e-05, 35.497253)
+
+[node name="EnemyBillboardDemo186" parent="Starter Enemies" unique_id=400311166 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.084717, -1.335144e-05, 64.587524)
+
+[node name="EnemyBillboardDemo187" parent="Starter Enemies" unique_id=309456908 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.23739, -1.335144e-05, 81.38197)
+
+[node name="EnemyBillboardDemo188" parent="Starter Enemies" unique_id=1203390879 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.095871, -1.335144e-05, 110.472244)
+
+[node name="EnemyBillboardDemo189" parent="Starter Enemies" unique_id=713442323 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.187485, -1.335144e-05, 88.94971)
+
+[node name="EnemyBillboardDemo190" parent="Starter Enemies" unique_id=721719971 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.209839, -1.335144e-05, 29.679962)
+
+[node name="EnemyBillboardDemo191" parent="Starter Enemies" unique_id=1698078844 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.931671, -1.335144e-05, 58.770233)
+
+[node name="EnemyBillboardDemo192" parent="Starter Enemies" unique_id=268528787 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.390434, -1.335144e-05, 75.56467)
+
+[node name="EnemyBillboardDemo193" parent="Starter Enemies" unique_id=824740372 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.248917, -1.335144e-05, 104.65494)
+
+[node name="EnemyBillboardDemo194" parent="Starter Enemies" unique_id=1052833171 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.064682, -1.335144e-05, 100.42137)
+
+[node name="EnemyBillboardDemo195" parent="Starter Enemies" unique_id=160916827 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.332626, -1.335144e-05, 41.151627)
+
+[node name="EnemyBillboardDemo196" parent="Starter Enemies" unique_id=411611999 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.808884, -1.335144e-05, 70.2419)
+
+[node name="EnemyBillboardDemo197" parent="Starter Enemies" unique_id=682163714 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.51322, -1.335144e-05, 87.03633)
+
+[node name="EnemyBillboardDemo198" parent="Starter Enemies" unique_id=532962273 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.371712, -1.335144e-05, 116.12662)
+
+[node name="EnemyModelDemo181" parent="Starter Enemies" unique_id=826646933 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.36989, -1.9073486e-05, 56.18499)
+
+[node name="EnemyModelDemo182" parent="Starter Enemies" unique_id=784488660 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.44249, -2.670288e-05, 72.44407)
+
+[node name="EnemyModelDemo183" parent="Starter Enemies" unique_id=1662853151 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.31088, -2.2888184e-05, 90.88209)
+
+[node name="EnemyModelDemo184" parent="Starter Enemies" unique_id=1068423308 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.45266, -2.2888184e-05, 71.37322)
+
+[node name="EnemyModelDemo185" parent="Starter Enemies" unique_id=1634517189 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.49693, -1.9073486e-05, 77.39196)
+
+[node name="EnemyModelDemo186" parent="Starter Enemies" unique_id=1453128582 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -119.569534, -2.670288e-05, 93.65104)
+
+[node name="EnemyModelDemo187" parent="Starter Enemies" unique_id=1726217128 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.43793, -2.2888184e-05, 112.08906)
+
+[node name="EnemyModelDemo188" parent="Starter Enemies" unique_id=1378348812 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.5797, -2.2888184e-05, 92.58019)
+
+[node name="EnemyModelDemo189" parent="Starter Enemies" unique_id=1447388715 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.35887, -1.9073486e-05, 30.12722)
+
+[node name="EnemyModelDemo190" parent="Starter Enemies" unique_id=85757857 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -122.43147, -2.670288e-05, 46.3863)
+
+[node name="EnemyModelDemo191" parent="Starter Enemies" unique_id=717565180 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.299866, -2.2888184e-05, 64.82432)
+
+[node name="EnemyModelDemo192" parent="Starter Enemies" unique_id=362576030 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.441635, -2.2888184e-05, 45.315453)
+
+[node name="EnemyModelDemo193" parent="Starter Enemies" unique_id=447125158 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.073265, -1.9073486e-05, 35.28077)
+
+[node name="EnemyModelDemo194" parent="Starter Enemies" unique_id=979964826 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.145874, -2.670288e-05, 51.53985)
+
+[node name="EnemyModelDemo195" parent="Starter Enemies" unique_id=1593134505 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.01426, -2.2888184e-05, 69.97788)
+
+[node name="EnemyModelDemo196" parent="Starter Enemies" unique_id=1468071211 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.15603, -2.2888184e-05, 50.469017)
+
+[node name="EnemyModelDemo197" parent="Starter Enemies" unique_id=1289297575 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.588264, -1.9073486e-05, 85.29902)
+
+[node name="EnemyModelDemo198" parent="Starter Enemies" unique_id=125296371 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.660866, -2.670288e-05, 101.5581)
+
+[node name="EnemyModelDemo199" parent="Starter Enemies" unique_id=1220454038 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.52926, -2.2888184e-05, 119.99612)
+
+[node name="EnemyModelDemo200" parent="Starter Enemies" unique_id=44313535 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.671028, -2.2888184e-05, 100.48725)
+
+[node name="EnemyBillboardDemo199" parent="Starter Enemies" unique_id=180690621 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.421898, -1.5258789e-05, 94.06312)
+
+[node name="EnemyBillboardDemo200" parent="Starter Enemies" unique_id=1709454768 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.563416, -1.5258789e-05, 123.15339)
+
+[node name="EnemyBillboardDemo201" parent="Starter Enemies" unique_id=1168216394 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.01087, -1.5258789e-05, 37.509834)
+
+[node name="EnemyBillboardDemo202" parent="Starter Enemies" unique_id=651688814 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.152374, -1.5258789e-05, 66.600105)
+
+[node name="EnemyBillboardDemo203" parent="Starter Enemies" unique_id=2007560170 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.529167, -1.5258789e-05, 78.75152)
+
+[node name="EnemyBillboardDemo204" parent="Starter Enemies" unique_id=1242846423 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94.67067, -1.5258789e-05, 107.84179)
+
+[node name="EnemyBillboardDemo205" parent="Starter Enemies" unique_id=309510236 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.99124, -1.335144e-05, 67.20243)
+
+[node name="EnemyBillboardDemo206" parent="Starter Enemies" unique_id=1197195324 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -122.13275, -1.335144e-05, 96.2927)
+
+[node name="EnemyBillboardDemo207" parent="Starter Enemies" unique_id=520446788 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.73543, -1.335144e-05, 37.022957)
+
+[node name="EnemyBillboardDemo208" parent="Starter Enemies" unique_id=977967373 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -124.87694, -1.335144e-05, 66.11323)
+
+[node name="EnemyBillboardDemo209" parent="Starter Enemies" unique_id=1002170566 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.554832, -1.335144e-05, 82.90768)
+
+[node name="EnemyBillboardDemo210" parent="Starter Enemies" unique_id=10431145 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.69635, -1.335144e-05, 111.99795)
+
+[node name="EnemyBillboardDemo211" parent="Starter Enemies" unique_id=1616571923 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.979706, -1.335144e-05, 90.47541)
+
+[node name="EnemyBillboardDemo212" parent="Starter Enemies" unique_id=1361955746 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.58238, -1.335144e-05, 31.205666)
+
+[node name="EnemyBillboardDemo213" parent="Starter Enemies" unique_id=721092123 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -112.72389, -1.335144e-05, 60.295937)
+
+[node name="EnemyBillboardDemo214" parent="Starter Enemies" unique_id=522866690 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.401787, -1.335144e-05, 77.09037)
+
+[node name="EnemyBillboardDemo215" parent="Starter Enemies" unique_id=1101518340 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.543304, -1.335144e-05, 106.18064)
+
+[node name="EnemyBillboardDemo216" parent="Starter Enemies" unique_id=794439997 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.8569, -1.335144e-05, 101.947075)
+
+[node name="EnemyBillboardDemo217" parent="Starter Enemies" unique_id=473342406 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.459595, -1.335144e-05, 42.67733)
+
+[node name="EnemyBillboardDemo218" parent="Starter Enemies" unique_id=551625420 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.601105, -1.335144e-05, 71.7676)
+
+[node name="EnemyBillboardDemo219" parent="Starter Enemies" unique_id=279432817 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.279, -1.335144e-05, 88.562035)
+
+[node name="EnemyBillboardDemo220" parent="Starter Enemies" unique_id=1689599703 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.42051, -1.335144e-05, 117.65232)
+
+[node name="EnemyModelDemo201" parent="Starter Enemies" unique_id=1952488794 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.828827, -3.8146973e-06, -94.025475)
+
+[node name="EnemyModelDemo202" parent="Starter Enemies" unique_id=1154019625 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.90143, -1.1444092e-05, -77.766396)
+
+[node name="EnemyModelDemo203" parent="Starter Enemies" unique_id=1430357169 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.76982, -7.6293945e-06, -59.328377)
+
+[node name="EnemyModelDemo204" parent="Starter Enemies" unique_id=2069375974 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.9116, -7.6293945e-06, -78.83724)
+
+[node name="EnemyModelDemo205" parent="Starter Enemies" unique_id=562917782 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.95587, -3.8146973e-06, -72.818504)
+
+[node name="EnemyModelDemo206" parent="Starter Enemies" unique_id=422875119 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -112.02847, -1.1444092e-05, -56.559425)
+
+[node name="EnemyModelDemo207" parent="Starter Enemies" unique_id=1153403153 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.896866, -7.6293945e-06, -38.121407)
+
+[node name="EnemyModelDemo208" parent="Starter Enemies" unique_id=1361781883 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.038635, -7.6293945e-06, -57.630272)
+
+[node name="EnemyModelDemo209" parent="Starter Enemies" unique_id=1401126674 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.81781, -3.8146973e-06, -120.083244)
+
+[node name="EnemyModelDemo210" parent="Starter Enemies" unique_id=61457692 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114.89041, -1.1444092e-05, -103.824165)
+
+[node name="EnemyModelDemo211" parent="Starter Enemies" unique_id=979379103 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.758804, -7.6293945e-06, -85.38615)
+
+[node name="EnemyModelDemo212" parent="Starter Enemies" unique_id=1117315524 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.90057, -7.6293945e-06, -104.89501)
+
+[node name="EnemyModelDemo213" parent="Starter Enemies" unique_id=40970601 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.532204, -3.8146973e-06, -114.929695)
+
+[node name="EnemyModelDemo214" parent="Starter Enemies" unique_id=718397843 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.604813, -1.1444092e-05, -98.670616)
+
+[node name="EnemyModelDemo215" parent="Starter Enemies" unique_id=1115982824 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.473198, -7.6293945e-06, -80.23258)
+
+[node name="EnemyModelDemo216" parent="Starter Enemies" unique_id=30103194 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.614967, -7.6293945e-06, -99.74145)
+
+[node name="EnemyModelDemo217" parent="Starter Enemies" unique_id=1637729897 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.047203, -3.8146973e-06, -64.911446)
+
+[node name="EnemyModelDemo218" parent="Starter Enemies" unique_id=776077129 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.119804, -1.1444092e-05, -48.652367)
+
+[node name="EnemyModelDemo219" parent="Starter Enemies" unique_id=1658357522 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.988197, -7.6293945e-06, -30.214348)
+
+[node name="EnemyModelDemo220" parent="Starter Enemies" unique_id=2068564570 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.129967, -7.6293945e-06, -49.723213)
+
+[node name="EnemyBillboardDemo221" parent="Starter Enemies" unique_id=877115337 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.880836, 0, -56.147346)
+
+[node name="EnemyBillboardDemo222" parent="Starter Enemies" unique_id=1057052076 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.022354, 0, -27.057076)
+
+[node name="EnemyBillboardDemo223" parent="Starter Enemies" unique_id=506769295 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.46981, 0, -112.70063)
+
+[node name="EnemyBillboardDemo224" parent="Starter Enemies" unique_id=389029948 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.61131, 0, -83.61036)
+
+[node name="EnemyBillboardDemo225" parent="Starter Enemies" unique_id=487476678 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.988106, 0, -71.45895)
+
+[node name="EnemyBillboardDemo226" parent="Starter Enemies" unique_id=1636786997 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.12961, 0, -42.368675)
+
+[node name="EnemyBillboardDemo227" parent="Starter Enemies" unique_id=867405434 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.45018, 1.9073486e-06, -83.00803)
+
+[node name="EnemyBillboardDemo228" parent="Starter Enemies" unique_id=1646573589 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114.59169, 1.9073486e-06, -53.917763)
+
+[node name="EnemyBillboardDemo229" parent="Starter Enemies" unique_id=1802753334 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.19437, 1.9073486e-06, -113.18751)
+
+[node name="EnemyBillboardDemo230" parent="Starter Enemies" unique_id=1264384936 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.33588, 1.9073486e-06, -84.09724)
+
+[node name="EnemyBillboardDemo231" parent="Starter Enemies" unique_id=2011586867 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.01377, 1.9073486e-06, -67.30279)
+
+[node name="EnemyBillboardDemo232" parent="Starter Enemies" unique_id=1640718160 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.15529, 1.9073486e-06, -38.212517)
+
+[node name="EnemyBillboardDemo233" parent="Starter Enemies" unique_id=1837176819 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.438644, 1.9073486e-06, -59.735054)
+
+[node name="EnemyBillboardDemo234" parent="Starter Enemies" unique_id=418437073 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.04132, 1.9073486e-06, -119.0048)
+
+[node name="EnemyBillboardDemo235" parent="Starter Enemies" unique_id=252277435 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105.18283, 1.9073486e-06, -89.91453)
+
+[node name="EnemyBillboardDemo236" parent="Starter Enemies" unique_id=908116953 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.860725, 1.9073486e-06, -73.120094)
+
+[node name="EnemyBillboardDemo237" parent="Starter Enemies" unique_id=483746206 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.00224, 1.9073486e-06, -44.029823)
+
+[node name="EnemyBillboardDemo238" parent="Starter Enemies" unique_id=246404577 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.31584, 1.9073486e-06, -48.26339)
+
+[node name="EnemyBillboardDemo239" parent="Starter Enemies" unique_id=732514020 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.918533, 1.9073486e-06, -107.533134)
+
+[node name="EnemyBillboardDemo240" parent="Starter Enemies" unique_id=592456686 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.06004, 1.9073486e-06, -78.44286)
+
+[node name="EnemyBillboardDemo241" parent="Starter Enemies" unique_id=1393420213 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.737938, 1.9073486e-06, -61.64843)
+
+[node name="EnemyBillboardDemo242" parent="Starter Enemies" unique_id=1690205284 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.879448, 1.9073486e-06, -32.558144)
+
+[node name="EnemyModelDemo221" parent="Starter Enemies" unique_id=1566601118 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.909424, -3.8146973e-06, -95.36372)
+
+[node name="EnemyModelDemo222" parent="Starter Enemies" unique_id=817595953 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.836823, -1.1444092e-05, -79.104645)
+
+[node name="EnemyModelDemo223" parent="Starter Enemies" unique_id=1850669227 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.96843, -7.6293945e-06, -60.666626)
+
+[node name="EnemyModelDemo224" parent="Starter Enemies" unique_id=1121651665 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.82665, -7.6293945e-06, -80.17549)
+
+[node name="EnemyModelDemo225" parent="Starter Enemies" unique_id=1538993949 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.78238, -3.8146973e-06, -74.15675)
+
+[node name="EnemyModelDemo226" parent="Starter Enemies" unique_id=574704294 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.709778, -1.1444092e-05, -57.897675)
+
+[node name="EnemyModelDemo227" parent="Starter Enemies" unique_id=1855219122 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.841385, -7.6293945e-06, -39.459656)
+
+[node name="EnemyModelDemo228" parent="Starter Enemies" unique_id=1494457572 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.699615, -7.6293945e-06, -58.96852)
+
+[node name="EnemyModelDemo229" parent="Starter Enemies" unique_id=2043263984 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.92044, -3.8146973e-06, -121.42149)
+
+[node name="EnemyModelDemo230" parent="Starter Enemies" unique_id=788850211 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.84784, -1.1444092e-05, -105.162415)
+
+[node name="EnemyModelDemo231" parent="Starter Enemies" unique_id=1419898748 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.979446, -7.6293945e-06, -86.724396)
+
+[node name="EnemyModelDemo232" parent="Starter Enemies" unique_id=129180219 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.837677, -7.6293945e-06, -106.23326)
+
+[node name="EnemyModelDemo233" parent="Starter Enemies" unique_id=1430809507 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.20605, -3.8146973e-06, -116.267944)
+
+[node name="EnemyModelDemo234" parent="Starter Enemies" unique_id=529693300 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.13344, -1.1444092e-05, -100.008865)
+
+[node name="EnemyModelDemo235" parent="Starter Enemies" unique_id=88083790 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.26505, -7.6293945e-06, -81.57083)
+
+[node name="EnemyModelDemo236" parent="Starter Enemies" unique_id=403563532 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120.12328, -7.6293945e-06, -101.0797)
+
+[node name="EnemyModelDemo237" parent="Starter Enemies" unique_id=1662236545 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.69105, -3.8146973e-06, -66.249695)
+
+[node name="EnemyModelDemo238" parent="Starter Enemies" unique_id=951756466 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.61845, -1.1444092e-05, -49.990616)
+
+[node name="EnemyModelDemo239" parent="Starter Enemies" unique_id=1372724765 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.75005, -7.6293945e-06, -31.552597)
+
+[node name="EnemyModelDemo240" parent="Starter Enemies" unique_id=289456535 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 121.608284, -7.6293945e-06, -51.061462)
+
+[node name="EnemyBillboardDemo243" parent="Starter Enemies" unique_id=1671097454 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.857414, 0, -57.485596)
+
+[node name="EnemyBillboardDemo244" parent="Starter Enemies" unique_id=1642986155 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.715897, 0, -28.395325)
+
+[node name="EnemyBillboardDemo245" parent="Starter Enemies" unique_id=2014831332 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.26844, 0, -114.03888)
+
+[node name="EnemyBillboardDemo246" parent="Starter Enemies" unique_id=1161259810 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.126938, 0, -84.94861)
+
+[node name="EnemyBillboardDemo247" parent="Starter Enemies" unique_id=150414791 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.750145, 0, -72.797195)
+
+[node name="EnemyBillboardDemo248" parent="Starter Enemies" unique_id=1499077475 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.608643, 0, -43.706924)
+
+[node name="EnemyBillboardDemo249" parent="Starter Enemies" unique_id=1146577979 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.28807, 1.9073486e-06, -84.34628)
+
+[node name="EnemyBillboardDemo250" parent="Starter Enemies" unique_id=41872578 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.14656, 1.9073486e-06, -55.256012)
+
+[node name="EnemyBillboardDemo251" parent="Starter Enemies" unique_id=2117388610 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.543884, 1.9073486e-06, -114.52576)
+
+[node name="EnemyBillboardDemo252" parent="Starter Enemies" unique_id=98233994 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.402374, 1.9073486e-06, -85.435486)
+
+[node name="EnemyBillboardDemo253" parent="Starter Enemies" unique_id=1542231511 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105.72448, 1.9073486e-06, -68.64104)
+
+[node name="EnemyBillboardDemo254" parent="Starter Enemies" unique_id=300265996 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.58296, 1.9073486e-06, -39.550766)
+
+[node name="EnemyBillboardDemo255" parent="Starter Enemies" unique_id=2003055249 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.299606, 1.9073486e-06, -61.073303)
+
+[node name="EnemyBillboardDemo256" parent="Starter Enemies" unique_id=351836020 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.69693, 1.9073486e-06, -120.34305)
+
+[node name="EnemyBillboardDemo257" parent="Starter Enemies" unique_id=950694662 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.55542, 1.9073486e-06, -91.25278)
+
+[node name="EnemyBillboardDemo258" parent="Starter Enemies" unique_id=444852224 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.877525, 1.9073486e-06, -74.45834)
+
+[node name="EnemyBillboardDemo259" parent="Starter Enemies" unique_id=1262760818 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.73601, 1.9073486e-06, -45.368073)
+
+[node name="EnemyBillboardDemo260" parent="Starter Enemies" unique_id=408822798 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.42241, 1.9073486e-06, -49.60164)
+
+[node name="EnemyBillboardDemo261" parent="Starter Enemies" unique_id=48289005 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.81972, 1.9073486e-06, -108.87138)
+
+[node name="EnemyBillboardDemo262" parent="Starter Enemies" unique_id=945804018 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.678207, 1.9073486e-06, -79.78111)
+
+[node name="EnemyBillboardDemo263" parent="Starter Enemies" unique_id=903264709 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.00031, 1.9073486e-06, -62.98668)
+
+[node name="EnemyBillboardDemo264" parent="Starter Enemies" unique_id=1823057931 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.8588, 1.9073486e-06, -33.896393)
+
+[node name="EnemyModelDemo241" parent="Starter Enemies" unique_id=843980723 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.26866, -3.8146973e-06, 55.128586)
+
+[node name="EnemyModelDemo242" parent="Starter Enemies" unique_id=2031872552 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.19606, -1.1444092e-05, 71.387665)
+
+[node name="EnemyModelDemo243" parent="Starter Enemies" unique_id=1727063100 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.32767, -7.6293945e-06, 89.82568)
+
+[node name="EnemyModelDemo244" parent="Starter Enemies" unique_id=564627042 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.18589, -7.6293945e-06, 70.31682)
+
+[node name="EnemyModelDemo245" parent="Starter Enemies" unique_id=1557253790 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.141617, -3.8146973e-06, 76.335556)
+
+[node name="EnemyModelDemo246" parent="Starter Enemies" unique_id=1085682382 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.069016, -1.1444092e-05, 92.594635)
+
+[node name="EnemyModelDemo247" parent="Starter Enemies" unique_id=1200827795 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.200623, -7.6293945e-06, 111.03265)
+
+[node name="EnemyModelDemo248" parent="Starter Enemies" unique_id=943100105 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.05885, -7.6293945e-06, 91.52379)
+
+[node name="EnemyModelDemo249" parent="Starter Enemies" unique_id=1633607239 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.27968, -3.8146973e-06, 29.070816)
+
+[node name="EnemyModelDemo250" parent="Starter Enemies" unique_id=926293832 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.207077, -1.1444092e-05, 45.329895)
+
+[node name="EnemyModelDemo251" parent="Starter Enemies" unique_id=257811548 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.338684, -7.6293945e-06, 63.767914)
+
+[node name="EnemyModelDemo252" parent="Starter Enemies" unique_id=1768886356 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.196915, -7.6293945e-06, 44.25905)
+
+[node name="EnemyModelDemo253" parent="Starter Enemies" unique_id=771749289 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.565285, -3.8146973e-06, 34.224365)
+
+[node name="EnemyModelDemo254" parent="Starter Enemies" unique_id=1619435798 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.492676, -1.1444092e-05, 50.483444)
+
+[node name="EnemyModelDemo255" parent="Starter Enemies" unique_id=539658677 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.62429, -7.6293945e-06, 68.92148)
+
+[node name="EnemyModelDemo256" parent="Starter Enemies" unique_id=1451171998 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120.48252, -7.6293945e-06, 49.412613)
+
+[node name="EnemyModelDemo257" parent="Starter Enemies" unique_id=303497300 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.050285, -3.8146973e-06, 84.242615)
+
+[node name="EnemyModelDemo258" parent="Starter Enemies" unique_id=264744000 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.977684, -1.1444092e-05, 100.50169)
+
+[node name="EnemyModelDemo259" parent="Starter Enemies" unique_id=2075579825 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.10929, -7.6293945e-06, 118.93971)
+
+[node name="EnemyModelDemo260" parent="Starter Enemies" unique_id=1773665918 instance=ExtResource("4_hcq85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 121.96752, -7.6293945e-06, 99.43085)
+
+[node name="EnemyBillboardDemo265" parent="Starter Enemies" unique_id=283838975 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.21665, 0, 93.006714)
+
+[node name="EnemyBillboardDemo266" parent="Starter Enemies" unique_id=1539965692 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.075134, 0, 122.096985)
+
+[node name="EnemyBillboardDemo267" parent="Starter Enemies" unique_id=1692597566 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.62768, 0, 36.45343)
+
+[node name="EnemyBillboardDemo268" parent="Starter Enemies" unique_id=779537343 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.486176, 0, 65.5437)
+
+[node name="EnemyBillboardDemo269" parent="Starter Enemies" unique_id=1644409292 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.10938, 0, 77.695114)
+
+[node name="EnemyBillboardDemo270" parent="Starter Enemies" unique_id=478837760 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.96788, 0, 106.785385)
+
+[node name="EnemyBillboardDemo271" parent="Starter Enemies" unique_id=1803432488 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.64731, 1.9073486e-06, 66.14603)
+
+[node name="EnemyBillboardDemo272" parent="Starter Enemies" unique_id=215953265 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.505798, 1.9073486e-06, 95.2363)
+
+[node name="EnemyBillboardDemo273" parent="Starter Enemies" unique_id=355305275 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.90312, 1.9073486e-06, 35.966553)
+
+[node name="EnemyBillboardDemo274" parent="Starter Enemies" unique_id=1261956827 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.761612, 1.9073486e-06, 65.05682)
+
+[node name="EnemyBillboardDemo275" parent="Starter Enemies" unique_id=1750850383 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.08372, 1.9073486e-06, 81.85127)
+
+[node name="EnemyBillboardDemo276" parent="Starter Enemies" unique_id=934628036 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.9422, 1.9073486e-06, 110.94154)
+
+[node name="EnemyBillboardDemo277" parent="Starter Enemies" unique_id=1893139913 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.658844, 1.9073486e-06, 89.41901)
+
+[node name="EnemyBillboardDemo278" parent="Starter Enemies" unique_id=1752225789 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.05617, 1.9073486e-06, 30.149261)
+
+[node name="EnemyBillboardDemo279" parent="Starter Enemies" unique_id=1936589899 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.914658, 1.9073486e-06, 59.239532)
+
+[node name="EnemyBillboardDemo280" parent="Starter Enemies" unique_id=240705552 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.23676, 1.9073486e-06, 76.033966)
+
+[node name="EnemyBillboardDemo281" parent="Starter Enemies" unique_id=419501267 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.095245, 1.9073486e-06, 105.12424)
+
+[node name="EnemyBillboardDemo282" parent="Starter Enemies" unique_id=1342096928 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.781647, 1.9073486e-06, 100.89067)
+
+[node name="EnemyBillboardDemo283" parent="Starter Enemies" unique_id=1724478891 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.178955, 1.9073486e-06, 41.620926)
+
+[node name="EnemyBillboardDemo284" parent="Starter Enemies" unique_id=270902421 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.037445, 1.9073486e-06, 70.7112)
+
+[node name="EnemyBillboardDemo285" parent="Starter Enemies" unique_id=455625532 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.35955, 1.9073486e-06, 87.50563)
+
+[node name="EnemyBillboardDemo286" parent="Starter Enemies" unique_id=1975984535 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.21804, 1.9073486e-06, 116.59592)
