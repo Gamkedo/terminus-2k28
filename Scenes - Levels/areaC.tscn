@@ -31,6 +31,11 @@ shape = SubResource("BoxShape3D_7tbbo")
 transform = Transform3D(0.73278594, -0.32673866, 0.59688085, 5.3732524e-08, 0.8771734, 0.48017368, -0.6804593, -0.35186443, 0.64278036, 23.942041, 17.40335, 0)
 shadow_enabled = true
 
+[node name="Sun2" type="DirectionalLight3D" parent="Environment" unique_id=2057679840]
+transform = Transform3D(0.48363605, 0.42028117, -0.76776284, -0.28596014, 0.9049097, 0.3152221, 0.82723814, 0.06709677, 0.5578307, 11.6279, 17.40335, 4.5625114)
+light_color = Color(1, 0.4745098, 0, 1)
+light_energy = 0.5
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1314461]
 transform = Transform3D(0.9983916, -0.028389657, 0.049073208, 0, 0.865588, 0.50075686, -0.056693494, -0.49995145, 0.8641958, -1.8925362, 3.693531, 2.1149712)
 fov = 65.0
@@ -42,7 +47,16 @@ script = ExtResource("3_itglv")
 [node name="Starter Enemies" type="Node3D" parent="." unique_id=849493121]
 
 [node name="EnemyModelDemo" parent="Starter Enemies" unique_id=533656628 instance=ExtResource("4_itglv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.37533, -3.8146973e-06, -19.88921)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9980755, -3.8146973e-06, -26.190989)
+
+[node name="EnemyModelDemo5" parent="Starter Enemies" unique_id=1201961037 instance=ExtResource("4_itglv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.998075, -3.8146973e-06, 44.809013)
+
+[node name="EnemyModelDemo6" parent="Starter Enemies" unique_id=1172971922 instance=ExtResource("4_itglv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.998077, -3.8146973e-06, -1.1909866)
+
+[node name="EnemyModelDemo7" parent="Starter Enemies" unique_id=1481763437 instance=ExtResource("4_itglv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.001923, -3.8146973e-06, 9.809013)
 
 [node name="EnemyModelDemo2" parent="Starter Enemies" unique_id=488020601 instance=ExtResource("4_itglv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.697277, -1.1444092e-05, -3.6301289)
@@ -75,3 +89,57 @@ transform = Transform3D(2.665, 0, 0, 0, 2.665, 0, 0, 0, 2.665, -12.428353, 1.355
 
 [node name="Example Obstacle3" parent="Obstacles" unique_id=65270144 instance=ExtResource("6_mhi1n")]
 transform = Transform3D(2.665, 0, 0, 0, 2.665, 0, 0, 0, 2.665, 9.485076, 1.3550231, 5.2785163)
+
+[node name="Corner segment" type="CSGCombiner3D" parent="Obstacles" unique_id=1649574598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87798405, 0, -17.900833)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Obstacles/Corner segment" unique_id=370581416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4.5, -12)
+size = Vector3(17, 10, 25)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Obstacles/Corner segment/CSGBox3D" unique_id=1152991735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0.5)
+operation = 2
+size = Vector3(15, 8, 24)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Obstacles/Corner segment/CSGBox3D" unique_id=2010986043]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -21, 0, -4)
+size = Vector3(17, 10, 25)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Obstacles/Corner segment/CSGBox3D" unique_id=947532387]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -19, -1.5, -4)
+operation = 2
+size = Vector3(15, 8, 29)
+
+[node name="Corner segment2" type="CSGCombiner3D" parent="Obstacles" unique_id=1787378531]
+transform = Transform3D(-0.2588191, 0, -0.96592593, 0, 1, 0, 0.96592593, 0, -0.2588191, 19.877983, -0.12721443, 39.04118)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Obstacles/Corner segment2" unique_id=738252768]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4.5, -12)
+size = Vector3(17, 10, 25)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Obstacles/Corner segment2/CSGBox3D" unique_id=1159950181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0.5)
+operation = 2
+size = Vector3(15, 8, 24)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Obstacles/Corner segment2/CSGBox3D" unique_id=885181697]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -21, 0, -4)
+size = Vector3(17, 10, 25)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Obstacles/Corner segment2/CSGBox3D" unique_id=603275171]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -19, -1.5, -4)
+operation = 2
+size = Vector3(15, 8, 29)
+
+[node name="Arch" type="CSGCombiner3D" parent="Obstacles" unique_id=239744114]
+transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, -22.753056, 0, 14.328699)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Obstacles/Arch" unique_id=1186772034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4.5, -6)
+size = Vector3(17, 10, 13)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Obstacles/Arch/CSGBox3D" unique_id=1898010130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0.5)
+operation = 2
+size = Vector3(15, 8, 14)
