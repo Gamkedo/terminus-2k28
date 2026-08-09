@@ -7,9 +7,9 @@
 
 [node name="LevelMenu" type="Node2D" unique_id=431338942 node_paths=PackedStringArray("area_a")]
 script = ExtResource("1_mcy63")
-area_a = NodePath("AreaA")
+area_a = NodePath("AreaA Arcade")
 
-[node name="Label" type="Label" parent="." unique_id=716597263]
+[node name="Top of screen text - placeholder" type="Label" parent="." unique_id=716597263]
 offset_left = 8.0
 offset_top = 10.0
 offset_right = 800.0
@@ -17,7 +17,7 @@ offset_bottom = 48.0
 theme_override_font_sizes/font_size = 16
 text = "Level Select menu (not just for testing! game will release with a cleaned up version of this)"
 
-[node name="AreaA" type="Button" parent="." unique_id=181493714]
+[node name="AreaA Arcade" type="Button" parent="." unique_id=181493714]
 offset_left = 50.0
 offset_top = 136.0
 offset_right = 300.0
@@ -25,13 +25,31 @@ offset_bottom = 386.0
 icon = ExtResource("1_pssaq")
 expand_icon = true
 
-[node name="AreaB" type="Button" parent="." unique_id=882515598]
+[node name="LabelA" type="Label" parent="." unique_id=2139458646]
+offset_left = 51.0
+offset_top = 396.0
+offset_right = 294.0
+offset_bottom = 434.0
+theme_override_font_sizes/font_size = 16
+text = "ARCADE MODE"
+horizontal_alignment = 1
+
+[node name="AreaB Survivor" type="Button" parent="." unique_id=882515598]
 offset_left = 350.0
 offset_top = 135.0
 offset_right = 600.0
 offset_bottom = 385.0
 icon = ExtResource("3_g3bd0")
 expand_icon = true
+
+[node name="LabelB Survivor" type="Label" parent="." unique_id=1705265690]
+offset_left = 353.0
+offset_top = 396.0
+offset_right = 596.0
+offset_bottom = 434.0
+theme_override_font_sizes/font_size = 16
+text = "SURVIVOR MODE"
+horizontal_alignment = 1
 
 [node name="AreaC" type="Button" parent="." unique_id=1680213156]
 offset_left = 650.0
@@ -41,6 +59,15 @@ offset_bottom = 385.0
 icon = ExtResource("4_krrsl")
 expand_icon = true
 
-[connection signal="pressed" from="AreaA" to="." method="_on_area_a_pressed"]
-[connection signal="pressed" from="AreaB" to="." method="_on_area_b_pressed"]
+[node name="LabelC Immersive" type="Label" parent="." unique_id=929782284]
+offset_left = 651.0
+offset_top = 396.0
+offset_right = 894.0
+offset_bottom = 434.0
+theme_override_font_sizes/font_size = 16
+text = "IMMERSIVE MODE"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="AreaA Arcade" to="." method="_on_area_a_pressed"]
+[connection signal="pressed" from="AreaB Survivor" to="." method="_on_area_b_pressed"]
 [connection signal="pressed" from="AreaC" to="." method="_on_area_c_pressed"]
