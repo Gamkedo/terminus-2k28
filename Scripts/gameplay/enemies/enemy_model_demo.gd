@@ -19,7 +19,9 @@ func _process(delta):
 	rotation.y = lerp_angle(rotation.y, atan2(-direction.x, -direction.z), delta * rotation_speed)
 
 func pick_new_direction():
-	var angle = randf_range(0.0, 2.0*PI)
+	var my_flat_position = Vector2(global_position.x, global_position.z)
+	var player_flat_position = Vector2(GameGlobal.player_ref.global_position.x, GameGlobal.player_ref.global_position.z)
+	var angle = (player_flat_position - my_flat_position).angle()	
 	var dir := Vector2.from_angle(angle)
 	direction = Vector3(dir.x, 0, dir.y)
 	time_left = drift_time

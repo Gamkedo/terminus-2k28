@@ -34,6 +34,7 @@ const LASER_TSCN := preload("res://Scenes - Objects/laser_bolt.tscn")
 @onready var aim_dot := $AimDot
 
 func _ready() -> void:
+	GameGlobal.player_ref = self
 	if camera.has_method("set_player"): # not currently needed in all scenes
 		camera.set_player(self)
 	
