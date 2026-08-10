@@ -5,9 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://c3neky7qng2wm" path="res://Scenes - Levels/Level Select Preview Images/areaB-preview.jpg" id="3_g3bd0"]
 [ext_resource type="Texture2D" uid="uid://oaxy71lew71g" path="res://Scenes - Levels/Level Select Preview Images/areaC-preview.jpg" id="4_krrsl"]
 
-[node name="LevelMenu" type="Node2D" unique_id=431338942 node_paths=PackedStringArray("area_a")]
+[node name="LevelMenu" type="Node2D" unique_id=431338942]
 script = ExtResource("1_mcy63")
-area_a = NodePath("AreaA Arcade")
 
 [node name="Top of screen text - placeholder" type="Label" parent="." unique_id=716597263]
 offset_left = 8.0
@@ -25,7 +24,7 @@ offset_bottom = 386.0
 icon = ExtResource("1_pssaq")
 expand_icon = true
 
-[node name="LabelA" type="Label" parent="." unique_id=2139458646]
+[node name="LabelA Arcade" type="Label" parent="." unique_id=2139458646]
 offset_left = 51.0
 offset_top = 396.0
 offset_right = 294.0
@@ -51,7 +50,7 @@ theme_override_font_sizes/font_size = 16
 text = "SURVIVOR MODE"
 horizontal_alignment = 1
 
-[node name="AreaC" type="Button" parent="." unique_id=1680213156]
+[node name="AreaC Immersive" type="Button" parent="." unique_id=1680213156]
 offset_left = 650.0
 offset_top = 135.0
 offset_right = 900.0
@@ -70,4 +69,4 @@ horizontal_alignment = 1
 
 [connection signal="pressed" from="AreaA Arcade" to="." method="_on_area_a_pressed"]
 [connection signal="pressed" from="AreaB Survivor" to="." method="_on_area_b_pressed"]
-[connection signal="pressed" from="AreaC" to="." method="_on_area_c_pressed"]
+[connection signal="pressed" from="AreaC Immersive" to="." method="_on_area_c_pressed"]

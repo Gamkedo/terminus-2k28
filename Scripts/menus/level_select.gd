@@ -1,15 +1,10 @@
 extends Node
 
-@export var area_a: Button
-
-func _ready() -> void:
-	area_a.grab_focus()
-
 func _on_area_a_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes - Levels/areaA.tscn")
+	get_tree().change_scene_to_file("res://Scenes - Levels/areaArcade.tscn")
 
 func _on_area_b_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes - Levels/areaB.tscn")
+	get_tree().change_scene_to_file("res://Scenes - Levels/areaSurvivor.tscn")
 
 func _on_area_c_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes - Levels/areaC.tscn")
+	get_tree().change_scene_to_file("res://Scenes - Levels/areaImmersive.tscn")
