@@ -52,6 +52,7 @@ func _process(delta):
 func fire():
 	var laser := LASER_TSCN.instantiate()
 	get_tree().current_scene.add_child(laser)
+	AudioStreamManager.play_sfx("res://Sound Effects/laserShoot.wav")
 	
 	if alternate_cannon_left:
 		laser.global_position = muzzleA.global_position
