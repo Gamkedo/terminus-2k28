@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dl8piyvm8ysor"]
+
+[ext_resource type="Script" uid="uid://0tateq5icy24" path="res://Scripts/gameplay/pickup.gd" id="1_s5pvk"]
+[ext_resource type="Material" uid="uid://bserx1t3urxwu" path="res://Materials/placeholder-glow red.tres" id="1_unc31"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_qp847"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qp847"]
+
+[node name="Pickup" type="Area3D" unique_id=1926490678]
+collision_layer = 8
+script = ExtResource("1_s5pvk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=435268161]
+mesh = SubResource("SphereMesh_qp847")
+surface_material_override/0 = ExtResource("1_unc31")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1702984332]
+shape = SubResource("SphereShape3D_qp847")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=6]

@@ -30,6 +30,14 @@ GameLogger="*uid://dtl503p3q72rn"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[dotnet]
+
+project/assembly_name="terminus-2k28"
+
+[filesystem]
+
+import/blender/enabled=false
+
 [global_group]
 
 enemy=""
