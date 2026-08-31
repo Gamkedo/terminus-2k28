@@ -49,9 +49,7 @@ func _ready() -> void:
 	if camera.has_method("set_player"): # not currently needed in all scenes
 		camera.set_player(self)
 
-	reduce_health(10.5)
-
-	gain_health(12.5)
+	GameLogger.debug(GameGlobal.player_ref)
 
 func _process(delta):
 	reload_time -= delta

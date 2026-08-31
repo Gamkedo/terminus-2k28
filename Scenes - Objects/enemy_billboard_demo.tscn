@@ -36,7 +36,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_6ke8d")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1926181443]
 collision_layer = 2
-collision_mask = 4
+collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=119700671]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39013672, 0)

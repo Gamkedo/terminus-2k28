@@ -16,12 +16,12 @@ script = ExtResource("1_ltojq")
 
 [node name="example-tread-robot" parent="." unique_id=1928178245 instance=ExtResource("2_o2cbc")]
 
-[node name="TreadRobotExample" parent="example-tread-robot" index="0" unique_id=829737725]
+[node name="TreadRobotExample" parent="example-tread-robot" index="0" unique_id=649150123]
 surface_material_override/0 = ExtResource("3_ltojq")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1926181443]
 collision_layer = 2
-collision_mask = 4
+collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=119700671]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39013672, 0)
