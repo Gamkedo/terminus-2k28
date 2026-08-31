@@ -81,3 +81,7 @@ shape = SubResource("CylinderShape3D_7tbbo")
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.30974174, 0.93932295, -6.3473606)
 mesh = SubResource("SphereMesh_4flbx")
 surface_material_override/0 = SubResource("StandardMaterial3D_onrkg")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=431553970]
+offset_right = 4.0
+offset_bottom = 27.0
