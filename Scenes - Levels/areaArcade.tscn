@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://mkhovd4r8qf5" path="res://Scenes - Objects/enemy_billboard_demo.tscn" id="3_xxns5"]
 [ext_resource type="PackedScene" uid="uid://dukkyn1bd7srm" path="res://Scenes - Objects/enemy_robodog.tscn" id="4_uuonq"]
 [ext_resource type="PackedScene" uid="uid://b67ej3la4722g" path="res://Scenes - Objects/pickup_health.tscn" id="5_sx3om"]
+[ext_resource type="PackedScene" uid="uid://c7g8xiglqyotb" path="res://Scenes - Objects/enemy_dogelisk.tscn" id="6_7xgxt"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_y5qfa"]
 size = Vector3(48, 1, 48)
@@ -94,3 +95,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.244577, 0, -15.10133)
 
 [node name="PickupHealth" parent="Starter Enemies" unique_id=1926490678 instance=ExtResource("5_sx3om")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.1, 0)
+
+[node name="EnemyDogelisk" parent="Starter Enemies" unique_id=799258780 instance=ExtResource("6_7xgxt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.975994, 0, -3.0613527)
+
+[node name="EnemyDogelisk2" parent="Starter Enemies" unique_id=995793168 instance=ExtResource("6_7xgxt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.744148, 0, -18.333511)
+rand_start_dir = true
+
+[node name="EnemyDogelisk3" parent="Starter Enemies" unique_id=1882057960 instance=ExtResource("6_7xgxt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.847113, 0, 3.4260178)
+start_flipped = true

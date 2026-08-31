@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://c7g8xiglqyotb"]
+
+[ext_resource type="Script" uid="uid://b008lo0ge0ygv" path="res://Scripts/gameplay/enemies/enemy_spawner.gd" id="1_lbhcc"]
+[ext_resource type="Texture2D" uid="uid://dva4iw1cm5glk" path="res://Sprites/dogelisk.png" id="1_qq5r6"]
+[ext_resource type="PackedScene" uid="uid://dukkyn1bd7srm" path="res://Scenes - Objects/enemy_robodog.tscn" id="2_tmvns"]
+[ext_resource type="PackedScene" uid="uid://bjoc5aa7xcnpi" path="res://Scenes - Objects/particle_smoke_puff.tscn" id="3_thbgr"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qq5r6"]
+height = 4.4575195
+radius = 1.0366211
+
+[node name="EnemyDogelisk" type="Node3D" unique_id=799258780 node_paths=PackedStringArray("particle_spawn_spot") groups=["enemy"]]
+script = ExtResource("1_lbhcc")
+spawn_enemy = ExtResource("2_tmvns")
+spawn_particles = ExtResource("3_thbgr")
+particle_spawn_spot = NodePath("BillboardActive/ParticleSpawnSpot")
+
+[node name="BillboardActive" type="Sprite3D" parent="." unique_id=1550188144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3428867, 0)
+pixel_size = 0.15
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_qq5r6")
+region_enabled = true
+region_rect = Rect2(0, 0, 20, 38)
+
+[node name="ParticleSpawnSpot" type="Node3D" parent="BillboardActive" unique_id=849154176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.726106, 0)
+
+[node name="BillboardInactive" type="Sprite3D" parent="." unique_id=1949641731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3428867, 0)
+visible = false
+pixel_size = 0.15
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_qq5r6")
+region_enabled = true
+region_rect = Rect2(20, 0, 20, 38)
+
+[node name="BillboardDestroyed" type="Sprite3D" parent="." unique_id=1870224833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3428867, 0)
+visible = false
+pixel_size = 0.15
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_qq5r6")
+region_enabled = true
+region_rect = Rect2(40, 0, 20, 38)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1570819580]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1238464045]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7687988, 0)
+shape = SubResource("CylinderShape3D_qq5r6")
