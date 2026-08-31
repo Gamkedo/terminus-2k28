@@ -23,13 +23,13 @@ var health_current: float = health_max
 # exposed/tunable variables
 @export var rotation_speed := 2
 @export var aim_dead_zone := 0.01
-@export var default_aim_range := 200
+@export var default_aim_range := 240
 
 # external references
 @onready var camera := get_viewport().get_camera_3d()
 const LASER_TSCN := preload("res://Scenes - Objects/laser_bolt.tscn")
 @export var follow_cam_move_to: Marker3D
-@export var follow_cam_point_at: Marker3D
+@export var follow_cam_point_at: Node3D
 
 # internal references
 @onready var legs := $Legs
@@ -116,6 +116,9 @@ func look_at_cursor():
 	if cursor_position_on_plane:
 		aim_dot.global_position = cursor_position_on_plane
 		turret.look_at(cursor_position_on_plane, Vector3.UP, 0)
+	else:
+		aim_dot.global_position = to
+		turret.look_at(to)
 
 func reduce_health(amount: float) -> void:
 	if amount > health_current:
@@ -157,5 +160,7 @@ func joypad_aim() -> void:
 		return
 	var aim_vector_3d = Vector3(aim_vector.x, 0, aim_vector.y)
 	var turret_pos_2d = camera.unproject_position(turret.global_position)
-	var scene_center = get_viewport().get_visible_rect().size / 2
-	get_viewport().warp_mouse(scene_center + aim_vector * default_aim_range)
+	var aim_center = camera.unproject_position(turret.global_position)
+	if camera.has_method("get_aim_center"):
+		aim_center = camera.get_aim_center()
+	get_viewport().warp_mouse(aim_center + aim_vector * default_aim_range)

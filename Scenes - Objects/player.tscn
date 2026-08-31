@@ -35,7 +35,7 @@ script = ExtResource("1_4flbx")
 rotation_speed = 5
 aim_dead_zone = 0.05
 follow_cam_move_to = NodePath("Turret/NonIsoCameraMoveToward")
-follow_cam_point_at = NodePath("Turret/NonIsoCameraLookAt")
+follow_cam_point_at = NodePath("AimDot")
 
 [node name="Legs" type="MeshInstance3D" parent="." unique_id=1286979195]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49009085, 0)
