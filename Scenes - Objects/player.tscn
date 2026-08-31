@@ -33,6 +33,7 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 script = ExtResource("1_4flbx")
 rotation_speed = 5
+aim_dead_zone = 0.05
 follow_cam_move_to = NodePath("Turret/NonIsoCameraMoveToward")
 follow_cam_point_at = NodePath("Turret/NonIsoCameraLookAt")
 

@@ -22,6 +22,8 @@ var health_current: float = health_max
 
 # exposed/tunable variables
 @export var rotation_speed := 2
+@export var aim_dead_zone := 0.01
+@export var default_aim_range := 200
 
 # external references
 @onready var camera := get_viewport().get_camera_3d()
@@ -48,10 +50,12 @@ func _ready() -> void:
 	GameGlobal.player_ref = self
 	if camera.has_method("set_player"): # not currently needed in all scenes
 		camera.set_player(self)
-
+	
+	
 func _process(delta):
 	reload_time -= delta
 
+	joypad_aim() # This will override mouseaim IF the joystick vector is greater than the deadzone
 	look_at_cursor()
 
 	if Input.is_action_pressed("fire") and reload_time <= 0.0:
@@ -101,12 +105,14 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func look_at_cursor():
-	var target_plane_mouse := Plane(Vector3(0,1,0), position.y)
+	var target_plane_mouse := Plane(Vector3.UP, position.y)
 	var ray_length := 1000
 	var mouse_position := get_viewport().get_mouse_position()
 	var from := camera.project_ray_origin(mouse_position)
 	var to := from + camera.project_ray_normal(mouse_position) * ray_length
+
 	var cursor_position_on_plane = target_plane_mouse.intersects_ray(from, to)
+
 	if cursor_position_on_plane:
 		aim_dot.global_position = cursor_position_on_plane
 		turret.look_at(cursor_position_on_plane, Vector3.UP, 0)
@@ -124,6 +130,7 @@ func reduce_health(amount: float) -> void:
 
 	GameLogger.debug("Health: %.2f / %.2f" % [health_current, health_max])
 
+
 func gain_health(amount: float) -> void:
 	if health_current + amount > health_max:
 		amount = health_max - health_current
@@ -136,3 +143,19 @@ func gain_health(amount: float) -> void:
 		health_at_max.emit()
 
 	GameLogger.debug("Health: %.2f / %.2f" % [health_current, health_max])
+
+
+## Returns a Vector2 from the aim direction inputs
+func get_joypad_aim_vector() -> Vector2:
+	return Input.get_vector("aim_left", "aim_right", "aim_up", "aim_down", aim_dead_zone)
+
+
+func joypad_aim() -> void:
+	var aim_vector = get_joypad_aim_vector()
+	# return early if stick in dead zone
+	if not aim_vector:
+		return
+	var aim_vector_3d = Vector3(aim_vector.x, 0, aim_vector.y)
+	var turret_pos_2d = camera.unproject_position(turret.global_position)
+	var scene_center = get_viewport().get_visible_rect().size / 2
+	get_viewport().warp_mouse(scene_center + aim_vector * default_aim_range)

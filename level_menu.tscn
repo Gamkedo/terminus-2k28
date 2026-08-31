@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://c3neky7qng2wm" path="res://Scenes - Levels/Level Select Preview Images/areaB-preview.jpg" id="3_g3bd0"]
 [ext_resource type="Texture2D" uid="uid://oaxy71lew71g" path="res://Scenes - Levels/Level Select Preview Images/areaC-preview.jpg" id="4_krrsl"]
 
-[node name="LevelMenu" type="Node2D" unique_id=431338942]
+[node name="LevelMenu" type="Node2D" unique_id=431338942 node_paths=PackedStringArray("starting_focus")]
 script = ExtResource("1_mcy63")
+starting_focus = NodePath("AreaB Survivor")
 
 [node name="Top of screen text - placeholder" type="Label" parent="." unique_id=716597263]
 offset_left = 8.0
@@ -21,6 +22,7 @@ offset_left = 50.0
 offset_top = 136.0
 offset_right = 300.0
 offset_bottom = 386.0
+focus_neighbor_right = NodePath("../AreaB Survivor")
 icon = ExtResource("1_pssaq")
 expand_icon = true
 
@@ -38,6 +40,8 @@ offset_left = 350.0
 offset_top = 135.0
 offset_right = 600.0
 offset_bottom = 385.0
+focus_neighbor_left = NodePath("../AreaA Arcade")
+focus_neighbor_right = NodePath("../AreaC Immersive")
 icon = ExtResource("3_g3bd0")
 expand_icon = true
 
@@ -55,6 +59,7 @@ offset_left = 650.0
 offset_top = 135.0
 offset_right = 900.0
 offset_bottom = 385.0
+focus_neighbor_left = NodePath("../AreaB Survivor")
 icon = ExtResource("4_krrsl")
 expand_icon = true
 
