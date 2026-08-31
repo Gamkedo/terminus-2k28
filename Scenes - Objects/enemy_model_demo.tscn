@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://k63f3er0k7u7"]
 
 [ext_resource type="Script" uid="uid://do3on4l85eckh" path="res://Scripts/gameplay/enemies/enemy_model_demo.gd" id="1_ltojq"]
+[ext_resource type="PackedScene" uid="uid://b67ej3la4722g" path="res://Scenes - Objects/pickup_health.tscn" id="2_hmo62"]
 [ext_resource type="PackedScene" uid="uid://cc2gbvpkv4j7f" path="res://Models (game format)/example-tread-robot.glb" id="2_o2cbc"]
 [ext_resource type="Material" uid="uid://dkjck5am51jr4" path="res://Materials/placeholder-metal.tres" id="3_ltojq"]
 [ext_resource type="Material" uid="uid://bserx1t3urxwu" path="res://Materials/placeholder-glow red.tres" id="4_q0jld"]
@@ -13,10 +14,11 @@ radius = 0.85791016
 
 [node name="EnemyModelDemo" type="Node3D" unique_id=533656628 groups=["enemy"]]
 script = ExtResource("1_ltojq")
+drop = ExtResource("2_hmo62")
 
 [node name="example-tread-robot" parent="." unique_id=1928178245 instance=ExtResource("2_o2cbc")]
 
-[node name="TreadRobotExample" parent="example-tread-robot" index="0" unique_id=649150123]
+[node name="TreadRobotExample" parent="example-tread-robot" index="0" unique_id=1493826499]
 surface_material_override/0 = ExtResource("3_ltojq")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1926181443]

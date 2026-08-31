@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dl8piyvm8ysor"]
+
+[ext_resource type="Script" uid="uid://0tateq5icy24" path="res://Scripts/gameplay/pickups/pickup.gd" id="1_s5pvk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qp847"]
+
+[node name="Pickup" type="Area3D" unique_id=1926490678]
+collision_layer = 8
+script = ExtResource("1_s5pvk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1702984332]
+shape = SubResource("SphereShape3D_qp847")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

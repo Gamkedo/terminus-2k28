@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bsu3opfror6hn" path="res://Scripts/gameplay/enemies/enemy_billboard_demo.gd" id="1_pycf4"]
 [ext_resource type="Texture2D" uid="uid://dt4bk4pj6l4dw" path="res://Sprites/enemy-billboard-demo.png" id="2_5kkw8"]
+[ext_resource type="PackedScene" uid="uid://b67ej3la4722g" path="res://Scenes - Objects/pickup_health.tscn" id="2_6ke8d"]
 [ext_resource type="Texture2D" uid="uid://bkw1e75hfx7q0" path="res://Sprites/enemy-billboard-back-demo.png" id="2_pycf4"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_7tbbo"]
@@ -23,6 +24,7 @@ radius = 0.85791016
 
 [node name="EnemyBillboardDemo" type="Node3D" unique_id=533656628 groups=["enemy"]]
 script = ExtResource("1_pycf4")
+drop = ExtResource("2_6ke8d")
 
 [node name="BillboardFront" type="MeshInstance3D" parent="." unique_id=290637688]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

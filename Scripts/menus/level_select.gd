@@ -1,5 +1,10 @@
 extends Node
 
+@export var starting_focus: Control
+
+func _ready() -> void:
+	starting_focus.grab_focus()
+
 func _on_area_a_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes - Levels/areaArcade.tscn")
 

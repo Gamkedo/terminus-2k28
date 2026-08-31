@@ -1,4 +1,4 @@
-extends Node3D
+extends Enemy
 
 var speed := 2.0
 var drift_time := 1.5

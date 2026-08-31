@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b67ej3la4722g"]
+
+[ext_resource type="PackedScene" uid="uid://dl8piyvm8ysor" path="res://Scenes - Objects/pickup.tscn" id="1_73v20"]
+[ext_resource type="Material" uid="uid://bserx1t3urxwu" path="res://Materials/placeholder-glow red.tres" id="2_6ert2"]
+[ext_resource type="Script" uid="uid://c3pnq8djtmaq2" path="res://Scripts/gameplay/pickups/heal_pickup_effect.gd" id="2_8kaiw"]
+
+[sub_resource type="Resource" id="Resource_8kaiw"]
+script = ExtResource("2_8kaiw")
+metadata/_custom_type_script = "uid://c3pnq8djtmaq2"
+
+[sub_resource type="SphereMesh" id="SphereMesh_qp847"]
+
+[node name="PickupHealth" unique_id=1926490678 instance=ExtResource("1_73v20")]
+effect = SubResource("Resource_8kaiw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=251874487]
+mesh = SubResource("SphereMesh_qp847")
+surface_material_override/0 = ExtResource("2_6ert2")
