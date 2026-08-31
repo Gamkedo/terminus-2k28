@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dv524cn03yptx" path="res://Textures/grid-square.png" id="1_5omp3"]
 [ext_resource type="PackedScene" uid="uid://eewdly8oh15j" path="res://Scenes - Objects/player.tscn" id="2_hwtxp"]
 [ext_resource type="PackedScene" uid="uid://mkhovd4r8qf5" path="res://Scenes - Objects/enemy_billboard_demo.tscn" id="3_xxns5"]
+[ext_resource type="PackedScene" uid="uid://dukkyn1bd7srm" path="res://Scenes - Objects/enemy_robodog.tscn" id="4_uuonq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_y5qfa"]
 size = Vector3(48, 1, 48)
@@ -37,7 +38,7 @@ transform = Transform3D(0.73278594, -0.32673866, 0.59688085, 5.3732524e-08, 0.87
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1314461]
-transform = Transform3D(0.7071068, -0.5196631, 0.47953132, 0, 0.67815965, 0.73491466, -0.7071068, -0.5196631, 0.47953132, 45, 68.70383, 45)
+transform = Transform3D(0.70710677, -0.5196631, 0.4795313, 0, 0.67815965, 0.7349146, -0.70710677, -0.5196631, 0.4795313, 45, 68.70383, 45)
 projection = 1
 size = 54.271
 
@@ -80,3 +81,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.358456, -2.861023e-06, 14.
 
 [node name="EnemyBillboardDemo12" parent="Starter Enemies" unique_id=2083695233 instance=ExtResource("3_xxns5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.896255, -2.861023e-06, 18.104025)
+
+[node name="EnemyRobodog" parent="Starter Enemies" unique_id=163751198 instance=ExtResource("4_uuonq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0183992, 0, 15.518707)
+
+[node name="EnemyRobodog2" parent="Starter Enemies" unique_id=88952948 instance=ExtResource("4_uuonq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.206879, 0, -12.3601)
+
+[node name="EnemyRobodog3" parent="Starter Enemies" unique_id=1762379844 instance=ExtResource("4_uuonq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.244577, 0, -15.10133)
