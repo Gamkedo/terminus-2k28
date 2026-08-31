@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://eewdly8oh15j" path="res://Scenes - Objects/player.tscn" id="2_hwtxp"]
 [ext_resource type="PackedScene" uid="uid://mkhovd4r8qf5" path="res://Scenes - Objects/enemy_billboard_demo.tscn" id="3_xxns5"]
 [ext_resource type="PackedScene" uid="uid://dukkyn1bd7srm" path="res://Scenes - Objects/enemy_robodog.tscn" id="4_uuonq"]
-[ext_resource type="PackedScene" uid="uid://dl8piyvm8ysor" path="res://Scenes - Objects/pickup.tscn" id="5_sx3om"]
+[ext_resource type="PackedScene" uid="uid://b67ej3la4722g" path="res://Scenes - Objects/pickup_health.tscn" id="5_sx3om"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_y5qfa"]
 size = Vector3(48, 1, 48)
@@ -92,5 +92,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.206879, 0, -12.3601)
 [node name="EnemyRobodog3" parent="Starter Enemies" unique_id=1762379844 instance=ExtResource("4_uuonq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.244577, 0, -15.10133)
 
-[node name="Pickup" parent="Starter Enemies" unique_id=1926490678 instance=ExtResource("5_sx3om")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.412, 1, 0)
+[node name="PickupHealth" parent="Starter Enemies" unique_id=1926490678 instance=ExtResource("5_sx3om")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.1, 0)

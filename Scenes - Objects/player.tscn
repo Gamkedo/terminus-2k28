@@ -27,7 +27,7 @@ albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
 emission = Color(1, 0, 0, 1)
 
-[node name="Player" type="CharacterBody3D" unique_id=997444506 node_paths=PackedStringArray("follow_cam_move_to", "follow_cam_point_at")]
+[node name="Player" type="CharacterBody3D" unique_id=997444506 groups=["player"] node_paths=PackedStringArray("follow_cam_move_to", "follow_cam_point_at")]
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
