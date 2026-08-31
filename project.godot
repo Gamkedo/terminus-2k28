@@ -23,7 +23,7 @@ buses/default_bus_layout="uid://x7o5rn5yrwih"
 
 GameGlobal="*uid://dq6dr03oqdbyp"
 AudioStreamManager="*uid://b1dm4u4xvtylv"
-LoggerGlobal="*uid://dtl503p3q72rn"
+GameLogger="*uid://dtl503p3q72rn"
 
 [display]
 

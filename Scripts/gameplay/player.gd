@@ -16,7 +16,9 @@ const FIRE_RATE := 0.2
 var last_direction := Vector3.FORWARD
 var reload_time := 0.0
 var alternate_cannon_left := true
-var current_health: int = 100
+
+var health_max: float = 100.00
+var health_current: float = health_max
 
 # exposed/tunable variables
 @export var rotation_speed := 2
@@ -34,17 +36,22 @@ const LASER_TSCN := preload("res://Scenes - Objects/laser_bolt.tscn")
 @onready var muzzleB := $Turret/CannonB/FireFromB
 @onready var aim_dot := $AimDot
 
+
 # signals
 
 signal health_reduced(amount)
 signal health_gained(amount)
-signal health_depleted
-signal health_max
+signal health_depleted ## zero or less health, death
+signal health_at_max ## health completely full
 
 func _ready() -> void:
 	GameGlobal.player_ref = self
 	if camera.has_method("set_player"): # not currently needed in all scenes
 		camera.set_player(self)
+
+	reduce_health(10.5)
+
+	gain_health(12.5)
 
 func _process(delta):
 	reload_time -= delta
@@ -108,10 +115,28 @@ func look_at_cursor():
 		aim_dot.global_position = cursor_position_on_plane
 		turret.look_at(cursor_position_on_plane, Vector3.UP, 0)
 
-func reduce_health(amount: int) -> void:
+func reduce_health(amount: float) -> void:
+	if amount > health_current:
+		amount = health_current
+
+	health_current -= amount
 
 	health_reduced.emit(amount)
 
-func gain_health(amount: int) -> void:
+	if health_current <= 0.0:
+		health_depleted.emit()
+
+	GameLogger.debug("Health: %.2f / %.2f" % [health_current, health_max])
+
+func gain_health(amount: float) -> void:
+	if health_current + amount > health_max:
+		amount = health_max - health_current
+
+	health_current += amount
 
 	health_gained.emit(amount)
+
+	if health_current == health_max:
+		health_at_max.emit()
+
+	GameLogger.debug("Health: %.2f / %.2f" % [health_current, health_max])
