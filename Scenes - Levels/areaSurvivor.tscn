@@ -6,7 +6,8 @@
 [ext_resource type="Script" uid="uid://bap106b6ivci0" path="res://Scripts/camera/iso_tracking.gd" id="3_42ddl"]
 [ext_resource type="PackedScene" uid="uid://k63f3er0k7u7" path="res://Scenes - Objects/enemy_model_demo.tscn" id="4_hcq85"]
 [ext_resource type="PackedScene" uid="uid://mkhovd4r8qf5" path="res://Scenes - Objects/enemy_billboard_demo.tscn" id="6_mrah0"]
-[ext_resource type="PackedScene" uid="uid://0wcd0e4ft353" path="res://Scenes - UI/screen_bezel_corners.tscn" id="7_155sy"]
+[ext_resource type="PackedScene" uid="uid://wdglasw32mes" path="res://Scenes - Objects/enemy_roombye.tscn" id="7_155sy"]
+[ext_resource type="PackedScene" uid="uid://0wcd0e4ft353" path="res://Scenes - UI/screen_bezel_corners.tscn" id="8_7cqv5"]
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="8_ua6li"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42ddl"]
@@ -1694,6 +1695,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.35955, 1.9073486e-06, 87.
 [node name="EnemyBillboardDemo286" parent="Starter Enemies" unique_id=1975984535 instance=ExtResource("6_mrah0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.21804, 1.9073486e-06, 116.59592)
 
-[node name="ScreenBezelCorners" parent="." unique_id=121658769 instance=ExtResource("7_155sy")]
+[node name="RoombyeEnemy" parent="Starter Enemies" unique_id=2070650955 instance=ExtResource("7_155sy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.953491, 0, 8.029668)
+
+[node name="RoombyeEnemy2" parent="Starter Enemies" unique_id=342107358 instance=ExtResource("7_155sy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42196655, 0, -41.39656)
+
+[node name="RoombyeEnemy3" parent="Starter Enemies" unique_id=415749971 instance=ExtResource("7_155sy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.684465, -1.9073486e-06, 47.719166)
+
+[node name="RoombyeEnemy4" parent="Starter Enemies" unique_id=1312170197 instance=ExtResource("7_155sy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.07138, 0, 37.454193)
+
+[node name="RoombyeEnemy5" parent="Starter Enemies" unique_id=293421350 instance=ExtResource("7_155sy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28972816, 0, -22.413864)
+
+[node name="ScreenBezelCorners" parent="." unique_id=121658769 instance=ExtResource("8_7cqv5")]
 
 [node name="ScoreGUI" parent="." unique_id=614518007 instance=ExtResource("8_ua6li")]
