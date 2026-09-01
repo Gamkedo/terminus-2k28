@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btk8esbkb6owc"
-path="res://.godot/imported/8x8_bullets_spritesheet.png-ccc00ddfc6b255fc67f8cd4f3dad6142.ctex"
+uid="uid://55nv21udle3s"
+path="res://.godot/imported/hydrant_64x64.png-96c744440bdba0969e0b4c461649448f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/FX/8x8_bullets_spritesheet.png"
-dest_files=["res://.godot/imported/8x8_bullets_spritesheet.png-ccc00ddfc6b255fc67f8cd4f3dad6142.ctex"]
+source_file="res://Sprites/hydrant_64x64.png"
+dest_files=["res://.godot/imported/hydrant_64x64.png-96c744440bdba0969e0b4c461649448f.ctex"]
 
 [params]
 
