@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://eewdly8oh15j"]
 
-[ext_resource type="Script" uid="uid://26qf6gylnoet" path="res://Scripts/gameplay/player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://26qf6gylnoet" path="res://Scripts/gameplay/player/player.gd" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://bex66uinswavl" path="res://Scripts/gameplay/weapons/weapon.gd" id="2_s0tvp"]
 [ext_resource type="PackedScene" uid="uid://cblqj4rysl46l" path="res://Scenes - Objects/laser_bolt.tscn" id="3_iv4hd"]
 [ext_resource type="Script" uid="uid://cj7eq14viaaad" path="res://Scripts/gameplay/weapons/shotgun.gd" id="4_iv4hd"]
@@ -30,7 +30,7 @@ albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
 emission = Color(1, 0, 0, 1)
 
-[node name="Player" type="CharacterBody3D" unique_id=997444506 groups=["player"] node_paths=PackedStringArray("follow_cam_move_to", "follow_cam_point_at")]
+[node name="Player" type="CharacterBody3D" unique_id=997444506 node_paths=PackedStringArray("follow_cam_move_to", "follow_cam_point_at") groups=["player"]]
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
