@@ -2,18 +2,34 @@
 
 [ext_resource type="Script" uid="uid://cqaictl8xy27t" path="res://Scripts/menus/level_select.gd" id="1_mcy63"]
 [ext_resource type="Texture2D" uid="uid://orfwumf3qiy1" path="res://Scenes - Levels/Level Select Preview Images/areaA-preview.jpg" id="1_pssaq"]
+[ext_resource type="Texture2D" uid="uid://by5q5qyu6eopi" path="res://Sprites/GUI/Terminus2k28Logo.png" id="2_lnidy"]
 [ext_resource type="Texture2D" uid="uid://c3neky7qng2wm" path="res://Scenes - Levels/Level Select Preview Images/areaB-preview.jpg" id="3_g3bd0"]
 [ext_resource type="Texture2D" uid="uid://oaxy71lew71g" path="res://Scenes - Levels/Level Select Preview Images/areaC-preview.jpg" id="4_krrsl"]
+
+[sub_resource type="Gradient" id="Gradient_lnidy"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0.32151106, 0.32151103, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kdu0b"]
+gradient = SubResource("Gradient_lnidy")
 
 [node name="LevelMenu" type="Node2D" unique_id=431338942 node_paths=PackedStringArray("starting_focus")]
 script = ExtResource("1_mcy63")
 starting_focus = NodePath("AreaB Survivor")
 
+[node name="Background" type="Sprite2D" parent="." unique_id=1069375977]
+position = Vector2(576, 466)
+scale = Vector2(5, 1024)
+texture = SubResource("GradientTexture1D_kdu0b")
+
+[node name="Logo" type="Sprite2D" parent="." unique_id=572854762]
+position = Vector2(476, 53)
+texture = ExtResource("2_lnidy")
+
 [node name="Top of screen text - placeholder" type="Label" parent="." unique_id=716597263]
-offset_left = 8.0
-offset_top = 10.0
-offset_right = 800.0
-offset_bottom = 48.0
+offset_left = 118.0
+offset_top = 102.0
+offset_right = 910.0
+offset_bottom = 140.0
 theme_override_font_sizes/font_size = 16
 text = "Level Select menu (not just for testing! game will release with a cleaned up version of this)"
 
