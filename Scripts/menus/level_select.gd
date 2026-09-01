@@ -4,6 +4,7 @@ extends Node
 
 func _ready() -> void:
 	starting_focus.grab_focus()
+	AudioStreamManager.play_bgm("res://Music/terminus1_vorbis.ogg")
 
 func _on_area_a_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes - Levels/areaArcade.tscn")
