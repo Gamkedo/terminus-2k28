@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://oaxy71lew71g" path="res://Scenes - Levels/Level Select Preview Images/areaC-preview.jpg" id="4_krrsl"]
 
 [sub_resource type="Gradient" id="Gradient_lnidy"]
-colors = PackedColorArray(0, 0, 0, 1, 0, 0.32151106, 0.32151103, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.5210963, 0.19145256, 0.020658007, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_kdu0b"]
 gradient = SubResource("Gradient_lnidy")
