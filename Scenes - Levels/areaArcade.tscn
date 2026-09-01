@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dnf1ej2wna6et"]
 
 [ext_resource type="Texture2D" uid="uid://dv524cn03yptx" path="res://Textures/grid-square.png" id="1_5omp3"]
+[ext_resource type="Script" uid="uid://78wdgh3kyjr3" path="res://Scenes - Levels/ground.gd" id="1_seirn"]
 [ext_resource type="PackedScene" uid="uid://eewdly8oh15j" path="res://Scenes - Objects/player.tscn" id="2_hwtxp"]
 [ext_resource type="PackedScene" uid="uid://mkhovd4r8qf5" path="res://Scenes - Objects/enemy_billboard_demo.tscn" id="3_xxns5"]
 [ext_resource type="PackedScene" uid="uid://dukkyn1bd7srm" path="res://Scenes - Objects/enemy_robodog.tscn" id="4_uuonq"]
@@ -25,6 +26,7 @@ size = Vector3(48, 1, 48)
 [node name="Environment" type="Node3D" parent="." unique_id=1062489120]
 
 [node name="Ground" type="StaticBody3D" parent="Environment" unique_id=313648461]
+script = ExtResource("1_seirn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Ground" unique_id=612605019]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
