@@ -16,6 +16,8 @@ const FIRE_RATE := 0.2
 var last_direction := Vector3.FORWARD
 var reload_time := 0.0
 var alternate_cannon_left := true
+var weapons: Array[Weapon] = []
+var active_weapon = 0
 
 var health_max: float = 100.00
 var health_current: float = health_max
@@ -51,6 +53,11 @@ func _ready() -> void:
 	if camera.has_method("set_player"): # not currently needed in all scenes
 		camera.set_player(self)
 	
+	#set up weapons
+	for child in get_children():
+		if not (child is Weapon):
+			continue
+		weapons.append(child)
 	
 func _process(delta):
 	reload_time -= delta
@@ -58,23 +65,22 @@ func _process(delta):
 	joypad_aim() # This will override mouseaim IF the joystick vector is greater than the deadzone
 	look_at_cursor()
 
-	if Input.is_action_pressed("fire") and reload_time <= 0.0:
-		reload_time = FIRE_RATE
+	if Input.is_action_pressed("fire") and weapons[active_weapon].can_fire():
 		fire()
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://level_menu.tscn")
+	if Input.is_action_just_pressed("debug_cycle_weapon"):
+		# Quick test for swapping weapons
+		active_weapon += 1
+		if active_weapon >= weapons.size():
+			active_weapon = 0
+		
 
 func fire():
-	var laser := LASER_TSCN.instantiate()
-	get_tree().current_scene.add_child(laser)
-	AudioStreamManager.play_sfx("res://Sound Effects/laserShoot.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
-
 	if alternate_cannon_left:
-		laser.global_position = muzzleA.global_position
-		laser.global_rotation = muzzleA.global_rotation
+		weapons[active_weapon].fire(muzzleA.global_position, muzzleA.global_rotation)
 	else:
-		laser.global_position = muzzleB.global_position
-		laser.global_rotation = muzzleB.global_rotation
+		weapons[active_weapon].fire(muzzleB.global_position, muzzleB.global_rotation)
 	alternate_cannon_left = !alternate_cannon_left
 
 func _physics_process(delta: float) -> void:
