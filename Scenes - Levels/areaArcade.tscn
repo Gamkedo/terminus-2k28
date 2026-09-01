@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dukkyn1bd7srm" path="res://Scenes - Objects/enemy_robodog.tscn" id="4_uuonq"]
 [ext_resource type="PackedScene" uid="uid://b67ej3la4722g" path="res://Scenes - Objects/pickup_health.tscn" id="5_sx3om"]
 [ext_resource type="PackedScene" uid="uid://c7g8xiglqyotb" path="res://Scenes - Objects/enemy_dogelisk.tscn" id="6_7xgxt"]
+[ext_resource type="PackedScene" uid="uid://0wcd0e4ft353" path="res://Scenes - UI/screen_bezel_corners.tscn" id="8_b4wml"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_y5qfa"]
 size = Vector3(48, 1, 48)
@@ -108,3 +109,5 @@ rand_start_dir = true
 [node name="EnemyDogelisk3" parent="Starter Enemies" unique_id=1882057960 instance=ExtResource("6_7xgxt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.847113, 0, 3.4260178)
 start_flipped = true
+
+[node name="ScreenBezelCorners" parent="." unique_id=121658769 instance=ExtResource("8_b4wml")]

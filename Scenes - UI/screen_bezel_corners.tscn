@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://0wcd0e4ft353"]
+
+[ext_resource type="Texture2D" uid="uid://bygetg0nwx4wa" path="res://Sprites/GUI/screen-bezel-corner.png" id="1_wfkmq"]
+
+[node name="ScreenBezelCorners" type="Control" unique_id=121658769]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2014492969]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1378717335]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CornerTopLeft" type="TextureRect" parent="CanvasLayer/Control" unique_id=1762567146]
+layout_mode = 1
+offset_right = 256.0
+offset_bottom = 256.0
+texture = ExtResource("1_wfkmq")
+
+[node name="CornerTopRight" type="TextureRect" parent="CanvasLayer/Control" unique_id=898442416]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 0
+scale = Vector2(-1, 1)
+texture = ExtResource("1_wfkmq")
+
+[node name="CornerBottomLeft" type="TextureRect" parent="CanvasLayer/Control" unique_id=1495174006]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_vertical = 0
+scale = Vector2(1, -1)
+texture = ExtResource("1_wfkmq")
+
+[node name="CornerBottomRight" type="TextureRect" parent="CanvasLayer/Control" unique_id=686177116]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(-1, -1)
+texture = ExtResource("1_wfkmq")

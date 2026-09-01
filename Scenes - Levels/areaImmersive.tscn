@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bhg5d8mcu38ny" path="res://Scripts/camera/third_person_camera.gd" id="3_itglv"]
 [ext_resource type="PackedScene" uid="uid://eewdly8oh15j" path="res://Scenes - Objects/player.tscn" id="3_mhi1n"]
 [ext_resource type="PackedScene" uid="uid://k63f3er0k7u7" path="res://Scenes - Objects/enemy_model_demo.tscn" id="4_itglv"]
+[ext_resource type="PackedScene" uid="uid://0wcd0e4ft353" path="res://Scenes - UI/screen_bezel_corners.tscn" id="6_kwne6"]
 [ext_resource type="PackedScene" uid="uid://d1grs1gs3wxkx" path="res://Scenes - Objects/example_obstacle.tscn" id="6_mhi1n"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_y5qfa"]
@@ -143,3 +144,5 @@ size = Vector3(17, 10, 13)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0.5)
 operation = 2
 size = Vector3(15, 8, 14)
+
+[node name="ScreenBezelCorners" parent="." unique_id=121658769 instance=ExtResource("6_kwne6")]
