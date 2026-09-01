@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bex66uinswavl" path="res://Scripts/gameplay/weapons/weapon.gd" id="2_s0tvp"]
 [ext_resource type="PackedScene" uid="uid://cblqj4rysl46l" path="res://Scenes - Objects/laser_bolt.tscn" id="3_iv4hd"]
 [ext_resource type="Script" uid="uid://cj7eq14viaaad" path="res://Scripts/gameplay/weapons/shotgun.gd" id="4_iv4hd"]
+[ext_resource type="Script" uid="uid://dvre2ude7y1fr" path="res://Scripts/gameplay/player/aim_component.gd" id="5_ypapg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7tbbo"]
 
@@ -97,3 +98,7 @@ script = ExtResource("4_iv4hd")
 sound_effect_path = "res://Sound Effects/laserShoot.wav"
 projectile_scene = ExtResource("3_iv4hd")
 metadata/_custom_type_script = "uid://cj7eq14viaaad"
+
+[node name="AimComponent" type="Node" parent="." unique_id=637743000]
+script = ExtResource("5_ypapg")
+metadata/_custom_type_script = "uid://dvre2ude7y1fr"
