@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://b5v6q4hcakfxg"]
+
+[ext_resource type="LabelSettings" uid="uid://7mc5uw7y6vnf" path="res://Scenes - UI/score-label-settings.tres" id="1_m3c8p"]
+[ext_resource type="Script" uid="uid://cdodu5og8y0t" path="res://Scripts/menus/score_gui.gd" id="1_t025o"]
+
+[node name="ScoreGUI" type="Control" unique_id=121658769]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t025o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2014492969]
+
+[node name="Score" type="Control" parent="CanvasLayer" unique_id=1378717335]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/Score" unique_id=905615547]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -157.0
+offset_right = 157.0
+offset_bottom = 43.0
+grow_horizontal = 2
+text = "SCORE: 00000000"
+label_settings = ExtResource("1_m3c8p")
+horizontal_alignment = 1
+
+[node name="Combo" type="Control" parent="CanvasLayer" unique_id=882236704]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ComboLabel" type="Label" parent="CanvasLayer/Combo" unique_id=1706396497]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -314.0
+offset_bottom = 43.0
+grow_horizontal = 0
+text = "x42 combo"
+label_settings = ExtResource("1_m3c8p")
+horizontal_alignment = 1
