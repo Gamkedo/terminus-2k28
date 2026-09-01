@@ -13,7 +13,7 @@ initial_velocity_max = 6.0
 scale_min = 0.099999994
 scale_max = 0.19999999
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5qfa"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_otmap"]
 shading_mode = 0
 billboard_mode = 3
 particles_anim_h_frames = 1
@@ -21,7 +21,7 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_7tbbo"]
-material = SubResource("StandardMaterial3D_y5qfa")
+material = SubResource("StandardMaterial3D_otmap")
 size = Vector2(0.1, 0.1)
 
 [node name="LaserHit" type="Node3D" unique_id=2136184369]

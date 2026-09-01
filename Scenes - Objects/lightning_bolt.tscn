@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://ceqmeyurk2751"]
+
+[ext_resource type="Script" uid="uid://df7uqxych4mqb" path="res://Scripts/gameplay/projectiles/lightning_bolt.gd" id="1_62pvi"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8jg5c"]
+radius = 3.5
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_62pvi"]
+lifetime_randomness = 0.3
+emission_shape_scale = Vector3(0.1, 0.1, 0.1)
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+spread = 90.0
+initial_velocity_min = 3.0
+initial_velocity_max = 6.0
+scale_min = 0.099999994
+scale_max = 0.19999999
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_toacn"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 1, 1, 0.25882354)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_ybqwe"]
+material = SubResource("StandardMaterial3D_toacn")
+size = Vector2(0.35, 0.35)
+
+[node name="Node3D" type="Area3D" unique_id=1676042793]
+collision_layer = 4
+collision_mask = 3
+monitorable = false
+script = ExtResource("1_62pvi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1132591130]
+shape = SubResource("SphereShape3D_8jg5c")
+
+[node name="Light" type="OmniLight3D" parent="." unique_id=980426912]
+light_color = Color(0, 1, 1, 1)
+shadow_enabled = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=506844413]
+amount = 25
+lifetime = 0.35000000000000003
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_62pvi")
+draw_pass_1 = SubResource("QuadMesh_ybqwe")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -56,9 +56,7 @@ func _ready() -> void:
 	
 	#set up weapons
 	for child in get_children():
-		if not (child is Weapon):
-			continue
-		weapons.append(child)
+		if child is Weapon: weapons.append(child)
 	
 func _process(delta):
 	reload_time -= delta

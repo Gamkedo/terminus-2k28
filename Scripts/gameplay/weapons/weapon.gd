@@ -13,7 +13,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	reload_time -= delta
 
-func fire(pos, rot) -> void:
+func fire(pos: Vector3, rot: Vector3) -> void:
 	reload_time = fire_rate
 	var projectile := projectile_scene.instantiate()
 	get_tree().current_scene.add_child(projectile)

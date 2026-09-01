@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://eewdly8oh15j"]
 
 [ext_resource type="Script" uid="uid://26qf6gylnoet" path="res://Scripts/gameplay/player/player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://6pslr24rx431" path="res://Scripts/gameplay/weapons/lightning_weapon.gd" id="2_p3gwe"]
 [ext_resource type="Script" uid="uid://bex66uinswavl" path="res://Scripts/gameplay/weapons/weapon.gd" id="2_s0tvp"]
+[ext_resource type="PackedScene" uid="uid://ceqmeyurk2751" path="res://Scenes - Objects/lightning_bolt.tscn" id="3_05wly"]
 [ext_resource type="PackedScene" uid="uid://cblqj4rysl46l" path="res://Scenes - Objects/laser_bolt.tscn" id="3_iv4hd"]
 [ext_resource type="Script" uid="uid://cj7eq14viaaad" path="res://Scripts/gameplay/weapons/shotgun.gd" id="4_iv4hd"]
 [ext_resource type="Script" uid="uid://dvre2ude7y1fr" path="res://Scripts/gameplay/player/aim_component.gd" id="5_ypapg"]
@@ -86,6 +88,10 @@ shape = SubResource("CylinderShape3D_7tbbo")
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.30974174, 0.93932295, -6.3473606)
 mesh = SubResource("SphereMesh_4flbx")
 surface_material_override/0 = SubResource("StandardMaterial3D_onrkg")
+
+[node name="Lightning" type="Node3D" parent="." unique_id=1872216530]
+script = ExtResource("2_p3gwe")
+projectile_scene = ExtResource("3_05wly")
 
 [node name="Laser" type="Node" parent="." unique_id=160993058]
 script = ExtResource("2_s0tvp")
