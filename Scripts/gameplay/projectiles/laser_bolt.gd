@@ -2,12 +2,15 @@ extends Area3D
 
 const SPEED := 30.0
 
+## How long before projectile is automatically destroyed (like if it travels out of bounds for example)
+@export var destroy_delay = 5.0
+
 const LASER_HIT_TSCN := preload("res://Scenes - Objects/laser_hit.tscn")
 
 func _ready():
 	body_entered.connect(_on_body_entered)
 	area_entered.connect(_on_area_entered)
-	get_tree().create_timer(5.0).timeout.connect(queue_free) # remove after 5 sec (long out of bounds)
+	get_tree().create_timer(destroy_delay).timeout.connect(queue_free) # remove after 5 sec (long out of bounds)
 
 func _physics_process(delta):
 	global_position += -global_basis.z * SPEED * delta

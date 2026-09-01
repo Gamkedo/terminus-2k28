@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cr0e2cljp0lx3" path="res://Sprites/robodog.png" id="1_6gior"]
 [ext_resource type="Script" uid="uid://cfwb0edy0hv4h" path="res://Scripts/gameplay/enemies/enemy_billboard_flip.gd" id="1_gmqav"]
-[ext_resource type="PackedScene" uid="uid://b67ej3la4722g" path="res://Scenes - Objects/pickup_health.tscn" id="2_dgvf3"]
+[ext_resource type="PackedScene" uid="uid://duqndmu67eiyv" path="res://Scenes - Objects/pickup_shield_orbiters.tscn" id="2_dgvf3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmqav"]
 atlas = ExtResource("1_6gior")
@@ -55,7 +55,7 @@ radius = 1.0366211
 [node name="EnemyRobodog" type="Node3D" unique_id=163751198 groups=["enemy"]]
 script = ExtResource("1_gmqav")
 drop = ExtResource("2_dgvf3")
-drop_chance = 1.0
+drop_chance = 0.395
 
 [node name="BillboardFront" type="AnimatedSprite3D" parent="." unique_id=999408059]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3436084, 0)

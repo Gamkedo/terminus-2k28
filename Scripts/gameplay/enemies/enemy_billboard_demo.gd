@@ -37,8 +37,7 @@ func pick_new_direction():
 	direction = Vector3(dir.x, 0, dir.y)
 
 	# toggle which graphic to show, moving towards or away from camera
-	graphic_toward.visible = dir.y>0
-	graphic_away.visible = !graphic_toward.visible
+	Utils.apply_billboard_graphics(graphic_toward, graphic_away, direction)
 
 	time_left = drift_time
 

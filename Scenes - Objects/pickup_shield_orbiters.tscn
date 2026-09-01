@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://duqndmu67eiyv"]
+
+[ext_resource type="Script" uid="uid://0tateq5icy24" path="res://Scripts/gameplay/pickups/pickup.gd" id="1_ag3ko"]
+[ext_resource type="Texture2D" uid="uid://c7bbn50kl0mrs" path="res://Sprites/shield_icon.png" id="1_b3cwr"]
+[ext_resource type="Script" uid="uid://cetla7sthnawm" path="res://Scripts/gameplay/pickups/shield_orbit_pickup_effect.gd" id="2_af1c8"]
+[ext_resource type="PackedScene" uid="uid://tnarft6slpfl" path="res://Scenes - Objects/shieldbot.tscn" id="3_af1c8"]
+
+[sub_resource type="Resource" id="Resource_35be7"]
+script = ExtResource("2_af1c8")
+shield_orbiter_scene = ExtResource("3_af1c8")
+orbiter_count = 5
+metadata/_custom_type_script = "uid://cetla7sthnawm"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_af1c8"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_mkuvl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_af1c8"]
+albedo_color = Color(0.59313357, 0.5931336, 0.5931334, 1)
+metallic = 1.0
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 0.55, 0, 1)
+
+[node name="PickupShieldOrbiters" type="Area3D" unique_id=1572994774]
+collision_layer = 8
+script = ExtResource("1_ag3ko")
+effect = SubResource("Resource_35be7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1962529593]
+shape = SubResource("SphereShape3D_af1c8")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1085567432]
+pixel_size = 0.15
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_b3cwr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2132517611]
+visible = false
+mesh = SubResource("SphereMesh_mkuvl")
+surface_material_override/0 = SubResource("StandardMaterial3D_af1c8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

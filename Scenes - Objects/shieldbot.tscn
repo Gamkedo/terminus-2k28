@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://tnarft6slpfl"]
+
+[ext_resource type="Texture2D" uid="uid://b6hp37kontti2" path="res://Sprites/shieldbot.png" id="1_n8mq1"]
+[ext_resource type="Script" uid="uid://bm18yshkrrkyt" path="res://Scripts/gameplay/projectiles/projectile_orbit.gd" id="1_q8yqn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8yqn"]
+atlas = ExtResource("1_n8mq1")
+region = Rect2(0, 0, 15, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j4q1"]
+atlas = ExtResource("1_n8mq1")
+region = Rect2(15, 0, 15, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g3f7"]
+atlas = ExtResource("1_n8mq1")
+region = Rect2(30, 0, 15, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6aiok"]
+atlas = ExtResource("1_n8mq1")
+region = Rect2(45, 0, 15, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p0kgv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8yqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j4q1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g3f7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6aiok")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlkgr"]
+atlas = ExtResource("1_n8mq1")
+region = Rect2(0, 14, 15, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtp2k"]
+atlas = ExtResource("1_n8mq1")
+region = Rect2(15, 14, 15, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x84e3"]
+atlas = ExtResource("1_n8mq1")
+region = Rect2(30, 14, 15, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r32p7"]
+atlas = ExtResource("1_n8mq1")
+region = Rect2(45, 14, 15, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uvb6n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlkgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtp2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x84e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r32p7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_n8mq1"]
+height = 1.7001953
+radius = 1.0366211
+
+[node name="Shieldbot" type="Area3D" unique_id=1013819127 node_paths=PackedStringArray("graphic_toward", "graphic_away")]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_q8yqn")
+orbit_range = 8.0
+orbit_period = 5.0
+graphic_toward = NodePath("BillboardFront")
+graphic_away = NodePath("BillboardBack")
+destroy_delay = 15.0
+
+[node name="BillboardFront" type="AnimatedSprite3D" parent="." unique_id=1023992883]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9504246, 0)
+pixel_size = 0.15
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_p0kgv")
+autoplay = "default"
+frame = 2
+frame_progress = 0.21937768
+
+[node name="BillboardBack" type="AnimatedSprite3D" parent="." unique_id=1185409892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9504246, 0)
+pixel_size = 0.15
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_uvb6n")
+autoplay = "default"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=532561624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39013672, 0)
+shape = SubResource("CylinderShape3D_n8mq1")
