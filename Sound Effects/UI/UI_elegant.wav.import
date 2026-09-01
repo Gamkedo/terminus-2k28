@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://hh2rl1oiv1pj"
+path="res://.godot/imported/UI_elegant.wav-b011e1b52e555f78c8def9521d2636c3.sample"
+
+[deps]
+
+source_file="res://Sound Effects/UI/UI_elegant.wav"
+dest_files=["res://.godot/imported/UI_elegant.wav-b011e1b52e555f78c8def9521d2636c3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

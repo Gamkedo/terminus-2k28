@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://byk6jajqajks2"
+path="res://.godot/imported/UI_click_5.wav-21ba0633707d5c1e5a68d4289acb8ebe.sample"
+
+[deps]
+
+source_file="res://Sound Effects/UI/UI_click_5.wav"
+dest_files=["res://.godot/imported/UI_click_5.wav-21ba0633707d5c1e5a68d4289acb8ebe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
