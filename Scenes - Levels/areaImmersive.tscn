@@ -12,8 +12,7 @@
 [sub_resource type="BoxMesh" id="BoxMesh_y5qfa"]
 size = Vector3(128, 1, 128)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7tbbo"]
-size = Vector3(128, 1, 128)
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_x0v8i"]
 
 [node name="Node3D" type="Node3D" unique_id=881090372]
 
@@ -26,9 +25,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 material_override = ExtResource("1_lums3")
 mesh = SubResource("BoxMesh_y5qfa")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Ground" unique_id=576058120]
+[node name="FloorCollisionPlane" type="CollisionShape3D" parent="Environment/Ground" unique_id=576058120]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_7tbbo")
+shape = SubResource("WorldBoundaryShape3D_x0v8i")
 
 [node name="Sun" type="DirectionalLight3D" parent="Environment" unique_id=685437435]
 transform = Transform3D(0.73278594, -0.32673866, 0.59688085, 5.3732524e-08, 0.8771734, 0.48017368, -0.6804593, -0.35186443, 0.64278036, 23.942041, 17.40335, 0)

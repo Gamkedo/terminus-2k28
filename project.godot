@@ -123,6 +123,12 @@ debug_cycle_weapon={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Player"
+3d_physics/layer_2="Enemies"
+3d_physics/layer_8="World Boundaries"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
