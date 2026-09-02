@@ -1,6 +1,8 @@
-extends StaticBody3D
+class_name WorldBoundaries extends StaticBody3D
 
 @onready var ground_mesh: GeometryInstance3D = $MeshInstance3D
+@export var infinite_world: bool = false
+
 var bounding_walls: Dictionary[String, CollisionShape3D] = {
 	"+x": CollisionShape3D.new(),
 	"+z": CollisionShape3D.new(),
@@ -12,11 +14,21 @@ func _init():
 	GameGlobal.world_boundaries = self
 
 func _ready():
-	recalculate_boundaries()
+	if not infinite_world:
+		recalculate_boundaries()
 
 
 ## Returns a dict of the distances from origin of each bounding wall.
 func get_world_limits() -> Dictionary[String, float]:
+	# Hacky solution to disable this behavior in the survivorlike.
+	if infinite_world:
+		return {
+			"+x": 1.79769e308,
+			"-x": -1.79769e308,
+			"+z": 1.79769e308, 
+			"-z": -1.79769e308,
+		}
+	
 	return {
 		"+x": bounding_walls["+x"].global_position.x,
 		"-x": bounding_walls["-x"].global_position.x,

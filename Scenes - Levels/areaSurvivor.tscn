@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://df8sfs7748bbo"]
 
 [ext_resource type="Texture2D" uid="uid://dv524cn03yptx" path="res://Textures/grid-square.png" id="1_7fg4l"]
+[ext_resource type="Script" uid="uid://78wdgh3kyjr3" path="res://Scripts/gameplay/world/world_boundaries.gd" id="1_geqij"]
 [ext_resource type="Texture2D" uid="uid://bsrs3o1e171q1" path="res://Textures/dirt-ground.png" id="1_hcq85"]
 [ext_resource type="PackedScene" uid="uid://eewdly8oh15j" path="res://Scenes - Objects/player.tscn" id="2_hcq85"]
 [ext_resource type="Script" uid="uid://bap106b6ivci0" path="res://Scripts/camera/iso_tracking.gd" id="3_42ddl"]
@@ -32,6 +33,8 @@ size = Vector3(128, 1, 128)
 [node name="Environment" type="Node3D" parent="." unique_id=1062489120]
 
 [node name="Ground" type="StaticBody3D" parent="Environment" unique_id=313648461]
+script = ExtResource("1_geqij")
+infinite_world = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Ground" unique_id=612605019]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
