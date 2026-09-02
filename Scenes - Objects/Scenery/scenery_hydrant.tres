@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SceneryItem" format=3 uid="uid://be7qcr1cgllpq"]
+
+[ext_resource type="Script" uid="uid://cjj7dll5q50w3" path="res://Scripts/gameplay/world/scenery_item.gd" id="1_t6nkx"]
+[ext_resource type="Texture2D" uid="uid://55nv21udle3s" path="res://Sprites/hydrant_64x64.png" id="2_1n0ko"]
+
+[resource]
+script = ExtResource("1_t6nkx")
+sprite = ExtResource("2_1n0ko")
+spawn_chance = 0.6
+scale_min = 1.2
+scale_max = 1.3
+metadata/_custom_type_script = "uid://cjj7dll5q50w3"

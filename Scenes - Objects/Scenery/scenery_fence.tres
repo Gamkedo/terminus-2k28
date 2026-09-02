@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SceneryItem" format=3 uid="uid://c1km63wfjpju5"]
+
+[ext_resource type="Script" uid="uid://cjj7dll5q50w3" path="res://Scripts/gameplay/world/scenery_item.gd" id="1_jhg0x"]
+[ext_resource type="Texture2D" uid="uid://2ysdnx8gpsf" path="res://Sprites/fence_64x64.png" id="2_pkvrw"]
+
+[resource]
+script = ExtResource("1_jhg0x")
+sprite = ExtResource("2_pkvrw")
+spawn_chance = 1.3
+scale_min = 0.8
+scale_max = 1.2
+metadata/_custom_type_script = "uid://cjj7dll5q50w3"
