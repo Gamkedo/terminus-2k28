@@ -20,9 +20,11 @@ func _ready():
 	collision_area.body_entered.connect(_collision_detected)
 
 func _process(delta):
-	time_left -= delta
+	#time_left -= delta
 	if time_left <= 0:
 		pick_new_direction()
+
+	_map_bb_prevention()
 	global_position += direction * speed * delta
 
 	if attack_timer > 0:
@@ -46,3 +48,11 @@ func _collision_detected(body: Node3D) -> void:
 		var player: Player = body as Player
 		player.reduce_health(attack_power)
 		attack_timer = attack_timer_max
+
+
+## Hopefully prevents the unit from leaving the world.  Reflects the direction across the boundary normal.
+func _map_bb_prevention():
+	var limits: Dictionary[String, float] = GameGlobal.world_boundaries.get_world_limits()
+	
+	if global_position.x > limits["+x"] or global_position.x < limits["-x"] or global_position.z > limits["+z"] or global_position.z < limits["-z"]:
+		direction = direction.length() * global_position.direction_to(Vector3(0, 1, 0))

@@ -7,6 +7,7 @@ extends Node
 # -it's something many other places in code will need to use
 
 var player_ref
+var world_boundaries
 
 signal add_score(new_score: int)
 signal score_changed(new_score: int)

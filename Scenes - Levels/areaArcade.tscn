@@ -90,12 +90,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.896255, -2.861023e-06, 18
 
 [node name="EnemyRobodog" parent="Starter Enemies" unique_id=163751198 instance=ExtResource("4_uuonq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0183992, 0, 15.518707)
+drop = ExtResource("5_sx3om")
+drop_chance = 1.0
 
 [node name="EnemyRobodog2" parent="Starter Enemies" unique_id=88952948 instance=ExtResource("4_uuonq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.206879, 0, -12.3601)
+drop = ExtResource("5_sx3om")
+drop_chance = 1.0
 
 [node name="EnemyRobodog3" parent="Starter Enemies" unique_id=1762379844 instance=ExtResource("4_uuonq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.244577, 0, -15.10133)
+drop = ExtResource("5_sx3om")
+drop_chance = 1.0
 
 [node name="PickupHealth" parent="Starter Enemies" unique_id=1926490678 instance=ExtResource("5_sx3om")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.1, 0)
