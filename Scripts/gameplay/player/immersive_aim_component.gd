@@ -27,6 +27,11 @@ var mouse_real_sensitivity: float:
 @export var mouse_active: bool = true
 
 
+func _ready() -> void:
+	super()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
 func handle_aiming(player: Player, delta: float) -> void:
 	if not active:
 		return
@@ -57,3 +62,7 @@ func _input(event: InputEvent) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		mouse_input += event.relative
+
+
+func _exit_tree() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
