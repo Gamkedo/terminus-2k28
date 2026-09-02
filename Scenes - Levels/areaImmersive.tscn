@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://eewdly8oh15j" path="res://Scenes - Objects/player.tscn" id="3_mhi1n"]
 [ext_resource type="PackedScene" uid="uid://k63f3er0k7u7" path="res://Scenes - Objects/enemy_model_demo.tscn" id="4_itglv"]
 [ext_resource type="PackedScene" uid="uid://0wcd0e4ft353" path="res://Scenes - UI/screen_bezel_corners.tscn" id="6_kwne6"]
+[ext_resource type="Script" uid="uid://das224o67qbcs" path="res://Scripts/gameplay/player/immersive_aim_component.gd" id="4_kwne6"]
 [ext_resource type="PackedScene" uid="uid://d1grs1gs3wxkx" path="res://Scenes - Objects/example_obstacle.tscn" id="6_mhi1n"]
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="7_8go4e"]
 
@@ -45,6 +46,10 @@ size = 54.271
 script = ExtResource("3_itglv")
 
 [node name="Player" parent="." unique_id=935553468 instance=ExtResource("3_mhi1n")]
+
+[node name="ImmersiveAimComponent" type="Node" parent="Player" unique_id=1083012156]
+script = ExtResource("4_kwne6")
+metadata/_custom_type_script = "uid://das224o67qbcs"
 
 [node name="Starter Enemies" type="Node3D" parent="." unique_id=849493121]
 

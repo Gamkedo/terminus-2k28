@@ -10,7 +10,7 @@ func _ready() -> void:
 		player.aim_componant = self
 
 
-func handle_aiming(player: Player) -> void:
+func handle_aiming(player: Player, delta: float) -> void:
 	joypad_aim(player) # This will override mouseaim IF the joystick vector is greater than the deadzone
 	look_at_cursor(player)
 

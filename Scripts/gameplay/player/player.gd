@@ -36,9 +36,10 @@ var aim_componant
 
 # internal references
 @onready var legs := $Legs
-@onready var turret := $Turret
-@onready var muzzleA := $Turret/CannonA/FireFromA
-@onready var muzzleB := $Turret/CannonB/FireFromB
+@onready var turret := %Turret
+@onready var turret_pivot := %TurretPivot
+@onready var muzzleA := %FireFromA
+@onready var muzzleB := %FireFromB
 @onready var aim_dot := $AimDot
 
 
@@ -61,7 +62,7 @@ func _ready() -> void:
 func _process(delta):
 	reload_time -= delta
 
-	handle_aiming()
+	handle_aiming(delta)
 
 	if Input.is_action_pressed("fire") and weapons[active_weapon].can_fire():
 		fire()
@@ -137,6 +138,6 @@ func gain_health(amount: float) -> void:
 	GameLogger.debug("Health: %.2f / %.2f" % [health_current, health_max])
 
 
-func handle_aiming() -> void:
+func handle_aiming(delta: float) -> void:
 	if aim_componant:
-		aim_componant.handle_aiming(self)
+		aim_componant.handle_aiming(self, delta)
