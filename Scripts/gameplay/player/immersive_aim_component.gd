@@ -48,8 +48,6 @@ func handle_aiming(player: Player, delta: float) -> void:
 	mouse_input = Vector2.ZERO
 
 
-
-
 func _input(event: InputEvent) -> void:
 	if not mouse_active:
 		return
