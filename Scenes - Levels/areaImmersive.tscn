@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://divrqdtp7jrcr"]
 
+[ext_resource type="Script" uid="uid://78wdgh3kyjr3" path="res://Scripts/gameplay/world/world_boundaries.gd" id="1_kwne6"]
 [ext_resource type="Material" uid="uid://dkjck5am51jr4" path="res://Materials/placeholder-metal.tres" id="1_lums3"]
 [ext_resource type="Script" uid="uid://bhg5d8mcu38ny" path="res://Scripts/camera/third_person_camera.gd" id="3_itglv"]
 [ext_resource type="PackedScene" uid="uid://eewdly8oh15j" path="res://Scenes - Objects/player.tscn" id="3_mhi1n"]
@@ -19,13 +20,14 @@ size = Vector3(128, 1, 128)
 [node name="Environment" type="Node3D" parent="." unique_id=1062489120]
 
 [node name="Ground" type="StaticBody3D" parent="Environment" unique_id=313648461]
+script = ExtResource("1_kwne6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Ground" unique_id=612605019]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 material_override = ExtResource("1_lums3")
 mesh = SubResource("BoxMesh_y5qfa")
 
-[node name="FloorCollisionPlane" type="CollisionShape3D" parent="Environment/Ground" unique_id=576058120]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Ground" unique_id=576058120]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("WorldBoundaryShape3D_x0v8i")
 
