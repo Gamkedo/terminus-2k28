@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://c7hc705w0hq2y"]
+[gd_scene format=3 uid="uid://djhjb31720o8e"]
 
-[ext_resource type="Script" uid="uid://cqaictl8xy27t" path="res://Scripts/menus/level_select.gd" id="1_mcy63"]
+[ext_resource type="Script" uid="uid://b8ios76is7wac" path="res://Scripts/menus/level_select.gd" id="1_lnidy"]
 [ext_resource type="Texture2D" uid="uid://orfwumf3qiy1" path="res://Scenes - Levels/Level Select Preview Images/areaA-preview.jpg" id="1_pssaq"]
 [ext_resource type="Texture2D" uid="uid://by5q5qyu6eopi" path="res://Sprites/GUI/Terminus2k28Logo.png" id="2_lnidy"]
 [ext_resource type="Texture2D" uid="uid://c3neky7qng2wm" path="res://Scenes - Levels/Level Select Preview Images/areaB-preview.jpg" id="3_g3bd0"]
@@ -13,81 +13,144 @@ colors = PackedColorArray(0, 0, 0, 1, 0.5210963, 0.19145256, 0.020658007, 1)
 gradient = SubResource("Gradient_lnidy")
 
 [node name="LevelMenu" type="Node2D" unique_id=431338942 node_paths=PackedStringArray("starting_focus")]
-script = ExtResource("1_mcy63")
-starting_focus = NodePath("AreaB Survivor")
+script = ExtResource("1_lnidy")
+starting_focus = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Survivor Container/AreaB Survivor")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1069375977]
 position = Vector2(576, 466)
 scale = Vector2(5, 1024)
 texture = SubResource("GradientTexture1D_kdu0b")
 
-[node name="Logo" type="Sprite2D" parent="." unique_id=572854762]
-position = Vector2(476, 53)
-texture = ExtResource("2_lnidy")
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=691725099]
+offset_right = 1154.0
+offset_bottom = 643.0
 
-[node name="Top of screen text - placeholder" type="Label" parent="." unique_id=716597263]
-offset_left = 118.0
-offset_top = 102.0
-offset_right = 910.0
-offset_bottom = 140.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2002553956]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Logo" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1202717716]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_lnidy")
+stretch_mode = 2
+
+[node name="Top of screen text - placeholder" type="Label" parent="MarginContainer/VBoxContainer" unique_id=716597263]
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 16
 text = "Level Select menu (not just for testing! game will release with a cleaned up version of this)"
 
-[node name="AreaA Arcade" type="Button" parent="." unique_id=181493714]
-offset_left = 50.0
-offset_top = 136.0
-offset_right = 300.0
-offset_bottom = 386.0
-focus_neighbor_right = NodePath("../AreaB Survivor")
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=379910567]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Arcade Container" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1940403045]
+layout_mode = 2
+
+[node name="AreaA Arcade" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Arcade Container" unique_id=181493714]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+focus_neighbor_right = NodePath("../../Survivor Container/AreaB Survivor")
 icon = ExtResource("1_pssaq")
 expand_icon = true
 
-[node name="LabelA Arcade" type="Label" parent="." unique_id=2139458646]
-offset_left = 51.0
-offset_top = 396.0
-offset_right = 294.0
-offset_bottom = 434.0
+[node name="LabelA Arcade" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Arcade Container" unique_id=2139458646]
+layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "ARCADE MODE"
 horizontal_alignment = 1
 
-[node name="AreaB Survivor" type="Button" parent="." unique_id=882515598]
-offset_left = 350.0
-offset_top = 135.0
-offset_right = 600.0
-offset_bottom = 385.0
-focus_neighbor_left = NodePath("../AreaA Arcade")
-focus_neighbor_right = NodePath("../AreaC Immersive")
+[node name="Survivor Container" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1234353584]
+layout_mode = 2
+
+[node name="AreaB Survivor" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Survivor Container" unique_id=882515598]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+focus_neighbor_left = NodePath("../../Arcade Container/AreaA Arcade")
+focus_neighbor_right = NodePath("../../Immersive Container/AreaC Immersive")
 icon = ExtResource("3_g3bd0")
 expand_icon = true
 
-[node name="LabelB Survivor" type="Label" parent="." unique_id=1705265690]
-offset_left = 353.0
-offset_top = 396.0
-offset_right = 596.0
-offset_bottom = 434.0
+[node name="LabelB Survivor" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Survivor Container" unique_id=1705265690]
+layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "SURVIVOR MODE"
 horizontal_alignment = 1
 
-[node name="AreaC Immersive" type="Button" parent="." unique_id=1680213156]
-offset_left = 650.0
-offset_top = 135.0
-offset_right = 900.0
-offset_bottom = 385.0
-focus_neighbor_left = NodePath("../AreaB Survivor")
+[node name="Immersive Container" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=365200356]
+layout_mode = 2
+
+[node name="AreaC Immersive" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Immersive Container" unique_id=1680213156]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+focus_neighbor_left = NodePath("../../Survivor Container/AreaB Survivor")
 icon = ExtResource("4_krrsl")
 expand_icon = true
 
-[node name="LabelC Immersive" type="Label" parent="." unique_id=929782284]
-offset_left = 651.0
-offset_top = 396.0
-offset_right = 894.0
-offset_bottom = 434.0
+[node name="LabelC Immersive" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Immersive Container" unique_id=929782284]
+layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "IMMERSIVE MODE"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="AreaA Arcade" to="." method="_on_area_a_pressed"]
-[connection signal="pressed" from="AreaB Survivor" to="." method="_on_area_b_pressed"]
-[connection signal="pressed" from="AreaC Immersive" to="." method="_on_area_c_pressed"]
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer" unique_id=262921972]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Credits Button" type="Button" parent="MarginContainer/VBoxContainer/CenterContainer" unique_id=1809354245]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Credits"
+
+[node name="Credits Panel" type="Panel" parent="." unique_id=1658457094]
+visible = false
+offset_left = 126.0
+offset_top = 18.0
+offset_right = 1017.0
+offset_bottom = 602.0
+
+[node name="Padding" type="MarginContainer" parent="Credits Panel" unique_id=1016785290]
+layout_mode = 0
+offset_right = 891.0
+offset_bottom = 584.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits Panel/Padding" unique_id=531258819]
+layout_mode = 2
+
+[node name="Credits Title" type="RichTextLabel" parent="Credits Panel/Padding/VBoxContainer" unique_id=561071897]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/bold_font_size = 25
+theme_override_font_sizes/bold_italics_font_size = 25
+theme_override_font_sizes/italics_font_size = 25
+theme_override_font_sizes/mono_font_size = 25
+text = "Credits
+"
+fit_content = true
+scroll_following = true
+horizontal_alignment = 1
+
+[node name="Credits Body" type="RichTextLabel" parent="Credits Panel/Padding/VBoxContainer" unique_id=1679062833]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Insert Credits Here"
+
+[node name="Close Credits" type="Button" parent="Credits Panel/Padding/VBoxContainer" unique_id=829291104]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Close"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Arcade Container/AreaA Arcade" to="." method="_on_area_a_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Survivor Container/AreaB Survivor" to="." method="_on_area_b_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Immersive Container/AreaC Immersive" to="." method="_on_area_c_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CenterContainer/Credits Button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Credits Panel/Padding/VBoxContainer/Close Credits" to="." method="_on_close_credits_pressed"]
