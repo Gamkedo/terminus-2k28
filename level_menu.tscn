@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://djhjb31720o8e"]
+[gd_scene format=3 uid="uid://c7hc705w0hq2y"]
 
 [ext_resource type="Script" uid="uid://b8ios76is7wac" path="res://Scripts/menus/level_select.gd" id="1_lnidy"]
 [ext_resource type="Texture2D" uid="uid://orfwumf3qiy1" path="res://Scenes - Levels/Level Select Preview Images/areaA-preview.jpg" id="1_pssaq"]
