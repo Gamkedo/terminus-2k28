@@ -3,7 +3,6 @@
 
 extends "res://Scripts/gameplay/enemies/enemy_billboard_demo.gd"
 
-func pick_new_direction():
-	super.pick_new_direction() # base behavior
-	
+func flip_graphics() -> void:
+	# no call super since apply_billboard_flip_graphics does both anyway
 	Utils.apply_billboard_flip_graphics(graphic_toward, graphic_away, direction)

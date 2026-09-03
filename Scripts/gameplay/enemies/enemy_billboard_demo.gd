@@ -38,8 +38,7 @@ func pick_new_direction():
 	var dir := Vector2.from_angle(angle)
 	direction = Vector3(dir.x, 0, dir.y)
 
-	# toggle which graphic to show, moving towards or away from camera
-	Utils.apply_billboard_graphics(graphic_toward, graphic_away, direction)
+	flip_graphics()
 
 	time_left = drift_time
 
@@ -56,3 +55,9 @@ func _map_bb_prevention():
 	
 	if global_position.x > limits["+x"] or global_position.x < limits["-x"] or global_position.z > limits["+z"] or global_position.z < limits["-z"]:
 		direction = direction.length() * global_position.direction_to(Vector3(0, 1, 0))
+		flip_graphics()
+
+# toggle which graphic to show, moving towards or away from camera
+#  Should be called every time we change direction
+func flip_graphics() -> void:
+	Utils.apply_billboard_graphics(graphic_toward, graphic_away, direction)
