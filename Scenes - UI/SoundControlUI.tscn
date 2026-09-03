@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://d2psco3t4cdwm"]
+
+[ext_resource type="Texture2D" uid="uid://dwa1miy0akjrx" path="res://Sprites/sound_icon_on.png" id="1_hxb2c"]
+[ext_resource type="Script" uid="uid://d4cdetf28p5m5" path="res://Scripts/menus/sound_control_ui.gd" id="1_u5shc"]
+[ext_resource type="Texture2D" uid="uid://dib0eemmjwre8" path="res://Sprites/sound_icon_off.png" id="2_u5shc"]
+
+[node name="SoundControlUI" type="Control" unique_id=712051681]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_right = 250.0
+grow_vertical = 0
+script = ExtResource("1_u5shc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=854868600]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MusicSelector" type="OptionButton" parent="HBoxContainer" unique_id=911973795]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MusicButton" type="TextureButton" parent="HBoxContainer" unique_id=800160627]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(32, 32)
+propagate_maximum_size = true
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("1_hxb2c")
+texture_pressed = ExtResource("2_u5shc")
+stretch_mode = 5
+
+[connection signal="item_selected" from="HBoxContainer/MusicSelector" to="." method="_on_music_selector_item_selected"]
+[connection signal="toggled" from="HBoxContainer/MusicButton" to="." method="_on_music_button_toggled"]

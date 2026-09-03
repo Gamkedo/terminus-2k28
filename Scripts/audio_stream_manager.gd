@@ -33,6 +33,12 @@ var descending_pitch = descending_starting_pitch
 var descending_pitch_decrement := 0.05
 var descending_timer
 
+var bg_music_tracks: Array[String] = [
+	"res://Music/ambience_a.ogg",
+	"res://Music/terminus1_vorbis.ogg"
+]
+var selected_background_music: String = bg_music_tracks[0]
+
 func _ready() -> void:
 	for i in num_players:
 		var p = AudioStreamPlayer.new()
@@ -46,11 +52,22 @@ func _ready() -> void:
 	bgm_player.process_mode = PROCESS_MODE_ALWAYS
 	_create_timer_nodes()
 
+func select_background_track(i: int) -> void:
+	if abs(i) < bg_music_tracks.size():
+		selected_background_music = bg_music_tracks[i]
+		play_selected_track()
+	else: push_error("Music track[" + str(i) + "/ + " + str(bg_music_tracks.size()) + "] out of bounds!")
+
+func play_selected_track() -> void:
+	if FileAccess.file_exists(selected_background_music):
+		play_bgm(selected_background_music)
+	else: push_error("Music track(" + selected_background_music + ") doesn't exist!")
 
 func _on_sfx_stream_finished(stream: AudioStreamPlayer):
 	available.append(stream)
 
 func play_sfx(sound_path: String, playback_mode: PlaybackMode = PlaybackMode.STANDARD):
+	if muted: return
 	match playback_mode:
 		PlaybackMode.STANDARD:
 			queue.append(sound_path)
@@ -62,11 +79,20 @@ func play_sfx(sound_path: String, playback_mode: PlaybackMode = PlaybackMode.STA
 			queue_descending.append(sound_path)
 
 
-func play_bgm(sound_path: String):
+func play_bgm(sound_path: String) -> void:
+	if muted: return
 	bgm_player.stream = load(sound_path)
 	bgm_player.play()
 
+@onready var muted: bool = false:
+	set(v):
+		muted = v
+		if muted: bgm_player.stop()
+		else: play_selected_track()
+
 func _process(_delta: float):
+	if muted: return
+
 	## Play sfx
 	if not queue.is_empty() and not available.is_empty():
 		available[0].stream = load(queue.pop_front())
