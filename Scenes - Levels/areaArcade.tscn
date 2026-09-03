@@ -48,8 +48,6 @@ transform = Transform3D(0.70710677, -0.5196631, 0.4795313, 0, 0.67815965, 0.7349
 projection = 1
 size = 54.271
 
-[node name="Player" parent="." unique_id=935553468 instance=ExtResource("2_hwtxp")]
-
 [node name="Starter Enemies" type="Node3D" parent="." unique_id=849493121]
 
 [node name="EnemyBillboardDemo" parent="Starter Enemies" unique_id=533656628 instance=ExtResource("3_xxns5")]
@@ -120,3 +118,5 @@ start_flipped = true
 [node name="ScreenBezelCorners" parent="." unique_id=121658769 instance=ExtResource("8_b4wml")]
 
 [node name="ScoreGUI" parent="." unique_id=924242711 instance=ExtResource("9_pbum0")]
+
+[node name="Player" parent="." unique_id=997444506 instance=ExtResource("2_hwtxp")]

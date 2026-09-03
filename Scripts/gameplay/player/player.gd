@@ -35,7 +35,7 @@ const LASER_TSCN := preload("res://Scenes - Objects/laser_bolt.tscn")
 var aim_componant
 
 # internal references
-@onready var legs := $Legs
+@onready var legs:= $Legs
 @onready var turret := %Turret
 @onready var turret_pivot := %TurretPivot
 @onready var muzzleA := %FireFromA
