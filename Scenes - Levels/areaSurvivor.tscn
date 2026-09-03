@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://mkhovd4r8qf5" path="res://Scenes - Objects/enemy_billboard_demo.tscn" id="6_mrah0"]
 [ext_resource type="Script" uid="uid://bp36fivqnl7k6" path="res://Scripts/gameplay/player/stacking_weapons_manager.gd" id="6_tmxv0"]
 [ext_resource type="PackedScene" uid="uid://wdglasw32mes" path="res://Scenes - Objects/enemy_roombye.tscn" id="7_155sy"]
+[ext_resource type="Script" uid="uid://dvre2ude7y1fr" path="res://Scripts/gameplay/player/aim_component.gd" id="7_vx5xs"]
 [ext_resource type="PackedScene" uid="uid://0wcd0e4ft353" path="res://Scenes - UI/screen_bezel_corners.tscn" id="8_7cqv5"]
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="8_ua6li"]
 
@@ -62,6 +63,10 @@ script = ExtResource("3_42ddl")
 [node name="StackingWeaponsManager" type="Node" parent="Player" unique_id=1837792810]
 script = ExtResource("6_tmxv0")
 metadata/_custom_type_script = "uid://bp36fivqnl7k6"
+
+[node name="AimComponent" type="Node" parent="Player" unique_id=815164976]
+script = ExtResource("7_vx5xs")
+metadata/_custom_type_script = "uid://dvre2ude7y1fr"
 
 [node name="Starter Enemies" type="Node3D" parent="." unique_id=849493121]
 

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://mkhovd4r8qf5" path="res://Scenes - Objects/enemy_billboard_demo.tscn" id="3_xxns5"]
 [ext_resource type="PackedScene" uid="uid://dukkyn1bd7srm" path="res://Scenes - Objects/enemy_robodog.tscn" id="4_uuonq"]
 [ext_resource type="PackedScene" uid="uid://b67ej3la4722g" path="res://Scenes - Objects/pickup_health.tscn" id="5_sx3om"]
+[ext_resource type="Script" uid="uid://dvre2ude7y1fr" path="res://Scripts/gameplay/player/aim_component.gd" id="7_tefx3"]
 [ext_resource type="PackedScene" uid="uid://0wcd0e4ft353" path="res://Scenes - UI/screen_bezel_corners.tscn" id="8_b4wml"]
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="9_pbum0"]
 [ext_resource type="Script" uid="uid://dkrh1yggfk8bq" path="res://Scripts/gameplay/world/scenery_placer.gd" id="10_tfrqe"]
@@ -93,6 +94,10 @@ projection = 1
 size = 54.271
 
 [node name="Player" parent="." unique_id=935553468 instance=ExtResource("2_hwtxp")]
+
+[node name="AimComponent" type="Node" parent="Player" unique_id=145682983]
+script = ExtResource("7_tefx3")
+metadata/_custom_type_script = "uid://dvre2ude7y1fr"
 
 [node name="Starter Enemies" type="Node3D" parent="." unique_id=849493121]
 
