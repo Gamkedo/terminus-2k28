@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://dnf1ej2wna6et"]
 
 [ext_resource type="Texture2D" uid="uid://dv524cn03yptx" path="res://Textures/grid-square.png" id="1_5omp3"]
+[ext_resource type="Script" uid="uid://d2l0rcvu8nstn" path="res://Scripts/gameplay/level_manager/wave_manager.gd" id="1_8mmtw"]
 [ext_resource type="Script" uid="uid://78wdgh3kyjr3" path="res://Scripts/gameplay/world/world_boundaries.gd" id="1_seirn"]
 [ext_resource type="PackedScene" uid="uid://eewdly8oh15j" path="res://Scenes - Objects/player.tscn" id="2_hwtxp"]
+[ext_resource type="Script" uid="uid://emf33hlypehq" path="res://Scripts/gameplay/level_manager/wave.gd" id="2_m4my6"]
+[ext_resource type="Script" uid="uid://dnditqbrgbcer" path="res://Scripts/gameplay/level_manager/enemy_batch.gd" id="3_oe8km"]
 [ext_resource type="PackedScene" uid="uid://mkhovd4r8qf5" path="res://Scenes - Objects/enemy_billboard_demo.tscn" id="3_xxns5"]
 [ext_resource type="PackedScene" uid="uid://dukkyn1bd7srm" path="res://Scenes - Objects/enemy_robodog.tscn" id="4_uuonq"]
 [ext_resource type="PackedScene" uid="uid://b67ej3la4722g" path="res://Scenes - Objects/pickup_health.tscn" id="5_sx3om"]
@@ -15,6 +18,39 @@
 [ext_resource type="PackedScene" uid="uid://dpc1jighs0jjk" path="res://Scenes - Objects/Scenery/_scenery_item_generic.tscn" id="13_4516c"]
 [ext_resource type="Resource" uid="uid://dxsnd76rlre5n" path="res://Scenes - Objects/Scenery/scenery_dogelisk.tres" id="14_8mmtw"]
 [ext_resource type="Resource" uid="uid://be7qcr1cgllpq" path="res://Scenes - Objects/Scenery/scenery_hydrant.tres" id="14_r1qmg"]
+
+[sub_resource type="Resource" id="Resource_oe8km"]
+script = ExtResource("3_oe8km")
+spawn_amount = 1
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_tefx3"]
+script = ExtResource("3_oe8km")
+spawn_amount = 2
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_wcdhk"]
+script = ExtResource("3_oe8km")
+spawn_amount = 3
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_w32vy"]
+script = ExtResource("2_m4my6")
+enemies = Array[ExtResource("3_oe8km")]([SubResource("Resource_oe8km"), SubResource("Resource_tefx3"), SubResource("Resource_wcdhk")])
+metadata/_custom_type_script = "uid://emf33hlypehq"
+
+[sub_resource type="Resource" id="Resource_c6wyi"]
+script = ExtResource("3_oe8km")
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_l37s2"]
+script = ExtResource("3_oe8km")
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_oksh5"]
+script = ExtResource("2_m4my6")
+enemies = Array[ExtResource("3_oe8km")]([SubResource("Resource_c6wyi"), SubResource("Resource_l37s2")])
+metadata/_custom_type_script = "uid://emf33hlypehq"
 
 [sub_resource type="BoxMesh" id="BoxMesh_y5qfa"]
 size = Vector3(48, 1, 48)
@@ -29,6 +65,8 @@ uv2_triplanar = true
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_seirn"]
 
 [node name="Node3D" type="Node3D" unique_id=881090372]
+script = ExtResource("1_8mmtw")
+waves = Array[ExtResource("2_m4my6")]([SubResource("Resource_w32vy"), SubResource("Resource_oksh5")])
 
 [node name="Environment" type="Node3D" parent="." unique_id=1062489120]
 
