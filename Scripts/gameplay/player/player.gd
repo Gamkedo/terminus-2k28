@@ -35,13 +35,13 @@ const LASER_TSCN := preload("res://Scenes - Objects/laser_bolt.tscn")
 var aim_componant
 
 # internal references
-@onready var legs := $Legs
+@onready var legs:= $Legs
 @onready var turret := %Turret
 @onready var turret_pivot := %TurretPivot
 @onready var muzzleA := %FireFromA
 @onready var muzzleB := %FireFromB
 @onready var aim_dot := $AimDot
-
+@onready var aim_ray_cast_3d: RayCast3D = %AimRayCast3D
 
 # signals
 

@@ -1,7 +1,9 @@
 extends Area3D
+class_name LightningBolt
 
 ## set this while instantiating the scene!
 var lightning_source: Node3D
+var intended_position: Vector3
 
 @export var lifetime_sec: float = 0.3
 @export var arc_segment_count: int = 10
@@ -50,6 +52,7 @@ func _on_area_exited(area: Area3D) -> void:
 @onready var arc: Array[Vector3] = [lightning_source.global_position]
 @onready var segments: Array[MeshInstance3D] = []
 func _ready() -> void:
+	global_position = intended_position
 	var arc_point_count: int = arc_segment_count + randi_range(-arc_segment_vareity, arc_segment_vareity) + 2
 	var arc_range: float = (arc_height_max - arc_height_min)
 	for i in arc_point_count:

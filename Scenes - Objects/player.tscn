@@ -42,7 +42,7 @@ script = ExtResource("1_4flbx")
 rotation_speed = 5
 aim_dead_zone = 0.05
 follow_cam_move_to = NodePath("TurretPivot/Turret/NonIsoCameraMoveToward")
-follow_cam_point_at = NodePath("TurretPivot/Turret/NonIsoCameraLookAt")
+follow_cam_point_at = NodePath("AimDot")
 
 [node name="Legs" type="MeshInstance3D" parent="." unique_id=1286979195]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49009085, 0)
@@ -87,6 +87,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.564, 0.93799996, 4.024687)
 [node name="NonIsoCameraLookAt" type="Marker3D" parent="TurretPivot/Turret" unique_id=1483838191]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.1109996, -32.048855)
 
+[node name="AimRayCast3D" type="RayCast3D" parent="TurretPivot/Turret" unique_id=336195343]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, -1000)
+collision_mask = 3
+collide_with_areas = true
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1486092495]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0301299, 0)
 shape = SubResource("CylinderShape3D_7tbbo")
@@ -100,13 +106,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_onrkg")
 script = ExtResource("2_p3gwe")
 projectile_scene = ExtResource("3_05wly")
 
-[node name="Laser" type="Node" parent="." unique_id=160993058]
+[node name="Laser" type="Node3D" parent="." unique_id=881354002]
 script = ExtResource("2_s0tvp")
 sound_effect_path = "res://Sound Effects/laserShoot.wav"
 projectile_scene = ExtResource("3_iv4hd")
 metadata/_custom_type_script = "uid://bex66uinswavl"
 
-[node name="LaserShotgun" type="Node" parent="." unique_id=1230999399]
+[node name="LaserShotgun" type="Node3D" parent="." unique_id=810139150]
 script = ExtResource("4_iv4hd")
 sound_effect_path = "res://Sound Effects/laserShoot.wav"
 projectile_scene = ExtResource("3_iv4hd")
