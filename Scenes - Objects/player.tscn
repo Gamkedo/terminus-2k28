@@ -100,13 +100,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_onrkg")
 script = ExtResource("2_p3gwe")
 projectile_scene = ExtResource("3_05wly")
 
-[node name="Laser" type="Node" parent="." unique_id=160993058]
+[node name="Laser" type="Node3D" parent="." unique_id=881354002]
 script = ExtResource("2_s0tvp")
 sound_effect_path = "res://Sound Effects/laserShoot.wav"
 projectile_scene = ExtResource("3_iv4hd")
 metadata/_custom_type_script = "uid://bex66uinswavl"
 
-[node name="LaserShotgun" type="Node" parent="." unique_id=1230999399]
+[node name="LaserShotgun" type="Node3D" parent="." unique_id=810139150]
 script = ExtResource("4_iv4hd")
 sound_effect_path = "res://Sound Effects/laserShoot.wav"
 projectile_scene = ExtResource("3_iv4hd")
