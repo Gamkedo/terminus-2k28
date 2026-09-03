@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://bhg5d8mcu38ny" path="res://Scripts/camera/third_person_camera.gd" id="3_itglv"]
 [ext_resource type="PackedScene" uid="uid://eewdly8oh15j" path="res://Scenes - Objects/player.tscn" id="3_mhi1n"]
 [ext_resource type="PackedScene" uid="uid://k63f3er0k7u7" path="res://Scenes - Objects/enemy_model_demo.tscn" id="4_itglv"]
-[ext_resource type="PackedScene" uid="uid://0wcd0e4ft353" path="res://Scenes - UI/screen_bezel_corners.tscn" id="6_kwne6"]
 [ext_resource type="Script" uid="uid://das224o67qbcs" path="res://Scripts/gameplay/player/immersive_aim_component.gd" id="4_kwne6"]
+[ext_resource type="PackedScene" uid="uid://0wcd0e4ft353" path="res://Scenes - UI/screen_bezel_corners.tscn" id="6_kwne6"]
 [ext_resource type="PackedScene" uid="uid://d1grs1gs3wxkx" path="res://Scenes - Objects/example_obstacle.tscn" id="6_mhi1n"]
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="7_8go4e"]
 
@@ -28,7 +28,7 @@ material_override = ExtResource("1_lums3")
 mesh = SubResource("BoxMesh_y5qfa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Ground" unique_id=576058120]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0044816434, 0)
 shape = SubResource("WorldBoundaryShape3D_x0v8i")
 
 [node name="Sun" type="DirectionalLight3D" parent="Environment" unique_id=685437435]
@@ -100,6 +100,7 @@ transform = Transform3D(2.665, 0, 0, 0, 2.665, 0, 0, 0, 2.665, 9.485076, 1.35502
 
 [node name="Corner segment" type="CSGCombiner3D" parent="Obstacles" unique_id=1649574598]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87798405, 0, -17.900833)
+use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Obstacles/Corner segment" unique_id=370581416]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4.5, -12)
@@ -121,6 +122,7 @@ size = Vector3(15, 8, 29)
 
 [node name="Corner segment2" type="CSGCombiner3D" parent="Obstacles" unique_id=1787378531]
 transform = Transform3D(-0.2588191, 0, -0.96592593, 0, 1, 0, 0.96592593, 0, -0.2588191, 19.877983, -0.12721443, 39.04118)
+use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Obstacles/Corner segment2" unique_id=738252768]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4.5, -12)
@@ -142,6 +144,7 @@ size = Vector3(15, 8, 29)
 
 [node name="Arch" type="CSGCombiner3D" parent="Obstacles" unique_id=239744114]
 transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, -22.753056, 0, 14.328699)
+use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Obstacles/Arch" unique_id=1186772034]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4.5, -6)

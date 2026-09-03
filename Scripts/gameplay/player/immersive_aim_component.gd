@@ -51,6 +51,11 @@ func handle_aiming(player: Player, delta: float) -> void:
 	player.turret_pivot.rotate_y(-mouse_input.x * mouse_real_sensitivity)
 	player.turret.rotate_x(-mouse_input.y * mouse_real_sensitivity)
 	mouse_input = Vector2.ZERO
+	
+	if player.aim_ray_cast_3d.is_colliding():
+		player.aim_dot.global_position = player.aim_ray_cast_3d.get_collision_point()
+	else:
+		player.aim_dot.global_position = player.aim_ray_cast_3d.to_global(player.aim_ray_cast_3d.target_position)
 
 
 func _input(event: InputEvent) -> void:

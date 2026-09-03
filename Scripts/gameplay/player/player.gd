@@ -41,7 +41,7 @@ var aim_componant
 @onready var muzzleA := %FireFromA
 @onready var muzzleB := %FireFromB
 @onready var aim_dot := $AimDot
-
+@onready var aim_ray_cast_3d: RayCast3D = %AimRayCast3D
 
 # signals
 
