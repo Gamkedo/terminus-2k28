@@ -81,7 +81,7 @@ radius = 1.0366211
 
 [node name="Shieldbot" type="Area3D" unique_id=1013819127 node_paths=PackedStringArray("graphic_toward", "graphic_away")]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 131
 script = ExtResource("1_q8yqn")
 orbit_range = 8.0
 orbit_period = 5.0
