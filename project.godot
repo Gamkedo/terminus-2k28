@@ -125,8 +125,9 @@ debug_cycle_weapon={
 
 [layer_names]
 
-3d_physics/layer_1="Player"
+3d_physics/layer_1="Default"
 3d_physics/layer_2="Enemies"
+3d_physics/layer_3="Player"
 3d_physics/layer_8="World Boundaries"
 
 [physics]
