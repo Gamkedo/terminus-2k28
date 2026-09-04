@@ -24,7 +24,8 @@ size_flags_vertical = 3
 
 [node name="CornerTopLeft" type="TextureRect" parent="CanvasLayer/Control" unique_id=1762567146]
 layout_mode = 1
-offset_right = 256.0
+offset_left = 150.0
+offset_right = 406.0
 offset_bottom = 256.0
 texture = ExtResource("1_wfkmq")
 
@@ -33,7 +34,8 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_right = 256.0
+offset_left = -138.0
+offset_right = 118.0
 offset_bottom = 256.0
 grow_horizontal = 0
 scale = Vector2(-1, 1)
@@ -44,7 +46,8 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_right = 256.0
+offset_left = 150.0
+offset_right = 406.0
 offset_bottom = 256.0
 grow_vertical = 0
 scale = Vector2(1, -1)
@@ -57,9 +60,24 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 256.0
+offset_left = -138.0
+offset_right = 118.0
 offset_bottom = 256.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(-1, -1)
 texture = ExtResource("1_wfkmq")
+
+[node name="LeftRect" type="ColorRect" parent="CanvasLayer/Control" unique_id=1052284932]
+layout_mode = 0
+offset_left = -56.0
+offset_right = 150.33331
+offset_bottom = 649.0
+color = Color(0.15686275, 0.15686275, 0.15686275, 1)
+
+[node name="RightRect" type="ColorRect" parent="CanvasLayer/Control" unique_id=93020977]
+layout_mode = 0
+offset_left = 1013.0
+offset_right = 1219.3333
+offset_bottom = 649.0
+color = Color(0.15686275, 0.15686275, 0.15686275, 1)

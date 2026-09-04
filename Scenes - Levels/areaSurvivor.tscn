@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://bp36fivqnl7k6" path="res://Scripts/gameplay/player/stacking_weapons_manager.gd" id="6_tmxv0"]
 [ext_resource type="PackedScene" uid="uid://wdglasw32mes" path="res://Scenes - Objects/enemy_roombye.tscn" id="7_155sy"]
 [ext_resource type="Script" uid="uid://dvre2ude7y1fr" path="res://Scripts/gameplay/player/aim_component.gd" id="7_vx5xs"]
-[ext_resource type="PackedScene" uid="uid://0wcd0e4ft353" path="res://Scenes - UI/screen_bezel_corners.tscn" id="8_7cqv5"]
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="8_ua6li"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42ddl"]
@@ -30,7 +29,7 @@ uv2_triplanar = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_7tbbo"]
 size = Vector3(128, 1, 128)
 
-[node name="Node3D" type="Node3D" unique_id=881090372]
+[node name="Node3D2" type="Node3D" unique_id=881090372]
 
 [node name="Environment" type="Node3D" parent="." unique_id=1062489120]
 
@@ -1722,7 +1721,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.07138, 0, 37.454193)
 
 [node name="RoombyeEnemy5" parent="Starter Enemies" unique_id=293421350 instance=ExtResource("7_155sy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28972816, 0, -22.413864)
-
-[node name="ScreenBezelCorners" parent="." unique_id=121658769 instance=ExtResource("8_7cqv5")]
 
 [node name="ScoreGUI" parent="." unique_id=614518007 instance=ExtResource("8_ua6li")]
