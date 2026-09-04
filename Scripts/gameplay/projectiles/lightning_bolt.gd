@@ -6,12 +6,13 @@ var lightning_source: Node3D
 var intended_position: Vector3
 
 @export var lifetime_sec: float = 0.3
-@export var arc_segment_count: int = 10
-@export var arc_segment_vareity: int = 3
+@export var arc_segment_count: int = 1
+@export var arc_segment_vareity: int = 0
 @export var arc_height_min: float = 5.
 @export var arc_height_max: float = 7.
 @export_range(0., 1.) var arc_scatteredness: float = 0.75
 @export_range(0., 1.) var arc_volatility: float = 0.15
+@export var arc_source_radius: float = 2.5
 @export var default_enemy_capacity: float = 0.2
 
 @onready var arc_material: ORMMaterial3D = ORMMaterial3D.new()
@@ -55,7 +56,9 @@ func _ready() -> void:
 	global_position = intended_position
 	var arc_point_count: int = arc_segment_count + randi_range(-arc_segment_vareity, arc_segment_vareity) + 2
 	var arc_range: float = (arc_height_max - arc_height_min)
+	arc.push_back(lightning_source.global_position + (global_position - lightning_source.global_position).normalized() * arc_source_radius)
 	for i in arc_point_count:
+		if 0 == i: continue
 		var arc_positional_ratio: float = float(i) / float(arc_point_count)
 		var pos: Vector3 = ( # The segment position connects the source and base of the arc
 			lerp(lightning_source.global_position, global_position, arc_positional_ratio)
@@ -76,12 +79,13 @@ func _process(delta: float) -> void:
 		var victim: Node3D = enemies_in_range.keys().pick_random()
 		if 0. < enemies_in_range[victim]:
 			enemies_in_range[victim] -= delta
-			arc[-randi_range(0, min(arc.size(), 3))] = victim.global_position
+			arc[-randi_range(1, min(arc.size(), 4))] = victim.global_position
 		else:
 			if victim.has_method("die"): victim.die()
 			else: victim.queue_free()
 
 	# move lightning bolt around
+	arc[0] = lightning_source.global_position + (global_position - lightning_source.global_position).normalized() * arc_source_radius
 	for p in arc.size():
 		if p == 0 or p == arc.size() - 1: continue
 		arc[p] = lerp(
