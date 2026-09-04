@@ -45,3 +45,10 @@ func _collision_detected(body: Node3D) -> void:
 		var player: Player = body as Player
 		player.reduce_health(attack_power)
 		attack_timer = attack_timer_max
+
+
+func _on_perceive_begin(object: Node3D) -> void:
+	print_debug("%s: Started seeing %s" % [name, object.name])
+
+func _on_perceive_end(object: Node3D) -> void:
+	print_debug("%s: Stopped seeing %s" % [name, object.name])

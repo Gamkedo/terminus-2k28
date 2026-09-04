@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dv1ejsbmpxf2k"]
+
+[ext_resource type="Script" uid="uid://dc6hrq8k5cmmy" path="res://Scripts/gameplay/enemies/perception_component.gd" id="1_pghwt"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_titt0"]
+
+[node name="PerceptionComponent" type="Node3D" unique_id=1716502930]
+script = ExtResource("1_pghwt")
+
+[node name="DetectionArea" type="Area3D" parent="." unique_id=987116847]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 0
+monitorable = false
+
+[node name="DetectionShape" type="CollisionShape3D" parent="DetectionArea" unique_id=654987055]
+unique_name_in_owner = true
+shape = SubResource("SphereShape3D_titt0")
+
+[node name="ScanTimer" type="Timer" parent="." unique_id=830603866]
+unique_name_in_owner = true
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_body_exited"]
+[connection signal="timeout" from="ScanTimer" to="." method="_on_scan_timer_timeout"]

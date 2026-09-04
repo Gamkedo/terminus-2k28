@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cc2gbvpkv4j7f" path="res://Models (game format)/example-tread-robot.glb" id="2_o2cbc"]
 [ext_resource type="Material" uid="uid://dkjck5am51jr4" path="res://Materials/placeholder-metal.tres" id="3_ltojq"]
 [ext_resource type="Material" uid="uid://bserx1t3urxwu" path="res://Materials/placeholder-glow red.tres" id="4_q0jld"]
+[ext_resource type="PackedScene" uid="uid://dv1ejsbmpxf2k" path="res://Scripts/gameplay/enemies/perception_component.tscn" id="6_olwmm"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_7tbbo"]
 height = 1.7001953
@@ -18,7 +19,7 @@ drop = ExtResource("2_hmo62")
 
 [node name="example-tread-robot" parent="." unique_id=1928178245 instance=ExtResource("2_o2cbc")]
 
-[node name="TreadRobotExample" parent="example-tread-robot" index="0" unique_id=1572508898]
+[node name="TreadRobotExample" parent="example-tread-robot" index="0" unique_id=1172264329]
 surface_material_override/0 = ExtResource("3_ltojq")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1926181443]
@@ -38,5 +39,16 @@ surface_material_override/0 = ExtResource("4_q0jld")
 transform = Transform3D(0.08485281, -0.08485281, 0, 0.08485281, 0.08485281, 0, 0, 0, 0.12, 0.15, 2.327, -0.242)
 mesh = SubResource("BoxMesh_7tbbo")
 surface_material_override/0 = ExtResource("4_q0jld")
+
+[node name="PerceptionComponent" parent="." unique_id=1716502930 node_paths=PackedStringArray("eyes") instance=ExtResource("6_olwmm")]
+scanning_mask = 4
+max_distance = 50.0
+eyes = NodePath("../Eyes")
+
+[node name="Eyes" type="Marker3D" parent="." unique_id=1960489194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01767546, 2.3201437, 0)
+
+[connection signal="perceive_begin" from="PerceptionComponent" to="." method="_on_perceive_begin"]
+[connection signal="perceive_end" from="PerceptionComponent" to="." method="_on_perceive_end"]
 
 [editable path="example-tread-robot"]
