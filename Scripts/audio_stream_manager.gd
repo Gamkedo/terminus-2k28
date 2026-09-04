@@ -90,6 +90,12 @@ func play_bgm(sound_path: String) -> void:
 		if muted: bgm_player.stop()
 		else: play_selected_track()
 
+func _input(event: InputEvent) -> void:
+	if(event.is_action_pressed("mute_game")):
+		var busIdx = AudioServer.get_bus_index("Master")
+		var muteState = AudioServer.is_bus_mute(busIdx)
+		AudioServer.set_bus_mute(busIdx, not muteState)
+
 func _process(_delta: float):
 	if muted: return
 
