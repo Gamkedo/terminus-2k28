@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://clpbemj1nvh6o"
+path="res://.godot/imported/laser_6.wav-619f269f16111ef54f214f3de2b2de23.sample"
+
+[deps]
+
+source_file="res://Sound Effects/Lasers/laser_6.wav"
+dest_files=["res://.godot/imported/laser_6.wav-619f269f16111ef54f214f3de2b2de23.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

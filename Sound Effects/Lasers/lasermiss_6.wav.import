@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://4ypohsq4u5h5"
+path="res://.godot/imported/lasermiss_6.wav-b9995965291152ca10c2d92abb2ed3da.sample"
+
+[deps]
+
+source_file="res://Sound Effects/Lasers/lasermiss_6.wav"
+dest_files=["res://.godot/imported/lasermiss_6.wav-b9995965291152ca10c2d92abb2ed3da.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
