@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="9_pbum0"]
 [ext_resource type="Script" uid="uid://dkrh1yggfk8bq" path="res://Scripts/gameplay/world/scenery_placer.gd" id="10_tfrqe"]
 [ext_resource type="Script" uid="uid://cjj7dll5q50w3" path="res://Scripts/gameplay/world/scenery_item.gd" id="11_lsjr8"]
+[ext_resource type="PackedScene" uid="uid://kdjmi5d2hdrt" path="res://Scenes - Objects/enemy_android.tscn" id="11_wcdhk"]
 [ext_resource type="Resource" uid="uid://c1km63wfjpju5" path="res://Scenes - Objects/Scenery/scenery_fence.tres" id="12_4516c"]
 [ext_resource type="Resource" uid="uid://b66cy048xvqd0" path="res://Scenes - Objects/Scenery/scenery_tree.tres" id="13_6qiox"]
 [ext_resource type="PackedScene" uid="uid://dpc1jighs0jjk" path="res://Scenes - Objects/Scenery/_scenery_item_generic.tscn" id="13_4516c"]
@@ -154,6 +155,15 @@ drop_chance = 1.0
 
 [node name="PickupHealth" parent="Starter Enemies" unique_id=1926490678 instance=ExtResource("5_sx3om")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.1, 0)
+
+[node name="EnemyAndroid" parent="Starter Enemies" unique_id=271898624 instance=ExtResource("11_wcdhk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.573853, 0, -19.993511)
+
+[node name="EnemyAndroid2" parent="Starter Enemies" unique_id=1846597851 instance=ExtResource("11_wcdhk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.82053, 0, 13.488117)
+
+[node name="EnemyAndroid3" parent="Starter Enemies" unique_id=257639808 instance=ExtResource("11_wcdhk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.868708, 0, 21.205856)
 
 [node name="ScreenBezelCorners" parent="." unique_id=121658769 instance=ExtResource("8_b4wml")]
 
