@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cr0e2cljp0lx3" path="res://Sprites/robodog.png" id="1_6gior"]
 [ext_resource type="Script" uid="uid://cfwb0edy0hv4h" path="res://Scripts/gameplay/enemies/enemy_billboard_flip.gd" id="1_gmqav"]
-[ext_resource type="PackedScene" uid="uid://duqndmu67eiyv" path="res://Scenes - Objects/pickup_shield_orbiters.tscn" id="2_dgvf3"]
+[ext_resource type="PackedScene" uid="uid://bgbax3gdpt8n7" path="res://Scenes - Objects/pickup_shield_orbiters.tscn" id="2_dgvf3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmqav"]
 atlas = ExtResource("1_6gior")

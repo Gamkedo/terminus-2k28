@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d345k4ddctsqo"]
 
-[ext_resource type="Texture2D" uid="uid://btk8esbkb6owc" path="res://Sprites/FX/8x8_bullets_spritesheet.png" id="1_bxfke"]
 [ext_resource type="Script" uid="uid://di4pigirvj4wx" path="res://Scripts/gameplay/enemies/enemy_projectile.gd" id="1_tw8uf"]
+[ext_resource type="Texture2D" uid="uid://l88pp0sylrvh" path="res://Sprites/FX/8x8_projectile_spritesheet.png" id="2_tw8uf"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xsd8v"]
 radius = 0.6
@@ -16,7 +16,7 @@ speed = 12.0
 pixel_size = 0.15
 billboard = 1
 texture_filter = 0
-texture = ExtResource("1_bxfke")
+texture = ExtResource("2_tw8uf")
 region_enabled = true
 region_rect = Rect2(0, 0, 8, 8)
 
