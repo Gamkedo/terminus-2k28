@@ -69,3 +69,9 @@ static func down_tree_matching(root: Node, predicate: Callable, return_on_first:
 ## Projects a 3d vector onto the xz plane
 static func grid_vector(v:Vector3) -> Vector2:
 	return Vector2(v.x, v.z)
+
+static func damage_enemy(enemy: Enemy) -> void:
+		if enemy.has_method("die"):
+			enemy.die()
+		else:
+			enemy.queue_free()

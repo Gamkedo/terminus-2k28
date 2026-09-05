@@ -20,10 +20,7 @@ func _on_area_entered(area):
 	# print(area.name)
 	if area.get_parent().is_in_group("enemy"):
 		var enemy := area.get_parent() as Node3D
-		if enemy.has_method("die"):
-			enemy.die()
-		else:
-			enemy.queue_free()
+		Utils.damage_enemy(enemy)
 		explode_and_remove()
 
 func _on_body_entered(body):

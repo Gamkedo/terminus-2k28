@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://p7aumif32558"]
+
+[ext_resource type="Texture2D" uid="uid://dviy8rpoi0v3y" path="res://Sprites/FX/green_projectile_32x32.png" id="1_ae7e0"]
+[ext_resource type="Script" uid="uid://dtx1cb27yo2rw" path="res://Scripts/gameplay/projectiles/laser_beam_projectile.gd" id="1_xch6m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xch6m"]
+atlas = ExtResource("1_ae7e0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbshg"]
+atlas = ExtResource("1_ae7e0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3ilx"]
+atlas = ExtResource("1_ae7e0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfq4k"]
+atlas = ExtResource("1_ae7e0")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce2sc"]
+atlas = ExtResource("1_ae7e0")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i2dn6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xch6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbshg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3ilx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfq4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce2sc")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="LaserBeamProjectile" type="Node3D" unique_id=1654714350]
+script = ExtResource("1_xch6m")
+
+[node name="BeamRay" type="RayCast3D" parent="." unique_id=513910501]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0.11480689, 0)
+target_position = Vector3(0, 0, 50)
+collision_mask = 130
+hit_from_inside = true
+collide_with_areas = true
+debug_shape_custom_color = Color(0.6140424, 0.53519464, 0.073333226, 1)
+debug_shape_thickness = 5
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=258249182]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -2.4269676)
+pixel_size = 0.15
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_i2dn6")
+autoplay = "default"
+
+[node name="BeamEnd" type="Node3D" parent="." unique_id=1503813431]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -4.822874)

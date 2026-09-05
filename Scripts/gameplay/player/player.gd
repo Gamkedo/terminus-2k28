@@ -131,3 +131,9 @@ func gain_health(amount: float) -> void:
 func handle_aiming(delta: float) -> void:
 	if aim_componant:
 		aim_componant.handle_aiming(self, delta)
+
+func get_shot_spots() -> Array[Node3D]:
+	var shot_spots: Array[Node3D]
+	shot_spots.push_back(muzzleA)
+	shot_spots.push_back(muzzleB)
+	return shot_spots
