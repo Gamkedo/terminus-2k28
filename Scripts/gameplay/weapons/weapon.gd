@@ -19,7 +19,7 @@ func fire(pos: Vector3, rot: Vector3) -> void:
 	get_tree().current_scene.add_child(projectile)
 	projectile.global_position = pos
 	projectile.global_rotation = rot
-	AudioStreamManager.play_sfx(sound_effect_path, AudioStreamManager.PlaybackMode.RANDOM_PITCH)
+	AudioStreamManager.play_sfx("res://Sound Effects/Lasers/laser_7.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
 
 func can_fire() -> bool:
 	return reload_time <= 0.0
