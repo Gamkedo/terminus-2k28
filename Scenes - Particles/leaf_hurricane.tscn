@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ic71hiiw54gl"]
+
+[ext_resource type="Texture2D" uid="uid://cjl7v6kftarj3" path="res://Sprites/FX/leaf_explosion.png" id="1_8rgwr"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_g4v7s"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[node name="LeafHurricane" type="CPUParticles2D" unique_id=1082297007]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_g4v7s")
+amount = 100
+texture = ExtResource("1_8rgwr")
+randomness = 0.3
+emission_shape = 1
+emission_sphere_radius = 16.0
+spread = 180.0
+gravity = Vector2(0, 0)
+orbit_velocity_min = -1.0
+orbit_velocity_max = 3.0
+linear_accel_min = 71.29
+linear_accel_max = 71.29
+radial_accel_min = 21.78
+radial_accel_max = 21.78
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+anim_speed_min = 2.0
+anim_speed_max = 5.0

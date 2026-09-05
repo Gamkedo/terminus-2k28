@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dr004o72ff57y"]
+
+[ext_resource type="Texture2D" uid="uid://b7jb5ab6g66xd" path="res://Sprites/FX/smoke_particle.png" id="1_c2ev4"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_g4v7s"]
+particles_animation = true
+particles_anim_h_frames = 9
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[node name="Smoke" type="CPUParticles2D" unique_id=1082297007]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_g4v7s")
+amount = 200
+texture = ExtResource("1_c2ev4")
+lifetime = 1.2
+emission_shape = 3
+emission_rect_extents = Vector2(10, 1)
+direction = Vector2(-1000, 0)
+spread = 180.0
+gravity = Vector2(0, -100)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+angular_velocity_min = -285.15
+angular_velocity_max = 171.09
+linear_accel_min = 48.3
+linear_accel_max = 48.51
+radial_accel_min = 1.0
+radial_accel_max = 1.0
+tangential_accel_min = 1.0
+tangential_accel_max = 1.0
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+anim_speed_min = 1.0
+anim_speed_max = 1.0

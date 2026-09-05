@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://fg0o0lx1c3d8"]
+
+[ext_resource type="Texture2D" uid="uid://cmwb5vgepnjth" path="res://Sprites/FX/testexplo.png" id="1_muwxp"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_g4v7s"]
+particles_animation = true
+particles_anim_h_frames = 10
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[node name="Explosion" type="CPUParticles2D" unique_id=1082297007]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_g4v7s")
+emitting = false
+amount = 10
+texture = ExtResource("1_muwxp")
+one_shot = true
+lifetime_randomness = 0.1
+emission_shape = 6
+emission_ring_inner_radius = 15.0
+emission_ring_radius = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+anim_speed_min = 1.0
+anim_speed_max = 2.0
