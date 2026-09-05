@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmwb5vgepnjth"
-path="res://.godot/imported/testexplo.png-e286a154efdc476965c6e2ad598f8cf6.ctex"
+uid="uid://l88pp0sylrvh"
+path="res://.godot/imported/8x8_projectile_spritesheet.png-2647373beba4c3617068a49355ce7534.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/FX/testexplo.png"
-dest_files=["res://.godot/imported/testexplo.png-e286a154efdc476965c6e2ad598f8cf6.ctex"]
+source_file="res://Sprites/FX/8x8_projectile_spritesheet.png"
+dest_files=["res://.godot/imported/8x8_projectile_spritesheet.png-2647373beba4c3617068a49355ce7534.ctex"]
 
 [params]
 
