@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d345k4ddctsqo"]
+
+[ext_resource type="Texture2D" uid="uid://btk8esbkb6owc" path="res://Sprites/FX/8x8_bullets_spritesheet.png" id="1_bxfke"]
+[ext_resource type="Script" uid="uid://di4pigirvj4wx" path="res://Scripts/gameplay/enemies/enemy_projectile.gd" id="1_tw8uf"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xsd8v"]
+radius = 0.6
+
+[node name="EnemyProjectile" type="Area3D" unique_id=1410082429]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_tw8uf")
+speed = 12.0
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=700368742]
+pixel_size = 0.15
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_bxfke")
+region_enabled = true
+region_rect = Rect2(0, 0, 8, 8)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=688299600]
+shape = SubResource("SphereShape3D_xsd8v")

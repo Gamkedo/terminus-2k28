@@ -1,7 +1,8 @@
+class_name LaserBolt
 extends Area3D
 
-const SPEED := 30.0
-
+## How fast the projectile moves
+@export var speed := 30.0
 ## How long before projectile is automatically destroyed (like if it travels out of bounds for example)
 @export var destroy_delay = 5.0
 
@@ -13,7 +14,7 @@ func _ready():
 	get_tree().create_timer(destroy_delay).timeout.connect(queue_free) # remove after 5 sec (long out of bounds)
 
 func _physics_process(delta):
-	global_position += -global_basis.z * SPEED * delta
+	global_position += -global_basis.z * speed * delta
 
 func _on_area_entered(area):
 	# print(area.name)

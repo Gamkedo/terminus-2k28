@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://wdglasw32mes" path="res://Scenes - Objects/enemy_roombye.tscn" id="7_155sy"]
 [ext_resource type="Script" uid="uid://dvre2ude7y1fr" path="res://Scripts/gameplay/player/aim_component.gd" id="7_vx5xs"]
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="8_ua6li"]
+[ext_resource type="PackedScene" uid="uid://vdwb0cf16yx0" path="res://Scenes - Objects/enemy_stationary_turret.tscn" id="11_vx5xs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42ddl"]
 albedo_texture = ExtResource("1_hcq85")
@@ -1708,7 +1709,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.35955, 1.9073486e-06, 87.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.21804, 1.9073486e-06, 116.59592)
 
 [node name="RoombyeEnemy" parent="Starter Enemies" unique_id=2070650955 instance=ExtResource("7_155sy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.953491, 0, 8.029668)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.56793, 0, 1.0225744)
 
 [node name="RoombyeEnemy2" parent="Starter Enemies" unique_id=342107358 instance=ExtResource("7_155sy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42196655, 0, -41.39656)
@@ -1721,5 +1722,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.07138, 0, 37.454193)
 
 [node name="RoombyeEnemy5" parent="Starter Enemies" unique_id=293421350 instance=ExtResource("7_155sy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28972816, 0, -22.413864)
+
+[node name="EnemyStationaryTurret" parent="Starter Enemies" unique_id=511856781 instance=ExtResource("11_vx5xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.625907, 0.014443338, -7.8714237)
+
+[node name="EnemyStationaryTurret2" parent="Starter Enemies" unique_id=2077287313 instance=ExtResource("11_vx5xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.088924, 0.014439523, -12.839972)
+
+[node name="EnemyStationaryTurret3" parent="Starter Enemies" unique_id=522111365 instance=ExtResource("11_vx5xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.750792, 0.014439523, 19.13214)
+
+[node name="EnemyStationaryTurret4" parent="Starter Enemies" unique_id=598366489 instance=ExtResource("11_vx5xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.983377, 0.014439523, 22.476036)
+
+[node name="EnemyStationaryTurret5" parent="Starter Enemies" unique_id=1989736064 instance=ExtResource("11_vx5xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.704754, 0.014439523, -54.74852)
+
+[node name="EnemyStationaryTurret6" parent="Starter Enemies" unique_id=2125728250 instance=ExtResource("11_vx5xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.362865, 0.014439523, -50.32878)
+
+[node name="EnemyStationaryTurret7" parent="Starter Enemies" unique_id=1941250386 instance=ExtResource("11_vx5xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.06908, 0.014439523, 34.79886)
+
+[node name="EnemyStationaryTurret8" parent="Starter Enemies" unique_id=1638364434 instance=ExtResource("11_vx5xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.737213, 0.014439523, 62.135742)
+
+[node name="EnemyStationaryTurret9" parent="Starter Enemies" unique_id=430490878 instance=ExtResource("11_vx5xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.933105, 0.014439523, 79.62023)
 
 [node name="ScoreGUI" parent="." unique_id=614518007 instance=ExtResource("8_ua6li")]
