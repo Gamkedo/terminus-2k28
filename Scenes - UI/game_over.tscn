@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bsqax7a47vrc6"]
+
+[ext_resource type="LabelSettings" uid="uid://djusahi51ns2f" path="res://Scenes - UI/game-over-label-settings.tres" id="1_bjwrq"]
+[ext_resource type="LabelSettings" uid="uid://7mc5uw7y6vnf" path="res://Scenes - UI/score-label-settings.tres" id="1_q125a"]
+
+[node name="GameOverScreen" type="Control" unique_id=397520369]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=865856325]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverLabel" type="Label" parent="VBoxContainer" unique_id=1616675643]
+layout_mode = 2
+size_flags_vertical = 6
+text = "GAME OVER"
+label_settings = ExtResource("1_bjwrq")
+horizontal_alignment = 1
+
+[node name="FinalScoreLabel" type="Label" parent="VBoxContainer" unique_id=998875179]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Final Score: 00000000"
+label_settings = ExtResource("1_q125a")
+
+[node name="MenuReturnButton" type="Button" parent="VBoxContainer" unique_id=464235643]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Return to Menu"

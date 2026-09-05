@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://djusahi51ns2f"]
+
+[ext_resource type="FontFile" uid="uid://dkj8w03psnead" path="res://Fonts/BungeeHairline-Regular.ttf" id="1_lqolj"]
+
+[resource]
+font = ExtResource("1_lqolj")
+font_size = 60
+font_color = Color(0.9490196, 0.39607844, 0.13333334, 1)
+shadow_size = 0
