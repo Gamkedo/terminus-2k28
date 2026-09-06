@@ -2,5 +2,75 @@
 
 [ext_resource type="Script" uid="uid://bl35px1my0qxp" path="res://Scripts/level loader/loading_screen.gd" id="1_icmt0"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbmba"]
+bg_color = Color(0.25929368, 0.25929374, 0.2592936, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ex85l"]
+bg_color = Color(0.9378395, 0.43079388, 0.04351618, 1)
+
 [node name="LoadingScreen" type="CanvasLayer" unique_id=136384833]
 script = ExtResource("1_icmt0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1606071558]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1383743651]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Control" type="Control" parent="." unique_id=551591745]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 30.0
+offset_top = 618.0
+offset_right = 1122.0
+offset_bottom = 618.0
+size_flags_vertical = 8
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1960719174]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.16
+anchor_top = 0.8
+anchor_right = 0.84
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.98, 0.49490008, 0.09800003, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 32
+theme_override_styles/background = SubResource("StyleBoxFlat_hbmba")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ex85l")
+max_value = 1.0
+step = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="ProgressBar" unique_id=485046067]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = -1.0
+anchor_right = 1.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.98, 0.49490008, 0.09800003, 1)
+theme_override_font_sizes/font_size = 30
+text = "Loading..."
+horizontal_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=335311144]
+offset_right = 40.0
+offset_bottom = 40.0
