@@ -12,6 +12,10 @@ extends Node
 # - Support for preloaded streams instead of paths
 #####
 
+const MASTER_BUS: StringName = &"Master"
+const SFX_BUS: StringName = &"sfx"
+const BGM_BUS: StringName = &"bgm"
+
 enum PlaybackMode {STANDARD, RANDOM_PITCH, ASCENDING_PITCH, DESCENDING_PITCH}
 
 var num_players := 7 # maximum sfx that can play at once
@@ -33,16 +37,11 @@ var descending_pitch = descending_starting_pitch
 var descending_pitch_decrement := 0.05
 var descending_timer
 
-#var bg_music_tracks: Array[String] = [
-	#"res://Music/ambience_a.ogg",
-	#"res://Music/terminus1_vorbis.ogg"
-#]
-
-var bg_music_tracks: Array[String] = [
-	"uid://dwrnljiewp65j",
-	"uid://ckf2bo2btl6yy"
+var bg_music_tracks: Array[AudioStream] = [
+	preload("uid://dwrnljiewp65j"),
+	preload("uid://ckf2bo2btl6yy"),
 ]
-var selected_background_music: String = bg_music_tracks[0]
+var selected_background_music: AudioStream = bg_music_tracks[0]
 
 func _ready() -> void:
 	for i in num_players:
@@ -50,10 +49,11 @@ func _ready() -> void:
 		add_child(p)
 		available.append(p)
 		p.finished.connect(_on_sfx_stream_finished.bind(p))
-		p.bus = "sfx"
+		p.bus = SFX_BUS
+	
 	bgm_player = AudioStreamPlayer.new()
 	add_child(bgm_player)
-	bgm_player.bus = "bgm"
+	bgm_player.bus = BGM_BUS
 	bgm_player.process_mode = PROCESS_MODE_ALWAYS
 	_create_timer_nodes()
 
@@ -64,9 +64,9 @@ func select_background_track(i: int) -> void:
 	else: push_error("Music track[" + str(i) + "/ + " + str(bg_music_tracks.size()) + "] out of bounds!")
 
 func play_selected_track() -> void:
-	if FileAccess.file_exists(selected_background_music):
+	assert(selected_background_music, "selected_background_music is null or invalid!")
+	if selected_background_music:
 		play_bgm(selected_background_music)
-	else: push_error("Music track(" + selected_background_music + ") doesn't exist!")
 
 func _on_sfx_stream_finished(stream: AudioStreamPlayer):
 	available.append(stream)
@@ -84,9 +84,9 @@ func play_sfx(sound_path: String, playback_mode: PlaybackMode = PlaybackMode.STA
 			queue_descending.append(sound_path)
 
 
-func play_bgm(sound_path: String) -> void:
+func play_bgm(sound: AudioStream) -> void:
 	if muted: return
-	bgm_player.stream = load(sound_path)
+	bgm_player.stream = sound
 	bgm_player.play()
 
 @onready var muted: bool = false:
@@ -97,9 +97,9 @@ func play_bgm(sound_path: String) -> void:
 
 func _input(event: InputEvent) -> void:
 	if(event.is_action_pressed("mute_game")):
-		var busIdx = AudioServer.get_bus_index("Master")
-		var muteState = AudioServer.is_bus_mute(busIdx)
-		AudioServer.set_bus_mute(busIdx, not muteState)
+		const MASTER_BUS_IDX = 0 #AudioServer.get_bus_index(MASTER_BUS) # master is always index 0...
+		var muteState = AudioServer.is_bus_mute(MASTER_BUS_IDX)
+		AudioServer.set_bus_mute(MASTER_BUS_IDX, not muteState)
 
 func _process(_delta: float):
 	if muted: return
