@@ -12,7 +12,7 @@ var intended_position: Vector3
 @export var arc_height_max: float = 7.
 @export_range(0., 1.) var arc_scatteredness: float = 0.75
 @export_range(0., 1.) var arc_volatility: float = 0.15
-@export var arc_source_radius: float = 2.5
+@export var arc_source_radius: float = 1.5
 @export var default_enemy_capacity: float = 0.2
 
 @onready var arc_material: ORMMaterial3D = ORMMaterial3D.new()
@@ -50,13 +50,20 @@ func _on_area_entered(area: Area3D) -> void:
 func _on_area_exited(area: Area3D) -> void:
 	if enemies_in_range.has(area.get_parent()): enemies_in_range.erase(area.get_parent())
 
+func bolt_start_position() -> Vector3:
+	return (
+		lightning_source.global_position
+		+ (global_position - lightning_source.global_position).normalized() * arc_source_radius
+		+ Vector3(0., 2., 0.)
+	)
+
 @onready var arc: Array[Vector3] = [lightning_source.global_position]
 @onready var segments: Array[MeshInstance3D] = []
 func _ready() -> void:
 	global_position = intended_position
 	var arc_point_count: int = arc_segment_count + randi_range(-arc_segment_vareity, arc_segment_vareity) + 2
 	var arc_range: float = (arc_height_max - arc_height_min)
-	arc.push_back(lightning_source.global_position + (global_position - lightning_source.global_position).normalized() * arc_source_radius)
+	arc.push_back(bolt_start_position())
 	for i in arc_point_count:
 		if 0 == i: continue
 		var arc_positional_ratio: float = float(i) / float(arc_point_count)
@@ -85,7 +92,7 @@ func _process(delta: float) -> void:
 			else: victim.queue_free()
 
 	# move lightning bolt around
-	arc[0] = lightning_source.global_position + (global_position - lightning_source.global_position).normalized() * arc_source_radius
+	arc[0] = bolt_start_position()
 	for p in arc.size():
 		if p == 0 or p == arc.size() - 1: continue
 		arc[p] = lerp(

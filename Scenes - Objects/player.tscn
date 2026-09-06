@@ -5,12 +5,18 @@
 [ext_resource type="Script" uid="uid://bex66uinswavl" path="res://Scripts/gameplay/weapons/weapon.gd" id="2_s0tvp"]
 [ext_resource type="PackedScene" uid="uid://ceqmeyurk2751" path="res://Scenes - Objects/lightning_bolt.tscn" id="3_05wly"]
 [ext_resource type="PackedScene" uid="uid://cblqj4rysl46l" path="res://Scenes - Objects/laser_bolt.tscn" id="3_iv4hd"]
+[ext_resource type="Texture2D" uid="uid://ndhytgykw0od" path="res://Textures/temp_player_front.png" id="3_y8h32"]
 [ext_resource type="Script" uid="uid://cj7eq14viaaad" path="res://Scripts/gameplay/weapons/shotgun.gd" id="4_iv4hd"]
-[ext_resource type="Script" uid="uid://ba3jif00r7vw1" path="res://Scripts/gameplay/weapons/laser_beam_weapon.gd" id="7_a1lel"]
-[ext_resource type="PackedScene" uid="uid://p7aumif32558" path="res://Scenes - Objects/laser_beam_projectile.tscn" id="8_5hocr"]
+[ext_resource type="Texture2D" uid="uid://clfhx8dc6avbg" path="res://Textures/temp_player_back.png" id="4_y8h32"]
+[ext_resource type="PackedScene" uid="uid://l0shf2pmj48f" path="res://Models (game format)/player_vehbryo.glb" id="8_5hocr"]
 [ext_resource type="Script" uid="uid://cfc24xmre36y6" path="res://Scripts/gameplay/player/weapons_manager.gd" id="8_a1lel"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8h32"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
 [sub_resource type="BoxMesh" id="BoxMesh_7tbbo"]
+material = SubResource("StandardMaterial3D_y8h32")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25807"]
 albedo_color = Color(0, 0.627451, 1, 1)
@@ -20,7 +26,18 @@ albedo_color = Color(0, 0.627451, 1, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dbkhw"]
 albedo_color = Color(0, 4.582968, 0, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y61ny"]
+[sub_resource type="QuadMesh" id="QuadMesh_8dwo2"]
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46nwg"]
+transparency = 1
+albedo_texture = ExtResource("3_y8h32")
+billboard_mode = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31akr"]
+transparency = 1
+albedo_texture = ExtResource("4_y8h32")
+billboard_mode = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fgfqk"]
 albedo_color = Color(1, 0.4627451, 0, 1)
@@ -49,6 +66,7 @@ follow_cam_point_at = NodePath("AimDot")
 
 [node name="Legs" type="MeshInstance3D" parent="." unique_id=1286979195]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49009085, 0)
+visible = false
 mesh = SubResource("BoxMesh_7tbbo")
 surface_material_override/0 = SubResource("StandardMaterial3D_25807")
 
@@ -59,15 +77,29 @@ surface_material_override/0 = SubResource("StandardMaterial3D_dbkhw")
 
 [node name="TurretPivot" type="Node3D" parent="." unique_id=495319353]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3085973, 0)
 
 [node name="Turret" type="MeshInstance3D" parent="TurretPivot" unique_id=1096646795]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5172758, 0)
 mesh = SubResource("BoxMesh_7tbbo")
-surface_material_override/0 = SubResource("StandardMaterial3D_y61ny")
+
+[node name="player_vehbryo" parent="TurretPivot/Turret" unique_id=817039240 instance=ExtResource("8_5hocr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.8258731, 0)
+
+[node name="BillboardFront" type="MeshInstance3D" parent="TurretPivot/Turret/player_vehbryo" unique_id=410453551]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("QuadMesh_8dwo2")
+surface_material_override/0 = SubResource("StandardMaterial3D_46nwg")
+
+[node name="BillboardBack" type="MeshInstance3D" parent="TurretPivot/Turret/player_vehbryo" unique_id=353239484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("QuadMesh_8dwo2")
+surface_material_override/0 = SubResource("StandardMaterial3D_31akr")
 
 [node name="CannonA" type="MeshInstance3D" parent="TurretPivot/Turret" unique_id=1565162303]
 transform = Transform3D(0.35355338, -0.35355338, 0, 0.35355338, 0.35355338, 0, 0, 0, 2, 0.5, 0, -0.75)
+visible = false
 mesh = SubResource("BoxMesh_7tbbo")
 surface_material_override/0 = SubResource("StandardMaterial3D_fgfqk")
 
@@ -77,6 +109,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.504982)
 
 [node name="CannonB" type="MeshInstance3D" parent="TurretPivot/Turret" unique_id=662644248]
 transform = Transform3D(0.35355338, -0.35355338, 0, 0.35355338, 0.35355338, 0, 0, 0, 2, -0.5, 0, -0.75)
+visible = false
 mesh = SubResource("BoxMesh_7tbbo")
 surface_material_override/0 = SubResource("StandardMaterial3D_fgfqk")
 
@@ -119,13 +152,6 @@ metadata/_custom_type_script = "uid://bex66uinswavl"
 script = ExtResource("4_iv4hd")
 sound_effect_path = "res://Sound Effects/laserShoot.wav"
 projectile_scene = ExtResource("3_iv4hd")
-metadata/_custom_type_script = "uid://cj7eq14viaaad"
-
-[node name="LaserBeam" type="Node3D" parent="." unique_id=2114451738]
-script = ExtResource("7_a1lel")
-sound_effect_path = "res://Sound Effects/laserShoot.wav"
-projectile_scene = ExtResource("8_5hocr")
-fire_rate = 2.0
 metadata/_custom_type_script = "uid://cj7eq14viaaad"
 
 [node name="WeaponsManager" type="Node" parent="." unique_id=1271808281]
