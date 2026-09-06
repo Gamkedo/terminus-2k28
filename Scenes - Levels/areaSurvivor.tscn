@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dvre2ude7y1fr" path="res://Scripts/gameplay/player/aim_component.gd" id="7_vx5xs"]
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="8_ua6li"]
 [ext_resource type="PackedScene" uid="uid://vdwb0cf16yx0" path="res://Scenes - Objects/enemy_stationary_turret.tscn" id="11_vx5xs"]
+[ext_resource type="PackedScene" uid="uid://c4bxgkgn3crmk" path="res://Scenes - Objects/Scenery/truck_scenery.tscn" id="13_u40bk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42ddl"]
 albedo_texture = ExtResource("1_hcq85")
@@ -1751,3 +1752,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.737213, 0.014439523, 62.1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.933105, 0.014439523, 79.62023)
 
 [node name="ScoreGUI" parent="." unique_id=614518007 instance=ExtResource("8_ua6li")]
+
+[node name="Scenery" type="Node3D" parent="." unique_id=1080259309]
+
+[node name="TruckScenery" parent="Scenery" unique_id=1339161382 instance=ExtResource("13_u40bk")]
+transform = Transform3D(0.52707475, 0, -0.60182405, 0, 0.8, 0, 0.60182405, 0, 0.52707475, 17.127256, -1.9073486e-06, 8.662942)
+
+[node name="TruckScenery2" parent="Scenery" unique_id=1474097806 instance=ExtResource("13_u40bk")]
+transform = Transform3D(0.73720866, 0, 0.31068194, 0, 0.8, 0, -0.31068194, 0, 0.73720866, -51.75477, -1.9073486e-06, -11.871673)
+
+[node name="TruckScenery3" parent="Scenery" unique_id=1247797618 instance=ExtResource("13_u40bk")]
+transform = Transform3D(-0.20815112, 0, -0.7724461, 0, 0.80000013, 0, 0.7724461, 0, -0.20815112, 22.605026, -1.9073486e-06, -60.05467)
+
+[node name="TruckScenery4" parent="Scenery" unique_id=1976637666 instance=ExtResource("13_u40bk")]
+transform = Transform3D(0.43197018, 0, -0.67335105, 0, 0.80000013, 0, 0.67335105, 0, 0.43197018, 73.57091, -1.9073486e-06, 64.355804)

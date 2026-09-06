@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b008lo0ge0ygv" path="res://Scripts/gameplay/enemies/enemy_spawner.gd" id="1_lbhcc"]
 [ext_resource type="Texture2D" uid="uid://dva4iw1cm5glk" path="res://Sprites/dogelisk.png" id="1_qq5r6"]
 [ext_resource type="PackedScene" uid="uid://dukkyn1bd7srm" path="res://Scenes - Objects/enemy_robodog.tscn" id="2_tmvns"]
-[ext_resource type="PackedScene" uid="uid://bjoc5aa7xcnpi" path="res://Scenes - Objects/particle_smoke_puff.tscn" id="3_thbgr"]
+[ext_resource type="PackedScene" uid="uid://bjoc5aa7xcnpi" path="res://Scenes - Particles/particle_smoke_puff.tscn" id="3_thbgr"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_qq5r6"]
 height = 4.4575195

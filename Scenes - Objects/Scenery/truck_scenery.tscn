@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://c4bxgkgn3crmk"]
+
+[ext_resource type="PackedScene" uid="uid://bfocsxw3ckdas" path="res://Models (game format)/truck.glb" id="1_s1cpr"]
+[ext_resource type="Script" uid="uid://eug6k1o7o52e" path="res://Scripts/gameplay/world/destructible_scenery.gd" id="1_wppp6"]
+[ext_resource type="PackedScene" uid="uid://bjoc5aa7xcnpi" path="res://Scenes - Particles/particle_smoke_puff.tscn" id="2_b84b4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p0kgv"]
+size = Vector3(3.5045166, 3.4609985, 9.171509)
+
+[sub_resource type="Animation" id="Animation_wppp6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TruckModel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2.0170522, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TruckModel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b84b4"]
+resource_name = "destroy_anim"
+length = 0.36666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TruckModel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0058517456, 0.13333334, 0.23333333, 0.36666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 2.0170522, 0), Vector3(1.701, 3.873, 0), Vector3(2.836, 3.067, 0), Vector3(3.452, 1.182, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TruckModel:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0058517456, 0.13333334, 0.23333333, 0.36666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -1.4909745), Vector3(0, 0, -2.349282), Vector3(0.25307274, 0, -3.047345)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ela8"]
+_data = {
+&"RESET": SubResource("Animation_wppp6"),
+&"destroy_anim": SubResource("Animation_b84b4")
+}
+
+[node name="TruckScenery" type="Node3D" unique_id=1339161382 groups=["enemy"]]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+script = ExtResource("1_wppp6")
+destroy_particles = Array[PackedScene]([ExtResource("2_b84b4")])
+
+[node name="TruckModel" parent="." unique_id=965362556 instance=ExtResource("1_s1cpr")]
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0, 2.0170522, 0)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=712190734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8312016, 0)
+collision_mask = 133
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=339122644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06756592, -0.06134796, 0.8689575)
+shape = SubResource("BoxShape3D_p0kgv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1181080129]
+libraries/ = SubResource("AnimationLibrary_3ela8")
