@@ -9,6 +9,7 @@ signal round_timeout(round_number)
 var round_number : int = 0
 var round_timer : Timer
 
+@export var enemy_spawner : Node
 @export var waves : Array[Wave]
 
 
@@ -39,11 +40,7 @@ func _spawn_enemies() -> void:
 		await get_tree().create_timer(round_wave.spawn_interval).timeout
 		var enemy = GameGlobal.EnemyTypes.keys()[batch.enemy_type]
 		var spawn_amount = batch.spawn_amount
-		_spawn_enemy(enemy, spawn_amount)
-
-
-func _spawn_enemy(enemy, spawn_amount) -> void:
-	GameLogger.debug("Spawning %s %s" % [spawn_amount, enemy])
+		enemy_spawner.spawn(enemy, spawn_amount)
 
 
 func _on_round_timer_timout() -> void:

@@ -6,21 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://eewdly8oh15j" path="res://Scenes - Objects/player.tscn" id="2_hwtxp"]
 [ext_resource type="Script" uid="uid://emf33hlypehq" path="res://Scripts/gameplay/level_manager/wave.gd" id="2_m4my6"]
 [ext_resource type="Script" uid="uid://dnditqbrgbcer" path="res://Scripts/gameplay/level_manager/enemy_batch.gd" id="3_oe8km"]
-[ext_resource type="PackedScene" uid="uid://mkhovd4r8qf5" path="res://Scenes - Objects/enemy_billboard_demo.tscn" id="3_xxns5"]
-[ext_resource type="PackedScene" uid="uid://dukkyn1bd7srm" path="res://Scenes - Objects/enemy_robodog.tscn" id="4_uuonq"]
-[ext_resource type="PackedScene" uid="uid://b67ej3la4722g" path="res://Scenes - Objects/pickup_health.tscn" id="5_sx3om"]
 [ext_resource type="Script" uid="uid://dvre2ude7y1fr" path="res://Scripts/gameplay/player/aim_component.gd" id="7_tefx3"]
 [ext_resource type="PackedScene" uid="uid://0wcd0e4ft353" path="res://Scenes - UI/screen_bezel_corners.tscn" id="8_b4wml"]
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="9_pbum0"]
 [ext_resource type="Script" uid="uid://dkrh1yggfk8bq" path="res://Scripts/gameplay/world/scenery_placer.gd" id="10_tfrqe"]
 [ext_resource type="Script" uid="uid://cjj7dll5q50w3" path="res://Scripts/gameplay/world/scenery_item.gd" id="11_lsjr8"]
-[ext_resource type="PackedScene" uid="uid://kdjmi5d2hdrt" path="res://Scenes - Objects/enemy_android.tscn" id="11_wcdhk"]
 [ext_resource type="Resource" uid="uid://c1km63wfjpju5" path="res://Scenes - Objects/Scenery/scenery_fence.tres" id="12_4516c"]
 [ext_resource type="Resource" uid="uid://b66cy048xvqd0" path="res://Scenes - Objects/Scenery/scenery_tree.tres" id="13_6qiox"]
 [ext_resource type="PackedScene" uid="uid://dpc1jighs0jjk" path="res://Scenes - Objects/Scenery/_scenery_item_generic.tscn" id="13_4516c"]
 [ext_resource type="Resource" uid="uid://dxsnd76rlre5n" path="res://Scenes - Objects/Scenery/scenery_dogelisk.tres" id="14_8mmtw"]
 [ext_resource type="PackedScene" uid="uid://bsqax7a47vrc6" path="res://Scenes - UI/game_over.tscn" id="14_c6wyi"]
 [ext_resource type="Resource" uid="uid://be7qcr1cgllpq" path="res://Scenes - Objects/Scenery/scenery_hydrant.tres" id="14_r1qmg"]
+[ext_resource type="Script" uid="uid://c7pgxg3avlvxo" path="res://Scripts/gameplay/level_manager/enemy_spawner.gd" id="22_l37s2"]
 
 [sub_resource type="Resource" id="Resource_oe8km"]
 script = ExtResource("3_oe8km")
@@ -76,8 +73,9 @@ uv2_triplanar = true
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_seirn"]
 
-[node name="Node3D" type="Node3D" unique_id=881090372]
+[node name="Node3D" type="Node3D" unique_id=881090372 node_paths=PackedStringArray("enemy_spawner")]
 script = ExtResource("1_8mmtw")
+enemy_spawner = NodePath("EnemySpawner")
 waves = Array[ExtResource("2_m4my6")]([SubResource("Resource_w32vy"), SubResource("Resource_oksh5")])
 
 [node name="Environment" type="Node3D" parent="." unique_id=1062489120]
@@ -110,71 +108,6 @@ size = 54.271
 script = ExtResource("7_tefx3")
 metadata/_custom_type_script = "uid://dvre2ude7y1fr"
 
-[node name="Starter Enemies" type="Node3D" parent="." unique_id=849493121]
-
-[node name="EnemyBillboardDemo" parent="Starter Enemies" unique_id=533656628 instance=ExtResource("3_xxns5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.403198, 9.536743e-07, 3.4864492)
-
-[node name="EnemyBillboardDemo2" parent="Starter Enemies" unique_id=1143168955 instance=ExtResource("3_xxns5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.440838, 9.536743e-07, 6.9587107)
-
-[node name="EnemyBillboardDemo3" parent="Starter Enemies" unique_id=2033633055 instance=ExtResource("3_xxns5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9172745, -9.536743e-07, 15.301399)
-
-[node name="EnemyBillboardDemo4" parent="Starter Enemies" unique_id=1289752100 instance=ExtResource("3_xxns5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.211811, -2.861023e-06, -12.294487)
-
-[node name="EnemyBillboardDemo5" parent="Starter Enemies" unique_id=1598419433 instance=ExtResource("3_xxns5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8806324, -2.861023e-06, -16.729614)
-
-[node name="EnemyBillboardDemo6" parent="Starter Enemies" unique_id=1985142365 instance=ExtResource("3_xxns5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.815983, -2.861023e-06, 7.180624)
-
-[node name="EnemyBillboardDemo7" parent="Starter Enemies" unique_id=965458322 instance=ExtResource("3_xxns5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.458179, -2.861023e-06, 15.320854)
-
-[node name="EnemyBillboardDemo8" parent="Starter Enemies" unique_id=1112081925 instance=ExtResource("3_xxns5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.814526, -2.861023e-06, -6.218025)
-
-[node name="EnemyBillboardDemo9" parent="Starter Enemies" unique_id=1636435018 instance=ExtResource("3_xxns5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.494129, -2.861023e-06, -16.484482)
-
-[node name="EnemyBillboardDemo10" parent="Starter Enemies" unique_id=832234094 instance=ExtResource("3_xxns5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.33947, -2.861023e-06, -4.486294)
-
-[node name="EnemyBillboardDemo11" parent="Starter Enemies" unique_id=1846461039 instance=ExtResource("3_xxns5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.358456, -2.861023e-06, 14.029776)
-
-[node name="EnemyBillboardDemo12" parent="Starter Enemies" unique_id=2083695233 instance=ExtResource("3_xxns5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.896255, -2.861023e-06, 18.104025)
-
-[node name="EnemyRobodog" parent="Starter Enemies" unique_id=163751198 instance=ExtResource("4_uuonq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0183992, 0, 15.518707)
-drop = ExtResource("5_sx3om")
-drop_chance = 1.0
-
-[node name="EnemyRobodog2" parent="Starter Enemies" unique_id=88952948 instance=ExtResource("4_uuonq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.206879, 0, -12.3601)
-drop = ExtResource("5_sx3om")
-drop_chance = 1.0
-
-[node name="EnemyRobodog3" parent="Starter Enemies" unique_id=1762379844 instance=ExtResource("4_uuonq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.244577, 0, -15.10133)
-drop = ExtResource("5_sx3om")
-drop_chance = 1.0
-
-[node name="PickupHealth" parent="Starter Enemies" unique_id=1926490678 instance=ExtResource("5_sx3om")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.1, 0)
-
-[node name="EnemyAndroid" parent="Starter Enemies" unique_id=271898624 instance=ExtResource("11_wcdhk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.573853, 0, -19.993511)
-
-[node name="EnemyAndroid2" parent="Starter Enemies" unique_id=1846597851 instance=ExtResource("11_wcdhk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.82053, 0, 13.488117)
-
-[node name="EnemyAndroid3" parent="Starter Enemies" unique_id=257639808 instance=ExtResource("11_wcdhk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.868708, 0, 21.205856)
-
 [node name="ScreenBezelCorners" parent="." unique_id=121658769 instance=ExtResource("8_b4wml")]
 
 [node name="ScoreGUI" parent="." unique_id=924242711 instance=ExtResource("9_pbum0")]
@@ -188,4 +121,7 @@ scenery_item_scene = ExtResource("13_4516c")
 border_size = 0.0
 
 [node name="GameOverScreen" parent="." unique_id=397520369 instance=ExtResource("14_c6wyi")]
-visible = false
+
+[node name="EnemySpawner" type="Node" parent="." unique_id=1658049301 node_paths=PackedStringArray("player")]
+script = ExtResource("22_l37s2")
+player = NodePath("../Player")
