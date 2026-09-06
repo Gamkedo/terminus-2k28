@@ -1,5 +1,7 @@
 extends Node
 
+signal enemy_spawned
+
 @export var player : Node3D
 
 var enemy_scene_paths: Dictionary = {
@@ -18,6 +20,7 @@ func spawn(enemy, spawn_amount) -> void:
 		var instance = resource.instantiate()
 		instance.position = _get_random_spawn_vector()
 		add_child(instance)
+		enemy_spawned.emit()
 
 
 func _get_random_spawn_vector() -> Vector3:

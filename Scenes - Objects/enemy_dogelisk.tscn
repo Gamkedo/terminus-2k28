@@ -14,6 +14,7 @@ script = ExtResource("1_lbhcc")
 spawn_enemy = ExtResource("2_tmvns")
 spawn_particles = ExtResource("3_thbgr")
 particle_spawn_spot = NodePath("BillboardActive/ParticleSpawnSpot")
+enemy_type = 1
 
 [node name="BillboardActive" type="Sprite3D" parent="." unique_id=1550188144]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3428867, 0)

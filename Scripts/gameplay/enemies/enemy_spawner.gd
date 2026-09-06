@@ -64,6 +64,7 @@ func _process(delta: float) -> void:
 		if spawn_timer >= spawn_interval:
 			spawn_timer = 0.0
 			var spawned_enemy := spawn_enemy.instantiate()
+			spawned_enemy.count_kill_for_wave = false
 			get_tree().current_scene.add_child(spawned_enemy)
 			spawned_enemy.global_position = position
 			spawned_enemies.push_back(spawned_enemy)

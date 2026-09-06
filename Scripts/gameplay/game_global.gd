@@ -16,3 +16,4 @@ signal score_changed(new_score: int)
 signal combo_changed(new_combo: int)
 signal game_over
 signal final_score(score: int)
+signal enemy_killed
