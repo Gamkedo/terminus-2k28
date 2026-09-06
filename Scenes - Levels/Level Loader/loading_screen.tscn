@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ce54pu4cqm5ud"]
+
+[ext_resource type="Script" uid="uid://bl35px1my0qxp" path="res://Scripts/level loader/loading_screen.gd" id="1_icmt0"]
+
+[node name="LoadingScreen" type="CanvasLayer" unique_id=136384833]
+script = ExtResource("1_icmt0")

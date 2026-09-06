@@ -33,9 +33,14 @@ var descending_pitch = descending_starting_pitch
 var descending_pitch_decrement := 0.05
 var descending_timer
 
+#var bg_music_tracks: Array[String] = [
+	#"res://Music/ambience_a.ogg",
+	#"res://Music/terminus1_vorbis.ogg"
+#]
+
 var bg_music_tracks: Array[String] = [
-	"res://Music/ambience_a.ogg",
-	"res://Music/terminus1_vorbis.ogg"
+	"uid://dwrnljiewp65j",
+	"uid://ckf2bo2btl6yy"
 ]
 var selected_background_music: String = bg_music_tracks[0]
 

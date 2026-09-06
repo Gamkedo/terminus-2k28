@@ -13,7 +13,8 @@ func _on_area_b_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes - Levels/areaSurvivor.tscn")
 
 func _on_area_c_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes - Levels/areaImmersive.tscn")
+	#get_tree().change_scene_to_file("res://Scenes - Levels/areaImmersive.tscn")
+	SceneChanger.change_scene("res://Scenes - Levels/areaImmersive.tscn")
 
 func _on_credits_button_pressed() -> void:
 	get_node("Credits Panel").show()
