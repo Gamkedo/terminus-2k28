@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://fg0o0lx1c3d8"]
 
-[ext_resource type="Texture2D" uid="uid://cmwb5vgepnjth" path="res://Sprites/FX/testexplo.png" id="1_muwxp"]
+[ext_resource type="Texture2D" uid="uid://df08c15hgb512" path="res://Sprites/FX/explosion_92x92.png" id="1_muwxp"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_g4v7s"]
 particles_animation = true
