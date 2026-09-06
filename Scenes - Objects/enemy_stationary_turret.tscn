@@ -14,6 +14,7 @@ radius = 1.3
 script = ExtResource("1_0tytp")
 refire = 2.0
 projectile_scene = ExtResource("2_xsd8v")
+enemy_type = 3
 
 [node name="TurretTopModel" parent="." unique_id=1762553988 instance=ExtResource("1_5651t")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.1150701, 0)

@@ -59,6 +59,7 @@ projectile_scene = ExtResource("2_b5yxc")
 drop = ExtResource("2_w1rim")
 drop_chance = 0.421
 scoreValue = 200
+enemy_type = 2
 
 [node name="BillboardFront" type="AnimatedSprite3D" parent="." unique_id=999408059]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4575043, 0)

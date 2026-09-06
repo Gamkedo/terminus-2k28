@@ -25,6 +25,7 @@ radius = 0.85791016
 [node name="EnemyBillboardDemo" type="Node3D" unique_id=533656628 groups=["enemy"]]
 script = ExtResource("1_pycf4")
 drop = ExtResource("2_6ke8d")
+enemy_type = 5
 
 [node name="BillboardFront" type="MeshInstance3D" parent="." unique_id=290637688]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
