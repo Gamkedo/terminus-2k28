@@ -81,7 +81,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3085973, 0)
 
 [node name="Turret" type="MeshInstance3D" parent="TurretPivot" unique_id=1096646795]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5172758, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0594563, 0)
 mesh = SubResource("BoxMesh_7tbbo")
 
 [node name="CannonA" type="MeshInstance3D" parent="TurretPivot/Turret" unique_id=1565162303]
