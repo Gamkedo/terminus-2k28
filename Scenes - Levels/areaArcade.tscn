@@ -43,15 +43,24 @@ metadata/_custom_type_script = "uid://emf33hlypehq"
 
 [sub_resource type="Resource" id="Resource_c6wyi"]
 script = ExtResource("3_oe8km")
+spawn_amount = 3
 metadata/_custom_type_script = "uid://dnditqbrgbcer"
 
 [sub_resource type="Resource" id="Resource_l37s2"]
 script = ExtResource("3_oe8km")
+enemy_type = 1
+spawn_amount = 1
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_w1rim"]
+script = ExtResource("3_oe8km")
+spawn_amount = 3
 metadata/_custom_type_script = "uid://dnditqbrgbcer"
 
 [sub_resource type="Resource" id="Resource_oksh5"]
 script = ExtResource("2_m4my6")
-enemies = Array[ExtResource("3_oe8km")]([SubResource("Resource_c6wyi"), SubResource("Resource_l37s2")])
+round_time_limit = 45.0
+enemies = Array[ExtResource("3_oe8km")]([SubResource("Resource_c6wyi"), SubResource("Resource_l37s2"), SubResource("Resource_w1rim")])
 metadata/_custom_type_script = "uid://emf33hlypehq"
 
 [sub_resource type="BoxMesh" id="BoxMesh_y5qfa"]
