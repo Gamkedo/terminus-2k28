@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="8_ua6li"]
 [ext_resource type="PackedScene" uid="uid://vdwb0cf16yx0" path="res://Scenes - Objects/enemy_stationary_turret.tscn" id="11_vx5xs"]
 [ext_resource type="PackedScene" uid="uid://c4bxgkgn3crmk" path="res://Scenes - Objects/Scenery/truck_scenery.tscn" id="13_u40bk"]
+[ext_resource type="PackedScene" uid="uid://bsqax7a47vrc6" path="res://Scenes - UI/game_over.tscn" id="14_ww2x6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42ddl"]
 albedo_texture = ExtResource("1_hcq85")
@@ -1766,3 +1767,6 @@ transform = Transform3D(-0.20815112, 0, -0.7724461, 0, 0.80000013, 0, 0.7724461,
 
 [node name="TruckScenery4" parent="Scenery" unique_id=1976637666 instance=ExtResource("13_u40bk")]
 transform = Transform3D(0.43197018, 0, -0.67335105, 0, 0.80000013, 0, 0.67335105, 0, 0.43197018, 73.57091, -1.9073486e-06, 64.355804)
+
+[node name="GameOverScreen" parent="." unique_id=397520369 instance=ExtResource("14_ww2x6")]
+visible = false

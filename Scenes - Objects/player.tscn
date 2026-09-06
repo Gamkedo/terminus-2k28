@@ -26,6 +26,9 @@ albedo_color = Color(0, 0.627451, 1, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dbkhw"]
 albedo_color = Color(0, 4.582968, 0, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fgfqk"]
+albedo_color = Color(1, 0.4627451, 0, 1)
+
 [sub_resource type="QuadMesh" id="QuadMesh_8dwo2"]
 size = Vector2(2, 2)
 
@@ -38,9 +41,6 @@ billboard_mode = 1
 transparency = 1
 albedo_texture = ExtResource("4_y8h32")
 billboard_mode = 1
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fgfqk"]
-albedo_color = Color(1, 0.4627451, 0, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_7tbbo"]
 height = 1.9824219
@@ -84,19 +84,6 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5172758, 0)
 mesh = SubResource("BoxMesh_7tbbo")
 
-[node name="player_vehbryo" parent="TurretPivot/Turret" unique_id=817039240 instance=ExtResource("8_5hocr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.8258731, 0)
-
-[node name="BillboardFront" type="MeshInstance3D" parent="TurretPivot/Turret/player_vehbryo" unique_id=410453551]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("QuadMesh_8dwo2")
-surface_material_override/0 = SubResource("StandardMaterial3D_46nwg")
-
-[node name="BillboardBack" type="MeshInstance3D" parent="TurretPivot/Turret/player_vehbryo" unique_id=353239484]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("QuadMesh_8dwo2")
-surface_material_override/0 = SubResource("StandardMaterial3D_31akr")
-
 [node name="CannonA" type="MeshInstance3D" parent="TurretPivot/Turret" unique_id=1565162303]
 transform = Transform3D(0.35355338, -0.35355338, 0, 0.35355338, 0.35355338, 0, 0, 0, 2, 0.5, 0, -0.75)
 visible = false
@@ -128,6 +115,19 @@ unique_name_in_owner = true
 target_position = Vector3(0, 0, -1000)
 collision_mask = 3
 collide_with_areas = true
+
+[node name="player_vehbryo" parent="TurretPivot" unique_id=817039240 instance=ExtResource("8_5hocr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3085973, 0)
+
+[node name="BillboardFront" type="MeshInstance3D" parent="TurretPivot/player_vehbryo" unique_id=410453551]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("QuadMesh_8dwo2")
+surface_material_override/0 = SubResource("StandardMaterial3D_46nwg")
+
+[node name="BillboardBack" type="MeshInstance3D" parent="TurretPivot/player_vehbryo" unique_id=353239484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("QuadMesh_8dwo2")
+surface_material_override/0 = SubResource("StandardMaterial3D_31akr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1486092495]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0301299, 0)

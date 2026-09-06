@@ -16,7 +16,7 @@ func handle_aiming(player: Player, delta: float) -> void:
 
 
 func look_at_cursor(player: Player):
-	var target_plane_mouse := Plane(Vector3.UP, player.position.y)
+	var target_plane_mouse := Plane(Vector3.UP, player.turret_pivot.position.y)
 	var ray_length := 1000
 	var mouse_position := get_viewport().get_mouse_position()
 	var from := player.camera.project_ray_origin(mouse_position)
@@ -26,10 +26,10 @@ func look_at_cursor(player: Player):
 
 	if cursor_position_on_plane:
 		player.aim_dot.global_position = cursor_position_on_plane
-		player.turret.look_at(cursor_position_on_plane, Vector3.UP, 0)
+		player.turret_pivot.look_at(cursor_position_on_plane, Vector3.UP, 0)
 	else:
 		player.aim_dot.global_position = to
-		player.turret.look_at(to)
+		player.turret_pivot.look_at(to)
 
 
 ## Returns a Vector2 from the aim direction inputs

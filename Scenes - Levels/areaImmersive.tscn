@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://das224o67qbcs" path="res://Scripts/gameplay/player/immersive_aim_component.gd" id="4_kwne6"]
 [ext_resource type="PackedScene" uid="uid://d1grs1gs3wxkx" path="res://Scenes - Objects/example_obstacle.tscn" id="6_mhi1n"]
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="7_8go4e"]
+[ext_resource type="PackedScene" uid="uid://bsqax7a47vrc6" path="res://Scenes - UI/game_over.tscn" id="9_n8psh"]
+[ext_resource type="PackedScene" uid="uid://dntgoi1wtjkxd" path="res://Models (game format)/3d_nuclear_power_plant.glb" id="9_uxmqf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_y5qfa"]
 size = Vector3(128, 1, 128)
@@ -22,7 +24,7 @@ size = Vector3(128, 1, 128)
 script = ExtResource("1_kwne6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Ground" unique_id=612605019]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+transform = Transform3D(1.1384606, 0, 0, 0, 1.1384606, 0, 0, 0, 1.1384606, 0, -0.5, 0)
 material_override = ExtResource("1_lums3")
 mesh = SubResource("BoxMesh_y5qfa")
 
@@ -155,3 +157,9 @@ operation = 2
 size = Vector3(15, 8, 14)
 
 [node name="ScoreGUI" parent="." unique_id=1866250465 instance=ExtResource("7_8go4e")]
+
+[node name="3d_nuclear_power_plant" parent="." unique_id=1574620204 instance=ExtResource("9_uxmqf")]
+transform = Transform3D(0.016178988, 0, -0.9998691, 0, 1, 0, 0.9998691, 0, 0.016178988, -94.733154, 7.272583, -19.892082)
+
+[node name="GameOverScreen" parent="." unique_id=397520369 instance=ExtResource("9_n8psh")]
+visible = false

@@ -12,7 +12,7 @@ var intended_position: Vector3
 @export var arc_height_max: float = 7.
 @export_range(0., 1.) var arc_scatteredness: float = 0.75
 @export_range(0., 1.) var arc_volatility: float = 0.15
-@export var arc_source_radius: float = 1.5
+@export var arc_source_radius: float = 1.75
 @export var default_enemy_capacity: float = 0.2
 
 @onready var arc_material: ORMMaterial3D = ORMMaterial3D.new()

@@ -28,6 +28,7 @@ func _ready() -> void:
 	GameGlobal.add_score.connect(addScore)
 	GameGlobal.score_changed.connect(setScore)
 	GameGlobal.combo_changed.connect(setCombo)
+	GameGlobal.game_over.connect(send_game_over_score)
 	pass
 
 func _process(delta: float) -> void:
@@ -36,3 +37,7 @@ func _process(delta: float) -> void:
 	# - use timestamps to determine combo expiry state
 	# - listen for player hit/die signals to reset combo
 	pass
+
+func send_game_over_score():
+	GameGlobal.final_score.emit(score)
+	visible = false
