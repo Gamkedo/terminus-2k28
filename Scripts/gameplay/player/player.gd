@@ -46,13 +46,13 @@ var weapons_manager: WeaponsManager
 
 signal health_reduced(amount)
 signal health_gained(amount)
-signal health_depleted ## zero or less health, death
 signal health_at_max ## health completely full
 
 func _ready() -> void:
 	GameGlobal.player_ref = self
 	if camera.has_method("set_player"): # not currently needed in all scenes
 		camera.set_player(self)
+	
 	
 func _process(delta):
 	reload_time -= delta
@@ -109,7 +109,7 @@ func reduce_health(amount: float) -> void:
 	health_reduced.emit(amount)
 
 	if health_current <= 0.0:
-		health_depleted.emit()
+		GameGlobal.game_over.emit()
 
 	GameLogger.debug("Health: %.2f / %.2f" % [health_current, health_max])
 
