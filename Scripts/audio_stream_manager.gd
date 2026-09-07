@@ -19,6 +19,7 @@ const BGM_BUS: StringName = &"bgm"
 enum PlaybackMode {STANDARD, RANDOM_PITCH, ASCENDING_PITCH, DESCENDING_PITCH}
 
 var num_players := 7 # maximum sfx that can play at once
+var max_in_queue := 10 # more than 20 sounds in queue will drop the last sound
 
 var bgm_player
 var available: Array[AudioStreamPlayer] = []
@@ -70,6 +71,8 @@ func _on_sfx_stream_finished(stream: AudioStreamPlayer):
 
 func play_sfx(sound_path: String, playback_mode: PlaybackMode = PlaybackMode.STANDARD):
 	if muted: return
+	if queue.size() >= max_in_queue:
+		queue.pop_back()
 	queue.append({"playback_mode": playback_mode, "sound_path": sound_path})
 
 
