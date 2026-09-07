@@ -22,6 +22,14 @@ const LASER_HIT_TSCN := preload("res://Scenes - Objects/laser_hit.tscn")
 
 func _ready() -> void:
 	beam_len = beam_end.position.z
+	
+	# Initial set beam length
+	beam_ray.force_raycast_update()
+	var coll_obj = beam_ray.get_collider()
+	var beam_length = max_dist
+	if coll_obj != null:
+		beam_length = (beam_ray.get_collision_point() - global_position).length() / beam_len
+	scale.z = abs(beam_length)
 
 func _physics_process(delta: float) -> void:
 	scale_update_timer += delta

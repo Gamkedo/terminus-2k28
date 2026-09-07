@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://clfhx8dc6avbg" path="res://Textures/temp_player_back.png" id="4_y8h32"]
 [ext_resource type="PackedScene" uid="uid://l0shf2pmj48f" path="res://Models (game format)/player_vehbryo.glb" id="8_5hocr"]
 [ext_resource type="Script" uid="uid://cfc24xmre36y6" path="res://Scripts/gameplay/player/weapons_manager.gd" id="8_a1lel"]
+[ext_resource type="Script" uid="uid://ba3jif00r7vw1" path="res://Scripts/gameplay/weapons/laser_beam_weapon.gd" id="10_8dwo2"]
+[ext_resource type="PackedScene" uid="uid://p7aumif32558" path="res://Scenes - Objects/laser_beam_projectile.tscn" id="11_46nwg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8h32"]
 transparency = 1
@@ -151,6 +153,13 @@ metadata/_custom_type_script = "uid://bex66uinswavl"
 script = ExtResource("4_iv4hd")
 sound_effect_path = "res://Sound Effects/laserShoot.wav"
 projectile_scene = ExtResource("3_iv4hd")
+metadata/_custom_type_script = "uid://cj7eq14viaaad"
+
+[node name="LaserBeam" type="Node3D" parent="." unique_id=449828892]
+script = ExtResource("10_8dwo2")
+sound_effect_path = "res://Sound Effects/laserShoot.wav"
+projectile_scene = ExtResource("11_46nwg")
+fire_rate = 1.0
 metadata/_custom_type_script = "uid://cj7eq14viaaad"
 
 [node name="WeaponsManager" type="Node" parent="." unique_id=1271808281]
