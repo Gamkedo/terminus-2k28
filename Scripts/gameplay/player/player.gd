@@ -9,43 +9,43 @@ class_name Player
 # teammates newer to an engine to join since they can easily catch up on the gist
 
 # constants
-const SPEED := 5.0
-const FIRE_RATE := 0.2
+const SPEED: float = 5.0
+const FIRE_RATE: float = 0.2
 
 # internal variables
-var last_direction := Vector3.FORWARD
-var reload_time := 0.0
-var alternate_cannon_left := true
+var last_direction: Vector3 = Vector3.FORWARD
+var reload_time: float = 0.0
+var alternate_cannon_left: bool = true
 
 var health_max: float = 100.00
 var health_current: float = health_max
 
 # exposed/tunable variables
-@export var rotation_speed := 2
-@export var aim_dead_zone := 0.01
-@export var default_aim_range := 240
+@export var rotation_speed: float = 2
+@export var aim_dead_zone: float = 0.01
+@export var default_aim_range: float = 240
 
 # external references
-@onready var camera := get_viewport().get_camera_3d()
-const LASER_TSCN := preload("res://Scenes - Objects/laser_bolt.tscn")
+@onready var camera: Camera3D = get_viewport().get_camera_3d()
+const LASER_TSCN: PackedScene = preload("res://Scenes - Objects/laser_bolt.tscn")
 @export var follow_cam_move_to: Marker3D
 @export var follow_cam_point_at: Node3D
-var aim_componant
+var aim_componant: AimComponent
 var weapons_manager: WeaponsManager
 
 # internal references
-@onready var legs:= $Legs
-@onready var turret := %Turret
-@onready var turret_pivot := %TurretPivot
-@onready var muzzleA := %FireFromA
-@onready var muzzleB := %FireFromB
-@onready var aim_dot := $AimDot
+@onready var legs: Node = $Legs
+@onready var turret: Node = %Turret
+@onready var turret_pivot: Node = %TurretPivot
+@onready var muzzleA: Node = %FireFromA
+@onready var muzzleB: Node = %FireFromB
+@onready var aim_dot: Node = $AimDot
 @onready var aim_ray_cast_3d: RayCast3D = %AimRayCast3D
 
 # signals
 
-signal health_reduced(amount)
-signal health_gained(amount)
+signal health_reduced(amount: float)
+signal health_gained(amount: float)
 signal health_at_max ## health completely full
 
 func _ready() -> void:
@@ -53,8 +53,7 @@ func _ready() -> void:
 	if camera.has_method("set_player"): # not currently needed in all scenes
 		camera.set_player(self)
 	
-	
-func _process(delta):
+func _process(delta: float) -> void:
 	reload_time -= delta
 
 	handle_aiming(delta)
@@ -64,8 +63,7 @@ func _process(delta):
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://level_menu.tscn")
 
-
-func fire():
+func fire() -> void:
 	if alternate_cannon_left:
 		weapons_manager.fire(muzzleA.global_position, muzzleA.global_rotation)
 	else:

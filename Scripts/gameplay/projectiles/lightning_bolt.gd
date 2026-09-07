@@ -18,30 +18,32 @@ var intended_position: Vector3
 @onready var damage_component := $DamageComponent
 
 @onready var arc_material: ORMMaterial3D = ORMMaterial3D.new()
-func add_line(pos1: Vector3, pos2: Vector3, color = Color.AQUA) -> MeshInstance3D:
-	var mesh_instance: MeshInstance3D = MeshInstance3D.new()
-	var immediate_mesh: ImmediateMesh = ImmediateMesh.new()
-
-	mesh_instance.top_level = true
-	mesh_instance.mesh = immediate_mesh
-	mesh_instance.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-
-	immediate_mesh.surface_begin(Mesh.PRIMITIVE_LINES, arc_material)
-	immediate_mesh.surface_add_vertex(pos1)
-	immediate_mesh.surface_add_vertex(pos2)
-	immediate_mesh.surface_end()
-
+var arc: MeshInstance3D
+func remake_arc(color = Color.AQUA) -> void:
+	if arc: arc.queue_free()
+	arc = MeshInstance3D.new()
+	arc.mesh = ImmediateMesh.new()
+	arc.top_level = true
+	arc.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	arc_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 	arc_material.albedo_color = color
 
-	return mesh_instance
+	arc.mesh.surface_begin(Mesh.PRIMITIVE_LINES, arc_material)
+	for s in (arc_points.size() - 1):
+		arc.mesh.surface_add_vertex(arc_points[s])
+		arc.mesh.surface_add_vertex(arc_points[s+1])
+	arc.mesh.surface_end()
+	add_child(arc)
 
-func remake_arc() -> void:
-	for seg in segments: seg.queue_free()
-	segments.clear()
-	for s in (arc.size() - 1):
-		segments.push_back(add_line(arc[s], arc[s+1]))
-		add_child(segments[-1])
+func refresh_arc(color = Color.AQUA) -> void:
+	var randomized_color: Color = color.lightened(randf())
+	arc_material.albedo_color = Color.from_hsv(randomized_color.h + randf_range(-0.05, 0.05), randomized_color.s, randomized_color.v)
+	arc.mesh.clear_surfaces()
+	arc.mesh.surface_begin(Mesh.PRIMITIVE_LINES, arc_material)
+	for s in (arc_points.size() - 1):
+		arc.mesh.surface_add_vertex(arc_points[s])
+		arc.mesh.surface_add_vertex(arc_points[s+1])
+	arc.mesh.surface_end()
 
 ## A dictionary of enemies in range and their conduction capacity == time until they release the current endpoint of the lightning bolt
 var enemies_in_range: Dictionary[Node3D, float]
@@ -59,13 +61,12 @@ func bolt_start_position() -> Vector3:
 		+ Vector3(0., 2., 0.)
 	)
 
-@onready var arc: Array[Vector3] = [lightning_source.global_position]
-@onready var segments: Array[MeshInstance3D] = []
+@onready var arc_points: Array[Vector3] = [lightning_source.global_position]
 func _ready() -> void:
 	global_position = intended_position
 	var arc_point_count: int = arc_segment_count + randi_range(-arc_segment_vareity, arc_segment_vareity) + 2
 	var arc_range: float = (arc_height_max - arc_height_min)
-	arc.push_back(bolt_start_position())
+	arc_points.push_back(bolt_start_position())
 	for i in arc_point_count:
 		if 0 == i: continue
 		var arc_positional_ratio: float = float(i) / float(arc_point_count)
@@ -74,8 +75,8 @@ func _ready() -> void:
 			+ Vector3(0., arc_height_min - abs(0.5 - arc_positional_ratio) * arc_height_max * 0.5, 0.) # middle part of the arc is higher
 			+ Vector3.ONE * (randf() - 0.5) * 2. * arc_scatteredness * arc_range # and it's also a bit random
 		)
-		arc.push_back(pos)
-	arc.push_back(global_position)
+		arc_points.push_back(pos)
+	arc_points.push_back(global_position)
 	remake_arc()
 
 @onready var time_left: float = lifetime_sec
@@ -88,17 +89,17 @@ func _process(delta: float) -> void:
 		var victim: Node3D = enemies_in_range.keys().pick_random()
 		if 0. < enemies_in_range[victim]:
 			enemies_in_range[victim] -= delta
-			arc[-randi_range(1, min(arc.size(), 4))] = victim.global_position
+			arc_points[-randi_range(1, min(arc_points.size(), 4))] = victim.global_position
 		else:
 			Utils.damage_enemy(victim, damage_component.amount)
 
 	# move lightning bolt around
-	arc[0] = bolt_start_position()
-	for p in arc.size():
-		if p == 0 or p == arc.size() - 1: continue
-		arc[p] = lerp(
-			arc[p], arc[p] + Vector3.ONE * (randf() - 0.5) * 2. * arc_scatteredness * (arc_height_max - arc_height_min),
+	arc_points[0] = bolt_start_position()
+	for p in arc_points.size():
+		if p == 0 or p == arc_points.size() - 1: continue
+		arc_points[p] = lerp(
+			arc_points[p], arc_points[p] + Vector3.ONE * (randf() - 0.5) * 2. * arc_scatteredness * (arc_height_max - arc_height_min),
 			arc_volatility
 		)
-		arc[p].y = max(arc_height_min, arc[p].y)
-	remake_arc()
+		arc_points[p].y = max(arc_height_min, arc_points[p].y)
+	refresh_arc()

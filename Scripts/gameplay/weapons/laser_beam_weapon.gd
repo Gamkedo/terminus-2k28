@@ -36,18 +36,20 @@ func _process(delta: float) -> void:
 		if beam_proj: beam_proj.queue_free()
 		beam_proj = null
 
-func fire(pos: Vector3, rot: Vector3) -> Array[Node3D]:
+func fire(pos: Vector3, rot: Vector3) -> void:
 	# Init fill of beam shot spots
 	if laser_spots.size() == 0:
 		laser_spots = GameGlobal.player_ref.get_shot_spots()
 	
 	# Manually check which hand we're currently firing from
-	var proj_arr = super.fire(pos, rot)
-	assert(proj_arr.size() <= 1)
-	beam_proj = proj_arr[0]
+	reload_time = fire_rate
+	beam_proj = projectile_scene.instantiate()
+	get_tree().current_scene.add_child(beam_proj)
+	beam_proj.global_position = pos
+	beam_proj.global_rotation = rot
 	for i in range(laser_spots.size()):
 		if (laser_spots[i].global_position - pos).length_squared() < 0.02:
 			active_laser_spot = i
 			break
 	beam_timer = 0.0
-	return proj_arr
+	AudioStreamManager.play_sfx("res://Sound Effects/Lasers/laser_7.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)

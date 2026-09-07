@@ -2,34 +2,34 @@ class_name LaserBolt
 extends Area3D
 
 ## How fast the projectile moves
-@export var speed := 30.0
+@export var speed: float = 30.0
 ## How long before projectile is automatically destroyed (like if it travels out of bounds for example)
-@export var destroy_delay = 5.0
+@export var destroy_delay: float = 5.0
 
-const LASER_HIT_TSCN := preload("res://Scenes - Objects/laser_hit.tscn")
+const LASER_HIT_TSCN: PackedScene = preload("res://Scenes - Objects/laser_hit.tscn")
 
 @onready var damage_component := $DamageComponent
 
-func _ready():
+func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	area_entered.connect(_on_area_entered)
 	get_tree().create_timer(destroy_delay).timeout.connect(queue_free) # remove after 5 sec (long out of bounds)
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	global_position += -global_basis.z * speed * delta
 
-func _on_area_entered(area):
+func _on_area_entered(area: Area3D) -> void:
 	# print(area.name)
 	if area.get_parent().is_in_group("enemy"):
 		var enemy := area.get_parent() as Node3D
 		Utils.damage_enemy(enemy, damage_component.amount)
 		explode_and_remove()
 
-func _on_body_entered(body):
+func _on_body_entered(_body: Node3D) -> void:
 	# print(body.name)
 	explode_and_remove()
 
-func explode_and_remove():
+func explode_and_remove() -> void:
 	var hit_effect := LASER_HIT_TSCN.instantiate()
 	get_tree().current_scene.add_child(hit_effect)
 	hit_effect.global_position = global_position

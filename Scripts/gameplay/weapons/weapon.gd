@@ -5,7 +5,7 @@ class_name Weapon
 @export var projectile_scene: PackedScene
 @export_range(0.01, 2.0, 0.01) var fire_rate := 0.2
 
-var reload_time := 0.0
+var reload_time: float = 0.0
 
 func _ready() -> void:
 	pass
@@ -13,16 +13,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	reload_time -= delta
 
-func fire(pos: Vector3, rot: Vector3) -> Array[Node3D]:
+func fire(pos: Vector3, rot: Vector3) -> void:
 	reload_time = fire_rate
-	var projectile := projectile_scene.instantiate()
+	var projectile: Node3D = projectile_scene.instantiate()
 	get_tree().current_scene.add_child(projectile)
 	projectile.global_position = pos
 	projectile.global_rotation = rot
 	AudioStreamManager.play_sfx("res://Sound Effects/Lasers/laser_7.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
-	var proj_arr: Array[Node3D]
-	proj_arr.push_back(projectile)
-	return proj_arr
 
 func can_fire() -> bool:
 	return reload_time <= 0.0
