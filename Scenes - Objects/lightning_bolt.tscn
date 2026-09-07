@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ceqmeyurk2751"]
 
 [ext_resource type="Script" uid="uid://df7uqxych4mqb" path="res://Scripts/gameplay/projectiles/lightning_bolt.gd" id="1_62pvi"]
+[ext_resource type="Script" uid="uid://dk0t68rm77cxi" path="res://Scripts/gameplay/damage_component.gd" id="2_toacn"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8jg5c"]
 radius = 3.5
@@ -49,6 +50,10 @@ lifetime = 0.35000000000000003
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_62pvi")
 draw_pass_1 = SubResource("QuadMesh_ybqwe")
+
+[node name="DamageComponent" type="Node" parent="." unique_id=1488326728]
+script = ExtResource("2_toacn")
+metadata/_custom_type_script = "uid://dk0t68rm77cxi"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

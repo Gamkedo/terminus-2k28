@@ -6,8 +6,9 @@ extends Node3D
 @export var scoreValue: int = 100
 @export var enemy_type : GameGlobal.EnemyTypes
 
-var count_kill_for_wave : bool = true
+@onready var health_component := $HealthComponent
 
+var count_kill_for_wave : bool = true
 
 func die() -> void:
 	GameLogger.debug("%s killed!" % GameGlobal.EnemyTypes.keys()[enemy_type])

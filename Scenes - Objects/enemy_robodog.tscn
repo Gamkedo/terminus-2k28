@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cr0e2cljp0lx3" path="res://Sprites/robodog.png" id="1_6gior"]
 [ext_resource type="Script" uid="uid://cfwb0edy0hv4h" path="res://Scripts/gameplay/enemies/enemy_billboard_flip.gd" id="1_gmqav"]
 [ext_resource type="PackedScene" uid="uid://bgbax3gdpt8n7" path="res://Scenes - Objects/pickup_shield_orbiters.tscn" id="2_dgvf3"]
+[ext_resource type="Script" uid="uid://bxd4qyt1cgnhi" path="res://Scripts/gameplay/health_component.gd" id="4_al5ti"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmqav"]
 atlas = ExtResource("1_6gior")
@@ -82,3 +83,7 @@ collision_mask = 133
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1818791255]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.920166, 0)
 shape = SubResource("CylinderShape3D_7tbbo")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1543445095]
+script = ExtResource("4_al5ti")
+metadata/_custom_type_script = "uid://bxd4qyt1cgnhi"

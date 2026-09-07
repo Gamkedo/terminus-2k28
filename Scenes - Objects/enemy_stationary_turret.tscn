@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://lyhxnotejlma" path="res://Models (game format)/stationary_turret_gun.glb" id="2_wa4ca"]
 [ext_resource type="PackedScene" uid="uid://d345k4ddctsqo" path="res://Scenes - Objects/enemy_projectile.tscn" id="2_xsd8v"]
 [ext_resource type="PackedScene" uid="uid://dg3ceg55au7hu" path="res://Models (game format)/stationary_turret_base.glb" id="3_wa4ca"]
+[ext_resource type="Script" uid="uid://bxd4qyt1cgnhi" path="res://Scripts/gameplay/health_component.gd" id="6_p4v62"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0tytp"]
 height = 2.918518
@@ -38,3 +39,7 @@ collision_mask = 5
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=419968350]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8594055, 0)
 shape = SubResource("CylinderShape3D_0tytp")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1919336211]
+script = ExtResource("6_p4v62")
+metadata/_custom_type_script = "uid://bxd4qyt1cgnhi"

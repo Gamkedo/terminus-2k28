@@ -70,8 +70,10 @@ static func down_tree_matching(root: Node, predicate: Callable, return_on_first:
 static func grid_vector(v:Vector3) -> Vector2:
 	return Vector2(v.x, v.z)
 
-static func damage_enemy(enemy: Enemy) -> void:
-		if enemy.has_method("die"):
-			enemy.die()
-		else:
-			enemy.queue_free()
+static func damage_enemy(enemy: Enemy, damage := 0) -> void:
+	if enemy.get("health_component"):
+		enemy.health_component.take_damage(damage)
+	elif enemy.has_method("die"):
+		enemy.die()
+	else:
+		enemy.queue_free()

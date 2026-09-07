@@ -6,6 +6,8 @@ extends Node3D
 ## Endpoint of the beam sprite, used to calculate stretch distance
 @onready var beam_end := $BeamEnd
 
+@onready var damage_component := $DamageComponent
+
 ## Initial length beam will stretch with no target (rare)
 @export var max_dist: float = 50.0
 ## How frequently to damage tick, update length, and spawn particles
@@ -33,7 +35,7 @@ func _physics_process(delta: float) -> void:
 			# damage tick to enemies
 			if coll_obj.get_parent().is_in_group("enemy"):
 				var enemy := coll_obj.get_parent() as Node3D
-				Utils.damage_enemy(enemy)
+				Utils.damage_enemy(enemy, damage_component.amount)
 			
 			# spawn particles
 			var hit_effect := LASER_HIT_TSCN.instantiate()

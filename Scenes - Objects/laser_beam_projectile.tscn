@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dviy8rpoi0v3y" path="res://Sprites/FX/green_projectile_32x32.png" id="1_ae7e0"]
 [ext_resource type="Script" uid="uid://dtx1cb27yo2rw" path="res://Scripts/gameplay/projectiles/laser_beam_projectile.gd" id="1_xch6m"]
+[ext_resource type="Script" uid="uid://dk0t68rm77cxi" path="res://Scripts/gameplay/damage_component.gd" id="3_rbshg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xch6m"]
 atlas = ExtResource("1_ae7e0")
@@ -67,3 +68,7 @@ autoplay = "default"
 
 [node name="BeamEnd" type="Node3D" parent="." unique_id=1503813431]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -4.822874)
+
+[node name="DamageComponent" type="Node" parent="." unique_id=1721918466]
+script = ExtResource("3_rbshg")
+metadata/_custom_type_script = "uid://dk0t68rm77cxi"

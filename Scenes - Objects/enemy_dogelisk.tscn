@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dva4iw1cm5glk" path="res://Sprites/dogelisk.png" id="1_qq5r6"]
 [ext_resource type="PackedScene" uid="uid://dukkyn1bd7srm" path="res://Scenes - Objects/enemy_robodog.tscn" id="2_tmvns"]
 [ext_resource type="PackedScene" uid="uid://bjoc5aa7xcnpi" path="res://Scenes - Particles/particle_smoke_puff.tscn" id="3_thbgr"]
+[ext_resource type="Script" uid="uid://bxd4qyt1cgnhi" path="res://Scripts/gameplay/health_component.gd" id="5_rw8x2"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_qq5r6"]
 height = 4.4575195
@@ -55,3 +56,7 @@ collision_mask = 133
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1238464045]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7687988, 0)
 shape = SubResource("CylinderShape3D_qq5r6")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1863486978]
+script = ExtResource("5_rw8x2")
+metadata/_custom_type_script = "uid://bxd4qyt1cgnhi"

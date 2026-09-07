@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d345k4ddctsqo" path="res://Scenes - Objects/enemy_projectile.tscn" id="2_b5yxc"]
 [ext_resource type="PackedScene" uid="uid://bgbax3gdpt8n7" path="res://Scenes - Objects/pickup_shield_orbiters.tscn" id="2_w1rim"]
 [ext_resource type="Texture2D" uid="uid://cyo5rvku750pi" path="res://Sprites/android.png" id="3_udoxn"]
+[ext_resource type="Script" uid="uid://bxd4qyt1cgnhi" path="res://Scripts/gameplay/health_component.gd" id="5_b5yxc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w1rim"]
 atlas = ExtResource("3_udoxn")
@@ -93,3 +94,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.673, 0)
 
 [node name="ShotSpot" type="Node3D" parent="ShotPivot" unique_id=709571132]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.893)
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1613111207]
+script = ExtResource("5_b5yxc")
+metadata/_custom_type_script = "uid://bxd4qyt1cgnhi"

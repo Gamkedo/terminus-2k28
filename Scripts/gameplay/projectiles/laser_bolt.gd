@@ -8,6 +8,8 @@ extends Area3D
 
 const LASER_HIT_TSCN := preload("res://Scenes - Objects/laser_hit.tscn")
 
+@onready var damage_component := $DamageComponent
+
 func _ready():
 	body_entered.connect(_on_body_entered)
 	area_entered.connect(_on_area_entered)
@@ -20,7 +22,7 @@ func _on_area_entered(area):
 	# print(area.name)
 	if area.get_parent().is_in_group("enemy"):
 		var enemy := area.get_parent() as Node3D
-		Utils.damage_enemy(enemy)
+		Utils.damage_enemy(enemy, damage_component.amount)
 		explode_and_remove()
 
 func _on_body_entered(body):

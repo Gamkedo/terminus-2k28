@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dt4bk4pj6l4dw" path="res://Sprites/enemy-billboard-demo.png" id="2_5kkw8"]
 [ext_resource type="PackedScene" uid="uid://b67ej3la4722g" path="res://Scenes - Objects/pickup_health.tscn" id="2_6ke8d"]
 [ext_resource type="Texture2D" uid="uid://bkw1e75hfx7q0" path="res://Sprites/enemy-billboard-back-demo.png" id="2_pycf4"]
+[ext_resource type="Script" uid="uid://bxd4qyt1cgnhi" path="res://Scripts/gameplay/health_component.gd" id="5_asia4"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_7tbbo"]
 size = Vector2(2, 2)
@@ -44,3 +45,8 @@ collision_mask = 133
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=119700671]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86193085, 0)
 shape = SubResource("CylinderShape3D_7tbbo")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1937671563 node_paths=PackedStringArray("hitbox")]
+script = ExtResource("5_asia4")
+hitbox = NodePath("../Area3D")
+metadata/_custom_type_script = "uid://bxd4qyt1cgnhi"

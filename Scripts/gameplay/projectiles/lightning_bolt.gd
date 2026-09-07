@@ -15,6 +15,8 @@ var intended_position: Vector3
 @export var arc_source_radius: float = 1.75
 @export var default_enemy_capacity: float = 0.2
 
+@onready var damage_component := $DamageComponent
+
 @onready var arc_material: ORMMaterial3D = ORMMaterial3D.new()
 func add_line(pos1: Vector3, pos2: Vector3, color = Color.AQUA) -> MeshInstance3D:
 	var mesh_instance: MeshInstance3D = MeshInstance3D.new()
@@ -88,8 +90,7 @@ func _process(delta: float) -> void:
 			enemies_in_range[victim] -= delta
 			arc[-randi_range(1, min(arc.size(), 4))] = victim.global_position
 		else:
-			if victim.has_method("die"): victim.die()
-			else: victim.queue_free()
+			Utils.damage_enemy(victim, damage_component.amount)
 
 	# move lightning bolt around
 	arc[0] = bolt_start_position()
