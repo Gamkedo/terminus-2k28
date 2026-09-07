@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://vdwb0cf16yx0" path="res://Scenes - Objects/enemy_stationary_turret.tscn" id="11_vx5xs"]
 [ext_resource type="PackedScene" uid="uid://c4bxgkgn3crmk" path="res://Scenes - Objects/Scenery/truck_scenery.tscn" id="13_u40bk"]
 [ext_resource type="PackedScene" uid="uid://bsqax7a47vrc6" path="res://Scenes - UI/game_over.tscn" id="14_ww2x6"]
+[ext_resource type="Script" uid="uid://cchqruxds1g4" path="res://Scripts/gameplay/world/enemy_looper.gd" id="15_v3a74"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42ddl"]
 albedo_color = Color(0.57, 0.57, 0.57, 1)
@@ -1708,9 +1709,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.037445, 1.9073486e-06, 70.
 [node name="EnemyBillboardDemo285" parent="Starter Enemies" unique_id=455625532 instance=ExtResource("6_mrah0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.35955, 1.9073486e-06, 87.50563)
 
-[node name="EnemyBillboardDemo286" parent="Starter Enemies" unique_id=1975984535 instance=ExtResource("6_mrah0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.21804, 1.9073486e-06, 116.59592)
-
 [node name="RoombyeEnemy" parent="Starter Enemies" unique_id=2070650955 instance=ExtResource("7_155sy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.56793, 0, 1.0225744)
 
@@ -1753,6 +1751,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.737213, 0.014439523, 62.1
 [node name="EnemyStationaryTurret9" parent="Starter Enemies" unique_id=430490878 instance=ExtResource("11_vx5xs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.933105, 0.014439523, 79.62023)
 
+[node name="EnemyBillboardDemo286" parent="Starter Enemies" unique_id=1975984535 instance=ExtResource("6_mrah0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.21804, 1.9073486e-06, 116.59592)
+
 [node name="ScoreGUI" parent="." unique_id=614518007 instance=ExtResource("8_ua6li")]
 
 [node name="Scenery" type="Node3D" parent="." unique_id=1080259309]
@@ -1770,3 +1771,7 @@ transform = Transform3D(-0.20815112, 0, -0.7724461, 0, 0.80000013, 0, 0.7724461,
 transform = Transform3D(0.43197018, 0, -0.67335105, 0, 0.80000013, 0, 0.67335105, 0, 0.43197018, 73.57091, -1.9073486e-06, 64.355804)
 
 [node name="GameOverScreen" parent="." unique_id=397520369 instance=ExtResource("14_ww2x6")]
+
+[node name="EnemyLooper" type="Node3D" parent="." unique_id=1010977497 node_paths=PackedStringArray("enemy_container")]
+script = ExtResource("15_v3a74")
+enemy_container = NodePath("../Starter Enemies")
