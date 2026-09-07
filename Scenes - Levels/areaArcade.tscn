@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dnf1ej2wna6et"]
 
-[ext_resource type="Texture2D" uid="uid://dv524cn03yptx" path="res://Textures/grid-square.png" id="1_5omp3"]
 [ext_resource type="Script" uid="uid://d2l0rcvu8nstn" path="res://Scripts/gameplay/level_manager/wave_manager.gd" id="1_8mmtw"]
 [ext_resource type="Script" uid="uid://78wdgh3kyjr3" path="res://Scripts/gameplay/world/world_boundaries.gd" id="1_seirn"]
 [ext_resource type="PackedScene" uid="uid://eewdly8oh15j" path="res://Scenes - Objects/player.tscn" id="2_hwtxp"]
 [ext_resource type="Script" uid="uid://emf33hlypehq" path="res://Scripts/gameplay/level_manager/wave.gd" id="2_m4my6"]
 [ext_resource type="Script" uid="uid://dnditqbrgbcer" path="res://Scripts/gameplay/level_manager/enemy_batch.gd" id="3_oe8km"]
+[ext_resource type="Texture2D" uid="uid://cmw11l0oc5b6" path="res://Textures/grid-grass.png" id="5_m4my6"]
 [ext_resource type="Script" uid="uid://dvre2ude7y1fr" path="res://Scripts/gameplay/player/aim_component.gd" id="7_tefx3"]
 [ext_resource type="PackedScene" uid="uid://0wcd0e4ft353" path="res://Scenes - UI/screen_bezel_corners.tscn" id="8_b4wml"]
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="9_pbum0"]
@@ -64,9 +64,8 @@ metadata/_custom_type_script = "uid://emf33hlypehq"
 size = Vector3(48, 1, 48)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4flbx"]
-albedo_color = Color(0, 0.29411766, 0.70980394, 1)
-albedo_texture = ExtResource("1_5omp3")
-uv1_scale = Vector3(0.25, 0.25, 0.25)
+albedo_texture = ExtResource("5_m4my6")
+uv1_scale = Vector3(0.07, 0.07, 0.07)
 uv1_triplanar = true
 uv2_triplanar = true
 
