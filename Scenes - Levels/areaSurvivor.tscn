@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bsqax7a47vrc6" path="res://Scenes - UI/game_over.tscn" id="14_ww2x6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42ddl"]
+albedo_color = Color(0.57, 0.57, 0.57, 1)
 albedo_texture = ExtResource("1_hcq85")
 uv1_scale = Vector3(4, 4, 4)
 
@@ -1769,4 +1770,3 @@ transform = Transform3D(-0.20815112, 0, -0.7724461, 0, 0.80000013, 0, 0.7724461,
 transform = Transform3D(0.43197018, 0, -0.67335105, 0, 0.80000013, 0, 0.67335105, 0, 0.43197018, 73.57091, -1.9073486e-06, 64.355804)
 
 [node name="GameOverScreen" parent="." unique_id=397520369 instance=ExtResource("14_ww2x6")]
-visible = false
