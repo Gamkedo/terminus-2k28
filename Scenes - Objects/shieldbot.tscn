@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b6hp37kontti2" path="res://Sprites/shieldbot.png" id="1_n8mq1"]
 [ext_resource type="Script" uid="uid://bm18yshkrrkyt" path="res://Scripts/gameplay/projectiles/projectile_orbit.gd" id="1_q8yqn"]
+[ext_resource type="Script" uid="uid://dk0t68rm77cxi" path="res://Scripts/gameplay/damage_component.gd" id="3_8j4q1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q8yqn"]
 atlas = ExtResource("1_n8mq1")
@@ -110,3 +111,8 @@ autoplay = "default"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=532561624]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39013672, 0)
 shape = SubResource("CylinderShape3D_n8mq1")
+
+[node name="DamageComponent" type="Node" parent="." unique_id=42710739]
+script = ExtResource("3_8j4q1")
+amount = 100
+metadata/_custom_type_script = "uid://dk0t68rm77cxi"

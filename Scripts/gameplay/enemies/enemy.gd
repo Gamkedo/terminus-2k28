@@ -7,8 +7,16 @@ extends Node3D
 @export var enemy_type : GameGlobal.EnemyTypes
 
 @onready var health_component := $HealthComponent
+## Default to this much health if no health component found
+const default_health: float = 50.0
 
 var count_kill_for_wave : bool = true
+
+func _ready() -> void:
+	if health_component == null:
+		push_error(name + " is missing health component! Please add one")
+		health_component = HealthComponent.new()
+		health_component.set_max_health(default_health)
 
 func die() -> void:
 	GameLogger.debug("%s killed!" % GameGlobal.EnemyTypes.keys()[enemy_type])

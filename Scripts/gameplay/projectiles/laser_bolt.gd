@@ -9,11 +9,20 @@ extends Area3D
 const LASER_HIT_TSCN: PackedScene = preload("res://Scenes - Objects/laser_hit.tscn")
 
 @onready var damage_component := $DamageComponent
+var damage_amount: float
+## Default to this much damage if no damage component found
+const default_damage: float = 10.0
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	area_entered.connect(_on_area_entered)
 	get_tree().create_timer(destroy_delay).timeout.connect(queue_free) # remove after 5 sec (long out of bounds)
+	
+	# safeguard and error message in case no damage component is found
+	if damage_component == null:
+		push_error(name + " is missing damage component! Please add one")
+		damage_component = DamageComponent.new()
+		damage_component.amount = default_damage
 
 func _physics_process(delta: float) -> void:
 	global_position += -global_basis.z * speed * delta

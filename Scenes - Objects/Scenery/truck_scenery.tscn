@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bfocsxw3ckdas" path="res://Models (game format)/truck.glb" id="1_s1cpr"]
 [ext_resource type="Script" uid="uid://eug6k1o7o52e" path="res://Scripts/gameplay/world/destructible_scenery.gd" id="1_wppp6"]
 [ext_resource type="PackedScene" uid="uid://bjoc5aa7xcnpi" path="res://Scenes - Particles/particle_smoke_puff.tscn" id="2_b84b4"]
+[ext_resource type="Script" uid="uid://bxd4qyt1cgnhi" path="res://Scripts/gameplay/health_component.gd" id="4_3ela8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p0kgv"]
 size = Vector3(3.5045166, 3.4609985, 9.171509)
@@ -86,3 +87,8 @@ shape = SubResource("BoxShape3D_p0kgv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1181080129]
 libraries/ = SubResource("AnimationLibrary_3ela8")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=950176422]
+script = ExtResource("4_3ela8")
+max_health = 50
+metadata/_custom_type_script = "uid://bxd4qyt1cgnhi"

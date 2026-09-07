@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://di4pigirvj4wx" path="res://Scripts/gameplay/enemies/enemy_projectile.gd" id="1_tw8uf"]
 [ext_resource type="Texture2D" uid="uid://l88pp0sylrvh" path="res://Sprites/FX/8x8_projectile_spritesheet.png" id="2_tw8uf"]
+[ext_resource type="Script" uid="uid://dk0t68rm77cxi" path="res://Scripts/gameplay/damage_component.gd" id="3_cntdh"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xsd8v"]
 radius = 0.6
@@ -22,3 +23,7 @@ region_rect = Rect2(0, 0, 8, 8)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=688299600]
 shape = SubResource("SphereShape3D_xsd8v")
+
+[node name="DamageComponent" type="Node" parent="." unique_id=1145145116]
+script = ExtResource("3_cntdh")
+metadata/_custom_type_script = "uid://dk0t68rm77cxi"

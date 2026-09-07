@@ -26,3 +26,8 @@ func die() -> void:
 		p.die()
 	else:
 		p.queue_free()
+
+func set_max_health(amount: int, heal_curr_health: bool = true) -> void:
+	max_health = amount
+	if heal_curr_health:
+		curr_health = max_health
