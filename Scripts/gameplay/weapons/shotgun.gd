@@ -13,4 +13,4 @@ func fire(pos, rot) -> void:
 		projectile.global_position = pos
 		projectile.global_rotation = rot
 		projectile.rotate_y(randf_range(-spread, spread)) # random spread
-	AudioStreamManager.play_sfx(sound_effect_path, AudioStreamManager.PlaybackMode.RANDOM_PITCH)
+	AudioStreamManager.play_sfx("res://Sound Effects/Shotgun/shotgun_3.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
