@@ -16,6 +16,7 @@ const FIRE_RATE: float = 0.2
 var last_direction: Vector3 = Vector3.FORWARD
 var reload_time: float = 0.0
 var alternate_cannon_left: bool = true
+var return_to_menu_delay: float = 3.5
 
 var health_max: float = 100.00
 var health_current: float = health_max
@@ -107,10 +108,12 @@ func reduce_health(amount: float) -> void:
 	health_reduced.emit(amount)
 
 	if health_current <= 0.0:
+		await get_tree().create_timer(return_to_menu_delay).timeout
 		GameGlobal.game_over.emit()
+		await get_tree().create_timer(return_to_menu_delay).timeout
+		SceneChanger.return_to_menu("res://level_menu.tscn")
 
 	GameLogger.debug("Health: %.2f / %.2f" % [health_current, health_max])
-
 
 func gain_health(amount: float) -> void:
 	if health_current + amount > health_max:
