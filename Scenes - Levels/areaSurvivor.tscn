@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://vdwb0cf16yx0" path="res://Scenes - Objects/enemy_stationary_turret.tscn" id="11_vx5xs"]
 [ext_resource type="PackedScene" uid="uid://c4bxgkgn3crmk" path="res://Scenes - Objects/Scenery/truck_scenery.tscn" id="13_u40bk"]
 [ext_resource type="PackedScene" uid="uid://bsqax7a47vrc6" path="res://Scenes - UI/game_over.tscn" id="14_ww2x6"]
+[ext_resource type="PackedScene" uid="uid://ciwirkbxqetkg" path="res://Scenes - Objects/enemy_quadcopter.tscn" id="15_ocn12"]
 [ext_resource type="Script" uid="uid://cchqruxds1g4" path="res://Scripts/gameplay/world/survivor_enemy_looper.gd" id="15_v3a74"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42ddl"]
@@ -94,4 +95,4 @@ transform = Transform3D(0.43197018, 0, -0.67335105, 0, 0.80000013, 0, 0.67335105
 [node name="EnemyLooper" type="Node3D" parent="." unique_id=1010977497 node_paths=PackedStringArray("enemy_container")]
 script = ExtResource("15_v3a74")
 enemy_container = NodePath("../Enemies")
-enemy_list = Array[PackedScene]([ExtResource("7_155sy"), ExtResource("11_vx5xs"), ExtResource("4_hcq85")])
+enemy_list = Array[PackedScene]([ExtResource("7_155sy"), ExtResource("11_vx5xs"), ExtResource("4_hcq85"), ExtResource("15_ocn12")])

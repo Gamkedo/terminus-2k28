@@ -6,7 +6,7 @@ extends Node
 # -there's always exactly and only 1 instance of something
 # -it's something many other places in code will need to use
 
-enum EnemyTypes{ROBODOG, DOGELISK, ANDROID, TURRET, ROOMBYE, FLOATING_HEAD}
+enum EnemyTypes{ROBODOG, DOGELISK, ANDROID, TURRET, ROOMBYE, FLOATING_HEAD, QUADCOPTER}
 
 var player_ref: Player
 var world_boundaries: WorldBoundaries

@@ -13,6 +13,9 @@ const default_health: float = 50.0
 var count_kill_for_wave : bool = true
 
 func _ready() -> void:
+	if not is_in_group("enemy"):
+		push_error(name + " isn't in enemy group! It won't take damage :(")
+	
 	if health_component == null:
 		push_error(name + " is missing health component! Please add one")
 		health_component = HealthComponent.new()

@@ -1,7 +1,7 @@
 extends Enemy
 
-var speed := 2.0
-var drift_time := 1.5
+@export var speed := 2.0
+@export var drift_time := 1.5
 
 var direction := Vector3.ZERO
 var time_left := 0.0
@@ -10,11 +10,13 @@ var attack_power: float = 10.00
 var attack_timer_max: float = 1.00 ## attack cooldown timer in seconds
 var attack_timer: float = attack_timer_max
 
-var rotation_speed := 5
+@export var rotation_speed := 5
 
 @onready var collision_area: Area3D = $Area3D
 
 func _ready():
+	super._ready()
+	
 	pick_new_direction()
 
 	collision_area.body_entered.connect(_collision_detected)
