@@ -18,4 +18,4 @@ func _process(delta: float) -> void:
 		projectile.intended_position = global_position + Vector3((randf() - 0.5) * 2. * spawn_range, 0., (randf() - 0.5) * 2. * spawn_range)
 		get_tree().current_scene.add_child(projectile)
 		bolts_to_shoot -= 1
-		AudioStreamManager.play_sfx("res://Sound Effects/Electricity/electricity_one_shot_test.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
+		AudioStreamManager.play_sfx("res://Sound Effects/Electricity/electricity_one_shot_v2.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
