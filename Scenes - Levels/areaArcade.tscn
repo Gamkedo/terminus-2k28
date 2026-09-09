@@ -45,13 +45,13 @@ metadata/_custom_type_script = "uid://dnditqbrgbcer"
 
 [sub_resource type="Resource" id="Resource_l37s2"]
 script = ExtResource("3_oe8km")
-enemy_type = 1
-spawn_amount = 1
+spawn_amount = 3
 metadata/_custom_type_script = "uid://dnditqbrgbcer"
 
 [sub_resource type="Resource" id="Resource_w1rim"]
 script = ExtResource("3_oe8km")
-spawn_amount = 3
+enemy_type = 1
+spawn_amount = 1
 metadata/_custom_type_script = "uid://dnditqbrgbcer"
 
 [sub_resource type="Resource" id="Resource_oksh5"]
@@ -132,7 +132,6 @@ metadata/_custom_type_script = "uid://dnditqbrgbcer"
 
 [sub_resource type="Resource" id="Resource_4ii8h"]
 script = ExtResource("3_oe8km")
-enemy_type = 1
 spawn_amount = 5
 metadata/_custom_type_script = "uid://dnditqbrgbcer"
 

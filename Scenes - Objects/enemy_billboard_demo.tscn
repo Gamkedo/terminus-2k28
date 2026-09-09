@@ -46,7 +46,6 @@ collision_mask = 133
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86193085, 0)
 shape = SubResource("CylinderShape3D_7tbbo")
 
-[node name="HealthComponent" type="Node" parent="." unique_id=1937671563 node_paths=PackedStringArray("hitbox")]
+[node name="HealthComponent" type="Node" parent="." unique_id=1937671563]
 script = ExtResource("5_asia4")
-hitbox = NodePath("../Area3D")
 metadata/_custom_type_script = "uid://bxd4qyt1cgnhi"

@@ -10,6 +10,7 @@ extends Node3D
 ## Default to this much health if no health component found
 const default_health: float = 50.0
 
+var dead := false
 var count_kill_for_wave : bool = true
 
 func _ready() -> void:
@@ -22,8 +23,10 @@ func _ready() -> void:
 		health_component.set_max_health(default_health)
 
 func die() -> void:
+	if dead == true:
+		return
+	dead = true
 	GameLogger.debug("%s killed!" % GameGlobal.EnemyTypes.keys()[enemy_type])
-	
 	GameGlobal.add_score.emit(scoreValue)
 	if count_kill_for_wave == true:
 		GameGlobal.enemy_killed.emit(enemy_type)
