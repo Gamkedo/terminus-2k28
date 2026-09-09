@@ -2,21 +2,115 @@
 
 [ext_resource type="Script" uid="uid://78wdgh3kyjr3" path="res://Scripts/gameplay/world/world_boundaries.gd" id="1_kwne6"]
 [ext_resource type="Material" uid="uid://dkjck5am51jr4" path="res://Materials/placeholder-metal.tres" id="1_lums3"]
+[ext_resource type="Script" uid="uid://d2l0rcvu8nstn" path="res://Scripts/gameplay/level_manager/wave_manager.gd" id="1_w8v52"]
+[ext_resource type="Script" uid="uid://emf33hlypehq" path="res://Scripts/gameplay/level_manager/wave.gd" id="2_l51xd"]
 [ext_resource type="Script" uid="uid://bhg5d8mcu38ny" path="res://Scripts/camera/third_person_camera.gd" id="3_itglv"]
+[ext_resource type="Script" uid="uid://dnditqbrgbcer" path="res://Scripts/gameplay/level_manager/enemy_batch.gd" id="3_m34s3"]
 [ext_resource type="PackedScene" uid="uid://eewdly8oh15j" path="res://Scenes - Objects/player.tscn" id="3_mhi1n"]
-[ext_resource type="PackedScene" uid="uid://k63f3er0k7u7" path="res://Scenes - Objects/enemy_model_demo.tscn" id="4_itglv"]
 [ext_resource type="Script" uid="uid://das224o67qbcs" path="res://Scripts/gameplay/player/immersive_aim_component.gd" id="4_kwne6"]
 [ext_resource type="PackedScene" uid="uid://d1grs1gs3wxkx" path="res://Scenes - Objects/example_obstacle.tscn" id="6_mhi1n"]
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="7_8go4e"]
 [ext_resource type="PackedScene" uid="uid://bsqax7a47vrc6" path="res://Scenes - UI/game_over.tscn" id="9_n8psh"]
 [ext_resource type="PackedScene" uid="uid://dntgoi1wtjkxd" path="res://Models (game format)/3d_nuclear_power_plant.glb" id="9_uxmqf"]
+[ext_resource type="Script" uid="uid://c7pgxg3avlvxo" path="res://Scripts/gameplay/level_manager/enemy_spawner.gd" id="14_rhcrj"]
+
+[sub_resource type="Resource" id="Resource_l0x6y"]
+script = ExtResource("3_m34s3")
+spawn_amount = 1
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_t21m7"]
+script = ExtResource("3_m34s3")
+spawn_amount = 2
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_05gft"]
+script = ExtResource("3_m34s3")
+spawn_amount = 3
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_yxf03"]
+script = ExtResource("2_l51xd")
+enemies = Array[ExtResource("3_m34s3")]([SubResource("Resource_l0x6y"), SubResource("Resource_t21m7"), SubResource("Resource_05gft")])
+metadata/_custom_type_script = "uid://emf33hlypehq"
+
+[sub_resource type="Resource" id="Resource_sg2f6"]
+script = ExtResource("3_m34s3")
+spawn_amount = 2
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_7fkuc"]
+script = ExtResource("3_m34s3")
+spawn_amount = 2
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_nrxhc"]
+script = ExtResource("3_m34s3")
+spawn_amount = 2
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_le5v6"]
+script = ExtResource("2_l51xd")
+enemies = Array[ExtResource("3_m34s3")]([SubResource("Resource_sg2f6"), SubResource("Resource_7fkuc"), SubResource("Resource_nrxhc")])
+metadata/_custom_type_script = "uid://emf33hlypehq"
+
+[sub_resource type="Resource" id="Resource_wnxyc"]
+script = ExtResource("3_m34s3")
+enemy_type = 1
+spawn_amount = 1
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_baima"]
+script = ExtResource("3_m34s3")
+enemy_type = 1
+spawn_amount = 1
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_rahtt"]
+script = ExtResource("3_m34s3")
+enemy_type = 1
+spawn_amount = 1
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_t0363"]
+script = ExtResource("2_l51xd")
+round_time_limit = 45.0
+spawn_interval = 5.0
+enemies = Array[ExtResource("3_m34s3")]([SubResource("Resource_wnxyc"), SubResource("Resource_baima"), SubResource("Resource_rahtt")])
+metadata/_custom_type_script = "uid://emf33hlypehq"
+
+[sub_resource type="Resource" id="Resource_c4ync"]
+script = ExtResource("3_m34s3")
+enemy_type = 1
+spawn_amount = 2
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_nl4cv"]
+script = ExtResource("3_m34s3")
+enemy_type = 2
+spawn_amount = 3
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_5v2eu"]
+script = ExtResource("3_m34s3")
+enemy_type = 1
+spawn_amount = 2
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_0jq83"]
+script = ExtResource("2_l51xd")
+enemies = Array[ExtResource("3_m34s3")]([SubResource("Resource_c4ync"), SubResource("Resource_nl4cv"), SubResource("Resource_5v2eu")])
+metadata/_custom_type_script = "uid://emf33hlypehq"
 
 [sub_resource type="BoxMesh" id="BoxMesh_y5qfa"]
 size = Vector3(128, 1, 128)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_x0v8i"]
 
-[node name="Node3D" type="Node3D" unique_id=881090372]
+[node name="Node3D" type="Node3D" unique_id=881090372 node_paths=PackedStringArray("enemy_spawner")]
+script = ExtResource("1_w8v52")
+enemy_spawner = NodePath("EnemySpawner")
+waves = Array[ExtResource("2_l51xd")]([SubResource("Resource_yxf03"), SubResource("Resource_le5v6"), SubResource("Resource_t0363"), SubResource("Resource_0jq83")])
 
 [node name="Environment" type="Node3D" parent="." unique_id=1062489120]
 
@@ -52,29 +146,6 @@ script = ExtResource("3_itglv")
 [node name="ImmersiveAimComponent" type="Node" parent="Player" unique_id=1083012156]
 script = ExtResource("4_kwne6")
 metadata/_custom_type_script = "uid://das224o67qbcs"
-
-[node name="Starter Enemies" type="Node3D" parent="." unique_id=849493121]
-
-[node name="EnemyModelDemo" parent="Starter Enemies" unique_id=533656628 instance=ExtResource("4_itglv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9980755, -3.8146973e-06, -26.190989)
-
-[node name="EnemyModelDemo5" parent="Starter Enemies" unique_id=1201961037 instance=ExtResource("4_itglv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.998075, -3.8146973e-06, 44.809013)
-
-[node name="EnemyModelDemo6" parent="Starter Enemies" unique_id=1172971922 instance=ExtResource("4_itglv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.998077, -3.8146973e-06, -1.1909866)
-
-[node name="EnemyModelDemo7" parent="Starter Enemies" unique_id=1481763437 instance=ExtResource("4_itglv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.001923, -3.8146973e-06, 9.809013)
-
-[node name="EnemyModelDemo2" parent="Starter Enemies" unique_id=488020601 instance=ExtResource("4_itglv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.697277, -1.1444092e-05, -3.6301289)
-
-[node name="EnemyModelDemo3" parent="Starter Enemies" unique_id=352471115 instance=ExtResource("4_itglv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.434343, -7.6293945e-06, 14.807894)
-
-[node name="EnemyModelDemo4" parent="Starter Enemies" unique_id=656984093 instance=ExtResource("4_itglv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.292562, -7.6293945e-06, -4.7009735)
 
 [node name="Obstacles" type="Node3D" parent="." unique_id=2079419476]
 
@@ -162,4 +233,7 @@ size = Vector3(15, 8, 14)
 transform = Transform3D(0.016178988, 0, -0.9998691, 0, 1, 0, 0.9998691, 0, 0.016178988, -94.733154, 7.272583, -19.892082)
 
 [node name="GameOverScreen" parent="." unique_id=397520369 instance=ExtResource("9_n8psh")]
-visible = false
+
+[node name="EnemySpawner" type="Node" parent="." unique_id=999513965 node_paths=PackedStringArray("player")]
+script = ExtResource("14_rhcrj")
+player = NodePath("../Player")
