@@ -56,8 +56,91 @@ metadata/_custom_type_script = "uid://dnditqbrgbcer"
 
 [sub_resource type="Resource" id="Resource_oksh5"]
 script = ExtResource("2_m4my6")
-round_time_limit = 45.0
+round_time_limit = 35.0
 enemies = Array[ExtResource("3_oe8km")]([SubResource("Resource_c6wyi"), SubResource("Resource_l37s2"), SubResource("Resource_w1rim")])
+metadata/_custom_type_script = "uid://emf33hlypehq"
+
+[sub_resource type="Resource" id="Resource_gsywx"]
+script = ExtResource("3_oe8km")
+spawn_amount = 5
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_4smt0"]
+script = ExtResource("3_oe8km")
+enemy_type = 1
+spawn_amount = 2
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_bvmoh"]
+script = ExtResource("3_oe8km")
+enemy_type = 2
+spawn_amount = 3
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_qbu68"]
+script = ExtResource("3_oe8km")
+spawn_amount = 5
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_8e6bi"]
+script = ExtResource("3_oe8km")
+enemy_type = 2
+spawn_amount = 3
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_4xej6"]
+script = ExtResource("2_m4my6")
+round_time_limit = 40.0
+spawn_interval = 2.5
+enemies = Array[ExtResource("3_oe8km")]([SubResource("Resource_gsywx"), SubResource("Resource_4smt0"), SubResource("Resource_bvmoh"), SubResource("Resource_qbu68"), SubResource("Resource_8e6bi")])
+metadata/_custom_type_script = "uid://emf33hlypehq"
+
+[sub_resource type="Resource" id="Resource_7idvj"]
+script = ExtResource("3_oe8km")
+enemy_type = 1
+spawn_amount = 3
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_gilkj"]
+script = ExtResource("3_oe8km")
+enemy_type = 2
+spawn_amount = 3
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_kg8oa"]
+script = ExtResource("3_oe8km")
+enemy_type = 3
+spawn_amount = 3
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_rk3j2"]
+script = ExtResource("3_oe8km")
+spawn_amount = 5
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_fcqwv"]
+script = ExtResource("3_oe8km")
+enemy_type = 1
+spawn_amount = 3
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_ro1kk"]
+script = ExtResource("3_oe8km")
+enemy_type = 2
+spawn_amount = 5
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_4ii8h"]
+script = ExtResource("3_oe8km")
+enemy_type = 1
+spawn_amount = 5
+metadata/_custom_type_script = "uid://dnditqbrgbcer"
+
+[sub_resource type="Resource" id="Resource_11dll"]
+script = ExtResource("2_m4my6")
+round_time_limit = 40.0
+spawn_interval = 2.5
+enemies = Array[ExtResource("3_oe8km")]([SubResource("Resource_7idvj"), SubResource("Resource_gilkj"), SubResource("Resource_kg8oa"), SubResource("Resource_rk3j2"), SubResource("Resource_fcqwv"), SubResource("Resource_ro1kk"), SubResource("Resource_4ii8h")])
 metadata/_custom_type_script = "uid://emf33hlypehq"
 
 [sub_resource type="BoxMesh" id="BoxMesh_y5qfa"]
@@ -74,7 +157,7 @@ uv2_triplanar = true
 [node name="Node3D" type="Node3D" unique_id=881090372 node_paths=PackedStringArray("enemy_spawner")]
 script = ExtResource("1_8mmtw")
 enemy_spawner = NodePath("EnemySpawner")
-waves = Array[ExtResource("2_m4my6")]([SubResource("Resource_w32vy"), SubResource("Resource_oksh5")])
+waves = Array[ExtResource("2_m4my6")]([SubResource("Resource_w32vy"), SubResource("Resource_oksh5"), SubResource("Resource_4xej6"), SubResource("Resource_11dll")])
 
 [node name="Environment" type="Node3D" parent="." unique_id=1062489120]
 

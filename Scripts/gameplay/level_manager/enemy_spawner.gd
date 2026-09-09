@@ -7,7 +7,7 @@ signal enemy_spawned
 var enemy_scene_paths: Dictionary = {
 	"ROBODOG": "res://Scenes - Objects/enemy_robodog.tscn",
 	"DOGELISK": "res://Scenes - Objects/enemy_dogelisk.tscn",
-	"ANDRIOD": "res://Scenes - Objects/enemy_android.tscn",
+	"ANDROID": "res://Scenes - Objects/enemy_android.tscn",
 	"TURRET": "res://Scenes - Objects/enemy_stationary_turret.tscn",
 	"ROOMBYE": "res://Scenes - Objects/enemy_roombye.tscn",
 	"FLOATING_HEAD": "res://Scenes - Objects/enemy_model_demo.tscn",
