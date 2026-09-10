@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dpc1jighs0jjk" path="res://Scenes - Objects/Scenery/_scenery_item_generic.tscn" id="13_4516c"]
 [ext_resource type="PackedScene" uid="uid://bsqax7a47vrc6" path="res://Scenes - UI/game_over.tscn" id="14_c6wyi"]
 [ext_resource type="Resource" uid="uid://be7qcr1cgllpq" path="res://Scenes - Objects/Scenery/scenery_hydrant.tres" id="14_r1qmg"]
+[ext_resource type="PackedScene" uid="uid://dlqunlry06xcl" path="res://Scenes - Objects/vertical_explosion.tscn" id="18_oe8km"]
 [ext_resource type="Script" uid="uid://c7pgxg3avlvxo" path="res://Scripts/gameplay/level_manager/enemy_spawner.gd" id="22_l37s2"]
 
 [sub_resource type="Resource" id="Resource_oe8km"]
@@ -205,3 +206,7 @@ border_size = 0.0
 [node name="EnemySpawner" type="Node" parent="." unique_id=1658049301 node_paths=PackedStringArray("player")]
 script = ExtResource("22_l37s2")
 player = NodePath("../Player")
+
+[node name="VerticalExplosion" parent="." unique_id=163751198 instance=ExtResource("18_oe8km")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.007804, 7.642496, 4.5499287)
+visible = false

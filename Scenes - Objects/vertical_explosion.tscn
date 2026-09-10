@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://dlqunlry06xcl"]
 
-[ext_resource type="Script" uid="uid://bb012s4rhv8d" path="res://Scripts/gameplay/enemies/enemy_billboard_ranged.gd" id="1_7wll2"]
 [ext_resource type="Texture2D" uid="uid://7rmfq2wfjn2p" path="res://Sprites/FX/vertical_explosion.png" id="1_btmlj"]
-[ext_resource type="PackedScene" uid="uid://d345k4ddctsqo" path="res://Scenes - Objects/enemy_projectile.tscn" id="2_yj5fj"]
-[ext_resource type="PackedScene" uid="uid://bgbax3gdpt8n7" path="res://Scenes - Objects/pickup_shield_orbiters.tscn" id="3_m7o4w"]
+[ext_resource type="Script" uid="uid://bhgnilc0dlmux" path="res://Scripts/gameplay/sprite_remove.gd" id="1_sttdr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otl0j"]
 atlas = ExtResource("1_btmlj")
@@ -288,12 +286,7 @@ animations = [{
 }]
 
 [node name="VerticalExplosion" type="Node3D" unique_id=163751198 groups=["enemy"]]
-script = ExtResource("1_7wll2")
-projectile_scene = ExtResource("2_yj5fj")
-drop = ExtResource("3_m7o4w")
-drop_chance = 0.421
-scoreValue = 200
-enemy_type = 2
+script = ExtResource("1_sttdr")
 
 [node name="BillboardFront" type="AnimatedSprite3D" parent="." unique_id=999408059]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4575043, 0)
