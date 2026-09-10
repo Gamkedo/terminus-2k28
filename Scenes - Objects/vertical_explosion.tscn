@@ -84,61 +84,61 @@ region = Rect2(1656, 0, 92, 128)
 [sub_resource type="SpriteFrames" id="SpriteFrames_66sjo"]
 animations = [{
 "frames": [{
-"duration": 0.25,
+"duration": 0.2,
 "texture": SubResource("AtlasTexture_otl0j")
 }, {
-"duration": 0.25,
+"duration": 0.2,
 "texture": SubResource("AtlasTexture_7wll2")
 }, {
-"duration": 0.5,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_yj5fj")
 }, {
-"duration": 0.5,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_m7o4w")
 }, {
-"duration": 0.5,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_ccfd2")
 }, {
-"duration": 0.5,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_6j84u")
 }, {
-"duration": 0.5,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_geyuf")
 }, {
-"duration": 0.5,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_ueog6")
 }, {
-"duration": 0.5,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_w8g6j")
 }, {
-"duration": 0.5,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_vep7y")
 }, {
-"duration": 0.5,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_3iipy")
 }, {
-"duration": 0.5,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_wfath")
 }, {
-"duration": 0.5,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_2at7w")
 }, {
-"duration": 0.5,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_ir5v0")
 }, {
-"duration": 0.5,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_bys66")
 }, {
-"duration": 0.5,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_huv0k")
 }, {
-"duration": 0.5,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_jxh6o")
 }, {
-"duration": 0.5,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_1epnq")
 }, {
-"duration": 0.5,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_aql14")
 }],
 "loop": 1,
@@ -302,8 +302,7 @@ billboard = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_66sjo")
 autoplay = "default"
-frame = 17
-frame_progress = 0.124513425
+frame_progress = 0.44980368
 
 [node name="BillboardBack" type="AnimatedSprite3D" parent="." unique_id=326310014]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4575043, 0)
@@ -313,4 +312,4 @@ billboard = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_udoxn")
 autoplay = "default"
-frame_progress = 0.41875848
+frame_progress = 0.4180015
