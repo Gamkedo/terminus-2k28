@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d0ba2tru4ht27"]
+
+[ext_resource type="Texture2D" uid="uid://clwypg3b6rtn3" path="res://Sprites/FX/muzzle_flash.png" id="1_1xgn2"]
+
+[resource]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_1xgn2")

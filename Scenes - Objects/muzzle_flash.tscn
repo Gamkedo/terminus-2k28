@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://br2mtw0tajdts"]
+
+[ext_resource type="Script" uid="uid://dylns0kqgemus" path="res://Scripts/gameplay/particle_remove.gd" id="1_71f6k"]
+[ext_resource type="Material" uid="uid://d0ba2tru4ht27" path="res://Materials/muzzle_flash_material.tres" id="2_5htru"]
+[ext_resource type="Material" uid="uid://c2j1am884poh" path="res://Materials/muzzle_flash_particle_process_material.tres" id="2_cbget"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7tbbo"]
+material = ExtResource("2_5htru")
+size = Vector2(0.1, 0.1)
+
+[node name="MuzzleFlash" type="Node3D" unique_id=2136184369]
+script = ExtResource("1_71f6k")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=939054033]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0.01)
+emitting = false
+amount = 20
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.5
+process_material = ExtResource("2_cbget")
+draw_pass_1 = SubResource("QuadMesh_7tbbo")
