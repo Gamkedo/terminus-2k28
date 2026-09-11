@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b7muf8h4yxj5"]
+
+[ext_resource type="Script" uid="uid://gre1bbok8lsr" path="res://Scripts/menus/pause_menu.gd" id="1_n6oqt"]
+
+[node name="PauseMenu" type="Control" unique_id=850452313]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n6oqt")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1236918097]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 646.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1144877728]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1737270289]
+layout_mode = 2
+text = "Paused"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="pause_or_unpause"]
