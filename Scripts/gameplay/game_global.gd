@@ -14,6 +14,7 @@ var world_boundaries: WorldBoundaries
 signal add_score(new_score: int)
 signal score_changed(new_score: int)
 signal combo_changed(new_combo: int)
+signal wave_changed(new_wave: int)
 signal game_over
 signal final_score(score: int)
 signal enemy_killed

@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://d1grs1gs3wxkx" path="res://Scenes - Objects/example_obstacle.tscn" id="6_mhi1n"]
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="7_8go4e"]
 [ext_resource type="PackedScene" uid="uid://bsqax7a47vrc6" path="res://Scenes - UI/game_over.tscn" id="9_n8psh"]
-[ext_resource type="PackedScene" uid="uid://dntgoi1wtjkxd" path="res://Models (game format)/3d_nuclear_power_plant.glb" id="9_uxmqf"]
 [ext_resource type="Script" uid="uid://c7pgxg3avlvxo" path="res://Scripts/gameplay/level_manager/enemy_spawner.gd" id="14_rhcrj"]
 
 [sub_resource type="Resource" id="Resource_l0x6y"]
@@ -107,7 +106,7 @@ size = Vector3(128, 1, 128)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_x0v8i"]
 
-[node name="Node3D" type="Node3D" unique_id=881090372 node_paths=PackedStringArray("enemy_spawner")]
+[node name="ImmersiveScene" type="Node3D" unique_id=881090372 node_paths=PackedStringArray("enemy_spawner")]
 script = ExtResource("1_w8v52")
 enemy_spawner = NodePath("EnemySpawner")
 waves = Array[ExtResource("2_l51xd")]([SubResource("Resource_yxf03"), SubResource("Resource_le5v6"), SubResource("Resource_t0363"), SubResource("Resource_0jq83")])
@@ -228,9 +227,6 @@ operation = 2
 size = Vector3(15, 8, 14)
 
 [node name="ScoreGUI" parent="." unique_id=1866250465 instance=ExtResource("7_8go4e")]
-
-[node name="3d_nuclear_power_plant" parent="." unique_id=1574620204 instance=ExtResource("9_uxmqf")]
-transform = Transform3D(0.016178988, 0, -0.9998691, 0, 1, 0, 0.9998691, 0, 0.016178988, -94.733154, 7.272583, -19.892082)
 
 [node name="GameOverScreen" parent="." unique_id=397520369 instance=ExtResource("9_n8psh")]
 

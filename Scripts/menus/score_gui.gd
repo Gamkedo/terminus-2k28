@@ -2,9 +2,11 @@ extends Control
 
 @onready var scoreLabel: Label = %ScoreLabel
 @onready var comboLabel: Label = %ComboLabel
+@onready var waveLabel: Label = %WaveLabel
 
 var score: int = 0;
 var combo: int = 0;
+var wave: int = 1;
 
 func addScore(addThisNumber:int) -> void:
 	score += addThisNumber
@@ -16,10 +18,14 @@ func setScore(toThisNumber:int) -> void:
 
 func setCombo(toThisNumber:int) -> void:
 	combo = toThisNumber
-	if combo==0: 
+	if combo == 0: 
 		comboLabel.text = ""
 	else: 
 		comboLabel.text = "x" + str(combo) + " COMBO"
+
+func setWave(toThisNumber: int) -> void:
+	wave = toThisNumber
+	waveLabel.text = "WAVE " + str(wave)
 
 func _ready() -> void:
 	setScore(0)
@@ -29,7 +35,9 @@ func _ready() -> void:
 	GameGlobal.score_changed.connect(setScore)
 	GameGlobal.combo_changed.connect(setCombo)
 	GameGlobal.game_over.connect(send_game_over_score)
-	pass
+	GameGlobal.wave_changed.connect(setWave)
+	if get_tree().current_scene.name == "ArcadeScene" or get_tree().current_scene.name == "ImmersiveScene":
+		waveLabel.visible = true
 
 func _process(delta: float) -> void:
 	# TODO:

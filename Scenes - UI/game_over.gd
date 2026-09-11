@@ -16,4 +16,4 @@ func _on_restart_pressed():
 
 func _on_back_to_menu_pressed():
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://level_menu.tscn")
+	SceneChanger.change_scene("res://level_menu.tscn")

@@ -155,7 +155,7 @@ uv2_triplanar = true
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_seirn"]
 
-[node name="Node3D" type="Node3D" unique_id=881090372 node_paths=PackedStringArray("enemy_spawner")]
+[node name="ArcadeScene" type="Node3D" unique_id=881090372 node_paths=PackedStringArray("enemy_spawner")]
 script = ExtResource("1_8mmtw")
 enemy_spawner = NodePath("EnemySpawner")
 waves = Array[ExtResource("2_m4my6")]([SubResource("Resource_w32vy"), SubResource("Resource_oksh5"), SubResource("Resource_4xej6"), SubResource("Resource_11dll")])
@@ -192,7 +192,7 @@ metadata/_custom_type_script = "uid://dvre2ude7y1fr"
 
 [node name="ScreenBezelCorners" parent="." unique_id=121658769 instance=ExtResource("8_b4wml")]
 
-[node name="ScoreGUI" parent="." unique_id=924242711 instance=ExtResource("9_pbum0")]
+[node name="get" parent="." unique_id=924242711 instance=ExtResource("9_pbum0")]
 
 [node name="SceneryPlacer" type="Node3D" parent="." unique_id=1323754423]
 script = ExtResource("10_tfrqe")

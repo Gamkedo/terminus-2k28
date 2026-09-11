@@ -36,6 +36,7 @@ func _start_new_round() -> void:
 	round_timer.start(30.0)
 	round_started.emit()
 	GameLogger.debug("Starting round %s" % round_number)
+	GameGlobal.wave_changed.emit(round_number)
 	_spawn_enemies()
 
 
