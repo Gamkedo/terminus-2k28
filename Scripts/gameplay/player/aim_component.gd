@@ -22,7 +22,7 @@ func look_at_cursor(player: Player):
 	var from := player.camera.project_ray_origin(mouse_position)
 	var to := from + player.camera.project_ray_normal(mouse_position) * ray_length
 
-	var cursor_position_on_plane = target_plane_mouse.intersects_ray(from, to)
+	var cursor_position_on_plane = target_plane_mouse.intersects_segment(from, to)
 
 	if cursor_position_on_plane:
 		player.aim_dot.global_position = cursor_position_on_plane
