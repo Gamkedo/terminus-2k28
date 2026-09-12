@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SceneryItem" format=3 uid="uid://jcggvrir8kj7"]
+
+[ext_resource type="Script" uid="uid://cjj7dll5q50w3" path="res://Scripts/gameplay/world/scenery_item.gd" id="1_chsso"]
+[ext_resource type="Texture2D" path="res://Sprites/Props/basic_rock_26x26.png" id="2_chsso"]
+
+[resource]
+script = ExtResource("1_chsso")
+sprite = ExtResource("2_chsso")
+spawn_chance = 0.9
+scale_min = 1.2
+scale_max = 1.3
+metadata/_custom_type_script = "uid://cjj7dll5q50w3"
