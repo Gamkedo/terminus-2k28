@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cmw11l0oc5b6" path="res://Textures/grid-grass.png" id="5_m4my6"]
 [ext_resource type="Script" uid="uid://dvre2ude7y1fr" path="res://Scripts/gameplay/player/aim_component.gd" id="7_tefx3"]
 [ext_resource type="PackedScene" uid="uid://0wcd0e4ft353" path="res://Scenes - UI/screen_bezel_corners.tscn" id="8_b4wml"]
+[ext_resource type="Script" uid="uid://cfc24xmre36y6" path="res://Scripts/gameplay/player/weapons_manager.gd" id="8_wcdhk"]
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="9_pbum0"]
 [ext_resource type="Script" uid="uid://dkrh1yggfk8bq" path="res://Scripts/gameplay/world/scenery_placer.gd" id="10_tfrqe"]
 [ext_resource type="Script" uid="uid://cjj7dll5q50w3" path="res://Scripts/gameplay/world/scenery_item.gd" id="11_lsjr8"]
@@ -189,6 +190,10 @@ size = 54.271
 [node name="AimComponent" type="Node" parent="Player" unique_id=145682983]
 script = ExtResource("7_tefx3")
 metadata/_custom_type_script = "uid://dvre2ude7y1fr"
+
+[node name="WeaponsManager" type="Node" parent="Player" unique_id=1106150763]
+script = ExtResource("8_wcdhk")
+metadata/_custom_type_script = "uid://cfc24xmre36y6"
 
 [node name="ScreenBezelCorners" parent="." unique_id=121658769 instance=ExtResource("8_b4wml")]
 
