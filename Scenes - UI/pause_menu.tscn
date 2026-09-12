@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b7muf8h4yxj5"]
 
 [ext_resource type="Script" uid="uid://gre1bbok8lsr" path="res://Scripts/menus/pause_menu.gd" id="1_n6oqt"]
+[ext_resource type="Script" uid="uid://bv8ijbramquuc" path="res://menu_button_audio.gd" id="2_8bei2"]
 
 [node name="PauseMenu" type="Control" unique_id=850452313]
 process_mode = 3
@@ -24,5 +25,9 @@ alignment = 1
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1737270289]
 layout_mode = 2
 text = "Paused"
+
+[node name="MenuButtonAudio" type="Node" parent="." unique_id=1648070741]
+script = ExtResource("2_8bei2")
+metadata/_custom_type_script = "uid://bv8ijbramquuc"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="pause_or_unpause"]
