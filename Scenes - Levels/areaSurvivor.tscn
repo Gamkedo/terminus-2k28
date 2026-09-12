@@ -64,9 +64,8 @@ script = ExtResource("3_42ddl")
 
 [node name="Player" parent="." unique_id=935553468 instance=ExtResource("2_hcq85")]
 
-[node name="StackingWeaponsManager" type="Node" parent="Player" unique_id=1837792810]
+[node name="WeaponsManager" parent="Player" index="8" unique_id=1271808281]
 script = ExtResource("6_tmxv0")
-metadata/_custom_type_script = "uid://bp36fivqnl7k6"
 
 [node name="AimComponent" type="Node" parent="Player" unique_id=815164976]
 script = ExtResource("7_vx5xs")
@@ -96,3 +95,5 @@ transform = Transform3D(0.43197018, 0, -0.67335105, 0, 0.80000013, 0, 0.67335105
 script = ExtResource("15_v3a74")
 enemy_container = NodePath("../Enemies")
 enemy_list = Array[PackedScene]([ExtResource("7_155sy"), ExtResource("11_vx5xs"), ExtResource("4_hcq85"), ExtResource("15_ocn12")])
+
+[editable path="Player"]

@@ -38,14 +38,17 @@ func cycle_weapon() -> void:
 	active_weapon += 1
 	if active_weapon >= weapons.size():
 		active_weapon = 0
+	GameLogger.debug("cycle weapon: %d" % active_weapon)
 
 func previous_weapon() -> void:
 	active_weapon -= 1
 	if active_weapon < 0:
 		active_weapon = weapons.size()-1
+	GameLogger.debug("previous weapon: %d" % active_weapon)
 
 func select_weapon_num(num:int) -> void: # triggered by keyboard keys 0..9
 	active_weapon = num
 	# we may have fewer than ten weapons:
 	if active_weapon < 0: active_weapon = weapons.size()-1
 	if active_weapon >= weapons.size(): active_weapon = 0
+	GameLogger.debug("select weapon: %d" % active_weapon)
