@@ -25,6 +25,7 @@ var health_current: float = health_max
 @export var rotation_speed: float = 2
 @export var aim_dead_zone: float = 0.01
 @export var default_aim_range: float = 240
+@export var auto_fire: bool = false
 
 # external references
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
@@ -59,7 +60,7 @@ func _process(delta: float) -> void:
 
 	handle_aiming(delta)
 
-	if Input.is_action_pressed("fire") and weapons_manager.can_fire():
+	if (auto_fire or Input.is_action_pressed("fire")) and weapons_manager.can_fire():
 		fire()
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://level_menu.tscn")

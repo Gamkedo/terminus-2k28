@@ -10,7 +10,10 @@ func _ready() -> void:
 		active_weapons.append(0)
 
 func can_fire() -> bool:
-	return true
+	for w in active_weapons:
+		if weapons[w].can_fire():
+			return true
+	return false
 
 func fire(pos, rot) -> void:
 	for w in active_weapons:

@@ -63,6 +63,7 @@ size = 54.271
 script = ExtResource("3_42ddl")
 
 [node name="Player" parent="." unique_id=935553468 instance=ExtResource("2_hcq85")]
+auto_fire = true
 
 [node name="WeaponsManager" parent="Player" index="8" unique_id=1271808281]
 script = ExtResource("6_tmxv0")
