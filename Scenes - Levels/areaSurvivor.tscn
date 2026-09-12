@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://k63f3er0k7u7" path="res://Scenes - Objects/enemy_model_demo.tscn" id="4_hcq85"]
 [ext_resource type="Script" uid="uid://bp36fivqnl7k6" path="res://Scripts/gameplay/player/stacking_weapons_manager.gd" id="6_tmxv0"]
 [ext_resource type="PackedScene" uid="uid://wdglasw32mes" path="res://Scenes - Objects/enemy_roombye.tscn" id="7_155sy"]
-[ext_resource type="Script" uid="uid://dvre2ude7y1fr" path="res://Scripts/gameplay/player/aim_component.gd" id="7_vx5xs"]
+[ext_resource type="Script" uid="uid://dgtikgscqcp3m" path="res://Scripts/gameplay/player/auto_aim_component.gd" id="7_v3a74"]
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="8_ua6li"]
 [ext_resource type="PackedScene" uid="uid://vdwb0cf16yx0" path="res://Scenes - Objects/enemy_stationary_turret.tscn" id="11_vx5xs"]
 [ext_resource type="PackedScene" uid="uid://c4bxgkgn3crmk" path="res://Scenes - Objects/Scenery/truck_scenery.tscn" id="13_u40bk"]
@@ -65,12 +65,14 @@ script = ExtResource("3_42ddl")
 [node name="Player" parent="." unique_id=935553468 instance=ExtResource("2_hcq85")]
 auto_fire = true
 
-[node name="WeaponsManager" parent="Player" index="8" unique_id=1271808281]
+[node name="StackingWeaponsManager" type="Node" parent="Player" unique_id=932133242]
 script = ExtResource("6_tmxv0")
+metadata/_custom_type_script = "uid://bp36fivqnl7k6"
 
-[node name="AimComponent" type="Node" parent="Player" unique_id=815164976]
-script = ExtResource("7_vx5xs")
-metadata/_custom_type_script = "uid://dvre2ude7y1fr"
+[node name="AutoAimComponent" type="Node" parent="Player" unique_id=1983435733]
+script = ExtResource("7_v3a74")
+default_aim_range = 100
+metadata/_custom_type_script = "uid://dgtikgscqcp3m"
 
 [node name="Enemies" type="Node3D" parent="." unique_id=2100857171]
 
@@ -96,5 +98,3 @@ transform = Transform3D(0.43197018, 0, -0.67335105, 0, 0.80000013, 0, 0.67335105
 script = ExtResource("15_v3a74")
 enemy_container = NodePath("../Enemies")
 enemy_list = Array[PackedScene]([ExtResource("7_155sy"), ExtResource("11_vx5xs"), ExtResource("4_hcq85"), ExtResource("15_ocn12")])
-
-[editable path="Player"]

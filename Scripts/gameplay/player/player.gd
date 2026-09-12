@@ -41,7 +41,7 @@ var weapons_manager: WeaponsManager
 @onready var turret_pivot: Node = %TurretPivot
 @onready var muzzleA: Node = %FireFromA
 @onready var muzzleB: Node = %FireFromB
-@onready var aim_dot: Node = $AimDot
+@onready var aim_dot: Node3D = $AimDot
 @onready var aim_ray_cast_3d: RayCast3D = %AimRayCast3D
 
 # signals
@@ -60,7 +60,9 @@ func _process(delta: float) -> void:
 
 	handle_aiming(delta)
 
-	if (auto_fire or Input.is_action_pressed("fire")) and weapons_manager.can_fire():
+	if auto_fire and not aim_dot.global_position.is_equal_approx(global_position) and weapons_manager.can_fire():
+		fire()
+	if Input.is_action_pressed("fire") and weapons_manager.can_fire():
 		fire()
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://level_menu.tscn")

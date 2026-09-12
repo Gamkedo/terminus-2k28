@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d2psco3t4cdwm" path="res://Scenes - UI/SoundControlUI.tscn" id="2_w32vy"]
 [ext_resource type="Texture2D" uid="uid://c3neky7qng2wm" path="res://Scenes - Levels/Level Select Preview Images/areaB-preview.jpg" id="3_g3bd0"]
 [ext_resource type="Texture2D" uid="uid://oaxy71lew71g" path="res://Scenes - Levels/Level Select Preview Images/areaC-preview.jpg" id="4_krrsl"]
-[ext_resource type="PackedScene" uid="uid://b7muf8h4yxj5" path="res://Scenes - UI/pause_menu.tscn" id="7_gd4f1"]
+[ext_resource type="Script" uid="uid://bv8ijbramquuc" path="res://menu_button_audio.gd" id="7_gd4f1"]
 
 [sub_resource type="Gradient" id="Gradient_lnidy"]
 colors = PackedColorArray(0, 0, 0, 1, 0.5210963, 0.19145256, 0.020658007, 1)
@@ -159,8 +159,12 @@ offset_top = 0.0
 offset_bottom = 50.0
 grow_vertical = 1
 
-[node name="PauseMenu" parent="." unique_id=850452313 instance=ExtResource("7_gd4f1")]
+[node name="PauseMenu" parent="." unique_id=850452313]
 visible = false
+
+[node name="MenuButtonAudio" type="Node" parent="." unique_id=238374378]
+script = ExtResource("7_gd4f1")
+metadata/_custom_type_script = "uid://bv8ijbramquuc"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Arcade Container/AreaA Arcade" to="." method="_on_area_a_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Survivor Container/AreaB Survivor" to="." method="_on_area_b_pressed"]

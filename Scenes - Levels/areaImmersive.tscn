@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://das224o67qbcs" path="res://Scripts/gameplay/player/immersive_aim_component.gd" id="4_kwne6"]
 [ext_resource type="PackedScene" uid="uid://d1grs1gs3wxkx" path="res://Scenes - Objects/example_obstacle.tscn" id="6_mhi1n"]
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="7_8go4e"]
+[ext_resource type="Script" uid="uid://cfc24xmre36y6" path="res://Scripts/gameplay/player/weapons_manager.gd" id="9_h4x15"]
 [ext_resource type="PackedScene" uid="uid://bsqax7a47vrc6" path="res://Scenes - UI/game_over.tscn" id="9_n8psh"]
 [ext_resource type="Script" uid="uid://c7pgxg3avlvxo" path="res://Scripts/gameplay/level_manager/enemy_spawner.gd" id="14_rhcrj"]
 
@@ -145,6 +146,10 @@ script = ExtResource("3_itglv")
 [node name="ImmersiveAimComponent" type="Node" parent="Player" unique_id=1083012156]
 script = ExtResource("4_kwne6")
 metadata/_custom_type_script = "uid://das224o67qbcs"
+
+[node name="WeaponsManager" type="Node" parent="Player" unique_id=931892316]
+script = ExtResource("9_h4x15")
+metadata/_custom_type_script = "uid://cfc24xmre36y6"
 
 [node name="Obstacles" type="Node3D" parent="." unique_id=2079419476]
 
