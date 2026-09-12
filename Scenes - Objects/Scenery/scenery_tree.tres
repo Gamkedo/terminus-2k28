@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_i0luf")
 sprite = ExtResource("2_f1w2l")
+spr_pixel_size = 0.1
 scale_min = 2.0
 scale_max = 2.5
 metadata/_custom_type_script = "uid://cjj7dll5q50w3"
