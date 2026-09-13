@@ -1,13 +1,11 @@
 extends Control
 
-const FLASH_COLOR = Color(3, 3, 3, 1)
-
-
 @onready var background: Control = $Background
 @onready var active_bar: Control = $ActiveBar
 @onready var hurt_particles: GPUParticles2D = $HurtParticles
 
 @export var tween_seconds: float = 0.2
+@export var intensity_on_flash: float = 2.5
 @export var growth_on_flash: float = 1.1
 
 var width_ratio: float
@@ -37,7 +35,7 @@ func _tween_to_value(v: float, flash = false) -> void:
 	tween = create_tween()
 	tween.tween_method(_set_displayed_value, cur_value, v, tween_seconds)
 	if flash:
-		modulate = FLASH_COLOR
+		modulate = Color(intensity_on_flash, intensity_on_flash, intensity_on_flash, 1.0)
 		offset_transform_scale = Vector2.ONE * growth_on_flash
 		tween.parallel().tween_property(self, "modulate", Color.WHITE, tween_seconds)
 		tween.parallel().tween_property(self, "offset_transform_scale", Vector2.ONE, tween_seconds)
