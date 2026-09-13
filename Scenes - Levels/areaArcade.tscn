@@ -192,8 +192,6 @@ size = 54.271
 
 [node name="AimComponent" type="Node" parent="Player" unique_id=145682983]
 script = ExtResource("7_tefx3")
-aim_dead_zone = null
-default_aim_range = null
 metadata/_custom_type_script = "uid://dvre2ude7y1fr"
 
 [node name="WeaponsManager" type="Node" parent="Player" unique_id=1106150763]

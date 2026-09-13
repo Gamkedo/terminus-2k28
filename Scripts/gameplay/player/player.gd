@@ -114,7 +114,7 @@ func reduce_health(amount: float) -> void:
 		await get_tree().create_timer(return_to_menu_delay).timeout
 		GameGlobal.game_over.emit()
 		await get_tree().create_timer(return_to_menu_delay).timeout
-		SceneChanger.return_to_menu("res://level_menu.tscn")
+		SceneChanger.return_to_menu()
 
 	GameLogger.debug("Health: %.2f / %.2f" % [health_current, health_max])
 

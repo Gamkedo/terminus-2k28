@@ -5,11 +5,11 @@ var process_tick_count := 0
 var process_time_count := 0.0
 var time_at_last_tick := 0.0
 
-var default_estimate := 100
+var default_estimate := 100.0
 var scene_load_estimates = {
-	"uid://divrqdtp7jrcr" : 149,
+	"uid://divrqdtp7jrcr" : 149.0,
 }
-var estimate := 400
+var estimate: float = 400.0
 
 @onready var progress_bar: ProgressBar = %ProgressBar
 
@@ -24,7 +24,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var status = ResourceLoader.load_threaded_get_status(scene_path)
 	#print(status)
 	process_time_count += Time.get_ticks_msec() - time_at_last_tick
@@ -60,7 +60,11 @@ func in_progress() -> void:
 func loaded() -> void:
 	print(">>> loaded %s after %s process ticks and %s milliseconds" % [scene_path, process_tick_count, process_time_count])
 	var new_scene = ResourceLoader.load_threaded_get(scene_path).instantiate()
-	get_tree().change_scene_to_node(new_scene)
+	var error := get_tree().change_scene_to_node(new_scene)
+	if not error:
+		SceneChanger.update_current_scene_path(scene_path)
+	else:
+		SceneChanger.return_to_previous_scene()
 
 
 func get_load_estimate() -> float:
