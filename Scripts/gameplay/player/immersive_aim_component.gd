@@ -31,8 +31,8 @@ var mouse_real_sensitivity: float:
 func _ready() -> void:
 	super()
 	_set_mouse_capture(true)
-	# Additionally allow toggling mouse capture in debug builds so can bounce into the editor
-	enable_toggle_mouse_capture = enable_toggle_mouse_capture or OS.is_debug_build()
+	# Additionally allow toggling mouse capture in editor so can look at remote scene tree/debugger etc
+	enable_toggle_mouse_capture = enable_toggle_mouse_capture or Engine.is_editor_hint()
 
 
 func handle_aiming(player: Player, delta: float) -> void:
