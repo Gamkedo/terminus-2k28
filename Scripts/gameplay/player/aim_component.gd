@@ -42,11 +42,8 @@ func joypad_aim(player: Player) -> void:
 	# return early if stick in dead zone
 	if not aim_vector:
 		return
-	var aim_vector_3d = Vector3(aim_vector.x, 0, aim_vector.y) * default_aim_range # TODO I need to center this on the turrent and then unproject it. that's why the aim point is drifting
-	#var turret_pos_2d = player.camera.unproject_position(player.turret.global_position)
-	var aim_center = player.camera.unproject_position(player.turret.global_position)
+		
+	var aim_vector_3d = Vector3(aim_vector.x, 0, aim_vector.y) * default_aim_range
 	var aim_point = player.camera.unproject_position(player.turret.global_position + aim_vector_3d)
-	if player.camera.has_method("get_aim_center"):
-		aim_center = player.camera.get_aim_center()
-	#get_viewport().warp_mouse(aim_center + aim_vector * default_aim_range)
+
 	get_viewport().warp_mouse(aim_point)
