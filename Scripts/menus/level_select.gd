@@ -18,6 +18,8 @@ func _on_area_c_pressed() -> void:
 
 func _on_credits_button_pressed() -> void:
 	get_node("Credits Panel").show()
+	(%"Close Credits" as Button).grab_focus()
 	
 func _on_close_credits_pressed() -> void:
 	get_node("Credits Panel").hide()
+	starting_focus.grab_focus()

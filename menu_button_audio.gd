@@ -13,7 +13,7 @@ func assign_all_menu_button_audio() -> void:
 	var buttons: Array[Node] = get_parent().find_children("*", "BaseButton", true, false)
 	for button in buttons:
 		button.pressed.connect(_on_button_event.bind(button, &"pressed"))
-		button.mouse_entered.connect(_on_button_event.bind(button, &"mouse_entered"))
+		button.focus_entered.connect(_on_button_event.bind(button, &"mouse_entered"))
 		
 		var select_stream_key: StringName = button.name + "|" + "pressed"
 		_button_signal_audio_streams[select_stream_key] = BUTTON_SELECT_STEAM

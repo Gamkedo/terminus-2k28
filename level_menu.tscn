@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://by5q5qyu6eopi" path="res://Sprites/GUI/Terminus2k28Logo.png" id="2_lnidy"]
 [ext_resource type="PackedScene" uid="uid://d2psco3t4cdwm" path="res://Scenes - UI/SoundControlUI.tscn" id="2_w32vy"]
 [ext_resource type="Texture2D" uid="uid://c3neky7qng2wm" path="res://Scenes - Levels/Level Select Preview Images/areaB-preview.jpg" id="3_g3bd0"]
+[ext_resource type="Script" uid="uid://43vdms6yoos2" path="res://Scripts/menus/menu_button.gd" id="4_7blhc"]
 [ext_resource type="Texture2D" uid="uid://oaxy71lew71g" path="res://Scenes - Levels/Level Select Preview Images/areaC-preview.jpg" id="4_krrsl"]
 [ext_resource type="Script" uid="uid://bv8ijbramquuc" path="res://menu_button_audio.gd" id="7_gd4f1"]
 
@@ -58,6 +59,7 @@ layout_mode = 2
 focus_neighbor_right = NodePath("../../Survivor Container/AreaB Survivor")
 icon = ExtResource("1_pssaq")
 expand_icon = true
+script = ExtResource("4_7blhc")
 
 [node name="LabelA Arcade" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Arcade Container" unique_id=2139458646]
 layout_mode = 2
@@ -75,6 +77,7 @@ focus_neighbor_left = NodePath("../../Arcade Container/AreaA Arcade")
 focus_neighbor_right = NodePath("../../Immersive Container/AreaC Immersive")
 icon = ExtResource("3_g3bd0")
 expand_icon = true
+script = ExtResource("4_7blhc")
 
 [node name="LabelB Survivor" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Survivor Container" unique_id=1705265690]
 layout_mode = 2
@@ -91,6 +94,7 @@ layout_mode = 2
 focus_neighbor_left = NodePath("../../Survivor Container/AreaB Survivor")
 icon = ExtResource("4_krrsl")
 expand_icon = true
+script = ExtResource("4_7blhc")
 
 [node name="LabelC Immersive" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Immersive Container" unique_id=929782284]
 layout_mode = 2
@@ -107,6 +111,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Credits"
+script = ExtResource("4_7blhc")
 
 [node name="Credits Panel" type="Panel" parent="." unique_id=1658457094]
 visible = false
@@ -146,9 +151,16 @@ size_flags_vertical = 3
 text = "Insert Credits Here"
 
 [node name="Close Credits" type="Button" parent="Credits Panel/Padding/VBoxContainer" unique_id=829291104]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
 text = "Close"
 
 [node name="SoundControlUI" parent="." unique_id=712051681 instance=ExtResource("2_w32vy")]
@@ -158,9 +170,6 @@ anchor_bottom = 0.0
 offset_top = 0.0
 offset_bottom = 50.0
 grow_vertical = 1
-
-[node name="PauseMenu" parent="." unique_id=850452313]
-visible = false
 
 [node name="MenuButtonAudio" type="Node" parent="." unique_id=238374378]
 script = ExtResource("7_gd4f1")
