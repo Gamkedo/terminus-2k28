@@ -41,12 +41,22 @@ func _process(delta):
 
 func pick_new_direction():
 	var my_flat_position = Vector2(global_position.x, global_position.z)
-	var player_flat_position = Vector2(GameGlobal.player_ref.global_position.x, GameGlobal.player_ref.global_position.z)
-	var angle = (player_flat_position - my_flat_position).angle()
-	var dir := Vector2.from_angle(angle)
-	direction = Vector3(dir.x, 0, dir.y)
+	
+	# Only seek the player if the movement handler is not in the scene
+	if not nav_movement_handler:
+		var player_flat_position = Vector2(GameGlobal.player_ref.global_position.x, GameGlobal.player_ref.global_position.z)
+		var angle = (player_flat_position - my_flat_position).angle()
+		var dir := Vector2.from_angle(angle)
+		direction = Vector3(dir.x, 0, dir.y)
+	else:
+		direction = _wander()
+		
 	time_left = drift_time
 
+func _wander() -> Vector3:
+	# randomly wander
+	return Vector3(randf_range(-1.0, 1.0), 0.0, randf_range(-1.0, 1.0)).normalized()
+	
 func _collision_detected(body: Node3D) -> void:
 	if body is Player:
 		var player: Player = body as Player
