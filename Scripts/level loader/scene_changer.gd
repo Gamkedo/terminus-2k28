@@ -20,6 +20,8 @@ func return_to_menu() -> void:
 
 
 func update_current_scene_path(scene_path: String) -> void:
+	if scene_path == loading_screen_uid:
+		push_warning("some kinda loading screen loop")
 	previous_scene_path = current_scene_path
 	current_scene_path = scene_path
 

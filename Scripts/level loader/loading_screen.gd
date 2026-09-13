@@ -18,6 +18,9 @@ func _ready() -> void:
 	if scene_path == "":
 		push_warning("Could not queue up scene %s" % scene_path)
 		return
+	elif scene_path == SceneChanger.loading_screen_uid:
+		push_error("Loading screen for loading screen!!")
+		assert(false)
 	ResourceLoader.load_threaded_request(scene_path)
 	estimate = get_load_estimate()
 	time_at_last_tick = Time.get_ticks_msec()
@@ -44,12 +47,12 @@ func _process(_delta: float) -> void:
 
 
 func invalid_resource() -> void:
-	push_error("Loading Screen ThreadLoad invalid resource: %" % scene_path)
+	push_error("Loading Screen ThreadLoad invalid resource: %s" % scene_path)
 	queue_free()
 
 
 func failed() -> void:
-	push_error("Loading Screen ThreadLoad failed: %" % scene_path)
+	push_error("Loading Screen ThreadLoad failed: %s" % scene_path)
 	queue_free()
 
 
