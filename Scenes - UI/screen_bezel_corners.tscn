@@ -11,6 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2014492969]
+layer = 5
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=1378717335]
 layout_mode = 3

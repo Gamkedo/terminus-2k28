@@ -200,7 +200,24 @@ metadata/_custom_type_script = "uid://cfc24xmre36y6"
 
 [node name="ScreenBezelCorners" parent="." unique_id=121658769 instance=ExtResource("8_b4wml")]
 
-[node name="get" parent="." unique_id=924242711 instance=ExtResource("9_pbum0")]
+[node name="ScoreGUI" parent="." unique_id=924242711 instance=ExtResource("9_pbum0")]
+
+[node name="Combo" parent="ScoreGUI/CanvasLayer" parent_id_path=PackedInt32Array(924242711, 2014492969) index="1" unique_id=882236704]
+offset_transform_enabled = true
+offset_transform_position = Vector2(-150, 0)
+
+[node name="HealthBar" parent="ScoreGUI/CanvasLayer" parent_id_path=PackedInt32Array(924242711, 2014492969) index="2" unique_id=1933614406]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -20.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_position = Vector2(0, -10)
 
 [node name="SceneryPlacer" type="Node3D" parent="." unique_id=1323754423]
 script = ExtResource("10_tfrqe")
@@ -222,3 +239,5 @@ visible = false
 
 [node name="PauseMenu" parent="." unique_id=850452313 instance=ExtResource("19_tefx3")]
 visible = false
+
+[editable path="ScoreGUI"]

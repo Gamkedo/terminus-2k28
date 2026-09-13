@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://bbwrgwjsa0gt1"]
 
-[ext_resource type="Texture2D" uid="uid://nfalh3buwqgw" path="res://Sprites/color_palette.png" id="1_3rrqc"]
 [ext_resource type="Script" uid="uid://bxgr7kpxwq7yl" path="res://Scenes - UI/health_bar.gd" id="1_t8w3l"]
 [ext_resource type="Texture2D" uid="uid://kyehpuv7x16r" path="res://Sprites/health_bar_9slice.png" id="2_t1t4p"]
 
@@ -86,8 +85,3 @@ amount = 30
 texture = SubResource("GradientTexture2D_l7t1d")
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_iynve")
-
-[node name="ColorPalette" type="Sprite2D" parent="." unique_id=941139302]
-visible = false
-position = Vector2(183, 75)
-texture = ExtResource("1_3rrqc")
