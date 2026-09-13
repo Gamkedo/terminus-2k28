@@ -39,11 +39,10 @@ func _process(delta):
 		for body: Node3D in collision_area.get_overlapping_bodies():
 			_collision_detected(body)
 
-func pick_new_direction():
-	var my_flat_position = Vector2(global_position.x, global_position.z)
-	
+func pick_new_direction():	
 	# Only seek the player if the movement handler is not in the scene
 	if not nav_movement_handler:
+		var my_flat_position = Vector2(global_position.x, global_position.z)
 		var player_flat_position = Vector2(GameGlobal.player_ref.global_position.x, GameGlobal.player_ref.global_position.z)
 		var angle = (player_flat_position - my_flat_position).angle()
 		var dir := Vector2.from_angle(angle)
