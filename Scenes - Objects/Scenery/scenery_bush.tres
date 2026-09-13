@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SceneryItem" format=3 uid="uid://cbfud86pu1rff"]
+
+[ext_resource type="Script" uid="uid://cjj7dll5q50w3" path="res://Scripts/gameplay/world/scenery_item.gd" id="1_foicl"]
+[ext_resource type="Texture2D" uid="uid://cw4is8c4kxgo5" path="res://Sprites/bush_12x11.png" id="2_foicl"]
+
+[resource]
+script = ExtResource("1_foicl")
+sprite = ExtResource("2_foicl")
+spr_pixel_size = 0.1
+spawn_chance = 2.0
+scale_min = 2.0
+scale_max = 2.1
+metadata/_custom_type_script = "uid://cjj7dll5q50w3"

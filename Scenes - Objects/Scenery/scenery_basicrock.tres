@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_chsso")
 sprite = ExtResource("2_kcuj7")
+spr_pixel_size = 0.1
 spawn_chance = 0.9
 scale_min = 1.2
 scale_max = 1.3

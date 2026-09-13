@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SceneryItem" format=3 uid="uid://o5c3nauvoi1l"]
+
+[ext_resource type="Script" uid="uid://cjj7dll5q50w3" path="res://Scripts/gameplay/world/scenery_item.gd" id="1_3duak"]
+[ext_resource type="Texture2D" uid="uid://bussuqel617d4" path="res://Sprites/car_wheel_b_36x19.png" id="2_3duak"]
+
+[resource]
+script = ExtResource("1_3duak")
+sprite = ExtResource("2_3duak")
+spr_pixel_size = 0.1
+spawn_chance = 0.2
+scale_min = 1.2
+scale_max = 1.3
+metadata/_custom_type_script = "uid://cjj7dll5q50w3"
