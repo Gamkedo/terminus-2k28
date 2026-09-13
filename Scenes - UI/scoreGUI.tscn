@@ -2,6 +2,7 @@
 
 [ext_resource type="LabelSettings" uid="uid://7mc5uw7y6vnf" path="res://Scenes - UI/score-label-settings.tres" id="1_m3c8p"]
 [ext_resource type="Script" uid="uid://cdodu5og8y0t" path="res://Scripts/menus/score_gui.gd" id="1_t025o"]
+[ext_resource type="PackedScene" uid="uid://bbwrgwjsa0gt1" path="res://Scenes - UI/health_bar.tscn" id="3_ljt6p"]
 
 [node name="ScoreGUI" type="Control" unique_id=121658769]
 layout_mode = 3
@@ -71,3 +72,7 @@ grow_horizontal = 0
 text = "x42 combo"
 label_settings = ExtResource("1_m3c8p")
 horizontal_alignment = 2
+
+[node name="HealthBar" parent="CanvasLayer" unique_id=1933614406 instance=ExtResource("3_ljt6p")]
+offset_transform_enabled = true
+offset_transform_position = Vector2(10, 10)

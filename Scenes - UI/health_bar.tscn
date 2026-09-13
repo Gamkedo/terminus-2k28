@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://bbwrgwjsa0gt1"]
+
+[ext_resource type="Texture2D" uid="uid://nfalh3buwqgw" path="res://Sprites/color_palette.png" id="1_3rrqc"]
+[ext_resource type="Script" uid="uid://bxgr7kpxwq7yl" path="res://Scenes - UI/health_bar.gd" id="1_t8w3l"]
+[ext_resource type="Texture2D" uid="uid://kyehpuv7x16r" path="res://Sprites/health_bar_9slice.png" id="2_t1t4p"]
+
+[sub_resource type="Gradient" id="Gradient_t8w3l"]
+offsets = PackedFloat32Array(0, 0.9518072, 1)
+colors = PackedColorArray(1.7129971, 0.74174297, 0.2735844, 1, 0.7490196, 0.2509804, 0.2509804, 0.5882353, 0.7490196, 0.2509804, 0.2509804, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l7t1d"]
+gradient = SubResource("Gradient_t8w3l")
+width = 8
+height = 8
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Curve" id="Curve_t1t4p"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2q6gc"]
+curve = SubResource("Curve_t1t4p")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_iynve"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1, 25, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+spread = 90.0
+initial_velocity_min = 10.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 600, 0)
+scale_min = 0.19999999
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_2q6gc")
+
+[node name="HealthBar" type="Control" unique_id=1933614406]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_t8w3l")
+
+[node name="Background" type="ColorRect" parent="." unique_id=221469782]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.067999996, 0.067999996, 1)
+
+[node name="Background2" type="ColorRect" parent="Background" unique_id=898421950]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7490196, 0.2509804, 0.2509804, 1)
+
+[node name="ActiveBar" type="NinePatchRect" parent="." unique_id=1577193348]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 100.0
+grow_vertical = 2
+texture = ExtResource("2_t1t4p")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="HurtParticles" type="GPUParticles2D" parent="." unique_id=1158930106]
+position = Vector2(103, 26)
+amount = 30
+texture = SubResource("GradientTexture2D_l7t1d")
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_iynve")
+
+[node name="ColorPalette" type="Sprite2D" parent="." unique_id=941139302]
+visible = false
+position = Vector2(183, 75)
+texture = ExtResource("1_3rrqc")
