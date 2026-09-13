@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://h0po6vsg8rdt"]
+
+[ext_resource type="Script" uid="uid://cvdeb82i146l1" path="res://Scripts/gameplay/enemies/nav/seek_target.gd" id="1_ui1vq"]
+
+[node name="SeekTarget" type="Node" unique_id=1800619295]
+script = ExtResource("1_ui1vq")
+metadata/_custom_type_script = "uid://cvdeb82i146l1"
+
+[node name="UpdateTimer" type="Timer" parent="." unique_id=593926958]

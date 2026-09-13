@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dq0p0cyn40igx"]
+
+[ext_resource type="Script" uid="uid://bdi3c4wh5utbp" path="res://Scripts/gameplay/enemies/nav/navigation_component.gd" id="1_prk82"]
+
+[node name="NavigationComponent" type="Node3D" unique_id=1265696176]
+script = ExtResource("1_prk82")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1801115719]

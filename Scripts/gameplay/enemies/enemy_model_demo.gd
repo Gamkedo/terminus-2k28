@@ -14,6 +14,9 @@ var attack_timer: float = attack_timer_max
 
 @onready var collision_area: Area3D = $Area3D
 
+@export
+var nav_movement_handler:NavigationMovementHandler
+
 func _ready():
 	super._ready()
 	
@@ -22,9 +25,11 @@ func _ready():
 	collision_area.body_entered.connect(_collision_detected)
 
 func _process(delta):
-	time_left -= delta
-	if time_left <= 0:
-		pick_new_direction()
+	# If navigation is active, then direction is handled by movement handler
+	if not nav_movement_handler or not nav_movement_handler.active:
+		time_left -= delta
+		if time_left <= 0:
+			pick_new_direction()
 	global_position += direction * speed * delta
 	rotation.y = lerp_angle(rotation.y, atan2(-direction.x, -direction.z), delta * rotation_speed)
 
@@ -47,10 +52,3 @@ func _collision_detected(body: Node3D) -> void:
 		var player: Player = body as Player
 		player.reduce_health(attack_power)
 		attack_timer = attack_timer_max
-
-
-func _on_perceive_begin(object: Node3D) -> void:
-	print_debug("%s: Started seeing %s" % [name, object.name])
-
-func _on_perceive_end(object: Node3D) -> void:
-	print_debug("%s: Stopped seeing %s" % [name, object.name])
