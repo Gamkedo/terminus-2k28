@@ -35,7 +35,7 @@ func _ready() -> void:
 	enable_toggle_mouse_capture = enable_toggle_mouse_capture or Engine.is_editor_hint()
 
 
-func handle_aiming(player: Player, delta: float) -> void:
+func handle_aiming(player: Player, _delta: float) -> void:
 	if not active:
 		return
 

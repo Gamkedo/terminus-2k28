@@ -67,6 +67,7 @@ func recalculate_boundaries() -> void:
 	for wall_key in bounding_walls.keys():
 		var wall: CollisionShape3D = bounding_walls[wall_key]
 		wall.shape = WorldBoundaryShape3D.new()
+		add_child(bounding_walls[wall_key])
 		
 		match wall_key:
 			"+x":
@@ -105,6 +106,3 @@ func recalculate_boundaries() -> void:
 				)
 				wall.shape.plane = Plane.PLANE_XY
 				wall.rotate(Vector3.UP, 0 * PI)
-		
-		add_child(bounding_walls[wall_key])
-	
