@@ -26,10 +26,13 @@ var mouse_real_sensitivity: float:
 		return mouse_sensitivity / mouse_sense_modifier
 @export var mouse_active: bool = true
 
+@export var enable_toggle_mouse_capture:bool = true
 
 func _ready() -> void:
 	super()
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	_set_mouse_capture(true)
+	# Additionally allow toggling mouse capture in editor so can look at remote scene tree/debugger etc
+	enable_toggle_mouse_capture = enable_toggle_mouse_capture or Engine.is_editor_hint()
 
 
 func handle_aiming(player: Player, delta: float) -> void:
@@ -61,13 +64,26 @@ func handle_aiming(player: Player, delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if not mouse_active:
 		return
+	
+	if event.is_action_pressed("toggle_mouse_capture"):
+		_toggle_mouse_capture()
+		
 	# this is needed for mouse capture in web games
 	if event is InputEventMouseButton:
 		if event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			_set_mouse_capture(true)
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		mouse_input += event.relative
 
-
+func _toggle_mouse_capture() -> void:
+	var captured:bool = Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
+	_set_mouse_capture(not captured)
+	
+func _set_mouse_capture(captured:bool) -> void:
+	if captured:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		
 func _exit_tree() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	_set_mouse_capture(false)
