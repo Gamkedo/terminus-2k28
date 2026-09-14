@@ -2,6 +2,7 @@
 
 [ext_resource type="LabelSettings" uid="uid://7mc5uw7y6vnf" path="res://Scenes - UI/score-label-settings.tres" id="1_m3c8p"]
 [ext_resource type="Script" uid="uid://cdodu5og8y0t" path="res://Scripts/menus/score_gui.gd" id="1_t025o"]
+[ext_resource type="LabelSettings" uid="uid://eshni5th5b3h" path="res://Scenes - UI/wave-label-settings.tres" id="3_1886b"]
 [ext_resource type="PackedScene" uid="uid://bbwrgwjsa0gt1" path="res://Scenes - UI/health_bar.tscn" id="3_ljt6p"]
 
 [node name="ScoreGUI" type="Control" unique_id=121658769]
@@ -46,7 +47,7 @@ offset_top = 43.0
 offset_right = 57.0
 offset_bottom = 86.0
 text = "WAVE 1"
-label_settings = ExtResource("1_m3c8p")
+label_settings = ExtResource("3_1886b")
 
 [node name="Combo" type="Control" parent="CanvasLayer" unique_id=882236704]
 layout_mode = 3
