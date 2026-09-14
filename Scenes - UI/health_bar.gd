@@ -27,14 +27,15 @@ func _on_health_added(_v: float) -> void:
 
 func _on_health_lost(_v: float) -> void:
 	_tween_to_value(GameGlobal.player_ref.health_current, true)
-	hurt_particles.restart()
+	if cur_value > 0.0:
+		hurt_particles.restart()
 
 func _tween_to_value(v: float, flash = false) -> void:
 	if tween and tween.is_running():
 		tween.stop()
 	tween = create_tween()
 	tween.tween_method(_set_displayed_value, cur_value, v, tween_seconds)
-	if flash:
+	if flash and cur_value > 0.0:
 		modulate = Color(intensity_on_flash, intensity_on_flash, intensity_on_flash, 1.0)
 		offset_transform_scale = Vector2.ONE * growth_on_flash
 		tween.parallel().tween_property(self, "modulate", Color.WHITE, tween_seconds)
@@ -43,6 +44,7 @@ func _tween_to_value(v: float, flash = false) -> void:
 func _set_displayed_value(v: float) -> void:
 	var max_health := GameGlobal.player_ref.health_max
 	background.size.x = width_ratio * max_health
-	active_bar.size.x = background.size.x * v / max_health
+	active_bar.size.x = background.size.x * max(v, 0.0) / max_health
+	active_bar.visible = v > 0.0
 	hurt_particles.position.x = active_bar.size.x
 	cur_value = v
