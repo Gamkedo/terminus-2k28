@@ -7,10 +7,12 @@ func _ready() -> void:
 	AudioStreamManager.play_selected_track()
 
 func _on_area_a_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes - Levels/areaArcade.tscn")
+	#get_tree().change_scene_to_file("res://Scenes - Levels/areaArcade.tscn")
+	SceneChanger.change_scene("res://Scenes - Levels/areaArcade.tscn")
 
 func _on_area_b_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes - Levels/areaSurvivor.tscn")
+	#get_tree().change_scene_to_file("res://Scenes - Levels/areaSurvivor.tscn")
+	SceneChanger.change_scene("res://Scenes - Levels/areaSurvivor.tscn")
 
 func _on_area_c_pressed() -> void:
 	#get_tree().change_scene_to_file("res://Scenes - Levels/areaImmersive.tscn")
