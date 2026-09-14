@@ -15,6 +15,18 @@ colors = PackedColorArray(0, 0, 0, 1, 0.5210963, 0.19145256, 0.020658007, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_kdu0b"]
 gradient = SubResource("Gradient_lnidy")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7blhc"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.8666667)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [node name="LevelMenu" type="Node2D" unique_id=431338942 node_paths=PackedStringArray("starting_focus")]
 script = ExtResource("1_lnidy")
 starting_focus = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Survivor Container/AreaB Survivor")
@@ -122,6 +134,7 @@ offset_left = 126.0
 offset_top = 18.0
 offset_right = 1017.0
 offset_bottom = 602.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7blhc")
 
 [node name="Padding" type="MarginContainer" parent="Credits Panel" unique_id=1016785290]
 layout_mode = 0
@@ -151,7 +164,9 @@ horizontal_alignment = 1
 [node name="Credits Body" type="RichTextLabel" parent="Credits Panel/Padding/VBoxContainer" unique_id=1679062833]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Insert Credits Here"
+text = "Chris is getting these compiled before release :)
+
+(Will be detailed based on GitHub commit details)"
 
 [node name="Close Credits" type="Button" parent="Credits Panel/Padding/VBoxContainer" unique_id=829291104]
 unique_name_in_owner = true
