@@ -9,9 +9,15 @@
 [ext_resource type="Script" uid="uid://cj7eq14viaaad" path="res://Scripts/gameplay/weapons/shotgun.gd" id="4_iv4hd"]
 [ext_resource type="Texture2D" uid="uid://clfhx8dc6avbg" path="res://Textures/temp_player_back.png" id="4_y8h32"]
 [ext_resource type="PackedScene" uid="uid://l0shf2pmj48f" path="res://Models (game format)/player_vehbryo.glb" id="8_5hocr"]
-[ext_resource type="PackedScene" uid="uid://br2mtw0tajdts" path="res://Scenes - Objects/muzzle_flash.tscn" id="9_46nwg"]
+[ext_resource type="PackedScene" uid="uid://br2mtw0tajdts" path="res://Scenes - Particles/muzzle_flash.tscn" id="9_46nwg"]
 [ext_resource type="Script" uid="uid://ba3jif00r7vw1" path="res://Scripts/gameplay/weapons/laser_beam_weapon.gd" id="10_8dwo2"]
 [ext_resource type="PackedScene" uid="uid://p7aumif32558" path="res://Scenes - Objects/laser_beam_projectile.tscn" id="11_46nwg"]
+[ext_resource type="PackedScene" uid="uid://fg0o0lx1c3d8" path="res://Scenes - Particles/explosion_particle_effect.tscn" id="13_0g0b8"]
+[ext_resource type="PackedScene" uid="uid://ic71hiiw54gl" path="res://Scenes - Particles/leaf_hurricane.tscn" id="14_bae4t"]
+[ext_resource type="PackedScene" uid="uid://bjoc5aa7xcnpi" path="res://Scenes - Particles/particle_smoke_puff.tscn" id="15_n3yrm"]
+[ext_resource type="PackedScene" uid="uid://dr004o72ff57y" path="res://Scenes - Particles/smoke_particle_effect.tscn" id="16_t14tu"]
+[ext_resource type="PackedScene" uid="uid://bsgkbj2irnxuh" path="res://Scenes - Particles/lightning_particles_3d.tscn" id="17_avl05"]
+[ext_resource type="PackedScene" uid="uid://dg14n5bxo33wb" path="res://Scenes - Particles/laser_hit.tscn" id="18_bae4t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8h32"]
 transparency = 1
@@ -136,6 +142,7 @@ shape = SubResource("CylinderShape3D_7tbbo")
 
 [node name="AimDot" type="MeshInstance3D" parent="." unique_id=249952343]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.30974174, 0.93932295, -6.3473606)
+cast_shadow = 0
 mesh = SubResource("SphereMesh_4flbx")
 surface_material_override/0 = SubResource("StandardMaterial3D_onrkg")
 
@@ -163,3 +170,21 @@ metadata/_custom_type_script = "uid://cj7eq14viaaad"
 [node name="Lightning" type="Node3D" parent="." unique_id=1872216530]
 script = ExtResource("2_p3gwe")
 projectile_scene = ExtResource("3_05wly")
+
+[node name="ParticlesCache" type="Node3D" parent="." unique_id=381308245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -31.402435, 0)
+
+[node name="Explosion" parent="ParticlesCache" unique_id=1082297007 instance=ExtResource("13_0g0b8")]
+
+[node name="LeafHurricane" parent="ParticlesCache" unique_id=2146032106 instance=ExtResource("14_bae4t")]
+
+[node name="ParticleSmokePuff" parent="ParticlesCache" unique_id=1690057196 instance=ExtResource("15_n3yrm")]
+
+[node name="Smoke" parent="ParticlesCache" unique_id=237784709 instance=ExtResource("16_t14tu")]
+visible = false
+
+[node name="CPUParticles3D" parent="ParticlesCache" unique_id=118062217 instance=ExtResource("17_avl05")]
+
+[node name="LaserHit" parent="ParticlesCache" unique_id=2136184369 instance=ExtResource("18_bae4t")]
+
+[node name="MuzzleFlash" parent="ParticlesCache" unique_id=1226608780 instance=ExtResource("9_46nwg")]

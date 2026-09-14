@@ -18,7 +18,7 @@ var beam_len: float
 ## Timer to count tick interval
 var scale_update_timer: float = 0.0
 
-const LASER_HIT_TSCN := preload("res://Scenes - Objects/laser_hit.tscn")
+const LASER_HIT_TSCN := preload("res://Scenes - Particles/laser_hit.tscn")
 
 func _ready() -> void:
 	beam_len = beam_end.position.z

@@ -6,7 +6,7 @@ extends Area3D
 ## How long before projectile is automatically destroyed (like if it travels out of bounds for example)
 @export var destroy_delay: float = 5.0
 
-const LASER_HIT_TSCN: PackedScene = preload("res://Scenes - Objects/laser_hit.tscn")
+const LASER_HIT_TSCN: PackedScene = preload("res://Scenes - Particles/laser_hit.tscn")
 
 @onready var damage_component := $DamageComponent
 var damage_amount: float
