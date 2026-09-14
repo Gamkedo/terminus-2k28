@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bsqax7a47vrc6" path="res://Scenes - UI/game_over.tscn" id="9_n8psh"]
 [ext_resource type="Script" uid="uid://c7pgxg3avlvxo" path="res://Scripts/gameplay/level_manager/enemy_spawner.gd" id="14_rhcrj"]
 [ext_resource type="PackedScene" uid="uid://c4bxgkgn3crmk" path="res://Scenes - Objects/Scenery/truck_scenery.tscn" id="15_l51xd"]
+[ext_resource type="PackedScene" uid="uid://b7muf8h4yxj5" path="res://Scenes - UI/pause_menu.tscn" id="16_m34s3"]
 
 [sub_resource type="Resource" id="Resource_l0x6y"]
 script = ExtResource("3_m34s3")
@@ -254,3 +255,5 @@ player = NodePath("../Player")
 
 [node name="TruckScenery" parent="." unique_id=1339161382 instance=ExtResource("15_l51xd")]
 transform = Transform3D(0.77274066, 0, 0.20705524, 0, 0.8, 0, -0.20705524, 0, 0.77274066, 10, 0, -2)
+
+[node name="PauseMenu" parent="." unique_id=850452313 instance=ExtResource("16_m34s3")]
