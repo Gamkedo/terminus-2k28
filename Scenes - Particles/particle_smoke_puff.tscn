@@ -2,27 +2,30 @@
 
 [ext_resource type="Script" uid="uid://dylns0kqgemus" path="res://Scripts/gameplay/particle_remove.gd" id="1_mmp83"]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p0kgv"]
-direction = Vector3(0, 1, 0)
-spread = 23.294
-initial_velocity_max = 8.0
-gravity = Vector3(0, 4, 0)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hnxxg"]
+albedo_color = Color(0.2, 0.2, 0.2, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvs1e"]
-albedo_color = Color(0.15, 0.133725, 0.1035, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ssbcb"]
+albedo_color = Color(0.2, 0.2, 0.2, 1)
 
-[sub_resource type="SphereMesh" id="SphereMesh_n5k5p"]
-material = SubResource("StandardMaterial3D_tvs1e")
+[sub_resource type="SphereMesh" id="SphereMesh_8mvcy"]
+material = SubResource("StandardMaterial3D_ssbcb")
 
 [node name="ParticleSmokePuff" type="Node3D" unique_id=1690057196]
 script = ExtResource("1_mmp83")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=738798962]
-cast_shadow = 0
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=910607657]
+material_override = SubResource("StandardMaterial3D_hnxxg")
 emitting = false
 amount = 13
 lifetime = 1.33
 one_shot = true
 explosiveness = 0.6
-process_material = SubResource("ParticleProcessMaterial_p0kgv")
-draw_pass_1 = SubResource("SphereMesh_n5k5p")
+fixed_fps = 30
+visibility_aabb = AABB(-4, -4, -4, 8, 8, 8)
+mesh = SubResource("SphereMesh_8mvcy")
+direction = Vector3(0, 1, 0)
+spread = 25.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
