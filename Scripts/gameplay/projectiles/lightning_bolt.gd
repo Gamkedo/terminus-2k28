@@ -17,14 +17,36 @@ var intended_position: Vector3
 
 @onready var damage_component := $DamageComponent
 
+#region Mesh Pool
+static var pregenerated_meshes_count: int = 25
+static var available_meshes_too_low_count: int = 5
+static var available_meshes: Array[MeshInstance3D]
+static var pregenerate_count: int = 0 # Debug
+static func pregenerate_meshes(count: int = pregenerated_meshes_count) -> void:
+	pregenerate_count += 1
+	for i in count:
+		var mesh_instance = MeshInstance3D.new()
+		mesh_instance.mesh = ImmediateMesh.new()
+		mesh_instance.top_level = true
+		mesh_instance.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		available_meshes.push_back(mesh_instance)
+
+static func request_mesh() -> MeshInstance3D:
+	if available_meshes.size() < available_meshes_too_low_count: pregenerate_meshes(1)
+	var mesh: MeshInstance3D = available_meshes.pop_back()
+	mesh.mesh.clear_surfaces()
+	return mesh
+
+static func return_mesh(mesh: MeshInstance3D) -> void:
+	mesh.get_parent().remove_child(mesh) # Remove mesh from scene tree without freeing it
+	available_meshes.push_back(mesh)
+#endregion
+
 @onready var arc_material: ORMMaterial3D = ORMMaterial3D.new()
 var arc: MeshInstance3D
 func remake_arc(color = Color.AQUA) -> void:
-	if arc: arc.queue_free()
-	arc = MeshInstance3D.new()
-	arc.mesh = ImmediateMesh.new()
-	arc.top_level = true
-	arc.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	if arc: return_mesh(arc) # always request a new mesh to re-initialize it
+	arc = request_mesh()
 	arc_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 	arc_material.albedo_color = color
 
@@ -66,7 +88,8 @@ func _ready() -> void:
 	global_position = intended_position
 	var arc_point_count: int = arc_segment_count + randi_range(-arc_segment_vareity, arc_segment_vareity) + 2
 	var arc_range: float = (arc_height_max - arc_height_min)
-	arc_points.push_back(bolt_start_position())
+	arc_points.resize(arc_point_count + 1)
+	arc_points[0] = bolt_start_position()
 	for i in arc_point_count:
 		if 0 == i: continue
 		var arc_positional_ratio: float = float(i) / float(arc_point_count)
@@ -75,14 +98,19 @@ func _ready() -> void:
 			+ Vector3(0., arc_height_min - abs(0.5 - arc_positional_ratio) * arc_height_max * 0.5, 0.) # middle part of the arc is higher
 			+ Vector3.ONE * (randf() - 0.5) * 2. * arc_scatteredness * arc_range # and it's also a bit random
 		)
-		arc_points.push_back(pos)
-	arc_points.push_back(global_position)
+		arc_points[i] = pos
+	arc_points[arc_point_count] = global_position
 	remake_arc()
 
 @onready var time_left: float = lifetime_sec
 func _process(delta: float) -> void:
 	time_left -= delta
-	if 0. >= time_left: queue_free()
+	if 0. >= time_left:
+		return_mesh(arc)
+		queue_free()
+
+	# Handle light fake
+	$LightFake.scale = Vector3.ONE * clamp($LightFake.scale.x * randf(), 5., 15.) * time_left / lifetime_sec
 
 	# Handle damaging enemies
 	if not enemies_in_range.is_empty():

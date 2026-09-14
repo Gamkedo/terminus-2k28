@@ -2,10 +2,18 @@
 
 [ext_resource type="Script" uid="uid://df7uqxych4mqb" path="res://Scripts/gameplay/projectiles/lightning_bolt.gd" id="1_62pvi"]
 [ext_resource type="Script" uid="uid://dk0t68rm77cxi" path="res://Scripts/gameplay/damage_component.gd" id="2_toacn"]
-[ext_resource type="PackedScene" uid="uid://bsgkbj2irnxuh" path="res://Scenes - Particles/lightning_particles_3d.tscn" id="3_ybqwe"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8jg5c"]
 radius = 3.5
+
+[sub_resource type="Gradient" id="Gradient_toacn"]
+colors = PackedColorArray(0.23529412, 1, 1, 0.60784316, 0, 0, 0.41568628, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ybqwe"]
+gradient = SubResource("Gradient_toacn")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.7, 0.93)
 
 [node name="Node3D" type="Area3D" unique_id=1676042793]
 collision_layer = 4
@@ -16,15 +24,13 @@ script = ExtResource("1_62pvi")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1132591130]
 shape = SubResource("SphereShape3D_8jg5c")
 
-[node name="Light" type="OmniLight3D" parent="." unique_id=980426912]
-light_color = Color(0, 1, 1, 1)
-shadow_enabled = true
-
 [node name="DamageComponent" type="Node" parent="." unique_id=1488326728]
 script = ExtResource("2_toacn")
 metadata/_custom_type_script = "uid://dk0t68rm77cxi"
 
-[node name="CPUParticles3D" parent="." unique_id=118062217 instance=ExtResource("3_ybqwe")]
+[node name="LightFake" type="Sprite3D" parent="." unique_id=2085980210]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, 0, 0, 0)
+texture = SubResource("GradientTexture2D_ybqwe")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

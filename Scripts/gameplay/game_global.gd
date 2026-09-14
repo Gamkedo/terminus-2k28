@@ -18,3 +18,6 @@ signal wave_changed(new_wave: int)
 signal game_over
 signal final_score(score: int)
 signal enemy_killed
+
+func _ready() -> void:
+	LightningBolt.pregenerate_meshes()
