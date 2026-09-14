@@ -22,6 +22,7 @@ var num_players := 7 # maximum sfx that can play at once
 var max_in_queue := 10 # more than 20 sounds in queue will drop the last sound
 
 var bgm_player
+var game_over_player
 var available: Array[AudioStreamPlayer] = []
 var queue: Array[Dictionary] = []
 
@@ -53,6 +54,10 @@ func _ready() -> void:
 	add_child(bgm_player)
 	bgm_player.bus = BGM_BUS
 	bgm_player.process_mode = PROCESS_MODE_ALWAYS
+	game_over_player = AudioStreamPlayer.new()
+	add_child(game_over_player)
+	game_over_player.bus = SFX_BUS
+	game_over_player.process_mode = PROCESS_MODE_ALWAYS
 	_create_timer_nodes()
 
 func select_background_track(i: int) -> void:
@@ -80,6 +85,11 @@ func play_bgm(sound: AudioStream) -> void:
 	if muted: return
 	bgm_player.stream = sound
 	bgm_player.play()
+
+func play_game_over(sound: AudioStream) -> void:
+	if muted or game_over_player.playing: return
+	game_over_player.stream = sound
+	game_over_player.play()
 
 @onready var muted: bool = false:
 	set(v):

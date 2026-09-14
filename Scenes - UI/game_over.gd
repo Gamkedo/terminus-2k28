@@ -2,12 +2,16 @@ extends Control
 
 @onready var finalScoreLabel: Label = %FinalScoreLabel
 
+const GAME_OVER_SOUND := preload("res://Sound Effects/UI/GameOver.wav")
+
 func _ready() -> void:
 	GameGlobal.final_score.connect(set_final_score)
+
 
 func set_final_score(score: int):
 	get_child(0).visible = true
 	get_tree().paused = true
+	AudioStreamManager.play_game_over(GAME_OVER_SOUND)
 	finalScoreLabel.text = "SCORE: " + str(score).pad_zeros(6)
 
 func _on_restart_pressed():
