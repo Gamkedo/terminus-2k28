@@ -139,10 +139,6 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.30974174, 0.93932295,
 mesh = SubResource("SphereMesh_4flbx")
 surface_material_override/0 = SubResource("StandardMaterial3D_onrkg")
 
-[node name="Lightning" type="Node3D" parent="." unique_id=1872216530]
-script = ExtResource("2_p3gwe")
-projectile_scene = ExtResource("3_05wly")
-
 [node name="Laser" type="Node3D" parent="." unique_id=881354002]
 script = ExtResource("2_s0tvp")
 sound_effect_path = "res://Sound Effects/laserShoot.wav"
@@ -163,3 +159,7 @@ sound_effect_path = "res://Sound Effects/laserShoot.wav"
 projectile_scene = ExtResource("11_46nwg")
 fire_rate = 1.0
 metadata/_custom_type_script = "uid://cj7eq14viaaad"
+
+[node name="Lightning" type="Node3D" parent="." unique_id=1872216530]
+script = ExtResource("2_p3gwe")
+projectile_scene = ExtResource("3_05wly")
