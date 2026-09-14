@@ -6,30 +6,22 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_8jg5c"]
 radius = 3.5
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_62pvi"]
-lifetime_randomness = 0.3
-emission_shape_scale = Vector3(0.1, 0.1, 0.1)
-emission_shape = 1
-emission_sphere_radius = 1.0
-direction = Vector3(0, 1, 0)
-spread = 90.0
-initial_velocity_min = 3.0
-initial_velocity_max = 6.0
-scale_min = 0.099999994
-scale_max = 0.19999999
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_toacn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5qfa"]
 transparency = 1
-shading_mode = 0
-albedo_color = Color(0, 1, 1, 0.25882354)
+albedo_color = Color(0, 0.72833353, 0.95, 0.45490196)
+emission_enabled = true
+emission = Color(0.07341487, 0.54238397, 0.57206535, 1)
 billboard_mode = 3
+billboard_keep_scale = true
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="QuadMesh" id="QuadMesh_ybqwe"]
-material = SubResource("StandardMaterial3D_toacn")
-size = Vector2(0.35, 0.35)
+[sub_resource type="QuadMesh" id="QuadMesh_7tbbo"]
+material = SubResource("StandardMaterial3D_y5qfa")
+
+[sub_resource type="Gradient" id="Gradient_w7dxp"]
+colors = PackedColorArray(0, 0.6783332, 0.74, 0.1882353, 0, 0.3499999, 1, 0.19215687)
 
 [node name="Node3D" type="Area3D" unique_id=1676042793]
 collision_layer = 4
@@ -44,16 +36,26 @@ shape = SubResource("SphereShape3D_8jg5c")
 light_color = Color(0, 1, 1, 1)
 shadow_enabled = true
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=506844413]
-amount = 25
-lifetime = 0.35000000000000003
-explosiveness = 1.0
-process_material = SubResource("ParticleProcessMaterial_62pvi")
-draw_pass_1 = SubResource("QuadMesh_ybqwe")
-
 [node name="DamageComponent" type="Node" parent="." unique_id=1488326728]
 script = ExtResource("2_toacn")
 metadata/_custom_type_script = "uid://dk0t68rm77cxi"
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=696062901]
+material_override = SubResource("StandardMaterial3D_y5qfa")
+amount = 15
+lifetime = 0.35000000000000003
+explosiveness = 1.0
+fixed_fps = 30
+mesh = SubResource("QuadMesh_7tbbo")
+emission_shape = 1
+emission_sphere_radius = 0.2
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color = Color(0.13399999, 0.6342666, 0.67, 0.19607843)
+color_ramp = SubResource("Gradient_w7dxp")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
