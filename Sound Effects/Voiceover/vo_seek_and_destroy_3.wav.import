@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dd0wd2nn6vn1c"
+path="res://.godot/imported/vo_seek_and_destroy_3.wav-31b1e40c94bc95dd941ed44f63ef5669.sample"
+
+[deps]
+
+source_file="res://Sound Effects/Voiceover/vo_seek_and_destroy_3.wav"
+dest_files=["res://.godot/imported/vo_seek_and_destroy_3.wav-31b1e40c94bc95dd941ed44f63ef5669.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

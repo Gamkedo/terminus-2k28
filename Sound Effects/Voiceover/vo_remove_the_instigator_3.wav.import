@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://475k0o8yqcdg"
+path="res://.godot/imported/vo_remove_the_instigator_3.wav-85adf24ce8da24c4e0d6c30ed33efb71.sample"
+
+[deps]
+
+source_file="res://Sound Effects/Voiceover/vo_remove_the_instigator_3.wav"
+dest_files=["res://.godot/imported/vo_remove_the_instigator_3.wav-85adf24ce8da24c4e0d6c30ed33efb71.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
