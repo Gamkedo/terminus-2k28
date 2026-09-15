@@ -77,22 +77,22 @@ func flash(seconds = MID, intensity = QUAKE, type = Flash.NEUTRAL) ->void:
 		flash_tween = create_tween()
 		flash_tween.set_ease(Tween.EASE_IN)
 		#flash_tween.set_parallel(true)
-		env.environment.glow_bloom = intensity
+		env.glow_bloom = intensity
 		match type:
 			Flash.LIGHT:
-				env.environment.adjustment_brightness = 1.0 + 2.0 * intensity
+				env.adjustment_brightness = 1.0 + 2.0 * intensity
 			Flash.DARK:
-				env.environment.glow_bloom = 0.0 # bloom doesn't look nice with this one
-				env.environment.adjustment_brightness = 1.0 - intensity * 1.2
+				env.glow_bloom = 0.0 # bloom doesn't look nice with this one
+				env.adjustment_brightness = 1.0 - intensity * 1.2
 			Flash.STARK:
-				env.environment.adjustment_contrast = 1.0 + intensity * 0.5
-				env.environment.adjustment_saturation = 1.0 + intensity * 5.0
+				env.adjustment_contrast = 1.0 + intensity * 0.5
+				env.adjustment_saturation = 1.0 + intensity * 0.5
 			Flash.BLAND:
-				env.environment.adjustment_saturation = 1.0 - intensity
-		flash_tween.tween_property(env.environment, "glow_bloom", baseline_bloom, seconds)
-		flash_tween.parallel().tween_property(env.environment, "adjustment_brightness", baseline_brightness, seconds)
-		flash_tween.parallel().tween_property(env.environment, "adjustment_contrast", baseline_contrast, seconds)
-		flash_tween.parallel().tween_property(env.environment, "adjustment_saturation", baseline_saturation, seconds)
+				env.adjustment_saturation = 1.0 - intensity
+		flash_tween.tween_property(env, "glow_bloom", baseline_bloom, seconds)
+		flash_tween.parallel().tween_property(env, "adjustment_brightness", baseline_brightness, seconds)
+		flash_tween.parallel().tween_property(env, "adjustment_contrast", baseline_contrast, seconds)
+		flash_tween.parallel().tween_property(env, "adjustment_saturation", baseline_saturation, seconds)
 
 
 var slomo_tween: Tween
@@ -134,9 +134,12 @@ func fade_in(seconds = MID, node = null):
 	return fade(seconds, node, Color.WHITE)
 
 
-func _get_world_env() -> WorldEnvironment:
-	return get_tree().get_first_node_in_group("world_environment")
-
+func _get_world_env() -> Environment:
+	var we = get_tree().get_first_node_in_group("world_environment")
+	if we and we is WorldEnvironment:
+		return we.environment
+	we = get_viewport().get_camera_3d().environment
+	return we
 
 func _process(delta: float) -> void:
 	var cam: Camera3D = get_viewport().get_camera_3d()

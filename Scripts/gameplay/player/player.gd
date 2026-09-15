@@ -16,7 +16,7 @@ const FIRE_RATE: float = 0.2
 var last_direction: Vector3 = Vector3.FORWARD
 var reload_time: float = 0.0
 var alternate_cannon_left: bool = true
-var return_to_menu_delay: float = 1.5
+var return_to_menu_delay: float = 2.0
 
 var health_max: float = 100.00
 var health_current: float = health_max
@@ -111,9 +111,10 @@ func reduce_health(amount: float) -> void:
 
 	health_reduced.emit(amount)
 
-	if health_current <= 0.0 and not has_died:
-		has_died = true
-		_on_death.call_deferred()
+	if health_current <= 0.0:
+		if not has_died:
+			has_died = true
+			_on_death.call_deferred()
 	else:
 		# TODO: maybe someone can make a sound that's more purpose-built for this
 		AudioStreamManager.play_sfx("res://Sound Effects/UI/UI_rumble.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
@@ -125,7 +126,7 @@ func reduce_health(amount: float) -> void:
 func _on_death() -> void:
 	ScreenVFX.slomo(ScreenVFX.MID, ScreenVFX.QUAKE)
 	ScreenVFX.shake(ScreenVFX.LONG, ScreenVFX.QUAKE)
-	ScreenVFX.flash(ScreenVFX.LONG, ScreenVFX.QUAKE, ScreenVFX.Flash.STARK)
+	ScreenVFX.flash(ScreenVFX.LONG, ScreenVFX.TREMOR, ScreenVFX.Flash.STARK)
 	AudioStreamManager.play_sfx("res://Sound Effects/Explosions/explosion_4.wav")
 	await AudioStreamManager.fade_out_music(return_to_menu_delay).finished
 	GameGlobal.game_over.emit()

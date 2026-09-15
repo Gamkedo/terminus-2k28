@@ -105,15 +105,14 @@ script = ExtResource("2_l51xd")
 enemies = Array[ExtResource("3_m34s3")]([SubResource("Resource_c4ync"), SubResource("Resource_nl4cv"), SubResource("Resource_5v2eu")])
 metadata/_custom_type_script = "uid://emf33hlypehq"
 
-[sub_resource type="Environment" id="Environment_m34s3"]
-adjustment_enabled = true
-
 [sub_resource type="Environment" id="Environment_788xb"]
+glow_enabled = true
 fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.19057477, 0.21052259, 0.24044365, 1)
 fog_density = 1.0
 fog_depth_end = 50.0
+adjustment_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_y5qfa"]
 size = Vector3(128, 1, 128)
@@ -135,9 +134,6 @@ shadow_enabled = true
 transform = Transform3D(0.48363605, 0.42028117, -0.76776284, -0.28596014, 0.9049097, 0.3152221, 0.82723814, 0.06709677, 0.5578307, 11.6279, 17.40335, 4.5625114)
 light_color = Color(1, 0.4745098, 0, 1)
 light_energy = 0.5
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=841791228 groups=["world_environment"]]
-environment = SubResource("Environment_m34s3")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1314461]
 transform = Transform3D(0.9983916, -0.028389657, 0.049073208, 0, 0.865588, 0.50075686, -0.056693494, -0.49995145, 0.8641958, -1.8925362, 3.693531, 2.1149712)
