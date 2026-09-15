@@ -44,6 +44,7 @@ var weapons_manager: WeaponsManager
 @onready var muzzleB: Node = %FireFromB
 @onready var aim_dot: Node3D = $AimDot
 @onready var aim_ray_cast_3d: RayCast3D = %AimRayCast3D
+@onready var death_explosion: AnimatedSprite3D = $DeathExplosion
 
 # signals
 
@@ -124,6 +125,8 @@ func reduce_health(amount: float) -> void:
 	GameLogger.debug("Health: %.2f / %.2f" % [health_current, health_max])
 
 func _on_death() -> void:
+	death_explosion.show()
+	death_explosion.play("default")
 	ScreenVFX.slomo(ScreenVFX.MID, ScreenVFX.QUAKE)
 	ScreenVFX.shake(ScreenVFX.LONG, ScreenVFX.QUAKE)
 	ScreenVFX.flash(ScreenVFX.LONG, ScreenVFX.TREMOR, ScreenVFX.Flash.STARK)
