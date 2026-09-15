@@ -16,6 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_jtftj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=20506675]
+layer = 7
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1949234868]
