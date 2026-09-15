@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://c7hc705w0hq2y"]
 
 [ext_resource type="Script" uid="uid://b8ios76is7wac" path="res://Scripts/menus/level_select.gd" id="1_lnidy"]
-[ext_resource type="Texture2D" uid="uid://orfwumf3qiy1" path="res://Scenes - Levels/Level Select Preview Images/areaA-preview.jpg" id="1_pssaq"]
 [ext_resource type="Texture2D" uid="uid://by5q5qyu6eopi" path="res://Sprites/GUI/Terminus2k28Logo.png" id="2_lnidy"]
 [ext_resource type="PackedScene" uid="uid://d2psco3t4cdwm" path="res://Scenes - UI/SoundControlUI.tscn" id="2_w32vy"]
-[ext_resource type="Texture2D" uid="uid://c3neky7qng2wm" path="res://Scenes - Levels/Level Select Preview Images/areaB-preview.jpg" id="3_g3bd0"]
+[ext_resource type="Texture2D" uid="uid://d3ym0voj38pp1" path="res://Scenes - Levels/Level Select Preview Images/areaA-preview.png" id="3_7blhc"]
 [ext_resource type="Script" uid="uid://43vdms6yoos2" path="res://Scripts/menus/menu_button.gd" id="4_7blhc"]
-[ext_resource type="Texture2D" uid="uid://oaxy71lew71g" path="res://Scenes - Levels/Level Select Preview Images/areaC-preview.jpg" id="4_krrsl"]
+[ext_resource type="Texture2D" uid="uid://drjg56vfuktlm" path="res://Scenes - Levels/Level Select Preview Images/areaB-preview.png" id="5_y1rhc"]
+[ext_resource type="Texture2D" uid="uid://dm856cff6gqsi" path="res://Scenes - Levels/Level Select Preview Images/areaC-preview.png" id="6_wj7nf"]
 [ext_resource type="Script" uid="uid://bv8ijbramquuc" path="res://menu_button_audio.gd" id="7_gd4f1"]
 
 [sub_resource type="Gradient" id="Gradient_lnidy"]
@@ -69,7 +69,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 focus_neighbor_right = NodePath("../../Survivor Container/AreaB Survivor")
-icon = ExtResource("1_pssaq")
+icon = ExtResource("3_7blhc")
 expand_icon = true
 script = ExtResource("4_7blhc")
 
@@ -88,7 +88,7 @@ custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 focus_neighbor_left = NodePath("../../Arcade Container/AreaA Arcade")
 focus_neighbor_right = NodePath("../../Immersive Container/AreaC Immersive")
-icon = ExtResource("3_g3bd0")
+icon = ExtResource("5_y1rhc")
 expand_icon = true
 script = ExtResource("4_7blhc")
 
@@ -106,7 +106,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 focus_neighbor_left = NodePath("../../Survivor Container/AreaB Survivor")
-icon = ExtResource("4_krrsl")
+icon = ExtResource("6_wj7nf")
 expand_icon = true
 script = ExtResource("4_7blhc")
 

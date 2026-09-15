@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oaxy71lew71g"
-path="res://.godot/imported/areaC-preview.jpg-8ae29de3641f0a80d47cd3af3941f335.ctex"
+uid="uid://d3ym0voj38pp1"
+path="res://.godot/imported/areaA-preview.png-b42f5acf94cf82aeded3f44844b1a6ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes - Levels/Level Select Preview Images/areaC-preview.jpg"
-dest_files=["res://.godot/imported/areaC-preview.jpg-8ae29de3641f0a80d47cd3af3941f335.ctex"]
+source_file="res://Scenes - Levels/Level Select Preview Images/areaA-preview.png"
+dest_files=["res://.godot/imported/areaA-preview.png-b42f5acf94cf82aeded3f44844b1a6ed.ctex"]
 
 [params]
 
