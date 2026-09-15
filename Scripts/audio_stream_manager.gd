@@ -39,6 +39,7 @@ var descending_timer
 var bg_music_tracks: Array[AudioStream] = [
 	preload("uid://dwrnljiewp65j"),
 	preload("uid://ckf2bo2btl6yy"),
+	preload("uid://daf5fwio2kfr0"),
 ]
 var selected_background_music: AudioStream = bg_music_tracks[0]
 
