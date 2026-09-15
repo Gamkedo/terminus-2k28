@@ -135,11 +135,10 @@ func fade_in(seconds = MID, node = null):
 
 
 func _get_world_env() -> Environment:
-	var we = get_tree().get_first_node_in_group("world_environment")
-	if we and we is WorldEnvironment:
-		return we.environment
-	we = get_viewport().get_camera_3d().environment
-	return we
+	var cam = get_viewport().get_camera_3d()
+	if cam:
+		return cam.environment
+	return null
 
 func _process(delta: float) -> void:
 	var cam: Camera3D = get_viewport().get_camera_3d()

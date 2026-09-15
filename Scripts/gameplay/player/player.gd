@@ -45,6 +45,7 @@ var weapons_manager: WeaponsManager
 @onready var aim_dot: Node3D = $AimDot
 @onready var aim_ray_cast_3d: RayCast3D = %AimRayCast3D
 @onready var death_explosion: AnimatedSprite3D = $DeathExplosion
+@onready var death_explosion_particles: CPUParticles3D = $DeathExplosionParticles
 
 # signals
 
@@ -127,6 +128,7 @@ func reduce_health(amount: float) -> void:
 func _on_death() -> void:
 	death_explosion.show()
 	death_explosion.play("default")
+	death_explosion_particles.emitting = true
 	ScreenVFX.slomo(ScreenVFX.MID, ScreenVFX.QUAKE)
 	ScreenVFX.shake(ScreenVFX.LONG, ScreenVFX.QUAKE)
 	ScreenVFX.flash(ScreenVFX.LONG, ScreenVFX.TREMOR, ScreenVFX.Flash.STARK)
