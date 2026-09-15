@@ -91,6 +91,31 @@ func play_game_over(sound: AudioStream) -> void:
 	game_over_player.stream = sound
 	game_over_player.play()
 
+
+var faded_bgm_from: float = 1.0
+
+func fade_out_music(seconds = 1.0) -> Tween:
+	faded_bgm_from = get_music_volume()
+	var t := create_tween()
+	t.tween_method(set_music_volume, faded_bgm_from, 0.0, seconds)
+	return t
+
+func fade_in_music(seconds = 1.0) -> Tween:
+	var t := create_tween()
+	t.tween_method(set_music_volume, get_music_volume(), faded_bgm_from, seconds)
+	return t
+
+func restore_bgm_volume() -> void:
+	set_music_volume(faded_bgm_from)
+
+func set_music_volume(linear_value: float) -> void:
+	var idx = AudioServer.get_bus_index(BGM_BUS)
+	AudioServer.set_bus_volume_linear(idx, linear_value)
+
+func get_music_volume() -> float:
+	var idx = AudioServer.get_bus_index(BGM_BUS)
+	return AudioServer.get_bus_volume_linear(idx)
+
 @onready var muted: bool = false:
 	set(v):
 		muted = v

@@ -16,8 +16,10 @@ func set_final_score(score: int):
 
 func _on_restart_pressed():
 	get_tree().paused = false
+	AudioStreamManager.restore_bgm_volume()
 	get_tree().reload_current_scene()
 
 func _on_back_to_menu_pressed():
 	get_tree().paused = false
+	AudioStreamManager.restore_bgm_volume()
 	SceneChanger.change_scene("res://level_menu.tscn")

@@ -25,6 +25,7 @@ GameGlobal="*uid://dq6dr03oqdbyp"
 AudioStreamManager="*uid://b1dm4u4xvtylv"
 GameLogger="*uid://dtl503p3q72rn"
 SceneChanger="*uid://805eboscf02o"
+ScreenVFX="*uid://b8nd06xhy2wpf"
 
 [display]
 
@@ -42,6 +43,7 @@ import/blender/enabled=false
 [global_group]
 
 enemy=""
+world_environment=""
 
 [input]
 
