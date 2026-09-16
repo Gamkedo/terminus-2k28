@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dpwshiotofj4d"]
+
+[ext_resource type="Script" uid="uid://dk0t68rm77cxi" path="res://Scripts/gameplay/damage_component.gd" id="1_04w5x"]
+[ext_resource type="Script" uid="uid://cm2j6bvbieeve" path="res://Scripts/gameplay/projectiles/laser_bolt.gd" id="1_nbgud"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nbgud"]
+radius = 5.0
+
+[node name="AOEExplosion" type="Area3D" unique_id=778278266]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_nbgud")
+speed = 0.0
+destroy_delay = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1725730875]
+shape = SubResource("SphereShape3D_nbgud")
+
+[node name="DamageComponent" type="Node" parent="." unique_id=760635595]
+script = ExtResource("1_04w5x")
+amount = 50
+metadata/_custom_type_script = "uid://dk0t68rm77cxi"

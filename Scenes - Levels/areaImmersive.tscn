@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="7_8go4e"]
 [ext_resource type="Script" uid="uid://cfc24xmre36y6" path="res://Scripts/gameplay/player/weapons_manager.gd" id="9_h4x15"]
 [ext_resource type="PackedScene" uid="uid://bsqax7a47vrc6" path="res://Scenes - UI/game_over.tscn" id="9_n8psh"]
+[ext_resource type="PackedScene" uid="uid://4u0plcnsynif" path="res://Scenes - Objects/Scenery/explosive_barrel.tscn" id="12_rhcrj"]
 [ext_resource type="Script" uid="uid://c7pgxg3avlvxo" path="res://Scripts/gameplay/level_manager/enemy_spawner.gd" id="14_rhcrj"]
 [ext_resource type="PackedScene" uid="uid://c4bxgkgn3crmk" path="res://Scenes - Objects/Scenery/truck_scenery.tscn" id="15_l51xd"]
 [ext_resource type="PackedScene" uid="uid://b7muf8h4yxj5" path="res://Scenes - UI/pause_menu.tscn" id="16_m34s3"]
@@ -246,6 +247,21 @@ size = Vector3(17, 10, 13)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0.5)
 operation = 2
 size = Vector3(15, 8, 14)
+
+[node name="ExplosiveBarrel" parent="NavigationRegion3D/Obstacles" unique_id=1514766770 instance=ExtResource("12_rhcrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.87697, 0, -14.346407)
+
+[node name="ExplosiveBarrel2" parent="NavigationRegion3D/Obstacles" unique_id=734484558 instance=ExtResource("12_rhcrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.884317, 0, 21.984415)
+
+[node name="ExplosiveBarrel3" parent="NavigationRegion3D/Obstacles" unique_id=1069026129 instance=ExtResource("12_rhcrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.494169, 1.9073486e-06, 22.841965)
+
+[node name="ExplosiveBarrel4" parent="NavigationRegion3D/Obstacles" unique_id=929932709 instance=ExtResource("12_rhcrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.020638, 1.9073486e-06, -19.802605)
+
+[node name="ExplosiveBarrel5" parent="NavigationRegion3D/Obstacles" unique_id=105900223 instance=ExtResource("12_rhcrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6100388, 1.9073486e-06, -6.9812317)
 
 [node name="ScoreGUI" parent="." unique_id=1866250465 instance=ExtResource("7_8go4e")]
 

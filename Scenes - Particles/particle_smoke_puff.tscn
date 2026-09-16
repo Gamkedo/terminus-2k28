@@ -5,11 +5,11 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hnxxg"]
 albedo_color = Color(0.2, 0.2, 0.2, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ssbcb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mvcy"]
 albedo_color = Color(0.2, 0.2, 0.2, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_8mvcy"]
-material = SubResource("StandardMaterial3D_ssbcb")
+material = SubResource("StandardMaterial3D_8mvcy")
 
 [node name="ParticleSmokePuff" type="Node3D" unique_id=1690057196]
 script = ExtResource("1_mmp83")
