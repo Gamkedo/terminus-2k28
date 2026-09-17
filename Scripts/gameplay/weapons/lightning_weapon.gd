@@ -1,7 +1,7 @@
 extends Weapon
 
 @export var light_fake: Node3D
-@export var light_fake_travel_length: float = 0.1
+@export var light_fake_travel_length: float = 0.05
 @export var min_projectiles: int = 5
 @export var max_projectiles: int = 10
 @export var ramp_up: float = 1.15
@@ -21,10 +21,9 @@ var time_to_flicker: float = flicker_interval
 var ramp_up_multiplier: float = 0.
 func _process(delta: float) -> void:
 	super(delta)
-	print(time_to_flicker)
 	ramp_up_multiplier = max(ramp_up_multiplier - ramp_down * delta, 0.)
 	if 0 < bolts_to_shoot:
-		time_to_flicker -= delta * ramp_up_multiplier
+		time_to_flicker -= delta
 		if time_to_flicker < 0.:
 			time_to_flicker = flicker_interval
 			if light_fake:
