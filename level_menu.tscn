@@ -130,16 +130,16 @@ script = ExtResource("4_7blhc")
 
 [node name="Credits Panel" type="Panel" parent="." unique_id=1658457094]
 visible = false
-offset_left = 126.0
-offset_top = 18.0
-offset_right = 1017.0
-offset_bottom = 602.0
+offset_left = 20.0
+offset_top = 42.0
+offset_right = 1133.0
+offset_bottom = 626.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7blhc")
 
 [node name="Padding" type="MarginContainer" parent="Credits Panel" unique_id=1016785290]
 layout_mode = 0
-offset_right = 891.0
-offset_bottom = 584.0
+offset_right = 1101.0
+offset_bottom = 582.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -148,25 +148,37 @@ theme_override_constants/margin_bottom = 10
 [node name="VBoxContainer" type="VBoxContainer" parent="Credits Panel/Padding" unique_id=531258819]
 layout_mode = 2
 
-[node name="Credits Title" type="RichTextLabel" parent="Credits Panel/Padding/VBoxContainer" unique_id=561071897]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 25
-theme_override_font_sizes/bold_font_size = 25
-theme_override_font_sizes/bold_italics_font_size = 25
-theme_override_font_sizes/italics_font_size = 25
-theme_override_font_sizes/mono_font_size = 25
-text = "Credits
-"
-fit_content = true
-scroll_following = true
-horizontal_alignment = 1
-
 [node name="Credits Body" type="RichTextLabel" parent="Credits Panel/Padding/VBoxContainer" unique_id=1679062833]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Chris is getting these compiled before release :)
+theme_override_font_sizes/normal_font_size = 13
+text = "• Chris DeLeon: Project lead, base gamplay, general game structure, basic billboard and 3d enemy types, immersive obstacles, immersive mode fog, minor optimizations
+• Michael Buslik: Robodog, obelisk spawner, turret enemy, orbit shield bots, randomized environment placement, beam weapon, destructible truck, survivor mode enemy edge spawner/looping, quadcopter enemy, explosive barrels, sprite flipping
+• Juan Luiz R: Environment art (fence, tree, hydrant, rock, bush, wheel), large explosion animation, song2k28, player projectiles, effects (explosion, smoke, wind/leafs), prop spawn tuning
+• wolscott: Movement and aim input fixes, gamepad support (including menus), loading screens, collision improvements, assorted bug fixes and optimizations
+• Tanner G: Sound lead (UI audio, drone hum, electric attacks, explosions, lasers, spreadshot, robot voice modulation) including integration
+• Mark Guinn: Surivor mode autotargeting and autofire, health bar with animated effects, screenshake and flashes, player death explosion
+• azzysteel: Level manager, wave managers, wave authoring, round stat tracking, dynamic sound pitch
+• Dávid Tóth: Lightning bolts weapon (incl. optimizations), player model, roombye robot, song selector
+• Shane B.: Level boundaries, aircraft model, robotank model
+• Raymond Zegles: Nuclear power planet, game over menu, GUI wave counter, credits panel toggle
+• Lenny Morayniss: Audio manager with stream queue limits, weapon switching, weapon stacking, spread shot, damage support
+• Christer Kaitila: Ambience song, title logo, CRT effect, muzzle flashes, weapon switch, GUI font selection, score/combo gui
+• Jalent (Jason W): Player concept art, terminus1 song
+• Amanda Stanley: Robot voice acting
+• Belén Albeza: Pickup system (incl. health boost, enemy drops)
+• Justin Montgomery: Enemy perception, nav mesh, seek and wander, mouse capture debug
+• L: Game over sound (and implementation), pause key toggle
+• VikingMalmstrom: Arcade ground texture
+• APC: Game story
+• Tim Lorgeree: Player health support, debugging logger
+• Ryan Gaillard: Game over handling, mute key toggle
+• Jordan: Pause menu scene
+• fizzybuzzybeezy: Main menu audio toggle
+• Michael Avrie: Music export bug fix
+• Playtesting: Barış Köklü, Juan Luiz R
 
-(Will be detailed based on GitHub commit details)"
+This game was developed as part of a 3-Week Challenge run in DevPods.gg (September 2026)"
 
 [node name="Close Credits" type="Button" parent="Credits Panel/Padding/VBoxContainer" unique_id=829291104]
 unique_name_in_owner = true
@@ -179,7 +191,7 @@ focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath(".")
 focus_next = NodePath(".")
 focus_previous = NodePath(".")
-text = "Close"
+text = "Back"
 
 [node name="SoundControlUI" parent="." unique_id=712051681 instance=ExtResource("2_w32vy")]
 anchors_preset = 0
