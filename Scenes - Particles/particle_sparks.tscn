@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bhkgqc8ses5nu"]
+
+[ext_resource type="Script" uid="uid://dylns0kqgemus" path="res://Scripts/gameplay/particle_remove.gd" id="1_gm55t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ssbcb"]
+albedo_color = Color(0.99196357, 0.7749155, 0.21113464, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wk7b5"]
+material = SubResource("StandardMaterial3D_ssbcb")
+radius = 0.1
+height = 0.6
+radial_segments = 4
+rings = 0
+
+[node name="ParticleSparks" type="Node3D" unique_id=1162072880]
+script = ExtResource("1_gm55t")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1875228570]
+emitting = false
+amount = 20
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+randomness = 0.18
+fixed_fps = 30
+visibility_aabb = AABB(-4, -4, -4, 8, 8, 8)
+mesh = SubResource("CapsuleMesh_wk7b5")
+particle_flag_align_y = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, -40, 0)
+initial_velocity_min = 12.0
+initial_velocity_max = 22.0
+scale_amount_min = 0.4
+scale_amount_max = 1.5

@@ -12,6 +12,7 @@ func set_final_score(score: int):
 	get_child(0).visible = true
 	get_tree().paused = true
 	AudioStreamManager.play_game_over(GAME_OVER_SOUND)
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	finalScoreLabel.text = "SCORE: " + str(score).pad_zeros(6)
 
 func _on_restart_pressed():

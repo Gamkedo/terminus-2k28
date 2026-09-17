@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://4u0plcnsynif"]
+
+[ext_resource type="Script" uid="uid://eug6k1o7o52e" path="res://Scripts/gameplay/world/destructible_scenery.gd" id="1_rm2dp"]
+[ext_resource type="PackedScene" uid="uid://dha0qrim6ra1o" path="res://Models (game format)/explosive_barrel.glb" id="1_xve1h"]
+[ext_resource type="PackedScene" uid="uid://bhkgqc8ses5nu" path="res://Scenes - Particles/particle_sparks.tscn" id="2_nk6up"]
+[ext_resource type="PackedScene" uid="uid://bjoc5aa7xcnpi" path="res://Scenes - Particles/particle_smoke_puff.tscn" id="3_dcled"]
+[ext_resource type="Script" uid="uid://bxd4qyt1cgnhi" path="res://Scripts/gameplay/health_component.gd" id="4_l5gdw"]
+[ext_resource type="PackedScene" uid="uid://c6aamc5js8pa1" path="res://Scenes - Particles/particle_aoe_explosion.tscn" id="4_whkpk"]
+[ext_resource type="PackedScene" uid="uid://dpwshiotofj4d" path="res://Scenes - Objects/aoe_explosion.tscn" id="5_whkpk"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xve1h"]
+height = 2.4666748
+radius = 1.0703125
+
+[node name="ExplosiveBarrel" type="Node3D" unique_id=1514766770 node_paths=PackedStringArray("part_spawn_spot") groups=["enemy"]]
+script = ExtResource("1_rm2dp")
+destroy_particles = Array[PackedScene]([ExtResource("2_nk6up"), ExtResource("3_dcled"), ExtResource("4_whkpk"), ExtResource("5_whkpk")])
+dest_anim_name = ""
+destroy_self = true
+part_spawn_spot = NodePath("ParticleSpawnSpot")
+
+[node name="explosive_barrel" parent="." unique_id=227694802 instance=ExtResource("1_xve1h")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=934144627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8312016, 0)
+collision_mask = 133
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2102116676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.56085205, 0)
+shape = SubResource("CylinderShape3D_xve1h")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=200475414]
+script = ExtResource("4_l5gdw")
+max_health = 50
+metadata/_custom_type_script = "uid://bxd4qyt1cgnhi"
+
+[node name="ParticleSpawnSpot" type="Node3D" parent="." unique_id=828109836]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0253339, 0)

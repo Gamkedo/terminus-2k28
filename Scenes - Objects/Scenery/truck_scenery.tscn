@@ -69,10 +69,12 @@ _data = {
 &"destroy_anim": SubResource("Animation_b84b4")
 }
 
-[node name="TruckScenery" type="Node3D" unique_id=1339161382 groups=["enemy"]]
+[node name="TruckScenery" type="Node3D" unique_id=1339161382 node_paths=PackedStringArray("anim_player", "part_spawn_spot") groups=["enemy"]]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 script = ExtResource("1_wppp6")
 destroy_particles = Array[PackedScene]([ExtResource("2_b84b4")])
+anim_player = NodePath("AnimationPlayer")
+part_spawn_spot = NodePath("PartSpawnSpot")
 
 [node name="TruckModel" parent="." unique_id=965362556 instance=ExtResource("1_s1cpr")]
 transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0, 2.0170522, 0)
@@ -92,3 +94,6 @@ libraries/ = SubResource("AnimationLibrary_3ela8")
 script = ExtResource("4_3ela8")
 max_health = 50
 metadata/_custom_type_script = "uid://bxd4qyt1cgnhi"
+
+[node name="PartSpawnSpot" type="Node3D" parent="." unique_id=1352408417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5038722, 2.3776495, -2.2066352)

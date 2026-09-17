@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="7_8go4e"]
 [ext_resource type="Script" uid="uid://cfc24xmre36y6" path="res://Scripts/gameplay/player/weapons_manager.gd" id="9_h4x15"]
 [ext_resource type="PackedScene" uid="uid://bsqax7a47vrc6" path="res://Scenes - UI/game_over.tscn" id="9_n8psh"]
+[ext_resource type="PackedScene" uid="uid://4u0plcnsynif" path="res://Scenes - Objects/Scenery/explosive_barrel.tscn" id="12_rhcrj"]
 [ext_resource type="Script" uid="uid://c7pgxg3avlvxo" path="res://Scripts/gameplay/level_manager/enemy_spawner.gd" id="14_rhcrj"]
 [ext_resource type="PackedScene" uid="uid://c4bxgkgn3crmk" path="res://Scenes - Objects/Scenery/truck_scenery.tscn" id="15_l51xd"]
 [ext_resource type="PackedScene" uid="uid://b7muf8h4yxj5" path="res://Scenes - UI/pause_menu.tscn" id="16_m34s3"]
@@ -105,15 +106,14 @@ script = ExtResource("2_l51xd")
 enemies = Array[ExtResource("3_m34s3")]([SubResource("Resource_c4ync"), SubResource("Resource_nl4cv"), SubResource("Resource_5v2eu")])
 metadata/_custom_type_script = "uid://emf33hlypehq"
 
-[sub_resource type="Environment" id="Environment_m34s3"]
-adjustment_enabled = true
-
 [sub_resource type="Environment" id="Environment_788xb"]
+glow_enabled = true
 fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.19057477, 0.21052259, 0.24044365, 1)
 fog_density = 1.0
 fog_depth_end = 50.0
+adjustment_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_y5qfa"]
 size = Vector3(128, 1, 128)
@@ -135,9 +135,6 @@ shadow_enabled = true
 transform = Transform3D(0.48363605, 0.42028117, -0.76776284, -0.28596014, 0.9049097, 0.3152221, 0.82723814, 0.06709677, 0.5578307, 11.6279, 17.40335, 4.5625114)
 light_color = Color(1, 0.4745098, 0, 1)
 light_energy = 0.5
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=841791228 groups=["world_environment"]]
-environment = SubResource("Environment_m34s3")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1314461]
 transform = Transform3D(0.9983916, -0.028389657, 0.049073208, 0, 0.865588, 0.50075686, -0.056693494, -0.49995145, 0.8641958, -1.8925362, 3.693531, 2.1149712)
@@ -250,6 +247,21 @@ size = Vector3(17, 10, 13)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0.5)
 operation = 2
 size = Vector3(15, 8, 14)
+
+[node name="ExplosiveBarrel" parent="NavigationRegion3D/Obstacles" unique_id=1514766770 instance=ExtResource("12_rhcrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.87697, 0, -14.346407)
+
+[node name="ExplosiveBarrel2" parent="NavigationRegion3D/Obstacles" unique_id=734484558 instance=ExtResource("12_rhcrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.884317, 0, 21.984415)
+
+[node name="ExplosiveBarrel3" parent="NavigationRegion3D/Obstacles" unique_id=1069026129 instance=ExtResource("12_rhcrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.494169, 1.9073486e-06, 22.841965)
+
+[node name="ExplosiveBarrel4" parent="NavigationRegion3D/Obstacles" unique_id=929932709 instance=ExtResource("12_rhcrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.020638, 1.9073486e-06, -19.802605)
+
+[node name="ExplosiveBarrel5" parent="NavigationRegion3D/Obstacles" unique_id=105900223 instance=ExtResource("12_rhcrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6100388, 1.9073486e-06, -6.9812317)
 
 [node name="ScoreGUI" parent="." unique_id=1866250465 instance=ExtResource("7_8go4e")]
 

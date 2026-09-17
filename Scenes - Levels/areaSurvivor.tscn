@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://wdglasw32mes" path="res://Scenes - Objects/enemy_roombye.tscn" id="7_155sy"]
 [ext_resource type="Script" uid="uid://dgtikgscqcp3m" path="res://Scripts/gameplay/player/auto_aim_component.gd" id="7_v3a74"]
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="8_ua6li"]
+[ext_resource type="PackedScene" uid="uid://4u0plcnsynif" path="res://Scenes - Objects/Scenery/explosive_barrel.tscn" id="10_lqsss"]
 [ext_resource type="PackedScene" uid="uid://vdwb0cf16yx0" path="res://Scenes - Objects/enemy_stationary_turret.tscn" id="11_vx5xs"]
 [ext_resource type="PackedScene" uid="uid://c4bxgkgn3crmk" path="res://Scenes - Objects/Scenery/truck_scenery.tscn" id="13_u40bk"]
 [ext_resource type="PackedScene" uid="uid://bsqax7a47vrc6" path="res://Scenes - UI/game_over.tscn" id="14_ww2x6"]
@@ -35,7 +36,8 @@ uv2_triplanar = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_7tbbo"]
 size = Vector3(128, 1, 128)
 
-[sub_resource type="Environment" id="Environment_ocn12"]
+[sub_resource type="Environment" id="Environment_oksh5"]
+glow_enabled = true
 adjustment_enabled = true
 
 [node name="SurvivorScene" type="Node3D" unique_id=881090372]
@@ -60,11 +62,9 @@ shape = SubResource("BoxShape3D_7tbbo")
 transform = Transform3D(0.73278594, -0.32673866, 0.59688085, 5.3732524e-08, 0.8771734, 0.48017368, -0.6804593, -0.35186443, 0.64278036, 23.942041, 17.40335, 0)
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=1421657127 groups=["world_environment"]]
-environment = SubResource("Environment_ocn12")
-
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1314461]
 transform = Transform3D(0.7071068, -0.5196631, 0.47953132, 0, 0.67815965, 0.73491466, -0.7071068, -0.5196631, 0.47953132, 45, 68.70383, 45)
+environment = SubResource("Environment_oksh5")
 projection = 1
 size = 54.271
 script = ExtResource("3_42ddl")
@@ -98,6 +98,30 @@ transform = Transform3D(-0.20815112, 0, -0.7724461, 0, 0.80000013, 0, 0.7724461,
 
 [node name="TruckScenery4" parent="Scenery" unique_id=1976637666 instance=ExtResource("13_u40bk")]
 transform = Transform3D(0.43197018, 0, -0.67335105, 0, 0.80000013, 0, 0.67335105, 0, 0.43197018, 73.57091, -1.9073486e-06, 64.355804)
+
+[node name="ExplosiveBarrel" parent="Scenery" unique_id=1514766770 instance=ExtResource("10_lqsss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2308, -1.9073486e-06, 1.4836025)
+
+[node name="ExplosiveBarrel8" parent="Scenery" unique_id=1308349724 instance=ExtResource("10_lqsss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.766294, -1.9073486e-06, 12.185125)
+
+[node name="ExplosiveBarrel2" parent="Scenery" unique_id=112185520 instance=ExtResource("10_lqsss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.350422, -5.722046e-06, -27.578321)
+
+[node name="ExplosiveBarrel3" parent="Scenery" unique_id=1904582310 instance=ExtResource("10_lqsss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.139866, -1.9073486e-06, -40.653656)
+
+[node name="ExplosiveBarrel4" parent="Scenery" unique_id=1430407667 instance=ExtResource("10_lqsss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.416836, -1.9073486e-06, 30.801422)
+
+[node name="ExplosiveBarrel5" parent="Scenery" unique_id=733920142 instance=ExtResource("10_lqsss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.368748, -1.9073486e-06, 49.37959)
+
+[node name="ExplosiveBarrel6" parent="Scenery" unique_id=1629784488 instance=ExtResource("10_lqsss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.031895, -1.9073486e-06, 7.866268)
+
+[node name="ExplosiveBarrel7" parent="Scenery" unique_id=874033840 instance=ExtResource("10_lqsss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.364956, -1.9073486e-06, -66.05765)
 
 [node name="GameOverScreen" parent="." unique_id=397520369 instance=ExtResource("14_ww2x6")]
 

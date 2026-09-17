@@ -43,7 +43,6 @@ import/blender/enabled=false
 [global_group]
 
 enemy=""
-world_environment=""
 
 [input]
 

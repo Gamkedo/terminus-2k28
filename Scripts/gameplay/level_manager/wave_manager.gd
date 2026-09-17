@@ -17,7 +17,7 @@ var spawning_complete = false
 
 func _ready() -> void:
 	GameGlobal.enemy_killed.connect(_on_enemy_killed)
-	ScreenVFX.set_shake_volume(0.1)
+	ScreenVFX.set_shake_volume(0.2)
 	enemy_spawner.enemy_spawned.connect(_on_enemy_spawned)
 	_set_up_timer()
 	_start_new_round()
