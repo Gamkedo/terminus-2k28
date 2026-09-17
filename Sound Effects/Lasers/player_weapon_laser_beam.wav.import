@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dpflv00x0xlgd"
+path="res://.godot/imported/player_weapon_laser_beam.wav-656886daeea739214b67c7f56c205aba.sample"
+
+[deps]
+
+source_file="res://Sound Effects/Lasers/player_weapon_laser_beam.wav"
+dest_files=["res://.godot/imported/player_weapon_laser_beam.wav-656886daeea739214b67c7f56c205aba.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

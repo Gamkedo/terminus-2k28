@@ -52,4 +52,4 @@ func fire(pos: Vector3, rot: Vector3) -> void:
 			active_laser_spot = i
 			break
 	beam_timer = 0.0
-	AudioStreamManager.play_sfx("res://Sound Effects/Lasers/laser_7.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
+	AudioStreamManager.play_sfx("res://Sound Effects/Lasers/player_weapon_laser_beam.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)

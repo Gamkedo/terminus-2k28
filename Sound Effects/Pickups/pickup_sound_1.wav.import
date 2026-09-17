@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cidkpneghn3dx"
+path="res://.godot/imported/pickup_sound_1.wav-63c08e8ea5aede691cdb7f4d4ae84c11.sample"
+
+[deps]
+
+source_file="res://Sound Effects/Pickups/pickup_sound_1.wav"
+dest_files=["res://.godot/imported/pickup_sound_1.wav-63c08e8ea5aede691cdb7f4d4ae84c11.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

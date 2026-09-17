@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://iopltijnw813"
+path="res://.godot/imported/explosion_car.wav-e491da06b82fea4cf6c2d6ed73c0a4dc.sample"
+
+[deps]
+
+source_file="res://Sound Effects/Explosions/explosion_car.wav"
+dest_files=["res://.godot/imported/explosion_car.wav-e491da06b82fea4cf6c2d6ed73c0a4dc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
