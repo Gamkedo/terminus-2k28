@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://wdglasw32mes" path="res://Scenes - Objects/enemy_roombye.tscn" id="7_155sy"]
 [ext_resource type="Script" uid="uid://dgtikgscqcp3m" path="res://Scripts/gameplay/player/auto_aim_component.gd" id="7_v3a74"]
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="8_ua6li"]
+[ext_resource type="LabelSettings" uid="uid://7mc5uw7y6vnf" path="res://Scenes - UI/score-label-settings.tres" id="10_6w6bc"]
 [ext_resource type="PackedScene" uid="uid://4u0plcnsynif" path="res://Scenes - Objects/Scenery/explosive_barrel.tscn" id="10_lqsss"]
 [ext_resource type="PackedScene" uid="uid://vdwb0cf16yx0" path="res://Scenes - Objects/enemy_stationary_turret.tscn" id="11_vx5xs"]
 [ext_resource type="PackedScene" uid="uid://c4bxgkgn3crmk" path="res://Scenes - Objects/Scenery/truck_scenery.tscn" id="13_u40bk"]
@@ -17,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://ciwirkbxqetkg" path="res://Scenes - Objects/enemy_quadcopter.tscn" id="15_ocn12"]
 [ext_resource type="Script" uid="uid://cchqruxds1g4" path="res://Scripts/gameplay/world/survivor_enemy_looper.gd" id="15_v3a74"]
 [ext_resource type="PackedScene" uid="uid://b7muf8h4yxj5" path="res://Scenes - UI/pause_menu.tscn" id="16_ocn12"]
+[ext_resource type="PackedScene" uid="uid://dgefm5eu8sdkx" path="res://Scenes - Objects/pickup_aircraft.tscn" id="18_eq1ps"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42ddl"]
 albedo_color = Color(0.57, 0.57, 0.57, 1)
@@ -132,3 +134,30 @@ enemy_list = Array[PackedScene]([ExtResource("7_155sy"), ExtResource("11_vx5xs")
 
 [node name="PauseMenu" parent="." unique_id=850452313 instance=ExtResource("16_ocn12")]
 visible = false
+
+[node name="SurvivorMode TimerAndEndingAnim" type="Control" parent="." unique_id=121658769]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 389.0
+offset_right = 389.0
+grow_horizontal = 2
+
+[node name="Ending Flyover Aircraft (WIP)" parent="SurvivorMode TimerAndEndingAnim" unique_id=2023012809 instance=ExtResource("18_eq1ps")]
+transform = Transform3D(-0.76714194, 0, 0.64147747, 0, 1, 0, -0.64147747, 0, -0.76714194, -14.684528, 7.6975307, 22.373508)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SurvivorMode TimerAndEndingAnim" unique_id=2014492969]
+
+[node name="TimerLabel" type="Label" parent="SurvivorMode TimerAndEndingAnim/CanvasLayer" unique_id=905615547]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 258.0
+offset_right = 572.0
+offset_bottom = 43.0
+grow_horizontal = 2
+text = "SURVIVE: 95"
+label_settings = ExtResource("10_6w6bc")
+horizontal_alignment = 2

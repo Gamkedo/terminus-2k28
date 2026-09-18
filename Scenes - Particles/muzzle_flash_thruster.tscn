@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dtlqeo5ri11dr"]
+
+[ext_resource type="Script" uid="uid://dylns0kqgemus" path="res://Scripts/gameplay/particle_remove.gd" id="1_0j5ok"]
+[ext_resource type="Material" uid="uid://d0ba2tru4ht27" path="res://Materials/muzzle_flash_material.tres" id="2_mloh6"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_y5qfa"]
+material = ExtResource("2_mloh6")
+
+[sub_resource type="Curve" id="Curve_otmap"]
+_data = [Vector2(0.026856236, 0.96366787), 0.0, 0.0, 0, 0, Vector2(1, 0.02422154), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_wbxlg"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9968404, -0.93771636), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="MuzzleFlash" type="Node3D" unique_id=2136184369]
+script = ExtResource("1_0j5ok")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1050997192]
+amount = 20
+lifetime = 0.25
+explosiveness = 0.5
+randomness = 0.5
+fixed_fps = 30
+mesh = SubResource("QuadMesh_y5qfa")
+emission_shape = 1
+emission_sphere_radius = 0.1
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 0.3
+scale_amount_curve = SubResource("Curve_otmap")
+color = Color(1, 1, 1, 0.19607843)
+hue_variation_max = 0.36
+hue_variation_curve = SubResource("Curve_wbxlg")

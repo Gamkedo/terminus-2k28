@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dgefm5eu8sdkx"]
+
+[ext_resource type="PackedScene" uid="uid://c8507f5gnxvi2" path="res://Models (game format)/animated_fighter.glb" id="1_1arrv"]
+[ext_resource type="Material" uid="uid://d0ba2tru4ht27" path="res://Materials/muzzle_flash_material.tres" id="2_hx2ot"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_y5qfa"]
+material = ExtResource("2_hx2ot")
+
+[sub_resource type="Curve" id="Curve_otmap"]
+_data = [Vector2(0.026856236, 0.96366787), 0.0, 0.0, 0, 0, Vector2(1, 0.02422154), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_wbxlg"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9968404, -0.93771636), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Node3D" type="Node3D" unique_id=2023012809]
+
+[node name="animated_fighter" parent="." unique_id=724408094 instance=ExtResource("1_1arrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007, 0, 0)
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1050997192]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.61619, 0.76259947, -9.613943)
+amount = 20
+lifetime = 0.25
+explosiveness = 0.5
+randomness = 0.5
+fixed_fps = 30
+mesh = SubResource("QuadMesh_y5qfa")
+emission_shape = 1
+emission_sphere_radius = 0.1
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 0.3
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_otmap")
+color = Color(1, 1, 1, 0.19607843)
+hue_variation_max = 0.36
+hue_variation_curve = SubResource("Curve_wbxlg")
+
+[node name="CPUParticles3D2" type="CPUParticles3D" parent="." unique_id=2081566217]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.526081, 0.76259947, -9.485897)
+amount = 20
+lifetime = 0.25
+explosiveness = 0.5
+randomness = 0.5
+fixed_fps = 30
+mesh = SubResource("QuadMesh_y5qfa")
+emission_shape = 1
+emission_sphere_radius = 0.1
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 0.3
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_otmap")
+color = Color(1, 1, 1, 0.19607843)
+hue_variation_max = 0.36
+hue_variation_curve = SubResource("Curve_wbxlg")
+
+[node name="CPUParticles3D3" type="CPUParticles3D" parent="." unique_id=1994982307]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.61619, -0.5510211, -9.613943)
+amount = 20
+lifetime = 0.25
+explosiveness = 0.5
+randomness = 0.5
+fixed_fps = 30
+mesh = SubResource("QuadMesh_y5qfa")
+emission_shape = 1
+emission_sphere_radius = 0.1
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 0.3
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_otmap")
+color = Color(1, 1, 1, 0.19607843)
+hue_variation_max = 0.36
+hue_variation_curve = SubResource("Curve_wbxlg")
+
+[node name="CPUParticles3D4" type="CPUParticles3D" parent="." unique_id=523747882]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.526081, -0.5510211, -9.485897)
+amount = 20
+lifetime = 0.25
+explosiveness = 0.5
+randomness = 0.5
+fixed_fps = 30
+mesh = SubResource("QuadMesh_y5qfa")
+emission_shape = 1
+emission_sphere_radius = 0.1
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 0.3
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_otmap")
+color = Color(1, 1, 1, 0.19607843)
+hue_variation_max = 0.36
+hue_variation_curve = SubResource("Curve_wbxlg")
