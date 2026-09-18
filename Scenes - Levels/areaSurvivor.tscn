@@ -60,7 +60,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_xetuu"]
 resource_name = "rescue"
-length = 2.0
 length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -73,6 +72,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(47.298836, -16.909134, -101.17751), Vector3(-73.32664, -63.689636, -44.240276), Vector3(-84.74414, 13.74345, -45.891098), Vector3(2.151927, 1.3857841, -2.5341797), Vector3(124.63869, 19.918152, -47.327717)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Player")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.18),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"rescue_pickup"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6w6bc"]
@@ -193,11 +206,11 @@ root_node = NodePath("../../Camera3D/EndingFlyoverAircraft")
 root_motion_local = true
 libraries/ = SubResource("AnimationLibrary_6w6bc")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="SurvivorMode TimerAndEndingAnim" unique_id=2014492969 node_paths=PackedStringArray("end_anim")]
+[node name="TimerScript" type="CanvasLayer" parent="SurvivorMode TimerAndEndingAnim" unique_id=2014492969 node_paths=PackedStringArray("end_anim")]
 script = ExtResource("20_xetuu")
 end_anim = NodePath("../AnimationPlayer")
 
-[node name="TimerLabel" type="Label" parent="SurvivorMode TimerAndEndingAnim/CanvasLayer" unique_id=905615547]
+[node name="TimerLabel" type="Label" parent="SurvivorMode TimerAndEndingAnim/TimerScript" unique_id=905615547]
 unique_name_in_owner = true
 anchors_preset = 5
 anchor_left = 0.5
@@ -210,7 +223,7 @@ text = "SURVIVE: XX"
 label_settings = ExtResource("10_6w6bc")
 horizontal_alignment = 2
 
-[node name="TimerKeeper" type="Timer" parent="SurvivorMode TimerAndEndingAnim/CanvasLayer" unique_id=134845927]
+[node name="TimerKeeper" type="Timer" parent="SurvivorMode TimerAndEndingAnim/TimerScript" unique_id=134845927]
 wait_time = 4.0
 one_shot = true
 autostart = true

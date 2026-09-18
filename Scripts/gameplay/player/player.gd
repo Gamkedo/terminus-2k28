@@ -22,6 +22,8 @@ var health_max: float = 100.00
 var health_current: float = health_max
 var has_died: bool = false
 
+var already_rescued: bool = false
+
 # exposed/tunable variables
 @export var rotation_speed: float = 2
 @export var aim_dead_zone: float = 0.01
@@ -59,6 +61,9 @@ func _ready() -> void:
 		camera.set_player(self)
 	
 func _process(delta: float) -> void:
+	if already_rescued:
+		return
+	
 	reload_time -= delta
 
 	handle_aiming(delta)
@@ -78,6 +83,9 @@ func fire() -> void:
 	alternate_cannon_left = !alternate_cannon_left
 
 func _physics_process(delta: float) -> void:
+	if already_rescued:
+		return
+
 	var input_dir := Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
 
 	# negative z since that's forward for godot
@@ -150,6 +158,10 @@ func gain_health(amount: float) -> void:
 
 	GameLogger.debug("Health: %.2f / %.2f" % [health_current, health_max])
 
+func rescue_pickup() -> void:
+	visible = false
+	auto_fire = false
+	already_rescued = true
 
 func handle_aiming(delta: float) -> void:
 	if aim_componant:
