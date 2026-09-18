@@ -10,4 +10,7 @@ func _ready():
 	timer.start()
 
 func _process(delta):
-	label.text = "SURVIVE: %02d" % int(timer.time_left)
+	if timer.time_left <= 0.0:
+		label.text = "RESCUE COMING!"
+	else:
+		label.text = "SURVIVE: %02d" % int(timer.time_left)

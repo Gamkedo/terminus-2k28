@@ -43,6 +43,43 @@ size = Vector3(128, 1, 128)
 glow_enabled = true
 adjustment_enabled = true
 
+[sub_resource type="Animation" id="Animation_6w6bc"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-43.765762, 9.2971325, 45.400665)]
+}
+
+[sub_resource type="Animation" id="Animation_xetuu"]
+resource_name = "rescue"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-43.765762, 9.2971325, 45.400665), Vector3(2.151927, 1.3857841, -2.5341797), Vector3(34.254303, 9.273647, -37.505253)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6w6bc"]
+_data = {
+&"RESET": SubResource("Animation_6w6bc"),
+&"rescue": SubResource("Animation_xetuu")
+}
+
 [node name="SurvivorScene" type="Node3D" unique_id=881090372]
 
 [node name="Environment" type="Node3D" parent="." unique_id=1062489120]
@@ -71,6 +108,13 @@ environment = SubResource("Environment_oksh5")
 projection = 1
 size = 54.271
 script = ExtResource("3_42ddl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D" unique_id=917002207]
+root_node = NodePath("EndingFlyoverAircraft")
+libraries/ = SubResource("AnimationLibrary_6w6bc")
+
+[node name="EndingFlyoverAircraft" parent="Camera3D/AnimationPlayer" unique_id=2023012809 instance=ExtResource("18_eq1ps")]
+transform = Transform3D(-0.76714236, 0, 0.6414775, 1.4901161e-07, 1, 1.3783574e-07, -0.64147764, 0, -0.7671419, -43.765762, 9.2971325, 45.400665)
 
 [node name="Player" parent="." unique_id=935553468 instance=ExtResource("2_hcq85")]
 auto_fire = true
@@ -145,9 +189,6 @@ offset_left = 389.0
 offset_right = 389.0
 grow_horizontal = 2
 
-[node name="Ending Flyover Aircraft (WIP)" parent="SurvivorMode TimerAndEndingAnim" unique_id=2023012809 instance=ExtResource("18_eq1ps")]
-transform = Transform3D(-0.76714194, 0, 0.64147747, 0, 1, 0, -0.64147747, 0, -0.76714194, -14.684528, 7.6975307, 22.373508)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="SurvivorMode TimerAndEndingAnim" unique_id=2014492969]
 script = ExtResource("20_xetuu")
 
@@ -165,6 +206,6 @@ label_settings = ExtResource("10_6w6bc")
 horizontal_alignment = 2
 
 [node name="TimerKeeper" type="Timer" parent="SurvivorMode TimerAndEndingAnim/CanvasLayer" unique_id=134845927]
-wait_time = 25.0
+wait_time = 4.0
 one_shot = true
 autostart = true
