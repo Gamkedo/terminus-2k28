@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://cchqruxds1g4" path="res://Scripts/gameplay/world/survivor_enemy_looper.gd" id="15_v3a74"]
 [ext_resource type="PackedScene" uid="uid://b7muf8h4yxj5" path="res://Scenes - UI/pause_menu.tscn" id="16_ocn12"]
 [ext_resource type="PackedScene" uid="uid://dgefm5eu8sdkx" path="res://Scenes - Objects/pickup_aircraft.tscn" id="18_eq1ps"]
+[ext_resource type="Script" uid="uid://b2im352uxecik" path="res://Scripts/gameplay/world/survivor_countdown.gd" id="20_xetuu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42ddl"]
 albedo_color = Color(0.57, 0.57, 0.57, 1)
@@ -148,6 +149,7 @@ grow_horizontal = 2
 transform = Transform3D(-0.76714194, 0, 0.64147747, 0, 1, 0, -0.64147747, 0, -0.76714194, -14.684528, 7.6975307, 22.373508)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="SurvivorMode TimerAndEndingAnim" unique_id=2014492969]
+script = ExtResource("20_xetuu")
 
 [node name="TimerLabel" type="Label" parent="SurvivorMode TimerAndEndingAnim/CanvasLayer" unique_id=905615547]
 unique_name_in_owner = true
@@ -158,6 +160,11 @@ offset_left = 258.0
 offset_right = 572.0
 offset_bottom = 43.0
 grow_horizontal = 2
-text = "SURVIVE: 95"
+text = "SURVIVE: XX"
 label_settings = ExtResource("10_6w6bc")
 horizontal_alignment = 2
+
+[node name="TimerKeeper" type="Timer" parent="SurvivorMode TimerAndEndingAnim/CanvasLayer" unique_id=134845927]
+wait_time = 25.0
+one_shot = true
+autostart = true
