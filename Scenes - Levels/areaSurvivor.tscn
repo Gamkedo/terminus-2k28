@@ -61,6 +61,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_xetuu"]
 resource_name = "rescue"
 length = 2.0
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -68,10 +69,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.13, 1.14, 2.2, 3.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-43.765762, 9.2971325, 45.400665), Vector3(2.151927, 1.3857841, -2.5341797), Vector3(34.254303, 9.273647, -37.505253)]
+"values": [Vector3(47.298836, -16.909134, -101.17751), Vector3(-73.32664, -63.689636, -44.240276), Vector3(-84.74414, 13.74345, -45.891098), Vector3(2.151927, 1.3857841, -2.5341797), Vector3(124.63869, 19.918152, -47.327717)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6w6bc"]
@@ -109,12 +110,8 @@ projection = 1
 size = 54.271
 script = ExtResource("3_42ddl")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D" unique_id=917002207]
-root_node = NodePath("EndingFlyoverAircraft")
-libraries/ = SubResource("AnimationLibrary_6w6bc")
-
-[node name="EndingFlyoverAircraft" parent="Camera3D/AnimationPlayer" unique_id=2023012809 instance=ExtResource("18_eq1ps")]
-transform = Transform3D(-0.76714236, 0, 0.6414775, 1.4901161e-07, 1, 1.3783574e-07, -0.64147764, 0, -0.7671419, -43.765762, 9.2971325, 45.400665)
+[node name="EndingFlyoverAircraft" parent="Camera3D" unique_id=2023012809 instance=ExtResource("18_eq1ps")]
+transform = Transform3D(-0.088858366, 0, 0.9960443, 0.732008, 0.67815965, 0.065303326, -0.67547727, 0.73491484, -0.060260147, -43.765762, 9.2971325, 45.400665)
 
 [node name="Player" parent="." unique_id=935553468 instance=ExtResource("2_hcq85")]
 auto_fire = true
@@ -185,12 +182,20 @@ layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 389.0
-offset_right = 389.0
+offset_left = -619.76575
+offset_top = 9.2971325
+offset_right = -619.76575
+offset_bottom = 9.2971325
 grow_horizontal = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="SurvivorMode TimerAndEndingAnim" unique_id=2014492969]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SurvivorMode TimerAndEndingAnim" unique_id=917002207]
+root_node = NodePath("../../Camera3D/EndingFlyoverAircraft")
+root_motion_local = true
+libraries/ = SubResource("AnimationLibrary_6w6bc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SurvivorMode TimerAndEndingAnim" unique_id=2014492969 node_paths=PackedStringArray("end_anim")]
 script = ExtResource("20_xetuu")
+end_anim = NodePath("../AnimationPlayer")
 
 [node name="TimerLabel" type="Label" parent="SurvivorMode TimerAndEndingAnim/CanvasLayer" unique_id=905615547]
 unique_name_in_owner = true
