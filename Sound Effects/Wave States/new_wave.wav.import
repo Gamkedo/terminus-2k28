@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b8qfdo856vkjo"
+path="res://.godot/imported/new_wave.wav-e9abeaa2fdb1b4bf0f354a65a1aab03c.sample"
+
+[deps]
+
+source_file="res://Sound Effects/Wave States/new_wave.wav"
+dest_files=["res://.godot/imported/new_wave.wav-e9abeaa2fdb1b4bf0f354a65a1aab03c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

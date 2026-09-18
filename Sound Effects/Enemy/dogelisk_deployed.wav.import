@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dqc6gs2ba7xge"
+path="res://.godot/imported/dogelisk_deployed.wav-3783d8cf9f904d14d355b59546e5e1ec.sample"
+
+[deps]
+
+source_file="res://Sound Effects/Enemy/dogelisk_deployed.wav"
+dest_files=["res://.godot/imported/dogelisk_deployed.wav-3783d8cf9f904d14d355b59546e5e1ec.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
