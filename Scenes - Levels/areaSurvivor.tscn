@@ -60,7 +60,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_xetuu"]
 resource_name = "rescue"
-length = 4.0
+length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -85,6 +85,20 @@ tracks/1/keys = {
 "values": [{
 "args": [],
 "method": &"rescue_pickup"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../SurvivorMode TimerAndEndingAnim/TimerScript")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"back_to_menu"
 }]
 }
 
@@ -224,6 +238,6 @@ label_settings = ExtResource("10_6w6bc")
 horizontal_alignment = 2
 
 [node name="TimerKeeper" type="Timer" parent="SurvivorMode TimerAndEndingAnim/TimerScript" unique_id=134845927]
-wait_time = 4.0
+wait_time = 99.0
 one_shot = true
 autostart = true
