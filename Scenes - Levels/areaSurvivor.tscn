@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://bsrs3o1e171q1" path="res://Textures/dirt-ground.png" id="1_hcq85"]
 [ext_resource type="PackedScene" uid="uid://eewdly8oh15j" path="res://Scenes - Objects/player.tscn" id="2_hcq85"]
 [ext_resource type="Script" uid="uid://bap106b6ivci0" path="res://Scripts/camera/iso_tracking.gd" id="3_42ddl"]
-[ext_resource type="PackedScene" uid="uid://k63f3er0k7u7" path="res://Scenes - Objects/enemy_model_demo.tscn" id="4_hcq85"]
 [ext_resource type="Script" uid="uid://bp36fivqnl7k6" path="res://Scripts/gameplay/player/stacking_weapons_manager.gd" id="6_tmxv0"]
 [ext_resource type="PackedScene" uid="uid://wdglasw32mes" path="res://Scenes - Objects/enemy_roombye.tscn" id="7_155sy"]
 [ext_resource type="Script" uid="uid://dgtikgscqcp3m" path="res://Scripts/gameplay/player/auto_aim_component.gd" id="7_v3a74"]
@@ -205,7 +204,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.364956, -1.9073486e-06, -
 [node name="EnemyLooper" type="Node3D" parent="." unique_id=1010977497 node_paths=PackedStringArray("enemy_container")]
 script = ExtResource("15_v3a74")
 enemy_container = NodePath("../Enemies")
-enemy_list = Array[PackedScene]([ExtResource("7_155sy"), ExtResource("11_vx5xs"), ExtResource("4_hcq85"), ExtResource("15_ocn12")])
+enemy_list = Array[PackedScene]([ExtResource("7_155sy"), ExtResource("11_vx5xs"), ExtResource("15_ocn12")])
 
 [node name="PauseMenu" parent="." unique_id=850452313 instance=ExtResource("16_ocn12")]
 visible = false
