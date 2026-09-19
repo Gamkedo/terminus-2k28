@@ -1,0 +1,18 @@
+[gd_resource type="Theme" format=3 uid="uid://do4s6nqfelees"]
+
+[ext_resource type="FontFile" uid="uid://dkj8w03psnead" path="res://Fonts/BungeeHairline-Regular.ttf" id="1_pdtg2"]
+[ext_resource type="StyleBox" uid="uid://cnrh2avoediv8" path="res://Scenes - UI/pause_button_hover_style.tres" id="2_6f7yt"]
+[ext_resource type="StyleBox" uid="uid://diobyuqq20pi6" path="res://Scenes - UI/pause_button_style.tres" id="3_fated"]
+
+[resource]
+Button/colors/font_outline_color = Color(1, 0.7019608, 0.54901963, 1)
+Button/constants/outline_size = 3
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_pdtg2")
+Button/styles/hover = ExtResource("2_6f7yt")
+Button/styles/normal = ExtResource("3_fated")
+Label/colors/font_color = Color(1, 0.7019608, 0.54901963, 1)
+Label/colors/font_outline_color = Color(1, 0.7019608, 0.54901963, 1)
+Label/constants/outline_size = 3
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_pdtg2")
