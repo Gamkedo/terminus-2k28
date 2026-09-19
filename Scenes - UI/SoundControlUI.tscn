@@ -41,4 +41,5 @@ tick_count = 10
 script = ExtResource("4_cf7w6")
 
 [connection signal="item_selected" from="HBoxContainer/MusicSelector" to="." method="_on_music_selector_item_selected"]
+[connection signal="toggled" from="HBoxContainer/MusicButton" to="." method="_on_music_button_toggled"]
 [connection signal="value_changed" from="VolumeSlider" to="VolumeSlider" method="_on_value_changed"]

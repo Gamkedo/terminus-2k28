@@ -1,4 +1,5 @@
 ## Scenery that can be destroyed
+class_name DestructScenery
 extends Enemy
 
 ## Particles to spawn when destroyed
