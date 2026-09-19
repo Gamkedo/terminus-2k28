@@ -209,22 +209,22 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 13
-text = "• Chris DeLeon: Project lead, base gamplay, general game structure, basic billboard and 3d enemy types, immersive obstacles, immersive mode fog, minor optimizations
+text = "• Chris DeLeon: Project lead, base gamplay, general game structure, basic billboard and 3d enemy types, immersive obstacles, win conditions, survivors rescue sequence, immersive mode fog, minor optimizations
 • Michael Buslik: Robodog, obelisk spawner, turret enemy, orbit shield bots, randomized environment placement, beam weapon, destructible truck, survivor mode enemy edge spawner/looping, quadcopter enemy, explosive barrels, sprite flipping
 • Juan Luiz R: Environment art (fence, tree, hydrant, rock, bush, wheel), large explosion animation, song2k28, player projectiles, effects (explosion, smoke, wind/leafs), prop spawn tuning
 • wolscott: Movement and aim input fixes, gamepad support (including menus), loading screens, collision improvements, assorted bug fixes and optimizations
-• Tanner G: Sound lead (UI audio, drone hum, electric attacks, explosions, lasers, spreadshot, robot voice modulation) including integration
-• Mark Guinn: Surivor mode autotargeting and autofire, health bar with animated effects, screenshake and flashes, player death explosion
+• Tanner G: Sound lead (UI audio, drone hum, electric attacks, explosions, lasers, spreadshot, robot voice modulation, pickups, new wave, rescue plane) including integration
+• Mark Guinn: Surivor mode autotargeting and autofire, health bar with animated effects, screenshake and flashes, player death explosion, weapon icons
+• Shane B.: Level boundaries, rescue aircraft model, robotank model, volume slider, escape menu with settings, visual effects slider, auto targeting fix
 • azzysteel: Level manager, wave managers, wave authoring, round stat tracking, dynamic sound pitch
 • Dávid Tóth: Lightning bolts weapon (incl. optimizations), player model, roombye robot, song selector
-• Shane B.: Level boundaries, aircraft model, robotank model
 • Raymond Zegles: Nuclear power planet, game over menu, GUI wave counter, credits panel toggle
 • Lenny Morayniss: Audio manager with stream queue limits, weapon switching, weapon stacking, spread shot, damage support
 • Christer Kaitila: Ambience song, title logo, CRT effect, muzzle flashes, weapon switch, GUI font selection, score/combo gui
 • Jalent (Jason W): Player concept art, terminus1 song
 • Amanda Stanley: Robot voice acting
 • Belén Albeza: Pickup system (incl. health boost, enemy drops)
-• Justin Montgomery: Enemy perception, nav mesh, seek and wander, mouse capture debug
+• Justin Montgomery: Enemy perception, nav mesh, seek and wander, related optimizations
 • L: Game over sound (and implementation), pause key toggle
 • VikingMalmstrom: Arcade ground texture
 • APC: Game story
@@ -234,7 +234,6 @@ text = "• Chris DeLeon: Project lead, base gamplay, general game structure, ba
 • fizzybuzzybeezy: Main menu audio toggle
 • Michael Avrie: Music export bug fix
 • Playtesting: Barış Köklü, Juan Luiz R
-
 This game was developed as part of a 3-Week Challenge run in DevPods.gg (September 2026)"
 
 [node name="Close Credits" type="Button" parent="Credits Panel/Padding/VBoxContainer" unique_id=829291104]
