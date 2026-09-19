@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://gre1bbok8lsr" path="res://Scripts/menus/pause_menu.gd" id="1_n6oqt"]
 [ext_resource type="Script" uid="uid://bv8ijbramquuc" path="res://menu_button_audio.gd" id="2_8bei2"]
+[ext_resource type="PackedScene" uid="uid://d2psco3t4cdwm" path="res://Scenes - UI/SoundControlUI.tscn" id="2_u3tbo"]
+[ext_resource type="PackedScene" uid="uid://dip0s51pffhnf" path="res://Scenes - UI/vfx_settings_ui.tscn" id="3_e5auh"]
 
 [node name="PauseMenu" type="Control" unique_id=850452313]
 process_mode = 3
@@ -21,6 +23,31 @@ offset_bottom = 646.0
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1144877728]
 layout_mode = 2
 alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=1651869335]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer" unique_id=1163725796]
+layout_mode = 2
+alignment = 1
+
+[node name="SoundMargins" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=777764505]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 5
+
+[node name="SoundControlUI" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/SoundMargins" unique_id=1732976235 instance=ExtResource("2_u3tbo")]
+layout_mode = 2
+
+[node name="VFXMargins" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1346623574]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 5
+
+[node name="VFXSettingsUI" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/VFXMargins" unique_id=1357413297 instance=ExtResource("3_e5auh")]
+layout_mode = 2
 
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1737270289]
 layout_mode = 2
