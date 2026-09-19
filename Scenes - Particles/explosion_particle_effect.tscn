@@ -8,7 +8,7 @@ particles_anim_h_frames = 10
 particles_anim_v_frames = 1
 particles_anim_loop = true
 
-[node name="Explosion" type="CPUParticles2D" unique_id=1082297007]
+[node name="Explosion" type="CPUParticles2D" unique_id=1082297007 groups=["Precompilation"]]
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_g4v7s")
 emitting = false
