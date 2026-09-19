@@ -9,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2014492969]
 layer = 5
@@ -22,12 +23,14 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 
 [node name="CornerTopLeft" type="TextureRect" parent="CanvasLayer/Control" unique_id=1762567146]
 layout_mode = 1
 offset_left = 150.0
 offset_right = 406.0
 offset_bottom = 256.0
+mouse_filter = 2
 texture = ExtResource("1_wfkmq")
 
 [node name="CornerTopRight" type="TextureRect" parent="CanvasLayer/Control" unique_id=898442416]
@@ -40,6 +43,7 @@ offset_right = 118.0
 offset_bottom = 256.0
 grow_horizontal = 0
 scale = Vector2(-1, 1)
+mouse_filter = 2
 texture = ExtResource("1_wfkmq")
 
 [node name="CornerBottomLeft" type="TextureRect" parent="CanvasLayer/Control" unique_id=1495174006]
@@ -52,6 +56,7 @@ offset_right = 406.0
 offset_bottom = 256.0
 grow_vertical = 0
 scale = Vector2(1, -1)
+mouse_filter = 2
 texture = ExtResource("1_wfkmq")
 
 [node name="CornerBottomRight" type="TextureRect" parent="CanvasLayer/Control" unique_id=686177116]
@@ -67,6 +72,7 @@ offset_bottom = 256.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(-1, -1)
+mouse_filter = 2
 texture = ExtResource("1_wfkmq")
 
 [node name="LeftRect" type="ColorRect" parent="CanvasLayer/Control" unique_id=1052284932]
@@ -74,6 +80,7 @@ layout_mode = 0
 offset_left = -56.0
 offset_right = 150.33331
 offset_bottom = 649.0
+mouse_filter = 2
 color = Color(0.15686275, 0.15686275, 0.15686275, 1)
 
 [node name="RightRect" type="ColorRect" parent="CanvasLayer/Control" unique_id=93020977]
@@ -81,4 +88,5 @@ layout_mode = 0
 offset_left = 1013.0
 offset_right = 1219.3333
 offset_bottom = 649.0
+mouse_filter = 2
 color = Color(0.15686275, 0.15686275, 0.15686275, 1)
