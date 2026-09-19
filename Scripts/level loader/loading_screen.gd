@@ -1,6 +1,6 @@
 class_name LoadingScreen extends CanvasLayer
 
-var scene_path: String
+@export var scene_path: String
 var process_tick_count := 0
 var process_time_count := 0.0
 var time_at_last_tick := 0.0
