@@ -49,13 +49,31 @@ func _collision_detected(body: Node3D) -> void:
 		attack_timer = attack_timer_max
 
 
-## Hopefully prevents the unit from leaving the world.  Reflects the direction across the boundary normal.
+## Prevents unit from leaving the world, and attempts to bounce the direction back inward
 func _map_bb_prevention():
 	var limits: Dictionary[String, float] = GameGlobal.world_boundaries.get_world_limits()
+	var edge_bounce = false
 	
-	if global_position.x > limits["+x"] or global_position.x < limits["-x"] or global_position.z > limits["+z"] or global_position.z < limits["-z"]:
-		direction = direction.length() * global_position.direction_to(Vector3(0, 1, 0))
-		flip_graphics()
+	if global_position.x > limits["+x"]:
+		global_position.x = limits["+x"]
+		if direction.x > 0:
+			direction.x = -direction.x
+			flip_graphics()
+	if global_position.x < limits["-x"]:
+		global_position.x = limits["-x"]
+		if direction.x < 0:
+			direction.x = -direction.x
+			flip_graphics()
+	if global_position.z > limits["+z"]:
+		global_position.z = limits["+z"]
+		if direction.z > 0:
+			direction.z = -direction.z
+			flip_graphics()
+	if global_position.z < limits["-z"]:
+		global_position.z = limits["-z"]
+		if direction.z < 0:
+			direction.z = -direction.z
+			flip_graphics()
 
 # toggle which graphic to show, moving towards or away from camera
 #  Should be called every time we change direction
