@@ -1,16 +1,46 @@
 [gd_resource type="Theme" format=3 uid="uid://do4s6nqfelees"]
 
 [ext_resource type="FontFile" uid="uid://dkj8w03psnead" path="res://Fonts/BungeeHairline-Regular.ttf" id="1_pdtg2"]
-[ext_resource type="StyleBox" uid="uid://cnrh2avoediv8" path="res://Scenes - UI/pause_button_hover_style.tres" id="2_6f7yt"]
+[ext_resource type="StyleBox" uid="uid://cj1drk0fb6vc4" path="res://Scenes - UI/button_hover_style.tres" id="2_pdtg2"]
 [ext_resource type="StyleBox" uid="uid://diobyuqq20pi6" path="res://Scenes - UI/pause_button_style.tres" id="3_fated"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74aq2"]
+bg_color = Color(0.27996668, 0.2799667, 0.2799666, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdtg2"]
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dihbr"]
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p555r"]
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [resource]
 Button/colors/font_outline_color = Color(1, 0.7019608, 0.54901963, 1)
 Button/constants/outline_size = 3
 Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("1_pdtg2")
-Button/styles/hover = ExtResource("2_6f7yt")
+Button/styles/disabled = SubResource("StyleBoxFlat_74aq2")
+Button/styles/focus = SubResource("StyleBoxFlat_pdtg2")
+Button/styles/hover = ExtResource("2_pdtg2")
+Button/styles/hover_mirrored = ExtResource("2_pdtg2")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_dihbr")
 Button/styles/normal = ExtResource("3_fated")
+Button/styles/pressed = SubResource("StyleBoxFlat_p555r")
 Label/colors/font_color = Color(1, 0.7019608, 0.54901963, 1)
 Label/colors/font_outline_color = Color(1, 0.7019608, 0.54901963, 1)
 Label/constants/outline_size = 3
