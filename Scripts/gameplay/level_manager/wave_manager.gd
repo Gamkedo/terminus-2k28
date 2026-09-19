@@ -75,6 +75,7 @@ func _end_round() -> void:
 	round_complete.emit()
 	await get_tree().create_timer(2.0).timeout
 	if round_number < waves.size():
+		AudioStreamManager.play_sfx("res://Sound Effects/Wave States/new_wave.wav", AudioStreamManager.PlaybackMode.STANDARD)
 		_start_new_round()
 	else: # ideally we handle end wave more gracefully, but at minimum, can't leave game stuck for now
 		if get_tree().current_scene.name.contains("Arc"):
