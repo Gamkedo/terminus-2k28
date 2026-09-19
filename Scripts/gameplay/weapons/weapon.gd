@@ -4,6 +4,7 @@ class_name Weapon
 @export var sound_effect_path: String
 @export var projectile_scene: PackedScene
 @export var muzzle_flash_scene: PackedScene
+@export var label_text: String
 @export_range(0.01, 2.0, 0.01) var fire_rate := 0.2
 
 var reload_time: float = 0.0

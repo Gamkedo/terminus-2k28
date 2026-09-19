@@ -153,6 +153,18 @@ script = ExtResource("3_itglv")
 
 [node name="Player" parent="." unique_id=935553468 instance=ExtResource("3_mhi1n")]
 
+[node name="Laser" parent="Player" index="4" unique_id=881354002]
+label_text = "1 - laser"
+
+[node name="LaserShotgun" parent="Player" index="5" unique_id=810139150]
+label_text = "2 - shotgun"
+
+[node name="LaserBeam" parent="Player" index="6" unique_id=449828892]
+label_text = "3 - beam"
+
+[node name="Lightning" parent="Player" index="7" unique_id=1872216530]
+label_text = "4 - lightning"
+
 [node name="ImmersiveAimComponent" type="Node" parent="Player" unique_id=1083012156]
 script = ExtResource("4_kwne6")
 metadata/_custom_type_script = "uid://das224o67qbcs"
@@ -286,6 +298,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6100388, 1.9073486e-06, -6.
 
 [node name="ScoreGUI" parent="." unique_id=1866250465 instance=ExtResource("7_8go4e")]
 
+[node name="ActiveWeaponsUI" parent="ScoreGUI/CanvasLayer" parent_id_path=PackedInt32Array(1866250465, 2014492969) index="3" unique_id=171342784]
+show_all = true
+
 [node name="GameOverScreen" parent="." unique_id=397520369 instance=ExtResource("9_n8psh")]
 
 [node name="EnemySpawner" type="Node" parent="." unique_id=999513965 node_paths=PackedStringArray("player")]
@@ -315,3 +330,6 @@ transform = Transform3D(0.11016648, -1.7555078e-07, 3.9936666, 2.1091866, 8.7775
 
 [node name="3d_nuclear_power_plant4" parent="." unique_id=2084274451 instance=ExtResource("18_t0363")]
 transform = Transform3D(-2.0068698, 0, 0.069286525, 0, 2.008066, 0, -0.069286525, 0, -2.0068698, 118.50198, 6.270172, -149.62079)
+
+[editable path="Player"]
+[editable path="ScoreGUI"]
