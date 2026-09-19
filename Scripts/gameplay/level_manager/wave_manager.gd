@@ -81,3 +81,5 @@ func _end_round() -> void:
 	await get_tree().create_timer(2.0).timeout
 	if round_number < waves.size():
 		_start_new_round()
+	else: # ideally we handle end wave more gracefully, but at minimum, can't leave game stuck for now
+		get_tree().change_scene_to_file("res://level_menu.tscn")
