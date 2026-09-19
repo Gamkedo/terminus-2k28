@@ -1,19 +1,20 @@
 extends Node
 
-enum Level { TRACE, DEBUG, INFO, WARNING, ERROR }
+enum Level { TRACE, DEBUG, INFO, WARNING, ERROR, RELEASE }
 
 var level_strings: Dictionary[Level, String] = {
 	Level.TRACE : "TRACE",
 	Level.DEBUG : "DEBUG",
 	Level.INFO : "INFO",
 	Level.WARNING : "WARNING",
-	Level.ERROR : "ERROR"
-
+	Level.ERROR : "ERROR",
+	Level.RELEASE : "RELEASE",
 }
 
-const THRESHOLD = Level.TRACE
+const THRESHOLD = Level.RELEASE
 
 func _log(message: String, level: Level) -> void:
+	
 	if level < THRESHOLD: return
 
 	var log_msg: String = "[%s]%s " % [ _get_time(), _get_level_str(level),] + message

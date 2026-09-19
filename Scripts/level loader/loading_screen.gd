@@ -33,7 +33,7 @@ func _process(_delta: float) -> void:
 	process_time_count += Time.get_ticks_msec() - time_at_last_tick
 	time_at_last_tick = Time.get_ticks_msec()
 	var percent_value = clampf(process_time_count / estimate , 0.0, 1.0)
-	printt(percent_value, process_time_count, estimate)
+	# printt(percent_value, process_time_count, estimate)
 	progress_bar.value = percent_value
 	match status:
 		ResourceLoader.ThreadLoadStatus.THREAD_LOAD_INVALID_RESOURCE:

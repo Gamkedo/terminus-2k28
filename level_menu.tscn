@@ -8,6 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://drjg56vfuktlm" path="res://Scenes - Levels/Level Select Preview Images/areaB-preview.png" id="5_y1rhc"]
 [ext_resource type="Texture2D" uid="uid://dm856cff6gqsi" path="res://Scenes - Levels/Level Select Preview Images/areaC-preview.png" id="6_wj7nf"]
 [ext_resource type="Script" uid="uid://bv8ijbramquuc" path="res://menu_button_audio.gd" id="7_gd4f1"]
+[ext_resource type="PackedScene" uid="uid://p7aumif32558" path="res://Scenes - Objects/laser_beam_projectile.tscn" id="7_y1rhc"]
+[ext_resource type="PackedScene" uid="uid://cblqj4rysl46l" path="res://Scenes - Objects/laser_bolt.tscn" id="10_87kcf"]
+[ext_resource type="PackedScene" uid="uid://dg14n5bxo33wb" path="res://Scenes - Particles/laser_hit.tscn" id="11_fgiea"]
+[ext_resource type="PackedScene" uid="uid://bsgkbj2irnxuh" path="res://Scenes - Particles/lightning_particles_3d.tscn" id="12_rx83g"]
+[ext_resource type="Texture2D" uid="uid://cr0e2cljp0lx3" path="res://Sprites/robodog.png" id="13_87kcf"]
+[ext_resource type="Texture2D" uid="uid://cyo5rvku750pi" path="res://Sprites/android.png" id="14_010tg"]
+[ext_resource type="Texture2D" uid="uid://b6hp37kontti2" path="res://Sprites/shieldbot.png" id="14_rx83g"]
+[ext_resource type="Texture2D" uid="uid://dva4iw1cm5glk" path="res://Sprites/dogelisk.png" id="15_010tg"]
 
 [sub_resource type="Gradient" id="Gradient_lnidy"]
 colors = PackedColorArray(0, 0, 0, 1, 0.5210963, 0.19145256, 0.020658007, 1)
@@ -204,6 +212,40 @@ grow_vertical = 1
 [node name="MenuButtonAudio" type="Node" parent="." unique_id=238374378]
 script = ExtResource("7_gd4f1")
 metadata/_custom_type_script = "uid://bv8ijbramquuc"
+
+[node name="CacheAttempt" type="Node3D" parent="." unique_id=209399095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8557644, 4.7253313)
+
+[node name="Camera3D" type="Camera3D" parent="CacheAttempt" unique_id=50183305]
+transform = Transform3D(1, 0, 0, 0, 0.9568805, 0.29048187, 0, -0.29048187, 0.9568805, 0, 0, 0)
+
+[node name="LaserBolt" parent="CacheAttempt" unique_id=1970496457 instance=ExtResource("10_87kcf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63891554, -1.8557644, -6.1128078)
+
+[node name="LaserHit" parent="CacheAttempt" unique_id=2136184369 instance=ExtResource("11_fgiea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34036565, -1.8557646, -5.7631936)
+
+[node name="CPUParticles3D" parent="CacheAttempt" unique_id=118062217 instance=ExtResource("12_rx83g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24188566, -1.8557644, -5.878141)
+
+[node name="LaserBeamProjectile" parent="CacheAttempt" unique_id=1654714350 instance=ExtResource("7_y1rhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08533096, -1.8557644, -3.7136064)
+
+[node name="Robodog" type="Sprite3D" parent="CacheAttempt" unique_id=200677660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35843492, 0, -1.5395246)
+texture = ExtResource("13_87kcf")
+
+[node name="Android" type="Sprite3D" parent="CacheAttempt" unique_id=338295300]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35843492, -0.32480264, -1.5395246)
+texture = ExtResource("14_010tg")
+
+[node name="Shieldbot" type="Sprite3D" parent="CacheAttempt" unique_id=1279693213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24706078, 0, -1.5395246)
+texture = ExtResource("14_rx83g")
+
+[node name="Dogelisk" type="Sprite3D" parent="CacheAttempt" unique_id=212512719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76287806, 0, -1.5395246)
+texture = ExtResource("15_010tg")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Arcade Container/AreaA Arcade" to="." method="_on_area_a_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Survivor Container/AreaB Survivor" to="." method="_on_area_b_pressed"]
