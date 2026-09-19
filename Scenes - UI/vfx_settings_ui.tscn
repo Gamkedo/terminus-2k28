@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dip0s51pffhnf"]
 
-[ext_resource type="StyleBox" path="res://Scenes - UI/slider_style.tres" id="1_4bdck"]
-[ext_resource type="Script" path="res://Scripts/menus/vfx_slider.gd" id="2_rix86"]
+[ext_resource type="StyleBox" uid="uid://cfx5vjangve0s" path="res://Scenes - UI/slider_style.tres" id="1_4bdck"]
+[ext_resource type="Script" uid="uid://1sm5jvlh552w" path="res://Scripts/menus/vfx_slider.gd" id="2_rix86"]
 
 [node name="VFXSettingsUI" type="VBoxContainer" unique_id=1357413297]
 offset_right = 250.0

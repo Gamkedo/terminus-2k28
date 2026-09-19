@@ -4,6 +4,22 @@
 [ext_resource type="Script" uid="uid://bv8ijbramquuc" path="res://menu_button_audio.gd" id="2_8bei2"]
 [ext_resource type="PackedScene" uid="uid://d2psco3t4cdwm" path="res://Scenes - UI/SoundControlUI.tscn" id="2_u3tbo"]
 [ext_resource type="PackedScene" uid="uid://dip0s51pffhnf" path="res://Scenes - UI/vfx_settings_ui.tscn" id="3_e5auh"]
+[ext_resource type="FontFile" uid="uid://dkj8w03psnead" path="res://Fonts/BungeeHairline-Regular.ttf" id="4_e5auh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmev2"]
+bg_color = Color(0.08598376, 0.08598376, 0.085983716, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.08598376, 0.08598376, 0.085983716, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5auh"]
+bg_color = Color(0.16924527, 0.16924533, 0.16924518, 1)
 
 [node name="PauseMenu" type="Control" unique_id=850452313]
 process_mode = 3
@@ -60,10 +76,24 @@ alignment = 1
 
 [node name="UnpauseButton" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1737270289]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.7019608, 0.54901963, 1)
+theme_override_fonts/font = ExtResource("4_e5auh")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_jmev2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e5auh")
 text = "Paused"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1990192086]
+layout_mode = 2
+theme_override_constants/margin_left = 5
 
 [node name="LevelSelectButton" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1243615767]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.7019608, 0.54901963, 1)
+theme_override_fonts/font = ExtResource("4_e5auh")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_jmev2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e5auh")
 text = "Level Select"
 
 [node name="MenuButtonAudio" type="Node" parent="." unique_id=1648070741]
