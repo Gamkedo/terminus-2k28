@@ -16,6 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://cyo5rvku750pi" path="res://Sprites/android.png" id="14_010tg"]
 [ext_resource type="Texture2D" uid="uid://b6hp37kontti2" path="res://Sprites/shieldbot.png" id="14_rx83g"]
 [ext_resource type="Texture2D" uid="uid://dva4iw1cm5glk" path="res://Sprites/dogelisk.png" id="15_010tg"]
+[ext_resource type="PackedScene" uid="uid://fg0o0lx1c3d8" path="res://Scenes - Particles/explosion_particle_effect.tscn" id="17_mhfku"]
+[ext_resource type="PackedScene" uid="uid://c6aamc5js8pa1" path="res://Scenes - Particles/particle_aoe_explosion.tscn" id="18_yy2u2"]
+[ext_resource type="PackedScene" uid="uid://bjoc5aa7xcnpi" path="res://Scenes - Particles/particle_smoke_puff.tscn" id="19_ek6xb"]
+[ext_resource type="PackedScene" uid="uid://bhkgqc8ses5nu" path="res://Scenes - Particles/particle_sparks.tscn" id="20_mlgtu"]
+[ext_resource type="PackedScene" uid="uid://dr004o72ff57y" path="res://Scenes - Particles/smoke_particle_effect.tscn" id="21_k7hfm"]
+[ext_resource type="PackedScene" uid="uid://ceqmeyurk2751" path="res://Scenes - Objects/lightning_bolt.tscn" id="22_yy2u2"]
 
 [sub_resource type="Gradient" id="Gradient_lnidy"]
 colors = PackedColorArray(0, 0, 0, 1, 0.5210963, 0.19145256, 0.020658007, 1)
@@ -216,12 +222,6 @@ metadata/_custom_type_script = "uid://bv8ijbramquuc"
 [node name="CacheAttempt" type="Node3D" parent="." unique_id=209399095]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8557644, 4.7253313)
 
-[node name="Camera3D" type="Camera3D" parent="CacheAttempt" unique_id=50183305]
-transform = Transform3D(1, 0, 0, 0, 0.9568805, 0.29048187, 0, -0.29048187, 0.9568805, 0, 0, 0)
-
-[node name="LaserBolt" parent="CacheAttempt" unique_id=1970496457 instance=ExtResource("10_87kcf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63891554, -1.8557644, -6.1128078)
-
 [node name="LaserHit" parent="CacheAttempt" unique_id=2136184369 instance=ExtResource("11_fgiea")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34036565, -1.8557646, -5.7631936)
 
@@ -243,9 +243,39 @@ texture = ExtResource("14_010tg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24706078, 0, -1.5395246)
 texture = ExtResource("14_rx83g")
 
+[node name="LightningBolt" parent="CacheAttempt" unique_id=1676042793 node_paths=PackedStringArray("lightning_source") instance=ExtResource("22_yy2u2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00029850006, -1.8557644, -5.3713055)
+lightning_source = NodePath("../Robodog")
+
 [node name="Dogelisk" type="Sprite3D" parent="CacheAttempt" unique_id=212512719]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76287806, 0, -1.5395246)
 texture = ExtResource("15_010tg")
+
+[node name="Camera3D" type="Camera3D" parent="CacheAttempt" unique_id=50183305]
+transform = Transform3D(1, 0, 0, 0, 0.9568805, 0.29048187, 0, -0.29048187, 0.9568805, 0, 0, 0)
+
+[node name="LaserBolt" parent="CacheAttempt" unique_id=1970496457 instance=ExtResource("10_87kcf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63891554, -1.8557644, -6.1128078)
+
+[node name="Particles" type="Node3D" parent="CacheAttempt" unique_id=753005460]
+
+[node name="Explosion" parent="CacheAttempt/Particles" unique_id=1082297007 instance=ExtResource("17_mhfku")]
+position = Vector2(30, -35)
+
+[node name="CPUParticles3D" parent="CacheAttempt/Particles" unique_id=2003279321 instance=ExtResource("12_rx83g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3348136, -1.6214426, -4.921183)
+
+[node name="ParticleAOEExplosion" parent="CacheAttempt/Particles" unique_id=328624605 instance=ExtResource("18_yy2u2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3348136, -1.6214426, -4.921183)
+
+[node name="ParticleSmokePuff" parent="CacheAttempt/Particles" unique_id=1690057196 instance=ExtResource("19_ek6xb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3348136, -1.6214426, -4.921183)
+
+[node name="ParticleSparks" parent="CacheAttempt/Particles" unique_id=1162072880 instance=ExtResource("20_mlgtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3348136, -1.6214426, -4.921183)
+
+[node name="Smoke" parent="CacheAttempt/Particles" unique_id=387460487 instance=ExtResource("21_k7hfm")]
+position = Vector2(30, -35)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Arcade Container/AreaA Arcade" to="." method="_on_area_a_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Survivor Container/AreaB Survivor" to="." method="_on_area_b_pressed"]

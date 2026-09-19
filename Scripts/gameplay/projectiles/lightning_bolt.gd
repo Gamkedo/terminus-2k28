@@ -2,8 +2,8 @@ extends Area3D
 class_name LightningBolt
 
 ## set this while instantiating the scene!
-var lightning_source: Node3D
-var intended_position: Vector3
+@export var lightning_source: Node3D
+@export var intended_position: Vector3
 
 @export var lifetime_sec: float = 0.3
 @export var arc_segment_count: int = 1
