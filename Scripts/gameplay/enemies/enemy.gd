@@ -33,6 +33,19 @@ func die() -> void:
 	_maybe_drop_pickup()
 	queue_free()
 	
+func enforce_boundary() -> void:
+	var limits: Dictionary[String, float] = GameGlobal.world_boundaries.get_world_limits()
+	
+	if global_position.x > limits["+x"]:
+		global_position.x = limits["+x"]
+	if global_position.x < limits["-x"]:
+		global_position.x = limits["-x"]
+	if global_position.z > limits["+z"]:
+		global_position.z = limits["+z"]
+	if global_position.z < limits["-z"]:
+		global_position.z = limits["-z"]
+
+	
 func _maybe_drop_pickup() -> void:
 	if drop and randf() < drop_chance:
 		var pickup := drop.instantiate()

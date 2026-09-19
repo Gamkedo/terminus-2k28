@@ -18,6 +18,9 @@ extends Enemy
 # Timer to count up to refire
 var shot_timer: float = 0.0
 
+func _ready() -> void:
+	enforce_boundary()
+
 func _process(delta: float) -> void:
 	# only aim at player if within range
 	var target_diff: Vector3 = GameGlobal.player_ref.global_position - global_position

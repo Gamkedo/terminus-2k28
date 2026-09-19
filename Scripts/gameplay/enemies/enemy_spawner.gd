@@ -46,8 +46,9 @@ func _ready() -> void:
 	graphic_inactive.flip_h = flip
 	graphic_destroyed.flip_h = flip
 	
+	enforce_boundary()
+	
 	if rand_start_progress: spawn_timer = randf() * spawn_interval
-
 func _process(delta: float) -> void:
 	if destroyed: return # just in case
 	# spawn enemies if count is less than max_spawn_count

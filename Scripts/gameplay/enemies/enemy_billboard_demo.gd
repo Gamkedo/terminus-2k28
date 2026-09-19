@@ -52,7 +52,6 @@ func _collision_detected(body: Node3D) -> void:
 ## Prevents unit from leaving the world, and attempts to bounce the direction back inward
 func _map_bb_prevention():
 	var limits: Dictionary[String, float] = GameGlobal.world_boundaries.get_world_limits()
-	var edge_bounce = false
 	
 	if global_position.x > limits["+x"]:
 		global_position.x = limits["+x"]
