@@ -49,11 +49,20 @@ theme_override_constants/margin_right = 5
 [node name="VFXSettingsUI" parent="PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/VFXMargins" unique_id=1357413297 instance=ExtResource("3_e5auh")]
 layout_mode = 2
 
-[node name="UnpauseButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1737270289]
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=1201609115]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer2" unique_id=1984965169]
+layout_mode = 2
+alignment = 1
+
+[node name="UnpauseButton" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1737270289]
 layout_mode = 2
 text = "Paused"
 
-[node name="LevelSelectButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1243615767]
+[node name="LevelSelectButton" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1243615767]
 layout_mode = 2
 text = "Level Select"
 
@@ -61,5 +70,5 @@ text = "Level Select"
 script = ExtResource("2_8bei2")
 metadata/_custom_type_script = "uid://bv8ijbramquuc"
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/UnpauseButton" to="." method="pause_or_unpause"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer/UnpauseButton" to="." method="pause_or_unpause"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
