@@ -8,7 +8,7 @@ albedo_color = Color(0.93, 0.14136001, 0.03720002, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_ya5t8"]
 material = SubResource("StandardMaterial3D_58oiu")
 
-[node name="ParticleAOEExplosion" type="Node3D" unique_id=328624605]
+[node name="ParticleAOEExplosion" type="Node3D" unique_id=328624605 groups=["Precompilation"]]
 script = ExtResource("1_mmgnj")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=225047893]

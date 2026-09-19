@@ -17,7 +17,7 @@ material = SubResource("StandardMaterial3D_y5qfa")
 [sub_resource type="Gradient" id="Gradient_w7dxp"]
 colors = PackedColorArray(0, 0.6783332, 0.74, 0.1882353, 0, 0.3499999, 1, 0.19215687)
 
-[node name="CPUParticles3D" type="CPUParticles3D" unique_id=118062217]
+[node name="CPUParticles3D" type="CPUParticles3D" unique_id=118062217 groups=["Precompilation"]]
 material_override = SubResource("StandardMaterial3D_y5qfa")
 emitting = false
 amount = 15

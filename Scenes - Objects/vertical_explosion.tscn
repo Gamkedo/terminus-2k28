@@ -285,7 +285,7 @@ animations = [{
 "speed": 4.0
 }]
 
-[node name="VerticalExplosion" type="Node3D" unique_id=163751198 groups=["enemy"]]
+[node name="VerticalExplosion" type="Node3D" unique_id=163751198 groups=["Precompilation", "enemy"]]
 script = ExtResource("1_sttdr")
 
 [node name="BillboardFront" type="AnimatedSprite3D" parent="." unique_id=999408059]

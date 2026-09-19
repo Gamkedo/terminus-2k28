@@ -47,7 +47,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="LaserBeamProjectile" type="Node3D" unique_id=1654714350]
+[node name="LaserBeamProjectile" type="Node3D" unique_id=1654714350 groups=["Precompilation"]]
 script = ExtResource("1_xch6m")
 max_dist = 2.5
 
