@@ -203,6 +203,7 @@ script = ExtResource("8_wcdhk")
 metadata/_custom_type_script = "uid://cfc24xmre36y6"
 
 [node name="ScreenBezelCorners" parent="." unique_id=121658769 instance=ExtResource("8_b4wml")]
+mouse_filter = 2
 
 [node name="ScoreGUI" parent="." unique_id=924242711 instance=ExtResource("9_pbum0")]
 
