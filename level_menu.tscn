@@ -241,11 +241,11 @@ text = "• Chris DeLeon: Project lead, base gamplay, general game structure, ba
 • Justin Montgomery: Enemy perception, nav mesh, seek and wander, related optimizations
 • L: Game over sound (and implementation), pause key toggle
 • VikingMalmstrom: Arcade ground texture
-• APC: Game story
+• APV: Game story
 • Tim Lorgeree: Player health support, debugging logger
+• fizzybuzzybeezy: Menu button hover & select audio code for level select and pause menus
 • Ryan Gaillard: Game over handling, mute key toggle
 • Jordan: Pause menu scene
-• fizzybuzzybeezy: Main menu audio toggle
 • Michael Avrie: Music export bug fix
 • Playtesting: Barış Köklü, Juan Luiz R
 This game was developed as part of a 3-Week Challenge run in DevPods.gg (September 2026)"
