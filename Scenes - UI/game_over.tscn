@@ -3,6 +3,7 @@
 [ext_resource type="LabelSettings" uid="uid://djusahi51ns2f" path="res://Scenes - UI/game-over-label-settings.tres" id="1_bjwrq"]
 [ext_resource type="Script" uid="uid://kb73sakwq7ov" path="res://Scenes - UI/game_over.gd" id="1_jtftj"]
 [ext_resource type="LabelSettings" uid="uid://7mc5uw7y6vnf" path="res://Scenes - UI/score-label-settings.tres" id="1_q125a"]
+[ext_resource type="Theme" uid="uid://do4s6nqfelees" path="res://Scenes - UI/menu_theme.tres" id="4_07to4"]
 
 [node name="GameOverScreen" type="Control" unique_id=397520369]
 process_mode = 3
@@ -58,12 +59,14 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("4_07to4")
 text = "Restart"
 
 [node name="MenuReturnButton" type="Button" parent="CanvasLayer/VBoxContainer/VBoxContainer" unique_id=464235643]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("4_07to4")
 text = "Return to Menu"
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/VBoxContainer/RestartButton" to="." method="_on_restart_pressed"]
