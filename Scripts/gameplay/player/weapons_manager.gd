@@ -4,6 +4,8 @@ class_name WeaponsManager
 signal weapon_activated(n: int)
 signal weapon_deactivated(n: int)
 
+@export var allow_keyboard_switching := true
+
 var weapons: Array[Weapon] = []
 var active_weapon := 0
 
@@ -16,6 +18,8 @@ func _ready() -> void:
 			weapons.append(child)
 
 func _input(event: InputEvent) -> void:
+	if not allow_keyboard_switching:
+		return
 	if event.is_action_pressed("debug_cycle_weapon"): # currently "Q"
 		cycle_weapon()
 	if event.is_action_pressed("debug_previous_weapon"): # currently "E"
@@ -62,3 +66,11 @@ func select_weapon_num(num:int) -> void: # triggered by keyboard keys 0..9
 	if active_weapon >= weapons.size(): active_weapon = 0
 	weapon_activated.emit.call_deferred(active_weapon)
 	GameLogger.debug("select weapon: %d" % active_weapon)
+
+# this is slightly different for the stacking implentation
+# and it's what is called by pickups
+func add_weapon(num:int) -> bool:
+	if num != active_weapon:
+		select_weapon_num(num)
+		return true
+	return false
