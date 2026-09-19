@@ -11,7 +11,8 @@ var pickup_options: Array[PickupObject] = []
 func _ready() -> void:
 	for c in get_children():
 		if c is PickupObject:
-			pickup_options.append(c)
+			for i in range(c.spawn_weight):
+				pickup_options.append(c)
 			c.hide()
 			c.monitoring = false
 	if not spawn_container:

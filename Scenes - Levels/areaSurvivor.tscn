@@ -184,6 +184,7 @@ spawn_height = 1.5
 
 [node name="LaserShotgun" parent="Player/PickupSpawner" unique_id=1926490678 instance=ExtResource("10_aogi5")]
 effect = SubResource("Resource_mrilc")
+spawn_weight = 2
 
 [node name="Beam" parent="Player/PickupSpawner" unique_id=681131222 instance=ExtResource("10_aogi5")]
 effect = SubResource("Resource_aogi5")
