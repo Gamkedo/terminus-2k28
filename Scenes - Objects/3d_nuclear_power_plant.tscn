@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://vs63dl1pqjmq"]
+
+[ext_resource type="PackedScene" uid="uid://dntgoi1wtjkxd" path="res://Models (game format)/3d_nuclear_power_plant.glb" id="1_ib5vk"]
+[ext_resource type="Material" uid="uid://dd1cg3x7dloy" path="res://Materials/generic - concrete.tres" id="2_qw88p"]
+[ext_resource type="Material" uid="uid://dkjck5am51jr4" path="res://Materials/placeholder-metal.tres" id="3_ekads"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7tbbo"]
+top_radius = 9.29248
+bottom_radius = 9.29248
+height = 0.001
+
+[node name="3d_nuclear_power_plant" unique_id=1263172194 instance=ExtResource("1_ib5vk")]
+
+[node name="Connector_1" parent="." index="0" unique_id=1305270895]
+material_override = ExtResource("2_qw88p")
+
+[node name="Connector_2" parent="." index="1" unique_id=1411841275]
+material_override = ExtResource("2_qw88p")
+
+[node name="Control_Station" parent="." index="2" unique_id=1318430952]
+material_override = ExtResource("2_qw88p")
+
+[node name="Nuclear_Cooling_Tower_1" parent="." index="3" unique_id=1477786573]
+material_override = ExtResource("3_ekads")
+
+[node name="Nuclear_Cooling_Tower_2" parent="." index="4" unique_id=1600676197]
+material_override = ExtResource("3_ekads")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="5" unique_id=1856254137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.737125, 27.13908, 9.240035)
+mesh = SubResource("CylinderMesh_7tbbo")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="6" unique_id=2046378918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.176521, 27.13908, 9.240035)
+mesh = SubResource("CylinderMesh_7tbbo")
