@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://bpyt0mcl3gevb" path="res://Scripts/menus/label_c_imm.gd" id="11_n38p7"]
 [ext_resource type="PackedScene" uid="uid://bsgkbj2irnxuh" path="res://Scenes - Particles/lightning_particles_3d.tscn" id="12_rx83g"]
 [ext_resource type="Texture2D" uid="uid://cr0e2cljp0lx3" path="res://Sprites/robodog.png" id="13_87kcf"]
+[ext_resource type="Theme" uid="uid://do4s6nqfelees" path="res://Scenes - UI/menu_theme.tres" id="13_n38p7"]
 [ext_resource type="Texture2D" uid="uid://cyo5rvku750pi" path="res://Sprites/android.png" id="14_010tg"]
 [ext_resource type="Texture2D" uid="uid://b6hp37kontti2" path="res://Sprites/shieldbot.png" id="14_rx83g"]
 [ext_resource type="Texture2D" uid="uid://dva4iw1cm5glk" path="res://Sprites/dogelisk.png" id="15_010tg"]
@@ -182,6 +183,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("13_n38p7")
 text = "Credits"
 script = ExtResource("4_7blhc")
 
