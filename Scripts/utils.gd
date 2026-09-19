@@ -6,7 +6,7 @@ extends Node
 static func apply_billboard_graphics(graphic_toward: VisualInstance3D,
 	graphic_away: VisualInstance3D, direction: Vector3) -> void:
 		# toggle which graphic to show, moving towards or away from camera
-		graphic_toward.visible = direction.z>0
+		graphic_toward.visible = direction.z > 0
 		graphic_away.visible = !graphic_toward.visible
 
 ## Hide/show billboard graphics, and also turn left/right based on direction

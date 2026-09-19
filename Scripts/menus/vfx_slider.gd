@@ -3,8 +3,8 @@ extends HSlider
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	value = AudioStreamManager._global_volume
+	value = ScreenVFX.get_vfx_intensity()
 
 
 func _on_value_changed(val: float):
-	AudioStreamManager.set_global_volume(val)
+	ScreenVFX.set_vfx_intensity(val)
