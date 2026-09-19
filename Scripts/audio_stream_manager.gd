@@ -21,8 +21,8 @@ enum PlaybackMode {STANDARD, RANDOM_PITCH, ASCENDING_PITCH, DESCENDING_PITCH}
 var num_players := 7 # maximum sfx that can play at once
 var max_in_queue := 10 # more than 20 sounds in queue will drop the last sound
 
-var bgm_player
-var game_over_player
+var bgm_player: AudioStreamPlayer
+var game_over_player: AudioStreamPlayer
 var available: Array[AudioStreamPlayer] = []
 var queue: Array[Dictionary] = []
 
@@ -35,6 +35,8 @@ var descending_starting_pitch := 1.2
 var descending_pitch = descending_starting_pitch
 var descending_pitch_decrement := 0.05
 var descending_timer
+
+var _global_volume: float = 1.0
 
 var bg_music_tracks: Array[AudioStream] = [
 	preload("uid://dwrnljiewp65j"),
@@ -59,10 +61,12 @@ func _ready() -> void:
 		p.bus = SFX_BUS
 	
 	bgm_player = AudioStreamPlayer.new()
+	bgm_player.volume_linear = _global_volume
 	add_child(bgm_player)
 	bgm_player.bus = BGM_BUS
 	bgm_player.process_mode = PROCESS_MODE_ALWAYS
 	game_over_player = AudioStreamPlayer.new()
+	game_over_player.volume_linear = _global_volume
 	add_child(game_over_player)
 	game_over_player.bus = SFX_BUS
 	game_over_player.process_mode = PROCESS_MODE_ALWAYS
@@ -142,32 +146,32 @@ func _process(_delta: float):
 	## Play sfx
 	if not queue.is_empty() and not available.is_empty():
 		var sound = queue.pop_front()
+		available[0].stream = load(sound["sound_path"])
 		match sound["playback_mode"]:
 			PlaybackMode.STANDARD:
-				available[0].stream = load(sound["sound_path"])
-				available[0].play()
-				available.pop_front()
+				pass
 			## Play sfx with a random pitch
 			PlaybackMode.RANDOM_PITCH:
-				available[0].stream = load(sound["sound_path"])
 				available[0].pitch_scale = randf_range(0.8,1.2)
-				available[0].play()
-				available.pop_front()
 			## Play sfx with an ascending pitch
 			PlaybackMode.ASCENDING_PITCH:
-				available[0].stream = load(sound["sound_path"])
 				available[0].pitch_scale = ascending_pitch
 				ascending_pitch += ascending_pitch_increment
 				ascending_timer.start()
-				available[0].play()
-				available.pop_front()
 			## Play sfx with a descreasing pitch
 			PlaybackMode.DESCENDING_PITCH:
-				available[0].stream = load(sound["sound_path"])
 				available[0].pitch_scale = descending_pitch
 				descending_pitch -= descending_pitch_decrement
-				available[0].play()
-				available.pop_front()
+				descending_timer.start()
+		available[0].volume_linear = available[0].volume_linear * _global_volume
+		available[0].play()
+		available.pop_front()
+
+
+func set_global_volume(vol: float):
+	_global_volume = vol
+	bgm_player.volume_linear = _global_volume
+	game_over_player.volume_linear = _global_volume
 
 
 func _create_timer_nodes() -> void:
