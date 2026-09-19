@@ -12,7 +12,6 @@ radius = 1.4633789
 
 [node name="QuadcopterDrone" type="Node3D" unique_id=1746777189 groups=["enemy"]]
 script = ExtResource("1_i2u5h")
-speed = 4.0
 drift_time = 2.2
 rotation_speed = 2
 scoreValue = 50
@@ -58,3 +57,7 @@ shape = SubResource("CylinderShape3D_i2u5h")
 script = ExtResource("3_je03m")
 max_health = 70
 metadata/_custom_type_script = "uid://bxd4qyt1cgnhi"
+
+[node name="BillboardFront" type="AnimatedSprite3D" parent="." unique_id=958456773]
+
+[node name="BillboardBack" type="AnimatedSprite3D" parent="." unique_id=922834622]
