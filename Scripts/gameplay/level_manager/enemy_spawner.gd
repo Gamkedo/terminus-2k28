@@ -11,6 +11,7 @@ var enemy_scene_paths: Dictionary = {
 	"TURRET": "res://Scenes - Objects/enemy_stationary_turret.tscn",
 	"ROOMBYE": "res://Scenes - Objects/enemy_roombye.tscn",
 	"FLOATING_HEAD": "res://Scenes - Objects/enemy_model_demo.tscn",
+	"SMART_ANDROID": "res://Scenes - Objects/enemy_model_demo.tscn",
 	}
 
 func spawn(enemy, spawn_amount) -> void:
