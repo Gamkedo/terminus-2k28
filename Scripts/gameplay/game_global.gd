@@ -11,6 +11,8 @@ enum EnemyTypes{ROBODOG, DOGELISK, ANDROID, TURRET, ROOMBYE, FLOATING_HEAD, QUAD
 var player_ref: Player
 var world_boundaries: WorldBoundaries
 
+var won_surv = false
+
 signal add_score(new_score: int)
 signal score_changed(new_score: int)
 signal combo_changed(new_combo: int)

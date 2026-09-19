@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://dm856cff6gqsi" path="res://Scenes - Levels/Level Select Preview Images/areaC-preview.png" id="6_wj7nf"]
 [ext_resource type="Script" uid="uid://bv8ijbramquuc" path="res://menu_button_audio.gd" id="7_gd4f1"]
 [ext_resource type="PackedScene" uid="uid://p7aumif32558" path="res://Scenes - Objects/laser_beam_projectile.tscn" id="7_y1rhc"]
+[ext_resource type="Script" uid="uid://bp4i4jcj68eag" path="res://Scripts/menus/label_b_survivor.gd" id="8_6nhei"]
 [ext_resource type="PackedScene" uid="uid://c3whajq5vweph" path="res://Scenes - Objects/lightning_light_fake.tscn" id="9_ek6xb"]
+[ext_resource type="Script" uid="uid://bc5nnejlvqka3" path="res://Scripts/menus/win_message.gd" id="9_megah"]
 [ext_resource type="Script" uid="uid://6pslr24rx431" path="res://Scripts/gameplay/weapons/lightning_weapon.gd" id="9_mlgtu"]
 [ext_resource type="PackedScene" uid="uid://cblqj4rysl46l" path="res://Scenes - Objects/laser_bolt.tscn" id="10_87kcf"]
 [ext_resource type="PackedScene" uid="uid://dg14n5bxo33wb" path="res://Scenes - Particles/laser_hit.tscn" id="11_fgiea"]
@@ -136,9 +138,10 @@ script = ExtResource("4_7blhc")
 [node name="LabelB Survivor" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Survivor Container" unique_id=1705265690]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
-text = "Chaper 2: SURVIVOR MODE
+text = "SURVIVOR MODE
 Tomorrow's monsters are here. "
 horizontal_alignment = 1
+script = ExtResource("8_6nhei")
 
 [node name="Immersive Container" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=365200356]
 layout_mode = 2
@@ -157,6 +160,15 @@ theme_override_font_sizes/font_size = 15
 text = "Chaper 3: IMMERSIVE MODE
 My heart beats for you now. "
 horizontal_alignment = 1
+
+[node name="Win Message" type="Label" parent="MarginContainer/VBoxContainer" unique_id=901515734]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95000005, 1, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "YOU WON! With his newly transplanted father's heart, Dr. Mike Wakefield lives and is able to complete his pivotal work
+dismantling the A.I. overlord responsible for Earth's dystopia by infecting it with a techno-virus. "
+horizontal_alignment = 1
+script = ExtResource("9_megah")
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer" unique_id=262921972]
 layout_mode = 2

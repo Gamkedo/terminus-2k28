@@ -24,6 +24,7 @@ func _process(delta):
 		return
 		
 	if timer.time_left <= 0.0:
+		GameGlobal.won_surv = true
 		label.text = "RESCUE COMING!"
 		end_anim.play("rescue")
 		finished = true
