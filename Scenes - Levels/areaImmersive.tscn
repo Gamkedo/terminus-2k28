@@ -22,16 +22,19 @@
 
 [sub_resource type="Resource" id="Resource_l0x6y"]
 script = ExtResource("3_m34s3")
+enemy_type = 7
 spawn_amount = 1
 metadata/_custom_type_script = "uid://dnditqbrgbcer"
 
 [sub_resource type="Resource" id="Resource_t21m7"]
 script = ExtResource("3_m34s3")
+enemy_type = 7
 spawn_amount = 2
 metadata/_custom_type_script = "uid://dnditqbrgbcer"
 
 [sub_resource type="Resource" id="Resource_05gft"]
 script = ExtResource("3_m34s3")
+enemy_type = 7
 spawn_amount = 3
 metadata/_custom_type_script = "uid://dnditqbrgbcer"
 
@@ -42,16 +45,19 @@ metadata/_custom_type_script = "uid://emf33hlypehq"
 
 [sub_resource type="Resource" id="Resource_sg2f6"]
 script = ExtResource("3_m34s3")
+enemy_type = 7
 spawn_amount = 2
 metadata/_custom_type_script = "uid://dnditqbrgbcer"
 
 [sub_resource type="Resource" id="Resource_7fkuc"]
 script = ExtResource("3_m34s3")
+enemy_type = 7
 spawn_amount = 2
 metadata/_custom_type_script = "uid://dnditqbrgbcer"
 
 [sub_resource type="Resource" id="Resource_nrxhc"]
 script = ExtResource("3_m34s3")
+enemy_type = 7
 spawn_amount = 2
 metadata/_custom_type_script = "uid://dnditqbrgbcer"
 
@@ -62,19 +68,19 @@ metadata/_custom_type_script = "uid://emf33hlypehq"
 
 [sub_resource type="Resource" id="Resource_wnxyc"]
 script = ExtResource("3_m34s3")
-enemy_type = 1
+enemy_type = 7
 spawn_amount = 1
 metadata/_custom_type_script = "uid://dnditqbrgbcer"
 
 [sub_resource type="Resource" id="Resource_baima"]
 script = ExtResource("3_m34s3")
-enemy_type = 1
+enemy_type = 7
 spawn_amount = 1
 metadata/_custom_type_script = "uid://dnditqbrgbcer"
 
 [sub_resource type="Resource" id="Resource_rahtt"]
 script = ExtResource("3_m34s3")
-enemy_type = 1
+enemy_type = 7
 spawn_amount = 1
 metadata/_custom_type_script = "uid://dnditqbrgbcer"
 
@@ -87,19 +93,19 @@ metadata/_custom_type_script = "uid://emf33hlypehq"
 
 [sub_resource type="Resource" id="Resource_c4ync"]
 script = ExtResource("3_m34s3")
-enemy_type = 1
+enemy_type = 7
 spawn_amount = 2
 metadata/_custom_type_script = "uid://dnditqbrgbcer"
 
 [sub_resource type="Resource" id="Resource_nl4cv"]
 script = ExtResource("3_m34s3")
-enemy_type = 2
+enemy_type = 7
 spawn_amount = 3
 metadata/_custom_type_script = "uid://dnditqbrgbcer"
 
 [sub_resource type="Resource" id="Resource_5v2eu"]
 script = ExtResource("3_m34s3")
-enemy_type = 1
+enemy_type = 7
 spawn_amount = 2
 metadata/_custom_type_script = "uid://dnditqbrgbcer"
 

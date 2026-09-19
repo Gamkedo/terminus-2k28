@@ -66,6 +66,8 @@ radius = 0.85791016
 script = ExtResource("1_ltojq")
 nav_movement_handler = NodePath("DefaultEnemyMovementHandler")
 drop = ExtResource("2_hmo62")
+scoreValue = 5000
+enemy_type = 7
 
 [node name="BillboardFront" type="AnimatedSprite3D" parent="." unique_id=981741464]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4575043, 0)
@@ -122,6 +124,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01767546, 2.3201437, 0)
 
 [node name="HealthComponent" type="Node" parent="." unique_id=254750012]
 script = ExtResource("7_o2uvj")
+max_health = 1000
 metadata/_custom_type_script = "uid://bxd4qyt1cgnhi"
 
 [node name="Behaviors" type="Node" parent="." unique_id=1534145447]
