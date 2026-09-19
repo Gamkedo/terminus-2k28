@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bfkhbsqph3wx4"]
+
+[ext_resource type="Script" uid="uid://cewcax4qvxee8" path="res://Scenes - UI/active_weapons_ui.gd" id="1_alvem"]
+[ext_resource type="Texture2D" uid="uid://b1023yvb011w2" path="res://Sprites/weapons.png" id="2_vvbmp"]
+
+[node name="ActiveWeaponsUI" type="VBoxContainer" unique_id=171342784]
+offset_right = 32.0
+offset_bottom = 36.0
+size_flags_vertical = 3
+alignment = 2
+script = ExtResource("1_alvem")
+
+[node name="WeaponIconTemplate" type="Control" parent="." unique_id=1549226834]
+custom_minimum_size = Vector2(32, 36)
+layout_mode = 2
+
+[node name="Icon" type="Sprite2D" parent="WeaponIconTemplate" unique_id=1745980394]
+texture_filter = 1
+position = Vector2(16, 20)
+texture = ExtResource("2_vvbmp")
+hframes = 3
+vframes = 3

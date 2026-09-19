@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cdodu5og8y0t" path="res://Scripts/menus/score_gui.gd" id="1_t025o"]
 [ext_resource type="LabelSettings" uid="uid://eshni5th5b3h" path="res://Scenes - UI/wave-label-settings.tres" id="3_1886b"]
 [ext_resource type="PackedScene" uid="uid://bbwrgwjsa0gt1" path="res://Scenes - UI/health_bar.tscn" id="3_ljt6p"]
+[ext_resource type="PackedScene" uid="uid://bfkhbsqph3wx4" path="res://Scenes - UI/active_weapons_ui.tscn" id="5_w3mdd"]
 
 [node name="ScoreGUI" type="Control" unique_id=121658769]
 layout_mode = 3
@@ -77,3 +78,13 @@ horizontal_alignment = 2
 [node name="HealthBar" parent="CanvasLayer" unique_id=1933614406 instance=ExtResource("3_ljt6p")]
 offset_transform_enabled = true
 offset_transform_position = Vector2(10, 10)
+
+[node name="ActiveWeaponsUI" parent="CanvasLayer" unique_id=171342784 instance=ExtResource("5_w3mdd")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -36.0
+offset_bottom = 0.0
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(10, -10)
