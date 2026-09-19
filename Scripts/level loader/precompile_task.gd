@@ -20,7 +20,7 @@ func run() -> Signal:
 		
 	# If there are any particle node types then make sure they are emitting
 	var particle_nodes:Array[Node] = Utils.down_tree_matching(node, func(n:Node) -> bool:
-		return n is GPUParticles3D or n is CPUParticles3D
+		return n is GPUParticles3D or n is CPUParticles3D or n is GPUParticles2D or n is CPUParticles2D
 	)
 	
 	if particle_nodes:
