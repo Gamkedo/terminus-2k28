@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c0ehc4qrivpgx"
+path="res://.godot/imported/spaceship_flyby.wav-0936125c78c9ca92c5f88df07d7941d6.sample"
+
+[deps]
+
+source_file="res://Sound Effects/Spaceship/spaceship_flyby.wav"
+dest_files=["res://.godot/imported/spaceship_flyby.wav-0936125c78c9ca92c5f88df07d7941d6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
