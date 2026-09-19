@@ -11,7 +11,12 @@ enum EnemyTypes{ROBODOG, DOGELISK, ANDROID, TURRET, ROOMBYE, FLOATING_HEAD, QUAD
 var player_ref: Player
 var world_boundaries: WorldBoundaries
 
+# tracking within play session for which rounds have been won, to show win text
+# there are certainly nicer ways to do this but the game releases tomorrow, doing
+# doing in a simple way that involves minimal complexity / mental overhead
+var won_arc = false
 var won_surv = false
+var won_imm = false
 
 signal add_score(new_score: int)
 signal score_changed(new_score: int)

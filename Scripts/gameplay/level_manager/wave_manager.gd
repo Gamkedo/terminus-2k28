@@ -77,4 +77,9 @@ func _end_round() -> void:
 	if round_number < waves.size():
 		_start_new_round()
 	else: # ideally we handle end wave more gracefully, but at minimum, can't leave game stuck for now
+		if get_tree().current_scene.name.contains("Arc"):
+			GameGlobal.won_arc = true
+		elif get_tree().current_scene.name.contains("Imm"):
+			GameGlobal.won_imm = true
+		
 		get_tree().change_scene_to_file("res://level_menu.tscn")

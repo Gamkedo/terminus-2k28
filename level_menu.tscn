@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://drjg56vfuktlm" path="res://Scenes - Levels/Level Select Preview Images/areaB-preview.png" id="5_y1rhc"]
 [ext_resource type="Texture2D" uid="uid://dm856cff6gqsi" path="res://Scenes - Levels/Level Select Preview Images/areaC-preview.png" id="6_wj7nf"]
 [ext_resource type="Script" uid="uid://bv8ijbramquuc" path="res://menu_button_audio.gd" id="7_gd4f1"]
+[ext_resource type="Script" uid="uid://cbpqtjavynya8" path="res://Scripts/menus/label_a_arcade.gd" id="7_wkm5r"]
 [ext_resource type="PackedScene" uid="uid://p7aumif32558" path="res://Scenes - Objects/laser_beam_projectile.tscn" id="7_y1rhc"]
 [ext_resource type="Script" uid="uid://bp4i4jcj68eag" path="res://Scripts/menus/label_b_survivor.gd" id="8_6nhei"]
 [ext_resource type="PackedScene" uid="uid://c3whajq5vweph" path="res://Scenes - Objects/lightning_light_fake.tscn" id="9_ek6xb"]
@@ -16,6 +17,7 @@
 [ext_resource type="Script" uid="uid://6pslr24rx431" path="res://Scripts/gameplay/weapons/lightning_weapon.gd" id="9_mlgtu"]
 [ext_resource type="PackedScene" uid="uid://cblqj4rysl46l" path="res://Scenes - Objects/laser_bolt.tscn" id="10_87kcf"]
 [ext_resource type="PackedScene" uid="uid://dg14n5bxo33wb" path="res://Scenes - Particles/laser_hit.tscn" id="11_fgiea"]
+[ext_resource type="Script" uid="uid://bpyt0mcl3gevb" path="res://Scripts/menus/label_c_imm.gd" id="11_n38p7"]
 [ext_resource type="PackedScene" uid="uid://bsgkbj2irnxuh" path="res://Scenes - Particles/lightning_particles_3d.tscn" id="12_rx83g"]
 [ext_resource type="Texture2D" uid="uid://cr0e2cljp0lx3" path="res://Sprites/robodog.png" id="13_87kcf"]
 [ext_resource type="Texture2D" uid="uid://cyo5rvku750pi" path="res://Sprites/android.png" id="14_010tg"]
@@ -119,9 +121,10 @@ script = ExtResource("4_7blhc")
 [node name="LabelA Arcade" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Arcade Container" unique_id=2139458646]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
-text = "Chapter 1: ARCADE MODE
+text = "ARCADE MODE
 Yesterday thaws alive for freedom. "
 horizontal_alignment = 1
+script = ExtResource("7_wkm5r")
 
 [node name="Survivor Container" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1234353584]
 layout_mode = 2
@@ -157,9 +160,10 @@ script = ExtResource("4_7blhc")
 [node name="LabelC Immersive" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Immersive Container" unique_id=929782284]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
-text = "Chaper 3: IMMERSIVE MODE
+text = "IMMERSIVE MODE
 My heart beats for you now. "
 horizontal_alignment = 1
+script = ExtResource("11_n38p7")
 
 [node name="Win Message" type="Label" parent="MarginContainer/VBoxContainer" unique_id=901515734]
 layout_mode = 2
