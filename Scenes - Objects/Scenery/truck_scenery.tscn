@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c4bxgkgn3crmk"]
 
+[ext_resource type="Script" uid="uid://cwiyjp1hvss1a" path="res://Scripts/gameplay/world/truck_scenery.gd" id="1_3ela8"]
 [ext_resource type="PackedScene" uid="uid://bfocsxw3ckdas" path="res://Models (game format)/truck.glb" id="1_s1cpr"]
-[ext_resource type="Script" uid="uid://eug6k1o7o52e" path="res://Scripts/gameplay/world/destructible_scenery.gd" id="1_wppp6"]
 [ext_resource type="PackedScene" uid="uid://bjoc5aa7xcnpi" path="res://Scenes - Particles/particle_smoke_puff.tscn" id="2_b84b4"]
 [ext_resource type="Script" uid="uid://bxd4qyt1cgnhi" path="res://Scripts/gameplay/health_component.gd" id="4_3ela8"]
 
@@ -71,7 +71,7 @@ _data = {
 
 [node name="TruckScenery" type="Node3D" unique_id=1339161382 node_paths=PackedStringArray("anim_player", "part_spawn_spot") groups=["enemy"]]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
-script = ExtResource("1_wppp6")
+script = ExtResource("1_3ela8")
 destroy_particles = Array[PackedScene]([ExtResource("2_b84b4")])
 anim_player = NodePath("AnimationPlayer")
 part_spawn_spot = NodePath("PartSpawnSpot")
