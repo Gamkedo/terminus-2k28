@@ -13,3 +13,7 @@ func pause_or_unpause():
 	elif get_tree().paused == false:
 		$".".show()
 		get_tree().paused = true
+
+
+func _on_level_select_button_pressed():
+	get_tree().change_scene_to_file("res://level_menu.tscn")
