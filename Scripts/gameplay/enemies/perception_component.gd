@@ -155,17 +155,20 @@ func _on_scan_timer_timeout() -> void:
 		
 		if not _cone_check(body) or not _line_of_sight_check(body):
 			if detection_data.detected:
-				print_debug("%s(%s): Stopped detecting %s" % [_debug_self.name, name, body.name])
+				if OS.is_stdout_verbose():
+					print_debug("%s(%s): Stopped detecting %s" % [_debug_self.name, name, body.name])
 				perceive_end.emit(body)
 				detection_data.clear()
 			continue
 		if not detection_data.detected:
-			print_debug("%s(%s): Started detecting %s" % [_debug_self.name, name, body.name])
+			if OS.is_stdout_verbose():
+				print_debug("%s(%s): Started detecting %s" % [_debug_self.name, name, body.name])
 			perceive_begin.emit(body)
 			detection_data.detected = true
 			
 	for id in invalid_ids:
-		print_debug("%s(%s): Erased invalid instance %d" % [_debug_self.name, name, id])
+		if OS.is_stdout_verbose():
+			print_debug("%s(%s): Erased invalid instance %d" % [_debug_self.name, name, id])
 		_detections.erase(id)
 	
 	if invalid_ids:

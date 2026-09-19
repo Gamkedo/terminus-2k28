@@ -63,7 +63,8 @@ func stop() -> void:
 	if not enabled:
 		return
 	
-	print_debug("%s(%s) - Navigation to canceled" % [_enemy.name, name, _target_position])
+	if OS.is_stdout_verbose():
+		print_debug("%s(%s) - Navigation to canceled" % [_enemy.name, name, _target_position])
 	
 	enabled = false
 	if _target_position != Vector3.INF:
@@ -107,7 +108,8 @@ func _on_navigation_agent_path_changed() -> void:
 	_target_path_position = navigation_agent.get_final_position()
 	
 func _on_target_reached() -> void:
-	print_debug("%s(%s) - Navigation to %s complete" % [_enemy.name, name, _target_position])
+	if OS.is_stdout_verbose():
+		print_debug("%s(%s) - Navigation to %s complete" % [_enemy.name, name, _target_position])
 
 	enabled = false
 

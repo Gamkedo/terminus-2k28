@@ -41,7 +41,8 @@ func _ready() -> void:
 	_update_timer.timeout.connect(_on_timer_timeout)
 		
 func _on_perceive_begin(target:Node3D) -> void:
-	print_debug("%s: Started seeing %s" % [name, target.name])
+	if OS.is_stdout_verbose():
+		print_debug("%s: Started seeing %s" % [name, target.name])
 
 	if target != _target:
 		_target_is_visible = false
@@ -54,7 +55,8 @@ func _on_perceive_begin(target:Node3D) -> void:
 		return
 	
 func _on_perceive_end(target:Node3D) -> void:
-	print_debug("%s: Stopped seeing %s" % [name, target.name])
+	if OS.is_stdout_verbose():
+		print_debug("%s: Stopped seeing %s" % [name, target.name])
 
 	if target != _target:
 		return
@@ -65,10 +67,10 @@ func _on_perceive_end(target:Node3D) -> void:
 func _on_timer_timeout() -> void:
 	_target_is_visible = true
 	
-	var dist = _target.global_position.distance_to(enemy.global_position)
-	var rand_angle = randf_range(0, TAU)
-	var rand_offset = randf_range(1, rand_offset*dist)
-	var rand_dest = Vector2.from_angle(rand_angle) * rand_offset
+	var dist := _target.global_position.distance_to(enemy.global_position)
+	var rand_angle := randf_range(0, TAU)
+	var rand_offset := randf_range(1, rand_offset*dist)
+	var rand_dest := Vector2.from_angle(rand_angle) * rand_offset
 	var target_pos:Vector3 = _target.global_position + Vector3(rand_dest.x, 0, rand_dest.y)
 
 	# var target_pos:Vector3 = _target.global_position
