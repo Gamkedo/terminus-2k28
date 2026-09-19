@@ -8,6 +8,7 @@ func _ready() -> void:
 		#%MusicSelector.add_item(track.get_file().get_basename())
 		%MusicSelector.add_item(track.resource_path.get_file().get_basename())
 	if 0 < AudioStreamManager.bg_music_tracks.size(): %MusicSelector.selected = 0
+	%MusicButton.button_pressed = AudioStreamManager.muted
 
 func _on_music_selector_item_selected(index: int) -> void:
 	AudioStreamManager.select_background_track(index)
