@@ -21,10 +21,16 @@
 [ext_resource type="PackedScene" uid="uid://dgefm5eu8sdkx" path="res://Scenes - Objects/pickup_aircraft.tscn" id="18_eq1ps"]
 [ext_resource type="Script" uid="uid://b2im352uxecik" path="res://Scripts/gameplay/world/survivor_countdown.gd" id="20_xetuu"]
 
+[sub_resource type="Environment" id="Environment_oksh5"]
+glow_enabled = true
+adjustment_enabled = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42ddl"]
 albedo_color = Color(0.57, 0.57, 0.57, 1)
 albedo_texture = ExtResource("1_hcq85")
-uv1_scale = Vector3(4, 4, 4)
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_y5qfa"]
 size = Vector3(256, 1, 256)
@@ -38,10 +44,6 @@ uv2_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7tbbo"]
 size = Vector3(128, 1, 128)
-
-[sub_resource type="Environment" id="Environment_oksh5"]
-glow_enabled = true
-adjustment_enabled = true
 
 [sub_resource type="Animation" id="Animation_6w6bc"]
 length = 2.0
@@ -112,20 +114,6 @@ _data = {
 
 [node name="Environment" type="Node3D" parent="." unique_id=1062489120]
 
-[node name="Ground" type="StaticBody3D" parent="Environment" unique_id=313648461]
-script = ExtResource("1_geqij")
-infinite_world = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Ground" unique_id=612605019]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-material_override = SubResource("StandardMaterial3D_42ddl")
-mesh = SubResource("BoxMesh_y5qfa")
-surface_material_override/0 = SubResource("StandardMaterial3D_4flbx")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Ground" unique_id=576058120]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_7tbbo")
-
 [node name="Sun" type="DirectionalLight3D" parent="Environment" unique_id=685437435]
 transform = Transform3D(0.73278594, -0.32673866, 0.59688085, 5.3732524e-08, 0.8771734, 0.48017368, -0.6804593, -0.35186443, 0.64278036, 23.942041, 17.40335, 0)
 shadow_enabled = true
@@ -139,6 +127,21 @@ script = ExtResource("3_42ddl")
 
 [node name="EndingFlyoverAircraft" parent="Camera3D" unique_id=2023012809 instance=ExtResource("18_eq1ps")]
 transform = Transform3D(-0.088858366, 0, 0.9960443, 0.732008, 0.67815965, 0.065303326, -0.67547727, 0.73491484, -0.060260147, -43.765762, 9.2971325, 45.400665)
+
+[node name="Ground" type="StaticBody3D" parent="Camera3D" unique_id=313648461]
+transform = Transform3D(0.70710677, 0, -0.70710677, -0.51966316, 0.6781597, -0.51966316, 0.47953132, 0.73491466, 0.47953132, 0, 0.17751694, -93.64927)
+script = ExtResource("1_geqij")
+infinite_world = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D/Ground" unique_id=612605019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_42ddl")
+mesh = SubResource("BoxMesh_y5qfa")
+surface_material_override/0 = SubResource("StandardMaterial3D_4flbx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/Ground" unique_id=576058120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_7tbbo")
 
 [node name="Player" parent="." unique_id=935553468 instance=ExtResource("2_hcq85")]
 auto_fire = true
