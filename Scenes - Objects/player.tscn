@@ -306,7 +306,7 @@ metadata/_custom_type_script = "uid://cj7eq14viaaad"
 script = ExtResource("10_8dwo2")
 sound_effect_path = "res://Sound Effects/laserShoot.wav"
 projectile_scene = ExtResource("11_46nwg")
-fire_rate = 2.5
+fire_rate = 3.0
 metadata/_custom_type_script = "uid://cj7eq14viaaad"
 
 [node name="Lightning" type="Node3D" parent="." unique_id=1872216530 node_paths=PackedStringArray("light_fake")]

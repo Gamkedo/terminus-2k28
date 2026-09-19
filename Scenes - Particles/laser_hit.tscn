@@ -15,7 +15,7 @@ size = Vector3(0.1, 0.1, 0.1)
 _data = [Vector2(0, 0.948097), 0.0, 0.0, 0, 0, Vector2(1, 0.06920421), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="LaserHit" type="Node3D" unique_id=2136184369]
+[node name="LaserHit" type="Node3D" unique_id=2136184369 groups=["Precompilation"]]
 script = ExtResource("1_otmap")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=261148521]

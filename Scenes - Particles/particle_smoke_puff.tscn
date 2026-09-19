@@ -11,7 +11,7 @@ albedo_color = Color(0.2, 0.2, 0.2, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_8mvcy"]
 material = SubResource("StandardMaterial3D_8mvcy")
 
-[node name="ParticleSmokePuff" type="Node3D" unique_id=1690057196]
+[node name="ParticleSmokePuff" type="Node3D" unique_id=1690057196 groups=["Precompilation"]]
 script = ExtResource("1_mmp83")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=910607657]

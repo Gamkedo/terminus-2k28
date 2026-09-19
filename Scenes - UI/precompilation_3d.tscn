@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dp5fgxr25rrbd"]
+
+[ext_resource type="Script" uid="uid://p7hebxkt6vl" path="res://Scripts/level loader/precompilation_3d.gd" id="1_jdlgw"]
+
+[node name="Precompilation3D" type="Node3D" unique_id=347377932 groups=["Compiler"]]
+script = ExtResource("1_jdlgw")
+
+[node name="Scenes" type="Node3D" parent="." unique_id=430030778]
+unique_name_in_owner = true

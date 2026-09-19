@@ -9,8 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://wdglasw32mes" path="res://Scenes - Objects/enemy_roombye.tscn" id="7_155sy"]
 [ext_resource type="Script" uid="uid://dgtikgscqcp3m" path="res://Scripts/gameplay/player/auto_aim_component.gd" id="7_v3a74"]
 [ext_resource type="PackedScene" uid="uid://b5v6q4hcakfxg" path="res://Scenes - UI/scoreGUI.tscn" id="8_ua6li"]
+[ext_resource type="Script" uid="uid://b6w3brs42extc" path="res://Scripts/gameplay/pickup_spawner.gd" id="9_xetuu"]
 [ext_resource type="LabelSettings" uid="uid://7mc5uw7y6vnf" path="res://Scenes - UI/score-label-settings.tres" id="10_6w6bc"]
+[ext_resource type="PackedScene" uid="uid://1lnda0gke088" path="res://Scenes - Objects/pickup_weapon.tscn" id="10_aogi5"]
 [ext_resource type="PackedScene" uid="uid://4u0plcnsynif" path="res://Scenes - Objects/Scenery/explosive_barrel.tscn" id="10_lqsss"]
+[ext_resource type="Script" uid="uid://fr2qc6q15f8p" path="res://Scripts/gameplay/pickups/weapon_pickup_effect.gd" id="11_vfen2"]
 [ext_resource type="PackedScene" uid="uid://vdwb0cf16yx0" path="res://Scenes - Objects/enemy_stationary_turret.tscn" id="11_vx5xs"]
 [ext_resource type="PackedScene" uid="uid://c4bxgkgn3crmk" path="res://Scenes - Objects/Scenery/truck_scenery.tscn" id="13_u40bk"]
 [ext_resource type="PackedScene" uid="uid://bsqax7a47vrc6" path="res://Scenes - UI/game_over.tscn" id="14_ww2x6"]
@@ -43,6 +46,21 @@ uv2_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7tbbo"]
 size = Vector3(128, 1, 128)
+
+[sub_resource type="Resource" id="Resource_mrilc"]
+script = ExtResource("11_vfen2")
+weapon_number = 1
+metadata/_custom_type_script = "uid://fr2qc6q15f8p"
+
+[sub_resource type="Resource" id="Resource_aogi5"]
+script = ExtResource("11_vfen2")
+weapon_number = 2
+metadata/_custom_type_script = "uid://fr2qc6q15f8p"
+
+[sub_resource type="Resource" id="Resource_vfen2"]
+script = ExtResource("11_vfen2")
+weapon_number = 3
+metadata/_custom_type_script = "uid://fr2qc6q15f8p"
 
 [sub_resource type="Animation" id="Animation_6w6bc"]
 length = 2.0
@@ -150,12 +168,29 @@ auto_fire = true
 
 [node name="StackingWeaponsManager" type="Node" parent="Player" unique_id=932133242]
 script = ExtResource("6_tmxv0")
+allow_keyboard_switching = false
 metadata/_custom_type_script = "uid://bp36fivqnl7k6"
 
 [node name="AutoAimComponent" type="Node" parent="Player" unique_id=1983435733]
 script = ExtResource("7_v3a74")
 default_aim_range = 100
 metadata/_custom_type_script = "uid://dgtikgscqcp3m"
+
+[node name="PickupSpawner" type="Node3D" parent="Player" unique_id=1180474748]
+script = ExtResource("9_xetuu")
+max_spawn_seconds = 7.0
+spawn_radius = 50.0
+spawn_height = 1.5
+
+[node name="LaserShotgun" parent="Player/PickupSpawner" unique_id=1926490678 instance=ExtResource("10_aogi5")]
+effect = SubResource("Resource_mrilc")
+spawn_weight = 2
+
+[node name="Beam" parent="Player/PickupSpawner" unique_id=681131222 instance=ExtResource("10_aogi5")]
+effect = SubResource("Resource_aogi5")
+
+[node name="Electricity" parent="Player/PickupSpawner" unique_id=1057952609 instance=ExtResource("10_aogi5")]
+effect = SubResource("Resource_vfen2")
 
 [node name="Enemies" type="Node3D" parent="." unique_id=2100857171]
 

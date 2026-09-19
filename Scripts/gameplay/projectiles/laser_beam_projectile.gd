@@ -30,6 +30,9 @@ func _ready() -> void:
 	if coll_obj != null:
 		beam_length = (beam_ray.get_collision_point() - global_position).length() / beam_len
 	scale.z = abs(beam_length)
+	if scale.z > max_dist:
+		scale.z = max_dist
+	# print(scale.z)
 
 func _physics_process(delta: float) -> void:
 	scale_update_timer += delta
@@ -41,18 +44,22 @@ func _physics_process(delta: float) -> void:
 		var coll_obj = beam_ray.get_collider()
 		if coll_obj != null:
 			var dist = beam_ray.get_collision_point().distance_to(global_position)
+			# print(dist)
 			if dist > max_dist:
 				return # out of range, do not fire or harm
 			# damage tick to enemies
+			var blocked = true
 			if coll_obj.get_parent().is_in_group("enemy"):
 				var enemy := coll_obj.get_parent() as Node3D
 				Utils.damage_enemy(enemy, damage_component.amount)
+				if enemy.dead: # dont shorten beam if we obliterated them
+					blocked = false
+
+			if blocked:
+				beam_length = (beam_ray.get_collision_point() - global_position).length() / beam_len
 			
 			# spawn particles
 			var hit_effect := LASER_HIT_TSCN.instantiate()
 			get_tree().current_scene.add_child(hit_effect)
 			hit_effect.global_position = beam_end.global_position
-			
-			# update beam length based on raycast hit
-			beam_length = (beam_ray.get_collision_point() - global_position).length() / beam_len
 		scale.z = abs(beam_length)

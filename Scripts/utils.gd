@@ -64,6 +64,21 @@ static func down_tree_matching(root: Node, predicate: Callable, return_on_first:
 				return matching_nodes
 		stack.append_array(node.get_children())
 	return matching_nodes
+	
+static func scene_has_group(scene: PackedScene, group_name: StringName, root_only:bool = false) -> bool:
+	var state: SceneState = scene.get_state()
+	var node_count:int = state.get_node_count()
+	if not node_count:
+		return false
+	if root_only:
+		return group_name in state.get_node_groups(0)
+		
+	for i in node_count:
+		var groups: PackedStringArray = state.get_node_groups(i)
+		if group_name in groups:
+			return true
+			
+	return false
 #endregion
 
 ## Projects a 3d vector onto the xz plane

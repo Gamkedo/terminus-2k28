@@ -45,3 +45,11 @@ func select_weapon_num(num:int) -> void: # triggered by keyboard keys 0..9
 		active_weapons.append(num)
 		weapon_activated.emit.call_deferred(num)
 		GameLogger.debug("adding weapon %d" % num)
+
+func add_weapon(num:int) -> bool: # triggered by pickups
+	if num not in active_weapons and num < weapons.size():
+		active_weapons.append(num)
+		weapon_activated.emit.call_deferred(num)
+		GameLogger.debug("adding weapon %d" % num)
+		return true
+	return false

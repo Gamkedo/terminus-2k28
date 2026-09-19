@@ -43,6 +43,7 @@ import/blender/enabled=false
 [global_group]
 
 enemy=""
+Precompilation="Tag for scenes that should have shaders precompiled during loading"
 
 [input]
 

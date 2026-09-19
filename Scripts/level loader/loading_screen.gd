@@ -11,7 +11,14 @@ var scene_load_estimates = {
 }
 var estimate: float = 400.0
 
+var _precompilation_total_count:int
+var _precompilation_current_count:int
+var _precompilation_progress:float
+var _precompilation_completed:bool
+var _main_scene_loaded:bool
+
 @onready var progress_bar: ProgressBar = %ProgressBar
+@onready var precompilation_3d: Precompilation3D = %Precompilation3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,6 +28,8 @@ func _ready() -> void:
 	elif scene_path == SceneChanger.loading_screen_uid:
 		push_error("Loading screen for loading screen!!")
 		assert(false)
+	
+	precompilation_3d.run()	
 	ResourceLoader.load_threaded_request(scene_path)
 	estimate = get_load_estimate()
 	time_at_last_tick = Time.get_ticks_msec()
@@ -32,9 +41,10 @@ func _process(_delta: float) -> void:
 	#print(status)
 	process_time_count += Time.get_ticks_msec() - time_at_last_tick
 	time_at_last_tick = Time.get_ticks_msec()
-	var percent_value = clampf(process_time_count / estimate , 0.0, 1.0)
+	var percent_value := clampf(process_time_count / estimate , 0.0, 1.0)
+	
 	# printt(percent_value, process_time_count, estimate)
-	progress_bar.value = percent_value
+	progress_bar.value = (percent_value + _precompilation_progress ) * 0.5
 	match status:
 		ResourceLoader.ThreadLoadStatus.THREAD_LOAD_INVALID_RESOURCE:
 			invalid_resource()
@@ -61,7 +71,17 @@ func in_progress() -> void:
 
 
 func loaded() -> void:
+	if _main_scene_loaded:
+		return
+		
 	print(">>> loaded %s after %s process ticks and %s milliseconds" % [scene_path, process_tick_count, process_time_count])
+	_main_scene_loaded = true
+	
+	if not _precompilation_completed:
+		await precompilation_3d.completed
+	_change_to_scene()
+
+func _change_to_scene() -> void:
 	var new_scene = ResourceLoader.load_threaded_get(scene_path).instantiate()
 	var error := get_tree().change_scene_to_node(new_scene)
 	if not error:
@@ -69,9 +89,22 @@ func loaded() -> void:
 	else:
 		SceneChanger.return_to_previous_scene()
 
-
 func get_load_estimate() -> float:
 	if scene_load_estimates.has(scene_path):
 		return scene_load_estimates[scene_path]
 	else:
 		return default_estimate
+
+
+func _on_precompilation_started(total_count: int) -> void:
+	_precompilation_total_count = total_count
+
+
+func _on_precompilation_progress_changed(progress: float, count: int) -> void:
+	_precompilation_progress = progress
+	_precompilation_current_count += count
+
+
+func _on_precompilation_completed() -> void:
+	_precompilation_completed = true
+	_precompilation_progress = 1.0

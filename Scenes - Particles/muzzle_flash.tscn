@@ -15,7 +15,7 @@ _limits = [-1.0, 1.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9968404, -0.93771636), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="MuzzleFlash" type="Node3D" unique_id=2136184369]
+[node name="MuzzleFlash" type="Node3D" unique_id=2136184369 groups=["Precompilation"]]
 script = ExtResource("1_71f6k")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1050997192]

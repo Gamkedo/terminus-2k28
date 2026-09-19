@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ce54pu4cqm5ud"]
 
 [ext_resource type="Script" uid="uid://bl35px1my0qxp" path="res://Scripts/level loader/loading_screen.gd" id="1_icmt0"]
+[ext_resource type="PackedScene" uid="uid://dp5fgxr25rrbd" path="res://Scenes - UI/precompilation_3d.tscn" id="2_b7nqo"]
 [ext_resource type="Script" uid="uid://d4j2g64dnf1pi" path="res://Scenes - Levels/Level Loader/loading_load_story_text.gd" id="2_uum5w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbmba"]
@@ -11,6 +12,29 @@ bg_color = Color(0.9378395, 0.43079388, 0.04351618, 1)
 
 [node name="LoadingScreen" type="CanvasLayer" unique_id=136384833]
 script = ExtResource("1_icmt0")
+
+[node name="PrecompilationViewport" type="SubViewportContainer" parent="." unique_id=1125989787]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="PrecompilationViewport" unique_id=759816662]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="PrecompilationCamera" type="Camera3D" parent="PrecompilationViewport/SubViewport" unique_id=582268242]
+
+[node name="Environment" type="Node3D" parent="PrecompilationViewport/SubViewport" unique_id=480884741]
+
+[node name="Sun" type="DirectionalLight3D" parent="PrecompilationViewport/SubViewport/Environment" unique_id=1154504177]
+transform = Transform3D(0.73278594, -0.32673866, 0.59688085, 5.3732524e-08, 0.8771734, 0.48017368, -0.6804593, -0.35186443, 0.64278036, 23.942041, 17.40335, 0)
+shadow_enabled = true
+
+[node name="Precompilation3D" parent="PrecompilationViewport/SubViewport" unique_id=347377932 instance=ExtResource("2_b7nqo")]
+unique_name_in_owner = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1606071558]
 anchors_preset = 15
@@ -93,3 +117,7 @@ horizontal_alignment = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=335311144]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[connection signal="completed" from="PrecompilationViewport/SubViewport/Precompilation3D" to="." method="_on_precompilation_completed"]
+[connection signal="progress_changed" from="PrecompilationViewport/SubViewport/Precompilation3D" to="." method="_on_precompilation_progress_changed"]
+[connection signal="started" from="PrecompilationViewport/SubViewport/Precompilation3D" to="." method="_on_precompilation_started"]
