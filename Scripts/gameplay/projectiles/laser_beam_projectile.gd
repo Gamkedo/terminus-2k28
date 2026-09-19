@@ -30,6 +30,9 @@ func _ready() -> void:
 	if coll_obj != null:
 		beam_length = (beam_ray.get_collision_point() - global_position).length() / beam_len
 	scale.z = abs(beam_length)
+	if scale.z > max_dist:
+		scale.z = max_dist
+	# print(scale.z)
 
 func _physics_process(delta: float) -> void:
 	scale_update_timer += delta
@@ -41,6 +44,7 @@ func _physics_process(delta: float) -> void:
 		var coll_obj = beam_ray.get_collider()
 		if coll_obj != null:
 			var dist = beam_ray.get_collision_point().distance_to(global_position)
+			# print(dist)
 			if dist > max_dist:
 				return # out of range, do not fire or harm
 			# damage tick to enemies

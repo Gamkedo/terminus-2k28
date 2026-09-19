@@ -49,7 +49,7 @@ animations = [{
 
 [node name="LaserBeamProjectile" type="Node3D" unique_id=1654714350 groups=["Precompilation"]]
 script = ExtResource("1_xch6m")
-max_dist = 5.0
+max_dist = 2.5
 
 [node name="BeamRay" type="RayCast3D" parent="." unique_id=513910501]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, -0.4093709, 0)
@@ -72,5 +72,5 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0
 
 [node name="DamageComponent" type="Node" parent="." unique_id=1721918466]
 script = ExtResource("3_rbshg")
-amount = 150
+amount = 400
 metadata/_custom_type_script = "uid://dk0t68rm77cxi"
