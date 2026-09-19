@@ -40,6 +40,9 @@ func _physics_process(delta: float) -> void:
 		
 		var coll_obj = beam_ray.get_collider()
 		if coll_obj != null:
+			var dist = beam_ray.get_collision_point().distance_to(global_position)
+			if dist > max_dist:
+				return # out of range, do not fire or harm
 			# damage tick to enemies
 			if coll_obj.get_parent().is_in_group("enemy"):
 				var enemy := coll_obj.get_parent() as Node3D
