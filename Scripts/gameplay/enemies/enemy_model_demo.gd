@@ -21,6 +21,8 @@ func _ready():
 	super._ready()
 	
 	pick_new_direction()
+	
+	enforce_boundary()
 
 	collision_area.body_entered.connect(_collision_detected)
 
@@ -32,6 +34,8 @@ func _process(delta):
 			pick_new_direction()
 	global_position += direction * speed * delta
 	rotation.y = lerp_angle(rotation.y, atan2(-direction.x, -direction.z), delta * rotation_speed)
+
+	enforce_boundary()
 
 	if attack_timer > 0:
 		attack_timer -= delta

@@ -112,7 +112,7 @@ fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.19057477, 0.21052259, 0.24044365, 1)
 fog_density = 1.0
-fog_depth_end = 50.0
+fog_depth_end = 80.0
 adjustment_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_y5qfa"]
