@@ -1,6 +1,9 @@
 extends Node
 class_name WeaponsManager
 
+signal weapon_activated(n: int)
+signal weapon_deactivated(n: int)
+
 var weapons: Array[Weapon] = []
 var active_weapon := 0
 
@@ -9,7 +12,8 @@ func _ready() -> void:
 	if player:
 		player.weapons_manager = self
 	for child in get_parent().get_children():
-		if child is Weapon: weapons.append(child)
+		if child is Weapon: 
+			weapons.append(child)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug_cycle_weapon"): # currently "Q"
@@ -35,20 +39,26 @@ func fire(pos, rot) -> void:
 	weapons[active_weapon].fire(pos, rot)
 
 func cycle_weapon() -> void:
+	weapon_deactivated.emit.call_deferred(active_weapon)
 	active_weapon += 1
 	if active_weapon >= weapons.size():
 		active_weapon = 0
+	weapon_activated.emit.call_deferred(active_weapon)
 	GameLogger.debug("cycle weapon: %d" % active_weapon)
 
 func previous_weapon() -> void:
+	weapon_deactivated.emit.call_deferred(active_weapon)
 	active_weapon -= 1
 	if active_weapon < 0:
 		active_weapon = weapons.size()-1
+	weapon_activated.emit.call_deferred(active_weapon)
 	GameLogger.debug("previous weapon: %d" % active_weapon)
 
 func select_weapon_num(num:int) -> void: # triggered by keyboard keys 0..9
+	weapon_deactivated.emit.call_deferred(active_weapon)
 	active_weapon = num
 	# we may have fewer than ten weapons:
 	if active_weapon < 0: active_weapon = weapons.size()-1
 	if active_weapon >= weapons.size(): active_weapon = 0
+	weapon_activated.emit.call_deferred(active_weapon)
 	GameLogger.debug("select weapon: %d" % active_weapon)
