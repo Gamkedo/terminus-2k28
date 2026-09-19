@@ -84,7 +84,7 @@ autoplay = "default"
 [node name="BillboardBack" type="AnimatedSprite3D" parent="." unique_id=939738332]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4575043, 0)
 visible = false
-modulate = Color(0.32, 0, 0, 1)
+modulate = Color(0, 0.55466676, 0.64, 0.38039216)
 pixel_size = 0.15
 billboard = 1
 texture_filter = 0

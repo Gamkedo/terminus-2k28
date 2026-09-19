@@ -10,6 +10,7 @@ var enemy_scene_paths: Dictionary = {
 	"ANDROID": "res://Scenes - Objects/enemy_android.tscn",
 	"TURRET": "res://Scenes - Objects/enemy_stationary_turret.tscn",
 	"ROOMBYE": "res://Scenes - Objects/enemy_roombye.tscn",
+	"QUADCOPTER": "res://Scenes - Objects/enemy_quadcopter.tscn",
 	"FLOATING_HEAD": "res://Scenes - Objects/enemy_model_demo.tscn",
 	"SMART_DROID": "res://Scenes - Objects/enemy_model_demo.tscn",
 	}
