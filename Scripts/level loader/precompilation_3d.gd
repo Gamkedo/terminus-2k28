@@ -6,8 +6,8 @@ var precompilation_group_name:String = "Precompilation"
 @export
 var max_concurrency:int = 3
 
-
 ## Keep precompiled resources alive so the shaders are not released after the loading screen
+## Onces a scene is precompiled it doesn't need to do it again since a reference to the retained scene is held
 static var _PRECOMPILED_SCENES:Array[PackedScene]
 
 #region Signals
@@ -41,8 +41,23 @@ func run() -> void:
 	print_debug("%s: Precompilation completed in %.1fms" % [name, (end - start) / 1000.0])
 	
 func _precompile_scenes() -> Signal:
+	# Only precompile any new scenes found since last - usually zero after first precompile
 	var scenes:Array[PackedScene] = _get_tagged_scenes()
-	_PRECOMPILED_SCENES = scenes
+	
+	var existing_scenes:Dictionary[PackedScene, bool]
+	for scene in _PRECOMPILED_SCENES:
+		existing_scenes[scene] = true
+		
+	var new_scenes:Array[PackedScene]
+	for scene in scenes:
+		if scene not in existing_scenes:
+			new_scenes.push_back(scene)
+	
+	# These are the scenes we actually need to precompile		
+	scenes = new_scenes
+	
+	# Retain a static reference to the lightweight packed scene so that the shaders aren't freed immediately after we precompile them
+	_PRECOMPILED_SCENES.append_array(new_scenes)
 	
 	started.emit(scenes.size())
 	
