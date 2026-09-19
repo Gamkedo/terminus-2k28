@@ -154,16 +154,16 @@ script = ExtResource("3_itglv")
 [node name="Player" parent="." unique_id=935553468 instance=ExtResource("3_mhi1n")]
 
 [node name="Laser" parent="Player" index="4" unique_id=881354002]
-label_text = "1 - laser"
+label_text = "1 - Laserbolt"
 
 [node name="LaserShotgun" parent="Player" index="5" unique_id=810139150]
-label_text = "2 - shotgun"
+label_text = "2 - Spreadshot"
 
 [node name="LaserBeam" parent="Player" index="6" unique_id=449828892]
-label_text = "3 - beam"
+label_text = "3 - Beam"
 
 [node name="Lightning" parent="Player" index="7" unique_id=1872216530]
-label_text = "4 - lightning"
+label_text = "4 - Lightning"
 
 [node name="ImmersiveAimComponent" type="Node" parent="Player" unique_id=1083012156]
 script = ExtResource("4_kwne6")
