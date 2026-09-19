@@ -1,5 +1,7 @@
 extends Weapon
 
+@export var cache_fire_on_start:bool = false
+
 @export var light_fake: Node3D
 @export var light_fake_travel_length: float = 0.05
 @export var min_projectiles: int = 5
@@ -8,6 +10,10 @@ extends Weapon
 @export var ramp_down: float = 5.
 @export var flicker_interval: float = 0.5
 @export_range(1.0, 100.) var spawn_range: float = 15.
+
+func _ready() -> void:
+	if cache_fire_on_start:
+		fire(global_position, Vector3.ZERO)
 
 var bolts_to_shoot: int = 0
 func fire(_pos: Vector3, _rot: Vector3) -> void:
@@ -40,5 +46,6 @@ func _process(delta: float) -> void:
 		projectile.intended_position = global_position + Vector3((randf() - 0.5) * 2. * spawn_range, 0., (randf() - 0.5) * 2. * spawn_range)
 		get_tree().current_scene.add_child(projectile)
 		bolts_to_shoot -= 1
-		AudioStreamManager.play_sfx("res://Sound Effects/Electricity/electricity_one_shot_v2.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
+		if cache_fire_on_start == false:
+			AudioStreamManager.play_sfx("res://Sound Effects/Electricity/electricity_one_shot_v2.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
 	elif light_fake: light_fake.visible = false
