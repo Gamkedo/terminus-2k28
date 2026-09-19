@@ -5,6 +5,5 @@
 [resource]
 font = ExtResource("1_pf5x1")
 font_size = 40
-font_color = Color(0.89302033, 0.48910266, 0.1405943, 1)
-outline_size = 1
+outline_size = 2
 shadow_size = 0
