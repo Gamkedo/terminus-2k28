@@ -29,7 +29,7 @@ var shake_decay: float = 1.0
 var flash_tween: Tween
 
 # allows the user to turn down shaking
-var shake_volume_setting := 1.0
+var vfx_intensity_setting := 1.0
 var slow_shaders_enabled := true
 
 var baseline_bloom := 0.0 
@@ -38,20 +38,20 @@ var baseline_contrast := 1.0
 var baseline_saturation := 1.0
 
 
-func get_shake_volume() -> float:
-	return shake_volume_setting
+func get_vfx_intensity() -> float:
+	return vfx_intensity_setting
 
 
-func set_shake_volume(value: float) -> void:
-	shake_volume_setting = value
+func set_vfx_intensity(value: float) -> void:
+	vfx_intensity_setting = value
 
 
 ## Screen shake with optional controller shake
 func shake(seconds = MID, intensity = QUAKE, controller_shake = true) -> void:
-	var new_strength = intensity * STRENGTH_MULTIPLIER * shake_volume_setting
+	var new_strength = intensity * STRENGTH_MULTIPLIER
 	if new_strength <= shake_strength or seconds <= 0.0:
 		return
-	shake_strength = new_strength
+	shake_strength = new_strength * vfx_intensity_setting
 	shake_decay = new_strength / seconds
 
 	var weak_vibes := 0.0
@@ -77,10 +77,10 @@ func flash(seconds = MID, intensity = QUAKE, type = Flash.NEUTRAL) ->void:
 		flash_tween = create_tween()
 		flash_tween.set_ease(Tween.EASE_IN)
 		#flash_tween.set_parallel(true)
-		env.glow_bloom = intensity
+		env.glow_bloom = intensity * vfx_intensity_setting
 		match type:
 			Flash.LIGHT:
-				env.adjustment_brightness = 1.0 + 2.0 * intensity
+				env.adjustment_brightness = 1.0 + 2.0 * intensity * vfx_intensity_setting
 			Flash.DARK:
 				env.glow_bloom = 0.0 # bloom doesn't look nice with this one
 				env.adjustment_brightness = 1.0 - intensity * 1.2

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dip0s51pffhnf"]
+
+[ext_resource type="StyleBox" path="res://Scenes - UI/slider_style.tres" id="1_4bdck"]
+[ext_resource type="Script" path="res://Scripts/menus/vfx_slider.gd" id="2_rix86"]
+
+[node name="VFXSettingsUI" type="VBoxContainer" unique_id=1357413297]
+offset_right = 250.0
+offset_bottom = 50.0
+alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=673645858]
+layout_mode = 2
+text = "VFX Intensity"
+
+[node name="HSlider" type="HSlider" parent="." unique_id=216237676]
+layout_mode = 2
+theme_override_styles/slider = ExtResource("1_4bdck")
+max_value = 1.0
+step = 0.025
+value = 1.0
+tick_count = 10
+script = ExtResource("2_rix86")
+
+[connection signal="value_changed" from="HSlider" to="HSlider" method="_on_value_changed"]

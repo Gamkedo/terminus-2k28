@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d2psco3t4cdwm" path="res://Scenes - UI/SoundControlUI.tscn" id="2_w32vy"]
 [ext_resource type="Texture2D" uid="uid://d3ym0voj38pp1" path="res://Scenes - Levels/Level Select Preview Images/areaA-preview.png" id="3_7blhc"]
 [ext_resource type="Script" uid="uid://43vdms6yoos2" path="res://Scripts/menus/menu_button.gd" id="4_7blhc"]
+[ext_resource type="PackedScene" uid="uid://dip0s51pffhnf" path="res://Scenes - UI/vfx_settings_ui.tscn" id="4_k7hfm"]
 [ext_resource type="Texture2D" uid="uid://drjg56vfuktlm" path="res://Scenes - Levels/Level Select Preview Images/areaB-preview.png" id="5_y1rhc"]
 [ext_resource type="Texture2D" uid="uid://dm856cff6gqsi" path="res://Scenes - Levels/Level Select Preview Images/areaC-preview.png" id="6_wj7nf"]
 [ext_resource type="Script" uid="uid://bv8ijbramquuc" path="res://menu_button_audio.gd" id="7_gd4f1"]
@@ -60,12 +61,36 @@ offset_bottom = 643.0
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Logo" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1202717716]
+[node name="TopElementsControl" type="Control" parent="MarginContainer/VBoxContainer" unique_id=944202821]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SoundControlUI" parent="MarginContainer/VBoxContainer/TopElementsControl" unique_id=712051681 instance=ExtResource("2_w32vy")]
+layout_mode = 0
+offset_left = 52.0
+offset_right = 302.0
+offset_bottom = 128.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TopElementsControl" unique_id=1160147205]
+layout_mode = 0
+offset_left = 306.0
+offset_right = 848.0
+offset_bottom = 128.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="Logo" type="TextureRect" parent="MarginContainer/VBoxContainer/TopElementsControl/MarginContainer" unique_id=1202717716]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("2_lnidy")
 stretch_mode = 2
+
+[node name="VFXSettingsUI" parent="MarginContainer/VBoxContainer/TopElementsControl" unique_id=94027503 instance=ExtResource("4_k7hfm")]
+layout_mode = 0
+offset_left = 852.0
+offset_right = 1102.0
+offset_bottom = 128.0
 
 [node name="Top of screen text - placeholder" type="Label" parent="MarginContainer/VBoxContainer" unique_id=716597263]
 layout_mode = 2
@@ -208,14 +233,6 @@ focus_neighbor_bottom = NodePath(".")
 focus_next = NodePath(".")
 focus_previous = NodePath(".")
 text = "Back"
-
-[node name="SoundControlUI" parent="." unique_id=712051681 instance=ExtResource("2_w32vy")]
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_top = 0.0
-offset_bottom = 50.0
-grow_vertical = 1
 
 [node name="MenuButtonAudio" type="Node" parent="." unique_id=238374378]
 script = ExtResource("7_gd4f1")
