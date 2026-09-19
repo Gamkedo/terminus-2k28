@@ -129,7 +129,7 @@ script = ExtResource("4_7blhc")
 [node name="LabelC Immersive" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Immersive Container" unique_id=929782284]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
-text = "Ch 3: Free the Last Human Heart
+text = "Ch 3: Data Center Power Station
 IMMERSIVE MODE"
 horizontal_alignment = 1
 

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ce54pu4cqm5ud"]
 
 [ext_resource type="Script" uid="uid://bl35px1my0qxp" path="res://Scripts/level loader/loading_screen.gd" id="1_icmt0"]
+[ext_resource type="Script" uid="uid://d4j2g64dnf1pi" path="res://Scenes - Levels/Level Loader/loading_load_story_text.gd" id="2_uum5w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbmba"]
 bg_color = Color(0.25929368, 0.25929374, 0.2592936, 1)
@@ -59,6 +60,24 @@ max_value = 1.0
 step = 0.0
 metadata/_edit_use_anchors_ = true
 
+[node name="Story Text" type="Label" parent="ProgressBar" unique_id=78367155 node_paths=PackedStringArray("scene_loading")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = -1.0
+anchor_right = 1.0
+offset_left = -780.68
+offset_top = -283.90002
+offset_right = 6.1035156e-05
+offset_bottom = -59.900024
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "story text"
+autowrap_mode = 2
+script = ExtResource("2_uum5w")
+scene_loading = NodePath("../..")
+
 [node name="Label" type="Label" parent="ProgressBar" unique_id=485046067]
 layout_mode = 1
 anchors_preset = -1
@@ -68,7 +87,7 @@ anchor_right = 1.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(0.98, 0.49490008, 0.09800003, 1)
 theme_override_font_sizes/font_size = 30
-text = "Loading..."
+text = "Loading... (may take a bit)"
 horizontal_alignment = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=335311144]
