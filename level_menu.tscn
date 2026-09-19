@@ -92,8 +92,8 @@ script = ExtResource("4_7blhc")
 [node name="LabelA Arcade" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Arcade Container" unique_id=2139458646]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
-text = "Ch 1: Escape from Cryosleep
-ARCADE MODE"
+text = "Chapter 1: ARCADE MODE
+Yesterday thaws alive for freedom. "
 horizontal_alignment = 1
 
 [node name="Survivor Container" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1234353584]
@@ -111,8 +111,8 @@ script = ExtResource("4_7blhc")
 [node name="LabelB Survivor" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Survivor Container" unique_id=1705265690]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
-text = "Ch 2: Break Past the Horde
-SURVIVOR MODE"
+text = "Chaper 2: SURVIVOR MODE
+Tomorrow's monsters are here. "
 horizontal_alignment = 1
 
 [node name="Immersive Container" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=365200356]
@@ -129,8 +129,8 @@ script = ExtResource("4_7blhc")
 [node name="LabelC Immersive" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Immersive Container" unique_id=929782284]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
-text = "Ch 3: Data Center Power Station
-IMMERSIVE MODE"
+text = "Chaper 3: IMMERSIVE MODE
+My heart beats for you now. "
 horizontal_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer" unique_id=262921972]

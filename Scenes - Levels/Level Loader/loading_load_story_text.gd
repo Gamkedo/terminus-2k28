@@ -4,10 +4,11 @@ extends Label
 
 func _ready() -> void:
 	if "Arcade" in scene_loading.scene_path:
-		text = "The creators of the machines want you to stay asleep.\n\nIn order to wake up, the first battle is in cyberspace."
+		text = "Frozen in 1990 and now awake in 2028, our hero - Sgt. Valentine Wakefield - must escape Cryosleep before a system collapse."
 	elif "Survivor" in scene_loading.scene_path:
-		text = "Your mind is free. They're coming for you.\n\nSurvive until the resistance can airlift you out.\n\nAutofire, autoaim, and weapon stacking activated."
+		text = "Sgt. Valentine Wakefield beats back against this new hellscape spawning creatures that need him dead. 
+Deep in the distant sky, a crackle of hope splits through."
 	elif "Immersive" in scene_loading.scene_path:
-		text = "We've dropped you off at the data center.\n\nFinish the mission.\n\nSwitching to precision mode"
+		text = "Sgt. Valentine Wakefield battles to deliver his heart for a transplant to his ailing scientist son Dr. Mike Wakefield."
 	else: # no loading scene text
 		text = ""
