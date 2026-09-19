@@ -20,3 +20,11 @@ position = Vector2(16, 20)
 texture = ExtResource("2_vvbmp")
 hframes = 3
 vframes = 3
+
+[node name="Label" type="Label" parent="WeaponIconTemplate" unique_id=2143967376]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 7.0
+offset_right = 80.0
+offset_bottom = 30.0
+text = "weapon label"

@@ -223,6 +223,16 @@ grow_horizontal = 2
 grow_vertical = 0
 offset_transform_position = Vector2(0, -10)
 
+[node name="ActiveWeaponsUI" parent="ScoreGUI/CanvasLayer" parent_id_path=PackedInt32Array(924242711, 2014492969) index="3" unique_id=171342784]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_right = 16.0
+grow_horizontal = 2
+offset_transform_position = Vector2(0, -60)
+offset_transform_scale = Vector2(1.5, 1.5)
+
 [node name="SceneryPlacer" type="Node3D" parent="." unique_id=1323754423]
 script = ExtResource("10_tfrqe")
 tile_size = 4.0
