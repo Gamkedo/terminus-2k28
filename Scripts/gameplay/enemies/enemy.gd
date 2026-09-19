@@ -5,6 +5,7 @@ extends Node3D
 @export_range(0.0, 1.0) var drop_chance: float = 0.5
 @export var scoreValue: int = 100
 @export var enemy_type : GameGlobal.EnemyTypes
+@export var stun_time: float = 0.0
 
 @onready var health_component := $HealthComponent
 ## Default to this much health if no health component found

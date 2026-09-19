@@ -114,12 +114,13 @@ func _process(delta: float) -> void:
 
 	# Handle damaging enemies
 	if not enemies_in_range.is_empty():
-		var victim: Node3D = enemies_in_range.keys().pick_random()
+		var victim: Enemy = enemies_in_range.keys().pick_random()
 		if 0. < enemies_in_range[victim]:
 			enemies_in_range[victim] -= delta
 			arc_points[-randi_range(1, min(arc_points.size(), 4))] = victim.global_position
 		else:
 			Utils.damage_enemy(victim, damage_component.amount)
+			victim.stun_time = 5.0 # currently only affects smart droids
 
 	# move lightning bolt around
 	arc_points[0] = bolt_start_position()

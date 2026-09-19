@@ -1,6 +1,6 @@
 extends Enemy
 
-@export var speed := 2.0
+@export var speed := 4.0
 @export var drift_time := 1.5
 
 var direction := Vector3.ZERO
@@ -27,6 +27,10 @@ func _ready():
 	collision_area.body_entered.connect(_collision_detected)
 
 func _process(delta):
+	if stun_time > 0.0:
+		stun_time -= delta
+		return
+	
 	# If navigation is active, then direction is handled by movement handler
 	if not nav_movement_handler or not nav_movement_handler.active:
 		time_left -= delta

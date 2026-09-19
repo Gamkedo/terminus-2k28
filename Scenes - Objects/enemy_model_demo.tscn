@@ -66,6 +66,7 @@ radius = 0.85791016
 script = ExtResource("1_ltojq")
 nav_movement_handler = NodePath("DefaultEnemyMovementHandler")
 drop = ExtResource("2_hmo62")
+drop_chance = 0.05
 scoreValue = 5000
 enemy_type = 7
 
