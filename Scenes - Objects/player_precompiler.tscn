@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://07cq41wefet5"]
+
+[ext_resource type="PackedScene" uid="uid://eewdly8oh15j" path="res://Scenes - Objects/player.tscn" id="1_2oxwi"]
+[ext_resource type="PackedScene" uid="uid://bbwrgwjsa0gt1" path="res://Scenes - UI/health_bar.tscn" id="2_413ci"]
+
+[node name="PlayerPrecompiler" type="Node3D" unique_id=207288205 groups=["Precompilation"]]
+
+[node name="Player" parent="." unique_id=997444506 instance=ExtResource("1_2oxwi")]
+
+[node name="HealthBar" parent="." unique_id=1933614406 instance=ExtResource("2_413ci")]
