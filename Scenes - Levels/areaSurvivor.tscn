@@ -28,7 +28,7 @@ adjustment_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42ddl"]
 albedo_color = Color(0.57, 0.57, 0.57, 1)
 albedo_texture = ExtResource("1_hcq85")
-uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_scale = Vector3(0.02, 0.02, 0.02)
 uv1_triplanar = true
 uv1_world_triplanar = true
 
@@ -96,9 +96,12 @@ tracks/2/path = NodePath("../../SurvivorMode TimerAndEndingAnim/TimerScript")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(5.8),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(1.5, 5.8),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [],
+"method": &"start_rescue_sound"
+}, {
 "args": [],
 "method": &"back_to_menu"
 }]

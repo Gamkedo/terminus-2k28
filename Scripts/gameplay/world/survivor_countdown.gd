@@ -12,6 +12,9 @@ var finished := false
 func _ready():
 	timer.start()
 
+func start_rescue_sound():
+	AudioStreamManager.play_sfx("res://Sound Effects/Spaceship/spaceship_flyby.wav", AudioStreamManager.PlaybackMode.STANDARD)
+
 # should probably handle more gracefully (game over?) but in the meantime can't trap testers
 func back_to_menu():
 	get_tree().change_scene_to_file("res://level_menu.tscn")
