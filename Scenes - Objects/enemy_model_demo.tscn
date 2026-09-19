@@ -64,6 +64,8 @@ radius = 0.85791016
 
 [node name="EnemyModelDemo" type="Node3D" unique_id=533656628 node_paths=PackedStringArray("nav_movement_handler") groups=["enemy"]]
 script = ExtResource("1_ltojq")
+speed_min = 2.0
+speed_max = 6.5
 nav_movement_handler = NodePath("DefaultEnemyMovementHandler")
 drop = ExtResource("2_hmo62")
 drop_chance = 0.05
@@ -71,8 +73,8 @@ scoreValue = 5000
 enemy_type = 7
 
 [node name="BillboardFront" type="AnimatedSprite3D" parent="." unique_id=981741464]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4575043, 0)
-modulate = Color(0.74, 0.05919999, 0.05919999, 1)
+transform = Transform3D(0.9999749, 0.006880383, 0.0016611175, -0.006873701, 0.9999684, -0.0039926097, -0.0016885552, 0.0039810836, 0.99999064, 0, 1.4575043, 0)
+modulate = Color(0.78, 0, 0, 1)
 pixel_size = 0.15
 billboard = 1
 texture_filter = 0
@@ -82,6 +84,7 @@ autoplay = "default"
 [node name="BillboardBack" type="AnimatedSprite3D" parent="." unique_id=939738332]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4575043, 0)
 visible = false
+modulate = Color(0.32, 0, 0, 1)
 pixel_size = 0.15
 billboard = 1
 texture_filter = 0
@@ -114,7 +117,7 @@ shape = SubResource("CylinderShape3D_7tbbo")
 
 [node name="PerceptionComponent" parent="." unique_id=1716502930 node_paths=PackedStringArray("eyes") instance=ExtResource("6_olwmm")]
 scanning_mask = 4
-max_distance = 50.0
+max_distance = 80.0
 eyes = NodePath("../Eyes")
 
 [node name="NavigationComponent" parent="." unique_id=1265696176 node_paths=PackedStringArray("movement_handler") instance=ExtResource("7_jw3qv")]
@@ -131,6 +134,7 @@ metadata/_custom_type_script = "uid://bxd4qyt1cgnhi"
 [node name="Behaviors" type="Node" parent="." unique_id=1534145447]
 
 [node name="SeekTarget" parent="Behaviors" unique_id=1800619295 node_paths=PackedStringArray("enemy", "perception_component", "navigation_component") instance=ExtResource("9_bd8qa")]
+rand_offset_max = 0.5
 enemy = NodePath("../..")
 perception_component = NodePath("../../PerceptionComponent")
 navigation_component = NodePath("../../NavigationComponent")

@@ -1,7 +1,15 @@
 class_name SeekTarget extends Node
 
-@export
-var reaction_time:float = 0.5
+@export var reaction_time_min:float = 0.1
+@export var reaction_time_max:float = 1.5
+var reaction_time := randf_range(reaction_time_min, reaction_time_max)
+
+# as a percentage (0.0-1.0) what % distance to player to target in rand dir
+# helps reduce clustering so they're harder to circle strafe or herd
+@export var rand_offset_min:float = 0.05
+@export var rand_offset_max:float = 0.6
+var rand_offset := randf_range(rand_offset_min, rand_offset_max)
+
 
 @export
 var target_nav_dist_threshold:float = 1.0
@@ -56,7 +64,15 @@ func _on_perceive_end(target:Node3D) -> void:
 	
 func _on_timer_timeout() -> void:
 	_target_is_visible = true
-	var target_pos:Vector3 = _target.global_position
+	
+	var dist = _target.global_position.distance_to(enemy.global_position)
+	var rand_angle = randf_range(0, TAU)
+	var rand_offset = randf_range(1, rand_offset*dist)
+	var rand_dest = Vector2.from_angle(rand_angle) * rand_offset
+	var target_pos:Vector3 = _target.global_position + Vector3(rand_dest.x, 0, rand_dest.y)
+
+	# var target_pos:Vector3 = _target.global_position
+	
 	if target_pos.distance_squared_to(enemy.global_position) < target_nav_dist_threshold * target_nav_dist_threshold:
 		return
 	

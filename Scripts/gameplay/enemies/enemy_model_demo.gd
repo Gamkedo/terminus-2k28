@@ -1,6 +1,12 @@
 extends Enemy
 
-@export var speed := 4.0
+@export var speed_min := 4.0
+@export var speed_max := 4.0
+var speed := randf_range(speed_min, speed_max)
+
+@onready var graphic_toward = $BillboardFront
+@onready var graphic_away = $BillboardBack
+
 @export var drift_time := 1.5
 
 var direction := Vector3.ZERO
@@ -39,6 +45,8 @@ func _process(delta):
 	global_position += direction * speed * delta
 	rotation.y = lerp_angle(rotation.y, atan2(-direction.x, -direction.z), delta * rotation_speed)
 
+	Utils.apply_billboard_flip_graphics(graphic_toward, graphic_away, direction)
+	
 	enforce_boundary()
 
 	if attack_timer > 0:
@@ -52,6 +60,7 @@ func pick_new_direction():
 	if not nav_movement_handler:
 		var my_flat_position = Vector2(global_position.x, global_position.z)
 		var player_flat_position = Vector2(GameGlobal.player_ref.global_position.x, GameGlobal.player_ref.global_position.z)
+		
 		var angle = (player_flat_position - my_flat_position).angle()
 		var dir := Vector2.from_angle(angle)
 		direction = Vector3(dir.x, 0, dir.y)

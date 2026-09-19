@@ -120,7 +120,7 @@ func _process(delta: float) -> void:
 			arc_points[-randi_range(1, min(arc_points.size(), 4))] = victim.global_position
 		else:
 			Utils.damage_enemy(victim, damage_component.amount)
-			victim.stun_time = 5.0 # currently only affects smart droids
+			victim.stun_time = 10.0 # currently only affects smart droids
 
 	# move lightning bolt around
 	arc_points[0] = bolt_start_position()

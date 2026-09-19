@@ -1,9 +1,9 @@
 extends Weapon
 class_name Shotgun
 
-@export var min_projectiles := 4
-@export var max_projectiles := 10
-@export_range(0.0, PI) var spread := 0.4
+@export var min_projectiles := 3
+@export var max_projectiles := 7
+@export_range(0.0, PI) var spread := 0.45
 
 func fire(pos, rot) -> void:
 	reload_time = fire_rate
