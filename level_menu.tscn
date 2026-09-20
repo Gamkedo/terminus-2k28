@@ -58,32 +58,32 @@ corner_detail = 5
 
 [node name="LevelMenu" type="Node2D" unique_id=431338942 node_paths=PackedStringArray("starting_focus")]
 script = ExtResource("1_lnidy")
-starting_focus = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Survivor Container/AreaB Survivor")
+starting_focus = NodePath("ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer/Survivor Container/AreaB Survivor")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1069375977]
 position = Vector2(576, 466)
 scale = Vector2(5, 1024)
 texture = SubResource("GradientTexture1D_kdu0b")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=691725099]
+[node name="ButtonsAndTextWithMargins" type="MarginContainer" parent="." unique_id=691725099]
 offset_right = 1154.0
 offset_bottom = 643.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2002553956]
+[node name="VBoxContainer" type="VBoxContainer" parent="ButtonsAndTextWithMargins" unique_id=2002553956]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="TopElementsControl" type="Control" parent="MarginContainer/VBoxContainer" unique_id=944202821]
+[node name="TopElementsControl" type="Control" parent="ButtonsAndTextWithMargins/VBoxContainer" unique_id=944202821]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="SoundControlUI" parent="MarginContainer/VBoxContainer/TopElementsControl" unique_id=712051681 instance=ExtResource("2_w32vy")]
+[node name="SoundControlUI" parent="ButtonsAndTextWithMargins/VBoxContainer/TopElementsControl" unique_id=712051681 instance=ExtResource("2_w32vy")]
 layout_mode = 0
 offset_left = 52.0
 offset_right = 302.0
 offset_bottom = 128.0
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TopElementsControl" unique_id=1160147205]
+[node name="MarginContainer" type="MarginContainer" parent="ButtonsAndTextWithMargins/VBoxContainer/TopElementsControl" unique_id=1160147205]
 layout_mode = 0
 offset_left = 306.0
 offset_right = 848.0
@@ -91,28 +91,28 @@ offset_bottom = 128.0
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_right = 15
 
-[node name="Logo" type="TextureRect" parent="MarginContainer/VBoxContainer/TopElementsControl/MarginContainer" unique_id=1202717716]
+[node name="Logo" type="TextureRect" parent="ButtonsAndTextWithMargins/VBoxContainer/TopElementsControl/MarginContainer" unique_id=1202717716]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("2_lnidy")
 stretch_mode = 2
 
-[node name="VFXSettingsUI" parent="MarginContainer/VBoxContainer/TopElementsControl" unique_id=94027503 instance=ExtResource("4_k7hfm")]
+[node name="VFXSettingsUI" parent="ButtonsAndTextWithMargins/VBoxContainer/TopElementsControl" unique_id=94027503 instance=ExtResource("4_k7hfm")]
 layout_mode = 0
 offset_left = 852.0
 offset_right = 1102.0
 offset_bottom = 128.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=379910567]
+[node name="HBoxContainer" type="HBoxContainer" parent="ButtonsAndTextWithMargins/VBoxContainer" unique_id=379910567]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Arcade Container" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1940403045]
+[node name="Arcade Container" type="VBoxContainer" parent="ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer" unique_id=1940403045]
 layout_mode = 2
 
-[node name="LabelA Arc" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Arcade Container" unique_id=585165690]
+[node name="LabelA Arc" type="Label" parent="ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer/Arcade Container" unique_id=585165690]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "ARCADE MODE
@@ -120,7 +120,7 @@ One Weapon at a Time"
 horizontal_alignment = 1
 script = ExtResource("7_wkm5r")
 
-[node name="AreaA Arcade" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Arcade Container" unique_id=181493714]
+[node name="AreaA Arcade" type="Button" parent="ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer/Arcade Container" unique_id=181493714]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 focus_neighbor_right = NodePath("../../Survivor Container/AreaB Survivor")
@@ -128,16 +128,16 @@ icon = ExtResource("3_7blhc")
 expand_icon = true
 script = ExtResource("4_7blhc")
 
-[node name="LabelA Arcade" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Arcade Container" unique_id=2139458646]
+[node name="LabelA Arcade" type="Label" parent="ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer/Arcade Container" unique_id=2139458646]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "Yesterday thaws alive for freedom. "
 horizontal_alignment = 1
 
-[node name="Survivor Container" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1234353584]
+[node name="Survivor Container" type="VBoxContainer" parent="ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer" unique_id=1234353584]
 layout_mode = 2
 
-[node name="LabelB Surv" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Survivor Container" unique_id=1730913610]
+[node name="LabelB Surv" type="Label" parent="ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer/Survivor Container" unique_id=1730913610]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "SURVIVOR MODE
@@ -145,7 +145,7 @@ Weapons Stack & Autofire"
 horizontal_alignment = 1
 script = ExtResource("8_6nhei")
 
-[node name="AreaB Survivor" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Survivor Container" unique_id=882515598]
+[node name="AreaB Survivor" type="Button" parent="ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer/Survivor Container" unique_id=882515598]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 focus_neighbor_left = NodePath("../../Arcade Container/AreaA Arcade")
@@ -154,24 +154,24 @@ icon = ExtResource("5_y1rhc")
 expand_icon = true
 script = ExtResource("4_7blhc")
 
-[node name="LabelB Survivor" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Survivor Container" unique_id=1705265690]
+[node name="LabelB Survivor" type="Label" parent="ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer/Survivor Container" unique_id=1705265690]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "Tomorrow's monsters are here. "
 horizontal_alignment = 1
 
-[node name="Immersive Container" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=365200356]
+[node name="Immersive Container" type="VBoxContainer" parent="ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer" unique_id=365200356]
 layout_mode = 2
 
-[node name="LabelC Imm" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Immersive Container" unique_id=1777125657]
+[node name="LabelC Imm" type="Label" parent="ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer/Immersive Container" unique_id=1777125657]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "IMMERSIVE MODE
-Weapons Switch, Shoulder Cam"
+Weapons Switch, Start with All"
 horizontal_alignment = 1
 script = ExtResource("11_n38p7")
 
-[node name="AreaC Immersive" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Immersive Container" unique_id=1680213156]
+[node name="AreaC Immersive" type="Button" parent="ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer/Immersive Container" unique_id=1680213156]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 focus_neighbor_left = NodePath("../../Survivor Container/AreaB Survivor")
@@ -179,13 +179,13 @@ icon = ExtResource("6_wj7nf")
 expand_icon = true
 script = ExtResource("4_7blhc")
 
-[node name="LabelC Immersive" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Immersive Container" unique_id=929782284]
+[node name="LabelC Immersive" type="Label" parent="ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer/Immersive Container" unique_id=929782284]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "My heart beats for you now. "
 horizontal_alignment = 1
 
-[node name="Win Message" type="Label" parent="MarginContainer/VBoxContainer" unique_id=901515734]
+[node name="Win Message" type="Label" parent="ButtonsAndTextWithMargins/VBoxContainer" unique_id=901515734]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.95000005, 1, 0, 1)
 theme_override_font_sizes/font_size = 15
@@ -194,11 +194,11 @@ dismantling the A.I. overlord responsible for Earth's dystopia by infecting it w
 horizontal_alignment = 1
 script = ExtResource("9_megah")
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer" unique_id=262921972]
+[node name="CenterContainer" type="CenterContainer" parent="ButtonsAndTextWithMargins/VBoxContainer" unique_id=262921972]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Credits Button" type="Button" parent="MarginContainer/VBoxContainer/CenterContainer" unique_id=1809354245]
+[node name="Credits Button" type="Button" parent="ButtonsAndTextWithMargins/VBoxContainer/CenterContainer" unique_id=1809354245]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -230,7 +230,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 13
-text = "• Chris DeLeon: Project lead, base gamplay, general game structure, basic billboard and 3d enemy types, immersive obstacles, win conditions, survivors rescue sequence, immersive mode fog, minor optimizations
+text = "• Chris DeLeon: Project lead, base gamplay, general game structure, basic billboard and 3d enemy types, immersive obstacles, win conditions, survivors rescue sequence, weapon power level, precaching, immersive mode fog/layout, assorted bug fixes and minor optimizations
 • Michael Buslik: Robodog, obelisk spawner, turret enemy, orbit shield bots, randomized environment placement, beam weapon, destructible truck, survivor mode enemy edge spawner/looping, quadcopter enemy, explosive barrels, sprite flipping
 • Juan Luiz R: Environment art (fence, tree, hydrant, rock, bush, wheel), large explosion animation, song2k28, player projectiles, effects (explosion, smoke, wind/leafs), prop spawn tuning
 • wolscott: Movement and aim input fixes, gamepad support (including menus), loading screens, collision improvements, assorted bug fixes and optimizations
@@ -318,7 +318,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.76287806, 0, -1.5395246)
 texture = ExtResource("15_010tg")
 
 [node name="Camera3D" type="Camera3D" parent="CacheAttempt" unique_id=50183305]
-transform = Transform3D(1, 0, 0, 0, 0.9568805, 0.29048187, 0, -0.29048187, 0.9568805, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9568805, 0.29048187, 0, -0.29048187, 0.9568805, 0, 1.3612916, 1.3617845)
 
 [node name="LaserBolt" parent="CacheAttempt" unique_id=1970496457 instance=ExtResource("10_87kcf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63891554, -1.8557644, -6.1128078)
@@ -361,6 +361,8 @@ script = ExtResource("34_0hm4u")
 
 [node name="DeathExplosionParticles" parent="." unique_id=1803962668 instance=ExtResource("33_5g6mr")]
 transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 5.828229, 0, -3.875431)
+emitting = true
+one_shot = false
 
 [node name="CacheRescue" type="Node3D" parent="DeathExplosionParticles" unique_id=965004941]
 transform = Transform3D(0.11111111, 0, 0, 0, 0.11111111, 0, 0, 0, 0.11111111, -0.647581, 0.20619604, 0.95564026)
@@ -373,8 +375,8 @@ transform = Transform3D(0.11111111, 0, 0, 0, 0.11111111, 0, 0, 0, 0.11111111, -0
 root_node = NodePath("../../../../../CacheAttempt/animated_fighter")
 script = ExtResource("37_2pq4h")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Arcade Container/AreaA Arcade" to="." method="_on_area_a_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Survivor Container/AreaB Survivor" to="." method="_on_area_b_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Immersive Container/AreaC Immersive" to="." method="_on_area_c_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/CenterContainer/Credits Button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer/Arcade Container/AreaA Arcade" to="." method="_on_area_a_pressed"]
+[connection signal="pressed" from="ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer/Survivor Container/AreaB Survivor" to="." method="_on_area_b_pressed"]
+[connection signal="pressed" from="ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer/Immersive Container/AreaC Immersive" to="." method="_on_area_c_pressed"]
+[connection signal="pressed" from="ButtonsAndTextWithMargins/VBoxContainer/CenterContainer/Credits Button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Credits Panel/Padding/VBoxContainer/Close Credits" to="." method="_on_close_credits_pressed"]
