@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 	if shot_timer >= refire:
 		shot_timer = 0.0
 		var projectile = projectile_scene.instantiate()
+		AudioStreamManager.play_sfx("res://Sound Effects/Lasers/lasermiss_7.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
 		get_tree().current_scene.add_child(projectile)
 		shot_pivot.look_at(GameGlobal.player_ref.global_position)
 		projectile.global_position = shot_spot.global_position
