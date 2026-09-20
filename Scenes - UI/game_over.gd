@@ -1,6 +1,7 @@
 extends Control
 
 @onready var finalScoreLabel: Label = %FinalScoreLabel
+@onready var restart_button: Button = %RestartButton
 
 const GAME_OVER_SOUND := preload("res://Sound Effects/UI/GameOver.wav")
 
@@ -14,6 +15,7 @@ func set_final_score(score: int):
 	AudioStreamManager.play_game_over(GAME_OVER_SOUND)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	finalScoreLabel.text = "SCORE: " + str(score).pad_zeros(6)
+	restart_button.grab_focus()
 
 func _on_restart_pressed():
 	get_tree().paused = false

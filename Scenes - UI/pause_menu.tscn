@@ -60,6 +60,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="UnpauseButton" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1737270289]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("4_00lnn")
 text = "Resume"
