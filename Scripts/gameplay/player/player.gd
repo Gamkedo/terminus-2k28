@@ -157,7 +157,7 @@ func _on_death() -> void:
 	ScreenVFX.slomo(ScreenVFX.MID, ScreenVFX.QUAKE)
 	ScreenVFX.shake(ScreenVFX.LONG, ScreenVFX.QUAKE)
 	ScreenVFX.flash(ScreenVFX.LONG, ScreenVFX.TREMOR, ScreenVFX.Flash.STARK)
-	AudioStreamManager.play_sfx("res://Sound Effects/Explosions/explosion_4.wav")
+	AudioStreamManager.play_sfx("res://Sound Effects/Player/player_destroyed.wav")
 	await AudioStreamManager.fade_out_music(return_to_menu_delay).finished
 	GameGlobal.game_over.emit()
 

@@ -38,6 +38,57 @@ func _start_new_round() -> void:
 	GameLogger.debug("Starting round %s" % round_number)
 	GameGlobal.wave_changed.emit(round_number)
 	_spawn_enemies()
+	await get_tree().create_timer(3.0).timeout
+	randomvoice()
+
+
+func randomvoice():
+	var rng = randi_range(0,21)
+	match rng:
+		0:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_attack_1.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		1:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_attack_2.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		2:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_deploying_countermeasures_1.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		3:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_deploying_countermeasures_2.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		4:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_do_not_attempt_to_resist_1.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		5:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_do_not_attempt_to_resist_2.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		6:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_eliminate_the_agitator_1.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		7:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_eliminate_the_agitator_2.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		8:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_hostile_presence_detected_1.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		9:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_hostile_presence_detected_2.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		10:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_incursion_identified_1.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		11:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_incursion_identified_2.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		12:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_incursion_identified_3.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		13:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_remove_the_instigator_1.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		14:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_remove_the_instigator_2.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		15:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_remove_the_instigator_3.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		16:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_seek_and_destroy_1.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		17:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_seek_and_destroy_2.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		18:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_seek_and_destroy_3.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		19:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_threat_in_the_area_1.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		20:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_threat_in_the_area_2.wav", AudioStreamManager.PlaybackMode.STANDARD)
+		21:
+			AudioStreamManager.play_sfx("res://Sound Effects/Voiceover/vo_threat_in_the_area_3.wav", AudioStreamManager.PlaybackMode.STANDARD)
 
 
 func _spawn_enemies() -> void:
