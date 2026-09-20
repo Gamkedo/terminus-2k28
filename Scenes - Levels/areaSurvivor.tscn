@@ -60,6 +60,7 @@ metadata/_custom_type_script = "uid://fr2qc6q15f8p"
 
 [sub_resource type="Resource" id="Resource_vfen2"]
 script = ExtResource("11_vfen2")
+weapon_number = 3
 metadata/_custom_type_script = "uid://fr2qc6q15f8p"
 
 [node name="SurvivorScene" type="Node3D" unique_id=881090372]
