@@ -177,9 +177,9 @@ metadata/_custom_type_script = "uid://dgtikgscqcp3m"
 
 [node name="PickupSpawner" type="Node3D" parent="Player" unique_id=1180474748]
 script = ExtResource("9_xetuu")
-min_spawn_seconds = 3.5
-max_spawn_seconds = 6.0
-spawn_radius = 45.0
+min_spawn_seconds = 3.0
+max_spawn_seconds = 5.5
+spawn_radius = 40.0
 spawn_height = 1.5
 
 [node name="LaserShotgun" parent="Player/PickupSpawner" unique_id=1926490678 instance=ExtResource("10_aogi5")]
