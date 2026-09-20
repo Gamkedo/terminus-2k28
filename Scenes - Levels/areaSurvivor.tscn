@@ -104,6 +104,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_7tbbo")
 
 [node name="Player" parent="." unique_id=935553468 instance=ExtResource("2_hcq85")]
+rotation_speed = 2.0
+default_aim_range = 240.0
 auto_fire = true
 
 [node name="StackingWeaponsManager" type="Node" parent="Player" unique_id=932133242]
@@ -125,6 +127,7 @@ spawn_height = 1.5
 
 [node name="LaserShotgun" parent="Player/PickupSpawner" unique_id=1926490678 instance=ExtResource("10_aogi5")]
 effect = SubResource("Resource_baima")
+spawn_weight = 2
 
 [node name="Beam" parent="Player/PickupSpawner" unique_id=681131222 instance=ExtResource("10_aogi5")]
 effect = SubResource("Resource_aogi5")
