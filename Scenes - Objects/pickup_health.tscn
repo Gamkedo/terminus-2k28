@@ -8,10 +8,16 @@
 script = ExtResource("2_8kaiw")
 metadata/_custom_type_script = "uid://c3pnq8djtmaq2"
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_4l27y"]
+radius = 2.0
+
 [sub_resource type="SphereMesh" id="SphereMesh_qp847"]
 
 [node name="PickupHealth" unique_id=1926490678 instance=ExtResource("1_73v20")]
 effect = SubResource("Resource_8kaiw")
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=1702984332]
+shape = SubResource("SphereShape3D_4l27y")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=251874487]
 mesh = SubResource("SphereMesh_qp847")
