@@ -81,6 +81,9 @@ script = ExtResource("3_42ddl")
 [node name="EndingFlyoverAircraft" parent="Camera3D" unique_id=2023012809 instance=ExtResource("18_eq1ps")]
 transform = Transform3D(-0.088858366, 0, 0.9960443, 0.732008, 0.67815965, 0.065303326, -0.67547727, 0.73491484, -0.060260147, -43.765762, 9.2971325, 45.400665)
 
+[node name="EndingFlyoverAircraft Cache Edition" parent="Camera3D" unique_id=2007315467 instance=ExtResource("18_eq1ps")]
+transform = Transform3D(-0.088858366, 0, 0.9960443, 0.732008, 0.67815965, 0.065303326, -0.67547727, 0.73491484, -0.060260147, 13.605171, -7.2376385, -108.02431)
+
 [node name="Ground" type="StaticBody3D" parent="Camera3D" unique_id=313648461]
 transform = Transform3D(0.70710677, 0, -0.70710677, -0.51966316, 0.6781597, -0.51966316, 0.47953132, 0.73491466, 0.47953132, 0, 0.17751694, -93.64927)
 script = ExtResource("1_geqij")
