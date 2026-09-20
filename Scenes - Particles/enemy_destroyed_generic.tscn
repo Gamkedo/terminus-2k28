@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://mudn3dw0ldyd"]
+
+[ext_resource type="Script" uid="uid://dylns0kqgemus" path="res://Scripts/gameplay/particle_remove.gd" id="1_umsxd"]
+[ext_resource type="Texture2D" uid="uid://d0lwck6gq0eys" path="res://Textures/particle_fire.png" id="2_vds5c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_coiko"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+specular_mode = 2
+disable_specular_occlusion = true
+albedo_color = Color(0.8178216, 0.5282599, 1.92523e-07, 1)
+albedo_texture = ExtResource("2_vds5c")
+emission_enabled = true
+emission = Color(0.54373056, 0.35399824, 2.8878452e-07, 1)
+emission_energy_multiplier = 1.3
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+grow = true
+grow_amount = 1.44
+proximity_fade_distance = 0.01
+distance_fade_mode = 1
+distance_fade_min_distance = 0.5
+distance_fade_max_distance = 40.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_6n5d2"]
+material = SubResource("StandardMaterial3D_coiko")
+
+[sub_resource type="Curve" id="Curve_vw5kl"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 18.461548), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="EnemyDestroyedGeneric" type="Node3D" unique_id=2136184369 groups=["Precompilation"]]
+script = ExtResource("1_umsxd")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=261148521]
+cast_shadow = 0
+amount = 500
+lifetime = 1.5
+explosiveness = 1.0
+randomness = 0.5
+lifetime_randomness = 0.9
+fixed_fps = 30
+mesh = SubResource("QuadMesh_6n5d2")
+emission_shape = 1
+emission_sphere_radius = 0.2
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -2, 0)
+initial_velocity_max = 3.0
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+angular_velocity_curve = SubResource("Curve_vw5kl")
+angle_min = -90.0
+angle_max = 90.0
+scale_amount_min = 0.0
