@@ -25,27 +25,28 @@ func _set_timer() -> void:
 	timer.timeout.connect(_spawn_pickup)
 
 func _spawn_pickup() -> void:
-	var choice := randi_range(0, pickup_options.size() - 1)
-	var obj := pickup_options[choice].duplicate()
-	var angle := randf_range(0.0, PI * 2.0)
-	var dist := randf_range(spawn_radius / 2.0, spawn_radius)
-	var offset = Vector2.from_angle(angle) * dist
-	spawn_container.add_child(obj)
-	obj.global_position = global_position + Vector3(offset.x, 1.0, offset.y)
-	
-	# enforce_boundary
-	var limits: Dictionary[String, float] = GameGlobal.world_boundaries.get_world_limits()
-	
-	if obj.global_position.x > limits["+x"]:
-		obj.global_position.x = limits["+x"]
-	if obj.global_position.x < limits["-x"]:
-		obj.global_position.x = limits["-x"]
-	if obj.global_position.z > limits["+z"]:
-		obj.global_position.z = limits["+z"]
-	if obj.global_position.z < limits["-z"]:
-		obj.global_position.z = limits["-z"]
-	
-	obj.show()
-	obj.monitoring = true
-	GameLogger.debug("Adding " + str(choice) + " at " + str(offset))
+	if get_tree().paused == false: # skip if game is paused
+		var choice := randi_range(0, pickup_options.size() - 1)
+		var obj := pickup_options[choice].duplicate()
+		var angle := randf_range(0.0, PI * 2.0)
+		var dist := randf_range(spawn_radius / 2.0, spawn_radius)
+		var offset = Vector2.from_angle(angle) * dist
+		spawn_container.add_child(obj)
+		obj.global_position = global_position + Vector3(offset.x, 1.0, offset.y)
+		
+		# enforce_boundary
+		var limits: Dictionary[String, float] = GameGlobal.world_boundaries.get_world_limits()
+		
+		if obj.global_position.x > limits["+x"]:
+			obj.global_position.x = limits["+x"]
+		if obj.global_position.x < limits["-x"]:
+			obj.global_position.x = limits["-x"]
+		if obj.global_position.z > limits["+z"]:
+			obj.global_position.z = limits["+z"]
+		if obj.global_position.z < limits["-z"]:
+			obj.global_position.z = limits["-z"]
+		
+		obj.show()
+		obj.monitoring = true
+		GameLogger.debug("Adding " + str(choice) + " at " + str(offset))
 	_set_timer()

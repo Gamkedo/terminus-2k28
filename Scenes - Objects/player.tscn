@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://l0shf2pmj48f" path="res://Models (game format)/player_vehbryo.glb" id="8_5hocr"]
 [ext_resource type="PackedScene" uid="uid://br2mtw0tajdts" path="res://Scenes - Particles/muzzle_flash.tscn" id="9_46nwg"]
 [ext_resource type="Script" uid="uid://ba3jif00r7vw1" path="res://Scripts/gameplay/weapons/laser_beam_weapon.gd" id="10_8dwo2"]
+[ext_resource type="PackedScene" uid="uid://btd7xo16gb6cw" path="res://Scenes - Objects/spreadshot_bolt.tscn" id="10_uvmbh"]
 [ext_resource type="PackedScene" uid="uid://p7aumif32558" path="res://Scenes - Objects/laser_beam_projectile.tscn" id="11_46nwg"]
 [ext_resource type="PackedScene" uid="uid://fg0o0lx1c3d8" path="res://Scenes - Particles/explosion_particle_effect.tscn" id="13_0g0b8"]
 [ext_resource type="PackedScene" uid="uid://ic71hiiw54gl" path="res://Scenes - Particles/leaf_hurricane.tscn" id="14_bae4t"]
@@ -289,8 +290,10 @@ metadata/_custom_type_script = "uid://bex66uinswavl"
 
 [node name="LaserShotgun" type="Node3D" parent="." unique_id=810139150]
 script = ExtResource("4_iv4hd")
+max_projectiles = 5
+spread = 0.5
 sound_effect_path = "res://Sound Effects/laserShoot.wav"
-projectile_scene = ExtResource("3_iv4hd")
+projectile_scene = ExtResource("10_uvmbh")
 muzzle_flash_scene = ExtResource("9_46nwg")
 metadata/_custom_type_script = "uid://cj7eq14viaaad"
 
