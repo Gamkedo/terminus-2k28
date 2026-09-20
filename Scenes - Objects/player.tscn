@@ -175,6 +175,7 @@ metadata/_custom_type_script = "uid://cj7eq14viaaad"
 
 [node name="LaserBeam" type="Node3D" parent="." unique_id=449828892]
 script = ExtResource("10_8dwo2")
+beam_dur = 1.0
 sound_effect_path = "res://Sound Effects/laserShoot.wav"
 projectile_scene = ExtResource("11_46nwg")
 fire_rate = 3.0
