@@ -15,6 +15,10 @@ extends Node
 const MASTER_BUS: StringName = &"Master"
 const SFX_BUS: StringName = &"sfx"
 const BGM_BUS: StringName = &"bgm"
+const LIGHTNING_BUS: StringName = &"lightning"
+
+const LIGHTNING_LOOP_RELATIVE_VOLUME = 0.6
+const LIGHTNING_VOL_CHANGE_PACE = 2.5 # multiplier on delta towards or down from 1.0
 
 enum PlaybackMode {STANDARD, RANDOM_PITCH, ASCENDING_PITCH, DESCENDING_PITCH}
 
@@ -23,6 +27,7 @@ var max_in_queue := 10 # more than 20 sounds in queue will drop the last sound
 
 var bgm_player: AudioStreamPlayer
 var game_over_player: AudioStreamPlayer
+var lightning_loop_player: AudioStreamPlayer
 var available: Array[AudioStreamPlayer] = []
 var queue: Array[Dictionary] = []
 
@@ -37,6 +42,9 @@ var descending_pitch_decrement := 0.05
 var descending_timer
 
 var _global_volume: float = 1.0
+
+var lightning_firing:bool = false
+var lightning_held_time: float = 0.0 # for ramp up and cool down
 
 var bg_music_tracks: Array[AudioStream] = [
 	preload("uid://dwrnljiewp65j"),
@@ -66,6 +74,15 @@ func _ready() -> void:
 	add_child(bgm_player)
 	bgm_player.bus = BGM_BUS
 	bgm_player.process_mode = PROCESS_MODE_ALWAYS
+	
+	lightning_loop_player = AudioStreamPlayer.new()
+	lightning_loop_player.volume_linear = 0.0 # starts silent
+	add_child(lightning_loop_player)
+	lightning_loop_player.bus = LIGHTNING_BUS
+	lightning_loop_player.process_mode = PROCESS_MODE_ALWAYS
+	lightning_loop_player.stream = load("res://Sound Effects/Electricity/electricity_staggered_loop.wav")
+	lightning_loop_player.play()
+	
 	game_over_player = AudioStreamPlayer.new()
 	game_over_player.volume_linear = _global_volume
 	add_child(game_over_player)
@@ -73,6 +90,10 @@ func _ready() -> void:
 	game_over_player.process_mode = PROCESS_MODE_ALWAYS
 	_create_timer_nodes()
 
+func lightning_loop_update(isFiring: bool, power_level:int) -> void:
+	lightning_firing = isFiring
+	lightning_loop_player.pitch_scale = 0.85 + 0.1 * power_level
+	
 func select_background_track(i: int) -> void:
 	if abs(i) < bg_music_tracks.size():
 		selected_background_music = bg_music_tracks[i]
@@ -144,6 +165,17 @@ func _input(event: InputEvent) -> void:
 func _process(_delta: float):
 	if muted: return
 
+	if lightning_firing:
+		lightning_held_time += _delta * LIGHTNING_VOL_CHANGE_PACE
+		if lightning_held_time>1.0:
+			lightning_held_time = 1.0
+	else:
+		lightning_held_time -= _delta * LIGHTNING_VOL_CHANGE_PACE
+		if lightning_held_time<0.0:
+			lightning_held_time = 0.0
+	lightning_loop_player.volume_linear = _global_volume * LIGHTNING_LOOP_RELATIVE_VOLUME * lightning_held_time
+
+
 	## Play sfx
 	if not queue.is_empty() and not available.is_empty():
 		var sound = queue.pop_front()
@@ -173,6 +205,7 @@ func set_global_volume(vol: float):
 	_global_volume = vol
 	bgm_player.volume_linear = _global_volume
 	game_over_player.volume_linear = _global_volume
+	lightning_loop_player.volume_linear = 0.0 # next shot will recalculate
 
 
 func _create_timer_nodes() -> void:
