@@ -210,15 +210,15 @@ script = ExtResource("4_7blhc")
 [node name="Credits Panel" type="Panel" parent="." unique_id=1658457094]
 visible = false
 offset_left = 20.0
-offset_top = 42.0
+offset_top = 16.0
 offset_right = 1133.0
-offset_bottom = 626.0
+offset_bottom = 630.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7blhc")
 
 [node name="Padding" type="MarginContainer" parent="Credits Panel" unique_id=1016785290]
 layout_mode = 0
 offset_right = 1101.0
-offset_bottom = 582.0
+offset_bottom = 607.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -231,9 +231,9 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 13
-text = "• Chris DeLeon: Project lead, base gamplay, general game structure, basic billboard and 3d enemy types, immersive obstacles, win conditions, survivors rescue sequence, weapon power level, precaching, immersive mode fog/layout, assorted bug fixes and minor optimizations
+text = "• Chris DeLeon: Project lead, base gamplay, general game structure, initial billboard and 3d enemy types, immersive obstacles, win conditions, survivors rescue sequence, weapon power level, precaching, immersive mode fog/layout, additional particle explosions, assorted bug fixes and optimizations
 • Michael Buslik: Robodog, obelisk spawner, turret enemy, orbit shield bots, randomized environment placement, beam weapon, destructible truck, survivor mode enemy edge spawner/looping, quadcopter enemy, explosive barrels, sprite flipping
-• Juan Luiz R: Environment art (fence, tree, hydrant, rock, bush, wheel), large explosion animation, song2k28, player projectiles, effects (explosion, smoke, wind/leafs), prop spawn tuning
+• Juan Luiz R: Environment art (fence, tree, hydrant, rock, bush, wheel), explosion animation, song2k28, projectiles, effects (explosion, smoke, wind/leafs), prop tuning
 • wolscott: Movement and aim input fixes, gamepad support (including menus), loading screens, collision improvements, assorted bug fixes and optimizations
 • Tanner G: Sound lead (UI audio, drone hum, electric attacks, explosions, lasers, spreadshot, robot voice modulation, pickups, new wave, rescue plane) including integration
 • Mark Guinn: Surivor mode autotargeting and autofire, health bar with animated effects, screenshake and flashes, player death explosion, weapon icons
@@ -247,16 +247,16 @@ text = "• Chris DeLeon: Project lead, base gamplay, general game structure, ba
 • Amanda Stanley: Robot voice acting
 • Belén Albeza: Pickup system (incl. health boost, enemy drops)
 • Justin Montgomery: Enemy perception, nav mesh, seek and wander, related optimizations
+• APV: Game story
+• Pretty Parsable: Sergeant V. Wakefield player sprite
 • L: Game over sound (and implementation), pause key toggle
 • VikingMalmstrom: Arcade ground texture
-• APV: Game story
 • Tim Lorgeree: Player health support, debugging logger
-• fizzybuzzybeezy: Menu button hover & select audio code for level select and pause menus
+• fizzybuzzybeezy: Menu button hover & select audio code (level select and pause menus), menu focus fix
 • Ryan Gaillard: Game over handling, mute key toggle
 • Jordan: Pause menu scene
 • Michael Avrie: Music export bug fix
-• Playtesting: Barış Köklü, Juan Luiz R
-This game was developed as part of a 3-Week Challenge run in DevPods.gg (September 2026)"
+• Playtesting: Barış Köklü, Juan Luiz R, and two anonymous testers (thank you, too!)"
 
 [node name="Close Credits" type="Button" parent="Credits Panel/Padding/VBoxContainer" unique_id=829291104]
 unique_name_in_owner = true
