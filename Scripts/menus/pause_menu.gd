@@ -19,6 +19,7 @@ func pause_or_unpause():
 		Input.mouse_mode = Input.MouseMode.MOUSE_MODE_VISIBLE
 		$".".show()
 		get_tree().paused = true
+		AudioStreamManager.lightning_loop_abrupt_stop()
 		unpause_button.grab_focus()
 
 
