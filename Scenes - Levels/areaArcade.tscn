@@ -165,6 +165,11 @@ uv2_triplanar = true
 [sub_resource type="Environment" id="Environment_ocn12"]
 adjustment_enabled = true
 
+[sub_resource type="Resource" id="Resource_vfen2"]
+script = ExtResource("11_w71ke")
+weapon_number = 1
+metadata/_custom_type_script = "uid://fr2qc6q15f8p"
+
 [sub_resource type="Resource" id="Resource_pcut1"]
 script = ExtResource("11_w71ke")
 metadata/_custom_type_script = "uid://fr2qc6q15f8p"
@@ -231,7 +236,7 @@ spawn_radius = 25.0
 spawn_height = 1.5
 
 [node name="LaserShotgun" parent="Player/PickupSpawner" unique_id=1926490678 instance=ExtResource("10_fyjty")]
-effect = SubResource("Resource_pcut1")
+effect = SubResource("Resource_vfen2")
 
 [node name="LaserBolt" parent="Player/PickupSpawner" unique_id=260529304 instance=ExtResource("10_fyjty")]
 effect = SubResource("Resource_pcut1")

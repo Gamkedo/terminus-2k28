@@ -143,6 +143,7 @@ func _on_death() -> void:
 	death_explosion.show()
 	death_explosion.play("default")
 	death_explosion_particles.emitting = true
+	turret_pivot.visible = false
 	ScreenVFX.slomo(ScreenVFX.MID, ScreenVFX.QUAKE)
 	ScreenVFX.shake(ScreenVFX.LONG, ScreenVFX.QUAKE)
 	ScreenVFX.flash(ScreenVFX.LONG, ScreenVFX.TREMOR, ScreenVFX.Flash.STARK)

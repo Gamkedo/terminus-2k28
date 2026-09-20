@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://c4bxgkgn3crmk" path="res://Scenes - Objects/Scenery/truck_scenery.tscn" id="15_l51xd"]
 [ext_resource type="PackedScene" uid="uid://b7muf8h4yxj5" path="res://Scenes - UI/pause_menu.tscn" id="16_m34s3"]
 [ext_resource type="PackedScene" uid="uid://vs63dl1pqjmq" path="res://Scenes - Objects/3d_nuclear_power_plant.tscn" id="18_t0363"]
-[ext_resource type="PackedScene" uid="uid://k63f3er0k7u7" path="res://Scenes - Objects/enemy_model_demo.tscn" id="20_baima"]
 
 [sub_resource type="Resource" id="Resource_l0x6y"]
 script = ExtResource("3_m34s3")
@@ -331,8 +330,6 @@ transform = Transform3D(0.11016648, -1.7555078e-07, 3.9936666, 2.1091866, 8.7775
 
 [node name="3d_nuclear_power_plant4" parent="." unique_id=2084274451 instance=ExtResource("18_t0363")]
 transform = Transform3D(-2.0068698, 0, 0.069286525, 0, 2.008066, 0, -0.069286525, 0, -2.0068698, 118.50198, 6.270172, -149.62079)
-
-[node name="EnemyModelDemo" parent="." unique_id=533656628 instance=ExtResource("20_baima")]
 
 [editable path="Player"]
 [editable path="ScoreGUI"]

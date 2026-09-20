@@ -27,12 +27,16 @@ func die() -> void:
 	if dead == true:
 		return
 	dead = true
+	death_explosion()
 	GameLogger.debug("%s killed!" % GameGlobal.EnemyTypes.keys()[enemy_type])
 	GameGlobal.add_score.emit(scoreValue)
 	if count_kill_for_wave == true:
 		GameGlobal.enemy_killed.emit(enemy_type)
 	_maybe_drop_pickup()
 	queue_free()
+	
+func death_explosion() -> void:
+	pass # to override for versions that need script in these cases
 	
 func enforce_boundary() -> void:
 	var limits: Dictionary[String, float] = GameGlobal.world_boundaries.get_world_limits()

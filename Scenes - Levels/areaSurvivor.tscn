@@ -48,7 +48,7 @@ uv2_triplanar = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_7tbbo"]
 size = Vector3(128, 1, 128)
 
-[sub_resource type="Resource" id="Resource_mrilc"]
+[sub_resource type="Resource" id="Resource_baima"]
 script = ExtResource("11_vfen2")
 weapon_number = 1
 metadata/_custom_type_script = "uid://fr2qc6q15f8p"
@@ -61,6 +61,10 @@ metadata/_custom_type_script = "uid://fr2qc6q15f8p"
 [sub_resource type="Resource" id="Resource_vfen2"]
 script = ExtResource("11_vfen2")
 weapon_number = 3
+metadata/_custom_type_script = "uid://fr2qc6q15f8p"
+
+[sub_resource type="Resource" id="Resource_wnxyc"]
+script = ExtResource("11_vfen2")
 metadata/_custom_type_script = "uid://fr2qc6q15f8p"
 
 [node name="SurvivorScene" type="Node3D" unique_id=881090372]
@@ -120,8 +124,7 @@ spawn_radius = 40.0
 spawn_height = 1.5
 
 [node name="LaserShotgun" parent="Player/PickupSpawner" unique_id=1926490678 instance=ExtResource("10_aogi5")]
-effect = SubResource("Resource_mrilc")
-spawn_weight = 2
+effect = SubResource("Resource_baima")
 
 [node name="Beam" parent="Player/PickupSpawner" unique_id=681131222 instance=ExtResource("10_aogi5")]
 effect = SubResource("Resource_aogi5")
@@ -130,7 +133,7 @@ effect = SubResource("Resource_aogi5")
 effect = SubResource("Resource_vfen2")
 
 [node name="Laser" parent="Player/PickupSpawner" unique_id=557498342 instance=ExtResource("10_aogi5")]
-effect = SubResource("Resource_vfen2")
+effect = SubResource("Resource_wnxyc")
 
 [node name="Enemies" type="Node3D" parent="." unique_id=2100857171]
 

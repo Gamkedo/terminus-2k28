@@ -11,6 +11,9 @@
 [ext_resource type="Script" uid="uid://bxd4qyt1cgnhi" path="res://Scripts/gameplay/health_component.gd" id="7_o2uvj"]
 [ext_resource type="PackedScene" uid="uid://h0po6vsg8rdt" path="res://Scripts/gameplay/enemies/nav/seek_target.tscn" id="9_bd8qa"]
 [ext_resource type="Script" uid="uid://d4a3thpjgicrr" path="res://Scenes - Objects/default_enemy_movement_handler.gd" id="10_bd8qa"]
+[ext_resource type="PackedScene" uid="uid://dvwlfekr3dsdf" path="res://Scenes - Particles/death_explosion.tscn" id="12_akcd5"]
+[ext_resource type="Script" uid="uid://bhgnilc0dlmux" path="res://Scripts/gameplay/sprite_remove.gd" id="12_bcrva"]
+[ext_resource type="PackedScene" uid="uid://drrg0hefcevxi" path="res://Scenes - Particles/death_explosion_particles.tscn" id="13_bcrva"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w1rim"]
 atlas = ExtResource("3_edmo1")
@@ -142,5 +145,13 @@ navigation_component = NodePath("../../NavigationComponent")
 [node name="DefaultEnemyMovementHandler" type="Node" parent="." unique_id=10961805 node_paths=PackedStringArray("enemy")]
 script = ExtResource("10_bd8qa")
 enemy = NodePath("..")
+
+[node name="DeathExplosion" type="Node3D" parent="." unique_id=1737848920]
+script = ExtResource("12_bcrva")
+autoplay = false
+
+[node name="BillboardFront" parent="DeathExplosion" unique_id=404917185 instance=ExtResource("12_akcd5")]
+
+[node name="DeathExplosionParticles" parent="DeathExplosion" unique_id=1803962668 instance=ExtResource("13_bcrva")]
 
 [editable path="example-tread-robot"]

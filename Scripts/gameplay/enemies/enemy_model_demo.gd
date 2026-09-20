@@ -78,3 +78,26 @@ func _collision_detected(body: Node3D) -> void:
 		var player: Player = body as Player
 		player.reduce_health(attack_power)
 		attack_timer = attack_timer_max
+
+func death_explosion() -> void:
+	var death_group = get_node("DeathExplosion")
+	if death_group == null:
+		return
+	var death_anim = death_group.get_node("BillboardFront")
+	var death_explosion_particles = death_group.get_node("DeathExplosionParticles")
+	death_anim.show()
+	death_anim.play("default")
+	death_explosion_particles.emitting = true
+	
+	ScreenVFX.slomo(ScreenVFX.SHORT, ScreenVFX.TREMOR)
+	ScreenVFX.shake(ScreenVFX.SHORT, ScreenVFX.TREMOR)
+	
+	# to survive the parent being freed
+	remove_child(death_group)
+	get_tree().root.add_child(death_group)
+	death_group.global_position = global_position
+	
+	graphic_toward.visible = false
+	graphic_away.visible = false
+	AudioStreamManager.play_sfx("res://Sound Effects/Explosions/explosion_4.wav")
+	
