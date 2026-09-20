@@ -17,7 +17,7 @@ const SFX_BUS: StringName = &"sfx"
 const BGM_BUS: StringName = &"bgm"
 const LIGHTNING_BUS: StringName = &"lightning"
 
-const LIGHTNING_LOOP_RELATIVE_VOLUME = 0.4
+const LIGHTNING_LOOP_RELATIVE_VOLUME = 0.6
 const LIGHTNING_VOL_CHANGE_PACE = 2.5 # multiplier on delta towards or down from 1.0
 
 enum PlaybackMode {STANDARD, RANDOM_PITCH, ASCENDING_PITCH, DESCENDING_PITCH}
