@@ -122,7 +122,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "ARCADE MODE
-One Weapon at a Time"
+Single Weapon with Upgrades"
 horizontal_alignment = 1
 script = ExtResource("7_wkm5r")
 
@@ -147,7 +147,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "SURVIVOR MODE
-Weapons Stack & Autofire"
+Weapons Stack and Autofire"
 horizontal_alignment = 1
 script = ExtResource("8_6nhei")
 
@@ -173,7 +173,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "IMMERSIVE MODE
-Weapons Switch, Start with All"
+Select Any Weapon"
 horizontal_alignment = 1
 script = ExtResource("11_n38p7")
 
