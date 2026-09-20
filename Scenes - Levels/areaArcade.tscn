@@ -180,6 +180,9 @@ script = ExtResource("11_w71ke")
 weapon_number = 3
 metadata/_custom_type_script = "uid://fr2qc6q15f8p"
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkn2u"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="ArcadeScene" type="Node3D" unique_id=881090372 node_paths=PackedStringArray("enemy_spawner")]
 script = ExtResource("1_8mmtw")
 enemy_spawner = NodePath("EnemySpawner")
@@ -205,10 +208,10 @@ transform = Transform3D(0.73278594, -0.32673866, 0.59688085, 5.3732524e-08, 0.87
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1314461]
-transform = Transform3D(0.70710677, -0.5196631, 0.4795313, 0, 0.67815965, 0.7349146, -0.70710677, -0.5196631, 0.4795313, 45, 68.70383, 45)
+transform = Transform3D(0.7071068, -0.5196631, 0.4795313, 0, 0.67815965, 0.7349146, -0.7071068, -0.5196631, 0.4795313, 45, 61.243866, 45)
 environment = SubResource("Environment_ocn12")
 projection = 1
-size = 54.271
+size = 64.0
 
 [node name="Player" parent="." unique_id=935553468 instance=ExtResource("2_hwtxp")]
 
@@ -246,6 +249,21 @@ offset_left = 152.0
 offset_top = 540.0
 offset_right = 1017.0
 offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mkn2u")
+
+[node name="ScoreLabel" parent="ScoreGUI/CanvasLayer/Score" parent_id_path=PackedInt32Array(924242711, 1378717335) index="0" unique_id=905615547]
+offset_left = 47.0
+offset_top = 550.0
+offset_right = 361.0
+offset_bottom = 593.0
+horizontal_alignment = 0
+
+[node name="WaveLabel" parent="ScoreGUI/CanvasLayer/Score" parent_id_path=PackedInt32Array(924242711, 1378717335) index="1" unique_id=2050866487]
+visible = true
+offset_left = 45.0
+offset_top = 593.0
+offset_right = 195.0
+offset_bottom = 646.0
 
 [node name="Combo" parent="ScoreGUI/CanvasLayer" parent_id_path=PackedInt32Array(924242711, 2014492969) index="2" unique_id=882236704]
 offset_transform_enabled = true
@@ -257,9 +275,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -100.0
+offset_left = -219.0
 offset_top = -20.0
-offset_right = 100.0
+offset_right = -19.0
 grow_horizontal = 2
 grow_vertical = 0
 offset_transform_position = Vector2(0, -10)
@@ -268,8 +286,10 @@ offset_transform_position = Vector2(0, -10)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -16.0
-offset_right = 16.0
+offset_left = -210.0
+offset_top = -39.0
+offset_right = -178.0
+offset_bottom = -3.0
 grow_horizontal = 2
 offset_transform_position = Vector2(0, -60)
 offset_transform_scale = Vector2(1.5, 1.5)

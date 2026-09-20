@@ -10,11 +10,11 @@ var wave: int = 1;
 
 func addScore(addThisNumber:int) -> void:
 	score += addThisNumber
-	scoreLabel.text = "SCORE: " + str(score).pad_zeros(6)
+	scoreLabel.text = str(score).pad_zeros(8)
 
 func setScore(toThisNumber:int) -> void:
 	score = toThisNumber
-	scoreLabel.text = "SCORE: " + str(score).pad_zeros(6)
+	scoreLabel.text = str(score).pad_zeros(8)
 
 func setCombo(toThisNumber:int) -> void:
 	combo = toThisNumber
