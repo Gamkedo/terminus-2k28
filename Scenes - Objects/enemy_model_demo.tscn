@@ -71,7 +71,7 @@ speed_min = 2.0
 speed_max = 6.5
 nav_movement_handler = NodePath("DefaultEnemyMovementHandler")
 drop = ExtResource("2_hmo62")
-drop_chance = 0.05
+drop_chance = 0.1
 scoreValue = 5000
 enemy_type = 7
 
