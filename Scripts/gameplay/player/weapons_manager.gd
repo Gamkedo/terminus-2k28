@@ -70,7 +70,5 @@ func select_weapon_num(num:int) -> void: # triggered by keyboard keys 0..9
 # this is slightly different for the stacking implentation
 # and it's what is called by pickups
 func add_weapon(num:int) -> bool:
-	if num != active_weapon:
-		select_weapon_num(num)
-		return true
-	return false
+	select_weapon_num(num) # always remove icon, todo: if player already has it reup ammo/time
+	return true

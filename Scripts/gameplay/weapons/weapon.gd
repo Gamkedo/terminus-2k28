@@ -7,6 +7,7 @@ class_name Weapon
 @export var label_text: String
 @export_range(0.01, 3.0, 0.01) var fire_rate := 0.2
 
+@export var power_level:int = 1 # to increases each time picked up in survivors mode
 var reload_time: float = 0.0
 
 func _ready() -> void:

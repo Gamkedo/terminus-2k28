@@ -5,7 +5,6 @@ var active_weapons: Array[int] = []
 
 func _ready() -> void:
 	super._ready()
-	# TODO: we may _want_ them to start with no weapons, but this makes it less confusing during testing
 	if weapons.size() > 0:
 		active_weapons.append(0)
 		
@@ -47,9 +46,14 @@ func select_weapon_num(num:int) -> void: # triggered by keyboard keys 0..9
 		GameLogger.debug("adding weapon %d" % num)
 
 func add_weapon(num:int) -> bool: # triggered by pickups
-	if num not in active_weapons and num < weapons.size():
-		active_weapons.append(num)
-		weapon_activated.emit.call_deferred(num)
-		GameLogger.debug("adding weapon %d" % num)
-		return true
-	return false
+	if num < weapons.size():
+		if num not in active_weapons:
+			active_weapons.append(num)
+			weapon_activated.emit.call_deferred(num)
+			GameLogger.debug("adding weapon %d" % num)
+		else:
+			weapons[num].power_level += 1
+			print("to do (WIP): increment power counter on this weapon, power level: ")
+			print(weapons[num].power_level)
+	return true # always remove icon
+	# return false
