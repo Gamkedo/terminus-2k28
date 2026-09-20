@@ -48,6 +48,8 @@ var weapons_manager: WeaponsManager
 @onready var aim_ray_cast_3d: RayCast3D = %AimRayCast3D
 @onready var death_explosion: AnimatedSprite3D = $DeathExplosion
 @onready var death_explosion_particles: CPUParticles3D = $DeathExplosionParticles
+@onready var sprite_away := $TurretPivot/player_vehbryo/BillboardBack
+@onready var sprite_toward := $TurretPivot/player_vehbryo/BillboardFront
 
 # signals
 
@@ -111,6 +113,16 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
+	var to_camera = (camera.global_position - global_position).normalized()    
+	var use_front_sprite: bool = false
+	if velocity.length() > 0.01:
+		var move_direction = velocity.normalized()
+		if move_direction.dot(to_camera) > -0.1: # nonzero for stable when strafing
+			use_front_sprite = true
+	if use_front_sprite != sprite_toward.visible:
+		sprite_toward.visible = use_front_sprite
+		sprite_away.visible = !use_front_sprite
+	
 	legs.rotation.y = lerp_angle(legs.rotation.y, atan2(-last_direction.x, -last_direction.z), delta * rotation_speed)
 
 	move_and_slide()
