@@ -83,4 +83,4 @@ func _end_round() -> void:
 		elif get_tree().current_scene.name.contains("Imm"):
 			GameGlobal.won_imm = true
 		
-		SceneChanger.change_scene("res://level_menu.tscn")
+		get_tree().change_scene_to_file("res://level_menu.tscn")
