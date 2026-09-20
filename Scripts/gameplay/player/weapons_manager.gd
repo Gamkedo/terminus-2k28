@@ -50,13 +50,11 @@ func fire_power_level(wep, pos, rot) -> void:
 					power_rot += angle_step
 			2: # beam
 					weapons[wep].fire(pos, rot)
-					weapons[wep].reload_time *= 1.0 / float(weapons[wep].power_level)
-					# keep beam dur less than reload time to avoid lingering beams
-					weapons[wep].beam_dur = weapons[wep].reload_time * 0.9
+					weapons[wep].fire_rate = 3.0 / float(weapons[wep].power_level)
 			3: # lightning
 					weapons[wep].fire(pos, rot)
 					# power 2 has half reload time, power 3 has third etc
-					weapons[wep].reload_time *= 1.0 / float(weapons[wep].power_level)
+					weapons[wep].fire_rate = 0.22 / float(weapons[wep].power_level)
 			# note: the above should be defined const/enum BUT:
 			# the ordering is not guaranteed, it's based on arrangement in the
 			# player.tscn, and, importantly, this game ships tomorrow ;)

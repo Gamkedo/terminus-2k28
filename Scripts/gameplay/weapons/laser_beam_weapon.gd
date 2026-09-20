@@ -2,7 +2,7 @@
 extends Weapon
 
 ## How long the beam lasts per fire
-@export var beam_dur: float = 1.0
+@export var beam_dur: float = 0.2
 
 ## Store current beam projectile
 var beam_proj: Node3D = null
@@ -17,7 +17,9 @@ var beam_timer: float = 0.0
 
 func _ready() -> void:
 	super._ready()
-	assert(beam_dur <= fire_rate, "Beam duration must be less than reload time")
+	# this used to be critial, but now reload time won't start
+	# until the current beam's beam_dur ran out
+	# assert(beam_dur <= fire_rate, "Beam duration must be less than reload time")
 
 func _process(delta: float) -> void:
 	super._process(delta)
@@ -30,11 +32,15 @@ func _process(delta: float) -> void:
 		beam_proj.look_at(aim_target, get_viewport().get_camera_3d().global_position - global_position)
 	
 	# Destroy beam once it is done firing
-	beam_timer += delta
-	if beam_timer >= beam_dur:
-		beam_timer = 0.0
-		if beam_proj: beam_proj.queue_free()
-		beam_proj = null
+	if beam_proj != null:
+		reload_time = 1.0 # block duration catching up to reload time
+		beam_timer += delta
+		print(beam_dur)
+		if beam_timer >= beam_dur: # beam done, start reload delay
+			beam_timer = 0.0
+			reload_time = fire_rate # reload time between beams
+			if beam_proj: beam_proj.queue_free()
+			beam_proj = null
 
 func fire(pos: Vector3, rot: Vector3) -> void:
 	# Init fill of beam shot spots
