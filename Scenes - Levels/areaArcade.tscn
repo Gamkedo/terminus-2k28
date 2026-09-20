@@ -218,6 +218,9 @@ projection = 1
 size = 64.0
 
 [node name="Player" parent="." unique_id=935553468 instance=ExtResource("2_hwtxp")]
+rotation_speed = 2.0
+default_aim_range = 240.0
+auto_fire = false
 
 [node name="AimComponent" type="Node" parent="Player" unique_id=145682983]
 script = ExtResource("7_tefx3")

@@ -45,8 +45,9 @@ func _physics_process(delta: float) -> void:
 		if coll_obj != null:
 			var dist = beam_ray.get_collision_point().distance_to(global_position)
 			# print(dist)
-			if dist > max_dist:
-				return # out of range, do not fire or harm
+			# seemed like a good idea but made collision unreliable in arcade mode
+			# if dist > max_dist:
+			# 	return # out of range, do not fire or harm
 			# damage tick to enemies
 			var blocked = true
 			if coll_obj.get_parent().is_in_group("enemy"):

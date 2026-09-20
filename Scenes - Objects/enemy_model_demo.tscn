@@ -62,21 +62,18 @@ animations = [{
 [sub_resource type="BoxMesh" id="BoxMesh_7tbbo"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_7tbbo"]
-height = 2.8747559
-radius = 0.85791016
+height = 3.739624
+radius = 1.2070313
 
 [node name="EnemyModelDemo" type="Node3D" unique_id=533656628 node_paths=PackedStringArray("nav_movement_handler") groups=["enemy"]]
 script = ExtResource("1_ltojq")
 speed_min = 2.0
 speed_max = 6.5
-drift_time = null
-rotation_speed = null
 nav_movement_handler = NodePath("DefaultEnemyMovementHandler")
 drop = ExtResource("2_hmo62")
 drop_chance = 0.05
 scoreValue = 5000
 enemy_type = 7
-stun_time = null
 
 [node name="BillboardFront" type="AnimatedSprite3D" parent="." unique_id=981741464]
 transform = Transform3D(0.9999749, 0.006880383, 0.0016611175, -0.006873701, 0.9999684, -0.0039926097, -0.0016885552, 0.0039810836, 0.99999064, 0, 1.4575043, 0)
@@ -118,7 +115,7 @@ collision_layer = 2
 collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=119700671]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.977417, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4098511, 0)
 shape = SubResource("CylinderShape3D_7tbbo")
 
 [node name="PerceptionComponent" parent="." unique_id=1716502930 node_paths=PackedStringArray("eyes") instance=ExtResource("6_olwmm")]
