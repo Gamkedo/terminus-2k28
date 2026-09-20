@@ -5,6 +5,7 @@ extends Area3D
 @export var speed: float = 30.0
 ## How long before projectile is automatically destroyed (like if it travels out of bounds for example)
 @export var destroy_delay: float = 5.0
+@export var bounce_off_powerful_enemy: bool = false
 
 const LASER_HIT_TSCN: PackedScene = preload("res://Scenes - Particles/laser_hit.tscn")
 
@@ -30,9 +31,17 @@ func _physics_process(delta: float) -> void:
 func _on_area_entered(area: Area3D) -> void:
 	# print(area.name)
 	if area.get_parent().is_in_group("enemy"):
-		var enemy := area.get_parent() as Node3D
-		Utils.damage_enemy(enemy, damage_component.amount)
-		explode_and_remove()
+		var enemy := area.get_parent() as Enemy
+		if bounce_off_powerful_enemy == false || enemy.get_max_health() < 500:
+			Utils.damage_enemy(enemy, damage_component.amount)
+			explode_and_remove()
+		else: # richochet, target too powerful
+			global_basis.z = -global_basis.z
+			var max_deviate = deg_to_rad(30.0)
+			var deviate_amount = randf_range(-max_deviate, max_deviate)
+			global_basis = global_basis.rotated(Vector3.UP, deviate_amount)
+			deviate_amount = randf_range(-max_deviate, max_deviate)
+			global_basis = global_basis.rotated(Vector3.RIGHT, deviate_amount)
 
 func _on_body_entered(_body: Node3D) -> void:
 	# print(body.name)

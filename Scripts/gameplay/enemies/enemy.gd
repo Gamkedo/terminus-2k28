@@ -24,6 +24,9 @@ func _ready() -> void:
 		health_component = HealthComponent.new()
 		health_component.set_max_health(default_health)
 
+func get_max_health() -> int:
+	return health_component.max_health
+
 func die() -> void:
 	if dead == true:
 		return
