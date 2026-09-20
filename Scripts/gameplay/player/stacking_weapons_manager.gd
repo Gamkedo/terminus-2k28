@@ -18,7 +18,11 @@ func can_fire() -> bool:
 func fire(pos, rot) -> void:
 	for w in active_weapons:
 		if weapons[w].can_fire():
-			weapons[w].fire(pos, rot)
+			var power_rot: float = rot.y
+			var angle_step: float = TAU / float(weapons[w].power_level)
+			for i in range(weapons[w].power_level):
+				weapons[w].fire(pos, Vector3(rot.x, power_rot, rot.z))
+				power_rot += angle_step
 
 func cycle_weapon() -> void:
 	# debug hack to quickly add weapons

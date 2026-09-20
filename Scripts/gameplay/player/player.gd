@@ -61,7 +61,7 @@ func _ready() -> void:
 		camera.set_player(self)
 	
 func _process(delta: float) -> void:
-	if already_rescued:
+	if already_rescued || has_died:
 		return
 	
 	reload_time -= delta
@@ -76,6 +76,9 @@ func _process(delta: float) -> void:
 	# 	get_tree().change_scene_to_file("res://level_menu.tscn")
 
 func fire() -> void:
+	if already_rescued || has_died:
+		return
+
 	if alternate_cannon_left:
 		weapons_manager.fire(muzzleA.global_position, muzzleA.global_rotation)
 	else:
@@ -83,7 +86,7 @@ func fire() -> void:
 	alternate_cannon_left = !alternate_cannon_left
 
 func _physics_process(delta: float) -> void:
-	if already_rescued:
+	if already_rescued || has_died:
 		return
 
 	var input_dir := Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
@@ -114,6 +117,9 @@ func _physics_process(delta: float) -> void:
 
 
 func reduce_health(amount: float) -> void:
+	if already_rescued || has_died:
+		return
+		
 	if amount > health_current:
 		amount = health_current
 
