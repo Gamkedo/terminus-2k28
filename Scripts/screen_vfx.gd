@@ -97,7 +97,7 @@ func flash(seconds = MID, intensity = QUAKE, type = Flash.NEUTRAL) ->void:
 
 var slomo_tween: Tween
 func slomo(seconds = MID, intensity = QUAKE) -> Tween:
-	Engine.time_scale = lerpf(1.0, 0.1, intensity)
+	Engine.time_scale = lerpf(1.0, 0.25, intensity)
 	return tween_time_scale(1.0, seconds)
 
 
