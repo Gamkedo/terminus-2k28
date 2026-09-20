@@ -1,6 +1,7 @@
 extends Control
 
 var prev_mouse_mode: Input.MouseMode
+@onready var unpause_button: Button = %UnpauseButton
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
@@ -18,6 +19,7 @@ func pause_or_unpause():
 		Input.mouse_mode = Input.MouseMode.MOUSE_MODE_VISIBLE
 		$".".show()
 		get_tree().paused = true
+		unpause_button.grab_focus()
 
 
 func _on_level_select_button_pressed():
