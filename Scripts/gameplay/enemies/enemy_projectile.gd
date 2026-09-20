@@ -9,6 +9,6 @@ func _on_body_entered(body):
 	# print(body.name)
 	if body.is_in_group("player"):
 		var player: Player = body as Player
-		player.reduce_health(damage_component.amount)
-		AudioStreamManager.play_sfx("res://Sound Effects/Player/player_damage_1.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
-		explode_and_remove()
+		if player.reduce_health(damage_component.amount): # prevent sound if player gone
+			AudioStreamManager.play_sfx("res://Sound Effects/Player/player_damage_1.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
+			explode_and_remove()

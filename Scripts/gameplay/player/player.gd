@@ -126,9 +126,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func reduce_health(amount: float) -> void:
+func reduce_health(amount: float) -> bool:
 	if already_rescued || has_died:
-		return
+		return false
 		
 	if amount > health_current:
 		amount = health_current
@@ -148,6 +148,7 @@ func reduce_health(amount: float) -> void:
 		ScreenVFX.flash(ScreenVFX.SHORT, ScreenVFX.TREMOR, ScreenVFX.Flash.BLAND)
 
 	GameLogger.debug("Health: %.2f / %.2f" % [health_current, health_max])
+	return true
 
 func _on_death() -> void:
 	death_explosion.show()
