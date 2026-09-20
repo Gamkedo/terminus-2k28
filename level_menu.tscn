@@ -271,6 +271,7 @@ focus_next = NodePath(".")
 focus_previous = NodePath(".")
 theme = ExtResource("13_n38p7")
 text = "Back"
+script = ExtResource("4_7blhc")
 
 [node name="MenuButtonAudio" type="Node" parent="." unique_id=238374378]
 script = ExtResource("7_gd4f1")
