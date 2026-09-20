@@ -19,14 +19,26 @@ func fire(pos, rot) -> void:
 	for w in active_weapons:
 		if weapons[w].can_fire():
 			match w: # hey godot can use a switch case, neat!
-				0,1:
+				0,1: # single laser or spread
 					var power_rot: float = rot.y
 					var angle_step: float = TAU / float(weapons[w].power_level)
 					for i in range(weapons[w].power_level):
 						weapons[w].fire(pos, Vector3(rot.x, power_rot, rot.z))
 						power_rot += angle_step
-				_:
+				2: # beam
 						weapons[w].fire(pos, rot)
+						weapons[w].reload_time *= 1.0 / float(weapons[w].power_level)
+						# keep beam dur less than reload time to avoid lingering beams
+						weapons[w].beam_dur = weapons[w].reload_time * 0.9
+				3: # lightning
+						weapons[w].fire(pos, rot)
+						# power 2 has half reload time, power 3 has third etc
+						weapons[w].reload_time *= 1.0 / float(weapons[w].power_level)
+				# note: the above should be defined const/enum BUT:
+				# the ordering is not guaranteed, it's based on arrangement in the
+				# player.tscn, and, importantly, this game ships tomorrow ;)
+				# (so it's both unlikely to change and not worth a bigger refactor
+				# to ensure they keep a given order)
 
 func cycle_weapon() -> void:
 	# debug hack to quickly add weapons

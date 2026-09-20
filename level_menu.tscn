@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://bhkgqc8ses5nu" path="res://Scenes - Particles/particle_sparks.tscn" id="20_mlgtu"]
 [ext_resource type="PackedScene" uid="uid://dr004o72ff57y" path="res://Scenes - Particles/smoke_particle_effect.tscn" id="21_k7hfm"]
 [ext_resource type="PackedScene" uid="uid://ceqmeyurk2751" path="res://Scenes - Objects/lightning_bolt.tscn" id="22_yy2u2"]
+[ext_resource type="PackedScene" uid="uid://c8507f5gnxvi2" path="res://Models (game format)/animated_fighter.glb" id="31_dihbr"]
 
 [sub_resource type="Gradient" id="Gradient_lnidy"]
 colors = PackedColorArray(0, 0, 0, 1, 0.5210963, 0.19145256, 0.020658007, 1)
@@ -335,6 +336,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3348136, -1.6214426, -4.92
 
 [node name="Smoke" parent="CacheAttempt/Particles" unique_id=387460487 instance=ExtResource("21_k7hfm")]
 position = Vector2(30, -35)
+
+[node name="animated_fighter" parent="CacheAttempt" unique_id=408037670 instance=ExtResource("31_dihbr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.160458, -7.964045)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Arcade Container/AreaA Arcade" to="." method="_on_area_a_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Survivor Container/AreaB Survivor" to="." method="_on_area_b_pressed"]
