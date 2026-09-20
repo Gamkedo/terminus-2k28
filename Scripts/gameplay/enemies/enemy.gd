@@ -32,6 +32,7 @@ func die() -> void:
 		return
 	dead = true
 	death_explosion()
+	AudioStreamManager.play_sfx("res://Sound Effects/Explosions/explosion_small_1.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
 	GameLogger.debug("%s killed!" % GameGlobal.EnemyTypes.keys()[enemy_type])
 	GameGlobal.add_score.emit(scoreValue)
 	if count_kill_for_wave == true:
