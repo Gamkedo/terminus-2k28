@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://ceqmeyurk2751" path="res://Scenes - Objects/lightning_bolt.tscn" id="3_05wly"]
 [ext_resource type="PackedScene" uid="uid://cblqj4rysl46l" path="res://Scenes - Objects/laser_bolt.tscn" id="3_iv4hd"]
 [ext_resource type="PackedScene" uid="uid://c3whajq5vweph" path="res://Scenes - Objects/lightning_light_fake.tscn" id="3_t14tu"]
-[ext_resource type="Texture2D" uid="uid://ndhytgykw0od" path="res://Textures/temp_player_front.png" id="3_y8h32"]
 [ext_resource type="Script" uid="uid://cj7eq14viaaad" path="res://Scripts/gameplay/weapons/shotgun.gd" id="4_iv4hd"]
-[ext_resource type="Texture2D" uid="uid://clfhx8dc6avbg" path="res://Textures/temp_player_back.png" id="4_y8h32"]
+[ext_resource type="Texture2D" uid="uid://fba5bio6qn7x" path="res://Textures/final_player_front.png" id="4_uvmbh"]
+[ext_resource type="Texture2D" uid="uid://1eefoj40plh7" path="res://Textures/final_player_back.png" id="5_765w1"]
 [ext_resource type="PackedScene" uid="uid://l0shf2pmj48f" path="res://Models (game format)/player_vehbryo.glb" id="8_5hocr"]
 [ext_resource type="PackedScene" uid="uid://br2mtw0tajdts" path="res://Scenes - Particles/muzzle_flash.tscn" id="9_46nwg"]
 [ext_resource type="Script" uid="uid://ba3jif00r7vw1" path="res://Scripts/gameplay/weapons/laser_beam_weapon.gd" id="10_8dwo2"]
@@ -46,12 +46,12 @@ size = Vector2(2, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46nwg"]
 transparency = 1
-albedo_texture = ExtResource("3_y8h32")
+albedo_texture = ExtResource("4_uvmbh")
 billboard_mode = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31akr"]
 transparency = 1
-albedo_texture = ExtResource("4_y8h32")
+albedo_texture = ExtResource("5_765w1")
 billboard_mode = 1
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_7tbbo"]
