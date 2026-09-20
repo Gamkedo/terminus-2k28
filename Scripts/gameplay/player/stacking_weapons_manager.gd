@@ -52,5 +52,6 @@ func add_weapon(num:int) -> bool: # triggered by pickups
 			GameLogger.debug("adding weapon %d" % num)
 		else:
 			weapons[num].power_level += 1
+			weapon_activated.emit.call_deferred(num)
 	return true # always remove icon
 	# return false

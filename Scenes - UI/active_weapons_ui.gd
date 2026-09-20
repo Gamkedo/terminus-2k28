@@ -39,14 +39,18 @@ func _add_icon(num: int, label_text: String) -> Control:
 	control.show()
 	visible_icons.append(control)
 	return control
-
+		
 func _on_weapon_activated(num: int) -> void:
+	if num in visible_nums:
+		_on_weapon_deactivated(num) # to force label refresh
+	
 	if num not in visible_nums:
 		if show_all:
 			_undim_icon(num)
 		else:
-			_add_icon(num, weapons_manager.weapons[num].label_text)
+			_add_icon(num, weapons_manager.weapons[num].label_text + " x"+str(weapons_manager.weapons[num].power_level))
 		visible_nums.append(num)
+
 
 func _on_weapon_deactivated(num: int) -> void:
 	if num in visible_nums:
