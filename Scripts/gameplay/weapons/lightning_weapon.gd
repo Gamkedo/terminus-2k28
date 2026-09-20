@@ -21,6 +21,8 @@ func fire(_pos: Vector3, _rot: Vector3) -> void:
 	if bolts_to_shoot == 0: time_to_flicker = 0
 	bolts_to_shoot = min(max_projectiles, bolts_to_shoot + max(round(randf_range(min_projectiles, max_projectiles) * ramp_up_multiplier), 1))
 	ramp_up_multiplier += ramp_up
+	if ramp_up_multiplier > 1.0:
+		ramp_up_multiplier = 1.0
 
 @onready var light_fake_original_position = light_fake.position #TechDebt this can not handle conditionally if the light fake isn't set
 var time_to_flicker: float = flicker_interval
@@ -28,6 +30,10 @@ var ramp_up_multiplier: float = 0.
 func _process(delta: float) -> void:
 	super(delta)
 	ramp_up_multiplier = max(ramp_up_multiplier - ramp_down * delta, 0.)
+	AudioStreamManager.lightning_loop_update(ramp_up_multiplier > 0.3, power_level)
+	# lightning_loop_player.pitch_scale = randf_range(0.9,1.1) will shift based on upgrade level
+
+	
 	if 0 < bolts_to_shoot:
 		time_to_flicker -= delta
 		if time_to_flicker < 0.:
@@ -46,6 +52,6 @@ func _process(delta: float) -> void:
 		projectile.intended_position = global_position + Vector3((randf() - 0.5) * 2. * spawn_range, 0., (randf() - 0.5) * 2. * spawn_range)
 		get_tree().current_scene.add_child(projectile)
 		bolts_to_shoot -= 1
-		if cache_fire_on_start == false:
-			AudioStreamManager.play_sfx("res://Sound Effects/Electricity/electricity_one_shot_v2.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
+		# if cache_fire_on_start == false:
+		#	AudioStreamManager.play_sfx("res://Sound Effects/Electricity/electricity_one_shot_v2.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
 	elif light_fake: light_fake.visible = false
