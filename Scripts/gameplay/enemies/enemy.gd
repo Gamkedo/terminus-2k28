@@ -7,6 +7,7 @@ extends Node3D
 @export var enemy_type : GameGlobal.EnemyTypes
 @export var stun_time: float = 0.0
 
+const DEF_EXPLODE_TSCN: PackedScene = preload("res://Scenes - Particles/enemy_destroyed_generic.tscn")
 @onready var health_component := $HealthComponent
 ## Default to this much health if no health component found
 const default_health: float = 50.0
@@ -34,9 +35,15 @@ func die() -> void:
 		GameGlobal.enemy_killed.emit(enemy_type)
 	_maybe_drop_pickup()
 	queue_free()
-	
+
+# can override for enemies that need fancier script in these cases
 func death_explosion() -> void:
-	pass # to override for versions that need script in these cases
+	generic_explode()
+
+func generic_explode() -> void:
+	var hit_effect := DEF_EXPLODE_TSCN.instantiate()
+	get_tree().current_scene.add_child(hit_effect)
+	hit_effect.global_position = global_position
 	
 func enforce_boundary() -> void:
 	var limits: Dictionary[String, float] = GameGlobal.world_boundaries.get_world_limits()

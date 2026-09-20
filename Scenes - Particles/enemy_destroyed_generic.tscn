@@ -2,29 +2,28 @@
 
 [ext_resource type="Script" uid="uid://dylns0kqgemus" path="res://Scripts/gameplay/particle_remove.gd" id="1_umsxd"]
 [ext_resource type="Texture2D" uid="uid://d0lwck6gq0eys" path="res://Textures/particle_fire.png" id="2_vds5c"]
+[ext_resource type="Script" uid="uid://cmtlgufiv1fbi" path="res://Scenes - Particles/particle_autoemit.gd" id="3_6n5d2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_coiko"]
 transparency = 1
-blend_mode = 1
 cull_mode = 2
 specular_mode = 2
 disable_specular_occlusion = true
-albedo_color = Color(0.8178216, 0.5282599, 1.92523e-07, 1)
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.2632, 0.26907998, 0.28, 0.08235294)
 albedo_texture = ExtResource("2_vds5c")
-emission_enabled = true
-emission = Color(0.54373056, 0.35399824, 2.8878452e-07, 1)
-emission_energy_multiplier = 1.3
+emission = Color(0.6961945, 0.70803887, 0.6716299, 1)
+emission_energy_multiplier = 1.15
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 grow = true
-grow_amount = 1.44
+grow_amount = 5.0
 proximity_fade_distance = 0.01
 distance_fade_mode = 1
-distance_fade_min_distance = 0.5
-distance_fade_max_distance = 40.0
+distance_fade_max_distance = 30.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_6n5d2"]
 material = SubResource("StandardMaterial3D_coiko")
@@ -34,26 +33,85 @@ _limits = [-360.0, 360.0, 0.0, 1.0]
 _data = [Vector2(0, 18.461548), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="Curve" id="Curve_vds5c"]
+_data = [Vector2(0, 0.9865952), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_vds5c"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6n5d2"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1, 1, 1, 0.043137256)
+albedo_texture = ExtResource("2_vds5c")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_coiko"]
+material = SubResource("StandardMaterial3D_6n5d2")
+
 [node name="EnemyDestroyedGeneric" type="Node3D" unique_id=2136184369 groups=["Precompilation"]]
 script = ExtResource("1_umsxd")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=261148521]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10653508, 0)
 cast_shadow = 0
-amount = 500
-lifetime = 1.5
+emitting = false
+amount = 400
+lifetime = 12.0
+one_shot = true
 explosiveness = 1.0
 randomness = 0.5
 lifetime_randomness = 0.9
 fixed_fps = 30
+fract_delta = false
 mesh = SubResource("QuadMesh_6n5d2")
 emission_shape = 1
-emission_sphere_radius = 0.2
+emission_sphere_radius = 2.5
 direction = Vector3(0, 1, 0)
-gravity = Vector3(0, -2, 0)
-initial_velocity_max = 3.0
+gravity = Vector3(0, 0.1, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 1.5
 angular_velocity_min = -10.0
 angular_velocity_max = 10.0
 angular_velocity_curve = SubResource("Curve_vw5kl")
 angle_min = -90.0
 angle_max = 90.0
 scale_amount_min = 0.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_vds5c")
+color_ramp = SubResource("Gradient_vds5c")
+script = ExtResource("3_6n5d2")
+
+[node name="CPUParticles3DFire" type="CPUParticles3D" parent="." unique_id=1386045124]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6264936, 0)
+cast_shadow = 0
+emitting = false
+amount = 200
+lifetime = 4.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.5
+lifetime_randomness = 0.9
+fixed_fps = 30
+fract_delta = false
+mesh = SubResource("QuadMesh_coiko")
+emission_shape = 1
+emission_sphere_radius = 1.8
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, 1.5, 0)
+initial_velocity_max = 4.0
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+angular_velocity_curve = SubResource("Curve_vw5kl")
+angle_min = -90.0
+angle_max = 90.0
+scale_amount_min = 0.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_vds5c")
+color_ramp = SubResource("Gradient_vds5c")
+script = ExtResource("3_6n5d2")

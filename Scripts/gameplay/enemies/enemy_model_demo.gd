@@ -82,6 +82,7 @@ func _collision_detected(body: Node3D) -> void:
 func death_explosion() -> void:
 	var death_group = get_node("DeathExplosion")
 	if death_group == null:
+		generic_explode()
 		return
 	var death_anim = death_group.get_node("BillboardFront")
 	var death_explosion_particles = death_group.get_node("DeathExplosionParticles")

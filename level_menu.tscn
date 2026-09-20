@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://ceqmeyurk2751" path="res://Scenes - Objects/lightning_bolt.tscn" id="22_yy2u2"]
 [ext_resource type="PackedScene" uid="uid://dvwlfekr3dsdf" path="res://Scenes - Particles/death_explosion.tscn" id="32_bt5xx"]
 [ext_resource type="PackedScene" uid="uid://dlqunlry06xcl" path="res://Scenes - Objects/vertical_explosion.tscn" id="32_l4bol"]
+[ext_resource type="PackedScene" uid="uid://mudn3dw0ldyd" path="res://Scenes - Particles/enemy_destroyed_generic.tscn" id="33_3wssx"]
 [ext_resource type="PackedScene" uid="uid://drrg0hefcevxi" path="res://Scenes - Particles/death_explosion_particles.tscn" id="33_5g6mr"]
 [ext_resource type="PackedScene" uid="uid://cgj86dwwoxs1b" path="res://Scenes - Objects/animation_player_surv_rescue.tscn" id="33_gtp82"]
 [ext_resource type="Script" uid="uid://cgkqewpt7o4xr" path="res://mainmenu_loading_panel_timeout.gd" id="33_tl0ry"]
@@ -354,6 +355,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17100143, -1.8557644, -16.7
 
 [node name="DeathExplosion" parent="CacheAttempt" unique_id=404917185 instance=ExtResource("32_bt5xx")]
 visible = true
+
+[node name="EnemyDestroyedGeneric" parent="CacheAttempt" unique_id=1114350921 instance=ExtResource("33_3wssx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.3423634)
 
 [node name="Loading Panel" type="Panel" parent="." unique_id=1242562350]
 offset_right = 1152.0

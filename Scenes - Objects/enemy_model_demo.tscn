@@ -69,11 +69,14 @@ radius = 0.85791016
 script = ExtResource("1_ltojq")
 speed_min = 2.0
 speed_max = 6.5
+drift_time = null
+rotation_speed = null
 nav_movement_handler = NodePath("DefaultEnemyMovementHandler")
 drop = ExtResource("2_hmo62")
 drop_chance = 0.05
 scoreValue = 5000
 enemy_type = 7
+stun_time = null
 
 [node name="BillboardFront" type="AnimatedSprite3D" parent="." unique_id=981741464]
 transform = Transform3D(0.9999749, 0.006880383, 0.0016611175, -0.006873701, 0.9999684, -0.0039926097, -0.0016885552, 0.0039810836, 0.99999064, 0, 1.4575043, 0)
