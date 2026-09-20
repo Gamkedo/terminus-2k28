@@ -39,8 +39,32 @@ func _input(event: InputEvent) -> void:
 func can_fire() -> bool:
 	return weapons[active_weapon].can_fire()
 
+func fire_power_level(wep, pos, rot) -> void:
+	if weapons[wep].can_fire():
+		match wep: # hey godot can use a switch case, neat!
+			0,1: # single laser or spread
+				var power_rot: float = rot.y
+				var angle_step: float = TAU / float(weapons[wep].power_level)
+				for i in range(weapons[wep].power_level):
+					weapons[wep].fire(pos, Vector3(rot.x, power_rot, rot.z))
+					power_rot += angle_step
+			2: # beam
+					weapons[wep].fire(pos, rot)
+					weapons[wep].reload_time *= 1.0 / float(weapons[wep].power_level)
+					# keep beam dur less than reload time to avoid lingering beams
+					weapons[wep].beam_dur = weapons[wep].reload_time * 0.9
+			3: # lightning
+					weapons[wep].fire(pos, rot)
+					# power 2 has half reload time, power 3 has third etc
+					weapons[wep].reload_time *= 1.0 / float(weapons[wep].power_level)
+			# note: the above should be defined const/enum BUT:
+			# the ordering is not guaranteed, it's based on arrangement in the
+			# player.tscn, and, importantly, this game ships tomorrow ;)
+			# (so it's both unlikely to change and not worth a bigger refactor
+			# to ensure they keep a given order)
+
 func fire(pos, rot) -> void:
-	weapons[active_weapon].fire(pos, rot)
+	fire_power_level(active_weapon,pos, rot)
 
 func cycle_weapon() -> void:
 	weapon_deactivated.emit.call_deferred(active_weapon)
@@ -70,5 +94,7 @@ func select_weapon_num(num:int) -> void: # triggered by keyboard keys 0..9
 # this is slightly different for the stacking implentation
 # and it's what is called by pickups
 func add_weapon(num:int) -> bool:
-	select_weapon_num(num) # always remove icon, todo: if player already has it reup ammo/time
+	if active_weapon == num:
+		weapons[num].power_level += 1
+	select_weapon_num(num)
 	return true
