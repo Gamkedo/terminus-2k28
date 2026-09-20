@@ -32,6 +32,19 @@ func _spawn_pickup() -> void:
 	var offset = Vector2.from_angle(angle) * dist
 	spawn_container.add_child(obj)
 	obj.global_position = global_position + Vector3(offset.x, 1.0, offset.y)
+	
+	# enforce_boundary
+	var limits: Dictionary[String, float] = GameGlobal.world_boundaries.get_world_limits()
+	
+	if obj.global_position.x > limits["+x"]:
+		obj.global_position.x = limits["+x"]
+	if obj.global_position.x < limits["-x"]:
+		obj.global_position.x = limits["-x"]
+	if obj.global_position.z > limits["+z"]:
+		obj.global_position.z = limits["+z"]
+	if obj.global_position.z < limits["-z"]:
+		obj.global_position.z = limits["-z"]
+	
 	obj.show()
 	obj.monitoring = true
 	GameLogger.debug("Adding " + str(choice) + " at " + str(offset))

@@ -223,8 +223,9 @@ metadata/_custom_type_script = "uid://cfc24xmre36y6"
 
 [node name="PickupSpawner" type="Node3D" parent="Player" unique_id=491559467]
 script = ExtResource("9_mkn2u")
-max_spawn_seconds = 7.0
-spawn_radius = 50.0
+min_spawn_seconds = 10.0
+max_spawn_seconds = 15.0
+spawn_radius = 25.0
 spawn_height = 1.5
 
 [node name="LaserShotgun" parent="Player/PickupSpawner" unique_id=1926490678 instance=ExtResource("10_fyjty")]
@@ -240,11 +241,17 @@ effect = SubResource("Resource_6bdme")
 
 [node name="ScoreGUI" parent="." unique_id=924242711 instance=ExtResource("9_pbum0")]
 
-[node name="Combo" parent="ScoreGUI/CanvasLayer" parent_id_path=PackedInt32Array(924242711, 2014492969) index="1" unique_id=882236704]
+[node name="dark area for UI" type="Panel" parent="ScoreGUI/CanvasLayer" parent_id_path=PackedInt32Array(924242711, 2014492969) index="0" unique_id=344489196]
+offset_left = 152.0
+offset_top = 540.0
+offset_right = 1017.0
+offset_bottom = 649.0
+
+[node name="Combo" parent="ScoreGUI/CanvasLayer" parent_id_path=PackedInt32Array(924242711, 2014492969) index="2" unique_id=882236704]
 offset_transform_enabled = true
 offset_transform_position = Vector2(-150, 0)
 
-[node name="HealthBar" parent="ScoreGUI/CanvasLayer" parent_id_path=PackedInt32Array(924242711, 2014492969) index="2" unique_id=1933614406]
+[node name="HealthBar" parent="ScoreGUI/CanvasLayer" parent_id_path=PackedInt32Array(924242711, 2014492969) index="3" unique_id=1933614406]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -257,7 +264,7 @@ grow_horizontal = 2
 grow_vertical = 0
 offset_transform_position = Vector2(0, -10)
 
-[node name="ActiveWeaponsUI" parent="ScoreGUI/CanvasLayer" parent_id_path=PackedInt32Array(924242711, 2014492969) index="3" unique_id=171342784]
+[node name="ActiveWeaponsUI" parent="ScoreGUI/CanvasLayer" parent_id_path=PackedInt32Array(924242711, 2014492969) index="4" unique_id=171342784]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_right = 0.5
