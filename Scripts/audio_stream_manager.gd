@@ -94,6 +94,11 @@ func lightning_loop_update(isFiring: bool, power_level:int) -> void:
 	lightning_firing = isFiring
 	lightning_loop_player.pitch_scale = 0.85 + 0.1 * power_level
 	
+func lightning_loop_abrupt_stop() -> void: # handy for pause menu etc
+	lightning_firing = false
+	lightning_held_time = 0.0
+	lightning_loop_player.volume_linear = 0.0
+	
 func select_background_track(i: int) -> void:
 	if abs(i) < bg_music_tracks.size():
 		selected_background_music = bg_music_tracks[i]
