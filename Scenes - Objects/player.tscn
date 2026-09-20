@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://p7aumif32558" path="res://Scenes - Objects/laser_beam_projectile.tscn" id="11_46nwg"]
 [ext_resource type="PackedScene" uid="uid://fg0o0lx1c3d8" path="res://Scenes - Particles/explosion_particle_effect.tscn" id="13_0g0b8"]
 [ext_resource type="PackedScene" uid="uid://ic71hiiw54gl" path="res://Scenes - Particles/leaf_hurricane.tscn" id="14_bae4t"]
+[ext_resource type="PackedScene" uid="uid://drrg0hefcevxi" path="res://Scenes - Particles/death_explosion_particles.tscn" id="15_avl05"]
 [ext_resource type="PackedScene" uid="uid://bjoc5aa7xcnpi" path="res://Scenes - Particles/particle_smoke_puff.tscn" id="15_n3yrm"]
 [ext_resource type="PackedScene" uid="uid://dr004o72ff57y" path="res://Scenes - Particles/smoke_particle_effect.tscn" id="16_t14tu"]
 [ext_resource type="PackedScene" uid="uid://bsgkbj2irnxuh" path="res://Scenes - Particles/lightning_particles_3d.tscn" id="17_avl05"]
@@ -189,15 +190,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n3yrm"]
-albedo_color = Color(1.642, 0.798, 0.236, 1)
-emission = Color(0.46618086, 0.4661808, 0.4661808, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_t14tu"]
-material = SubResource("StandardMaterial3D_n3yrm")
-radial_segments = 16
-rings = 8
-
 [node name="Player" type="CharacterBody3D" unique_id=997444506 node_paths=PackedStringArray("follow_cam_move_to", "follow_cam_point_at") groups=["player"]]
 collision_layer = 4
 collision_mask = 131
@@ -324,22 +316,8 @@ frame = 16
 frame_progress = 1.0
 speed_scale = 0.7
 
-[node name="DeathExplosionParticles" type="CPUParticles3D" parent="." unique_id=14048526]
+[node name="DeathExplosionParticles" parent="." unique_id=1803962668 instance=ExtResource("15_avl05")]
 transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 1.9691343, 0)
-emitting = false
-amount = 100
-lifetime = 0.4
-one_shot = true
-speed_scale = 0.8
-explosiveness = 1.0
-randomness = 0.35
-mesh = SubResource("SphereMesh_t14tu")
-direction = Vector3(0, 1, 0)
-gravity = Vector3(0, -98, 0)
-initial_velocity_min = 2.0
-initial_velocity_max = 5.0
-scale_amount_min = 0.1
-scale_amount_max = 0.15
 
 [node name="ParticlesCache" type="Node3D" parent="." unique_id=381308245]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -31.402435, 0)

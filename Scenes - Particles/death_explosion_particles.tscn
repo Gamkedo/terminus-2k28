@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://drrg0hefcevxi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n3yrm"]
+albedo_color = Color(1.642, 0.798, 0.236, 1)
+emission = Color(0.46618086, 0.4661808, 0.4661808, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_t14tu"]
+material = SubResource("StandardMaterial3D_n3yrm")
+radial_segments = 16
+rings = 8
+
+[node name="DeathExplosionParticles" type="CPUParticles3D" unique_id=1803962668]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0, 0)
+emitting = false
+amount = 100
+lifetime = 0.4
+one_shot = true
+speed_scale = 0.8
+explosiveness = 1.0
+randomness = 0.35
+mesh = SubResource("SphereMesh_t14tu")
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -98, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+scale_amount_min = 0.1
+scale_amount_max = 0.15
