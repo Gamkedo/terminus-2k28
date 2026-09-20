@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://bhkgqc8ses5nu" path="res://Scenes - Particles/particle_sparks.tscn" id="20_mlgtu"]
 [ext_resource type="PackedScene" uid="uid://dr004o72ff57y" path="res://Scenes - Particles/smoke_particle_effect.tscn" id="21_k7hfm"]
 [ext_resource type="PackedScene" uid="uid://ceqmeyurk2751" path="res://Scenes - Objects/lightning_bolt.tscn" id="22_yy2u2"]
+[ext_resource type="PackedScene" uid="uid://dvwlfekr3dsdf" path="res://Scenes - Particles/death_explosion.tscn" id="32_bt5xx"]
 [ext_resource type="PackedScene" uid="uid://dlqunlry06xcl" path="res://Scenes - Objects/vertical_explosion.tscn" id="32_l4bol"]
 [ext_resource type="PackedScene" uid="uid://drrg0hefcevxi" path="res://Scenes - Particles/death_explosion_particles.tscn" id="33_5g6mr"]
 [ext_resource type="PackedScene" uid="uid://cgj86dwwoxs1b" path="res://Scenes - Objects/animation_player_surv_rescue.tscn" id="33_gtp82"]
@@ -345,6 +346,9 @@ position = Vector2(30, -35)
 
 [node name="VerticalExplosion" parent="CacheAttempt" unique_id=163751198 instance=ExtResource("32_l4bol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17100143, -1.8557644, -16.734371)
+
+[node name="DeathExplosion" parent="CacheAttempt" unique_id=404917185 instance=ExtResource("32_bt5xx")]
+visible = true
 
 [node name="Player" type="Node3D" parent="." unique_id=833612878]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8557644, 4.7253313)
