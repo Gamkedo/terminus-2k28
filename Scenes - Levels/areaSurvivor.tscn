@@ -185,9 +185,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.364956, -1.9073486e-06, -
 [node name="EnemyLooper" type="Node3D" parent="." unique_id=1010977497 node_paths=PackedStringArray("enemy_container")]
 script = ExtResource("15_v3a74")
 enemy_container = NodePath("../Enemies")
-target_enemy_count = 650
+target_enemy_count = 500
 enemy_list = Array[PackedScene]([ExtResource("7_155sy"), ExtResource("11_vx5xs"), ExtResource("15_ocn12")])
-max_spawn_per_frame = 100
+max_spawn_per_frame = 75
 
 [node name="PauseMenu" parent="." unique_id=850452313 instance=ExtResource("16_ocn12")]
 visible = false
