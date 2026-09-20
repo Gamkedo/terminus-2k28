@@ -10,5 +10,7 @@ func _ready() -> void:
 Deep in the distant sky, a crackle of hope splits through."
 	elif "Immersive" in scene_loading.scene_path:
 		text = "Sgt. Valentine Wakefield battles to deliver his heart for a transplant to his ailing scientist son Dr. Mike Wakefield."
+	elif "menu" in scene_loading.scene_path:
+		text = "MISSION COMPLETE!!"
 	else: # no loading scene text
 		text = ""

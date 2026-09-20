@@ -74,8 +74,6 @@ func _process(delta: float) -> void:
 		fire()
 	if Input.is_action_pressed("fire") and weapons_manager.can_fire():
 		fire()
-	# if Input.is_action_pressed("ui_cancel"):
-	# 	get_tree().change_scene_to_file("res://level_menu.tscn")
 
 func fire() -> void:
 	if already_rescued || has_died:
