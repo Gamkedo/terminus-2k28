@@ -33,6 +33,10 @@
 [ext_resource type="PackedScene" uid="uid://c8507f5gnxvi2" path="res://Models (game format)/animated_fighter.glb" id="31_dihbr"]
 [ext_resource type="PackedScene" uid="uid://dlqunlry06xcl" path="res://Scenes - Objects/vertical_explosion.tscn" id="32_l4bol"]
 [ext_resource type="PackedScene" uid="uid://drrg0hefcevxi" path="res://Scenes - Particles/death_explosion_particles.tscn" id="33_5g6mr"]
+[ext_resource type="PackedScene" uid="uid://cgj86dwwoxs1b" path="res://Scenes - Objects/animation_player_surv_rescue.tscn" id="33_gtp82"]
+[ext_resource type="Script" uid="uid://faia83gf1tdx" path="res://cache_anim_fake_survivor_mode.gd" id="34_0hm4u"]
+[ext_resource type="Script" uid="uid://bvq76ulmwjxfx" path="res://cache_anim_player.gd" id="34_sxltc"]
+[ext_resource type="Script" uid="uid://ck818phlto22l" path="res://Scenes - Objects/cache_rescue_autoplay.gd" id="37_2pq4h"]
 
 [sub_resource type="Gradient" id="Gradient_lnidy"]
 colors = PackedColorArray(0, 0, 0, 1, 0.5210963, 0.19145256, 0.020658007, 1)
@@ -340,13 +344,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3348136, -1.6214426, -4.92
 position = Vector2(30, -35)
 
 [node name="animated_fighter" parent="CacheAttempt" unique_id=408037670 instance=ExtResource("31_dihbr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.160458, -7.964045)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.765762, 9.2971325, 45.400665)
 
 [node name="VerticalExplosion" parent="CacheAttempt" unique_id=163751198 instance=ExtResource("32_l4bol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17100143, -1.8557644, -16.734371)
 
+[node name="Player" type="Node3D" parent="." unique_id=833612878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8557644, 4.7253313)
+script = ExtResource("34_sxltc")
+
+[node name="SurvivorMode TimerAndEndingAnim" type="Node3D" parent="." unique_id=218704457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8557644, 4.7253313)
+
+[node name="TimerScript" type="Node3D" parent="SurvivorMode TimerAndEndingAnim" unique_id=1600809362]
+script = ExtResource("34_0hm4u")
+
 [node name="DeathExplosionParticles" parent="." unique_id=1803962668 instance=ExtResource("33_5g6mr")]
 transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 5.828229, 0, -3.875431)
+
+[node name="CacheRescue" type="Node3D" parent="DeathExplosionParticles" unique_id=965004941]
+transform = Transform3D(0.11111111, 0, 0, 0, 0.11111111, 0, 0, 0, 0.11111111, -0.647581, 0.20619604, 0.95564026)
+
+[node name="Depth2" type="Node3D" parent="DeathExplosionParticles/CacheRescue" unique_id=386932775]
+
+[node name="Depth3" type="Node3D" parent="DeathExplosionParticles/CacheRescue/Depth2" unique_id=1839545804]
+
+[node name="AnimationPlayer" parent="DeathExplosionParticles/CacheRescue/Depth2/Depth3" unique_id=1591960597 instance=ExtResource("33_gtp82")]
+root_node = NodePath("../../../../../CacheAttempt/animated_fighter")
+script = ExtResource("37_2pq4h")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Arcade Container/AreaA Arcade" to="." method="_on_area_a_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Survivor Container/AreaB Survivor" to="." method="_on_area_b_pressed"]

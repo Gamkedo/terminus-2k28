@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://b7muf8h4yxj5" path="res://Scenes - UI/pause_menu.tscn" id="16_ocn12"]
 [ext_resource type="PackedScene" uid="uid://dgefm5eu8sdkx" path="res://Scenes - Objects/pickup_aircraft.tscn" id="18_eq1ps"]
 [ext_resource type="Script" uid="uid://b2im352uxecik" path="res://Scripts/gameplay/world/survivor_countdown.gd" id="20_xetuu"]
+[ext_resource type="PackedScene" uid="uid://cgj86dwwoxs1b" path="res://Scenes - Objects/animation_player_surv_rescue.tscn" id="21_vfen2"]
 
 [sub_resource type="Environment" id="Environment_oksh5"]
 glow_enabled = true
@@ -60,74 +61,6 @@ metadata/_custom_type_script = "uid://fr2qc6q15f8p"
 [sub_resource type="Resource" id="Resource_vfen2"]
 script = ExtResource("11_vfen2")
 metadata/_custom_type_script = "uid://fr2qc6q15f8p"
-
-[sub_resource type="Animation" id="Animation_6w6bc"]
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-43.765762, 9.2971325, 45.400665)]
-}
-
-[sub_resource type="Animation" id="Animation_xetuu"]
-resource_name = "rescue"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.13, 1.14, 2.2, 3.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(47.298836, -16.909134, -101.17751), Vector3(-73.32664, -63.689636, -44.240276), Vector3(-84.74414, 13.74345, -45.891098), Vector3(2.151927, 1.3857841, -2.5341797), Vector3(124.63869, 19.918152, -47.327717)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../../Player")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(2.18),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"rescue_pickup"
-}]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../SurvivorMode TimerAndEndingAnim/TimerScript")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1.5, 5.8),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"start_rescue_sound"
-}, {
-"args": [],
-"method": &"back_to_menu"
-}]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6w6bc"]
-_data = {
-&"RESET": SubResource("Animation_6w6bc"),
-&"rescue": SubResource("Animation_xetuu")
-}
 
 [node name="SurvivorScene" type="Node3D" unique_id=881090372]
 
@@ -260,10 +193,7 @@ offset_right = -619.76575
 offset_bottom = 9.2971325
 grow_horizontal = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SurvivorMode TimerAndEndingAnim" unique_id=917002207]
-root_node = NodePath("../../Camera3D/EndingFlyoverAircraft")
-root_motion_local = true
-libraries/ = SubResource("AnimationLibrary_6w6bc")
+[node name="AnimationPlayer" parent="SurvivorMode TimerAndEndingAnim" unique_id=1591960597 instance=ExtResource("21_vfen2")]
 
 [node name="TimerScript" type="CanvasLayer" parent="SurvivorMode TimerAndEndingAnim" unique_id=2014492969 node_paths=PackedStringArray("end_anim")]
 script = ExtResource("20_xetuu")
