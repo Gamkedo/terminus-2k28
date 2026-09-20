@@ -8,7 +8,7 @@ extends PickupEffect
 
 func apply(player: Player) -> bool:
 	# spawn orbiters around player. If no scene assigned, return false and fail
-	AudioStreamManager.play_sfx("res://Sound Effects/Pickups/pickup_sound_3.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
+	AudioStreamManager.play_sfx("res://Sound Effects/Pickups/pickup_sound_3.wav", AudioStreamManager.PlaybackMode.STANDARD)
 	if shield_orbiter_scene:
 		var orbit_spacing = (PI * 2.0) / orbiter_count
 		for i in orbiter_count:
