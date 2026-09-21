@@ -57,6 +57,7 @@ var sound_preload_attempt: Array[AudioStream] = [
 	preload("uid://bkgs7qplm88a2"), # UI/UI_rumble.wav
 	preload("uid://b6de3bc3fgdnh"), # Explosions/explosion_4.wav
 	preload("uid://c0ehc4qrivpgx"), # survivors pickup sound
+	preload("uid://dpflv00x0xlgd") # player_weapon_laser_beam.wav
 ]
 
 var selected_background_music: AudioStream = bg_music_tracks[0]

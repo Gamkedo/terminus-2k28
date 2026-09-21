@@ -9,11 +9,8 @@
 [ext_resource type="Script" uid="uid://cj7eq14viaaad" path="res://Scripts/gameplay/weapons/shotgun.gd" id="4_iv4hd"]
 [ext_resource type="Texture2D" uid="uid://fba5bio6qn7x" path="res://Textures/final_player_front.png" id="4_uvmbh"]
 [ext_resource type="Texture2D" uid="uid://1eefoj40plh7" path="res://Textures/final_player_back.png" id="5_765w1"]
-[ext_resource type="Texture2D" uid="uid://dviy8rpoi0v3y" path="res://Sprites/FX/green_projectile_32x32.png" id="6_v82q8"]
-[ext_resource type="Script" uid="uid://dtd1pss0l34nx" path="res://Scenes - Objects/rapid_spin.gd" id="7_qnqlf"]
-[ext_resource type="Texture2D" uid="uid://d0lwck6gq0eys" path="res://Textures/particle_fire.png" id="8_4f14w"]
+[ext_resource type="PackedScene" uid="uid://dhipins3g8vxu" path="res://Scenes - Objects/beam_reloading_effect.tscn" id="6_765w1"]
 [ext_resource type="PackedScene" uid="uid://l0shf2pmj48f" path="res://Models (game format)/player_vehbryo.glb" id="8_5hocr"]
-[ext_resource type="Script" uid="uid://cmtlgufiv1fbi" path="res://Scenes - Particles/particle_autoemit.gd" id="9_1dsib"]
 [ext_resource type="PackedScene" uid="uid://br2mtw0tajdts" path="res://Scenes - Particles/muzzle_flash.tscn" id="9_46nwg"]
 [ext_resource type="Script" uid="uid://ba3jif00r7vw1" path="res://Scripts/gameplay/weapons/laser_beam_weapon.gd" id="10_8dwo2"]
 [ext_resource type="PackedScene" uid="uid://btd7xo16gb6cw" path="res://Scenes - Objects/spreadshot_bolt.tscn" id="10_uvmbh"]
@@ -57,51 +54,6 @@ billboard_mode = 1
 transparency = 1
 albedo_texture = ExtResource("5_765w1")
 billboard_mode = 1
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5qfa"]
-transparency = 1
-blend_mode = 1
-albedo_color = Color(1, 1, 1, 0.47058824)
-albedo_texture = ExtResource("6_v82q8")
-
-[sub_resource type="SphereMesh" id="SphereMesh_7tbbo"]
-material = SubResource("StandardMaterial3D_y5qfa")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_coiko"]
-transparency = 1
-cull_mode = 2
-specular_mode = 2
-disable_specular_occlusion = true
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.2632, 0.26907998, 0.28, 0.2901961)
-albedo_texture = ExtResource("8_4f14w")
-emission = Color(0.6961945, 0.70803887, 0.6716299, 1)
-emission_energy_multiplier = 1.15
-billboard_mode = 3
-billboard_keep_scale = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-grow = true
-grow_amount = 5.0
-proximity_fade_distance = 0.01
-distance_fade_mode = 1
-distance_fade_max_distance = 30.0
-
-[sub_resource type="QuadMesh" id="QuadMesh_2gaq3"]
-material = SubResource("StandardMaterial3D_coiko")
-
-[sub_resource type="Curve" id="Curve_4f14w"]
-_limits = [-360.0, 360.0, 0.0, 1.0]
-_data = [Vector2(0, 18.461548), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_1dsib"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.39606127, 0.53253), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="Gradient" id="Gradient_2gaq3"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_7tbbo"]
 height = 1.9824219
@@ -193,40 +145,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("QuadMesh_8dwo2")
 surface_material_override/0 = SubResource("StandardMaterial3D_31akr")
 
-[node name="BeamReloadingEffect" type="MeshInstance3D" parent="TurretPivot/player_vehbryo" unique_id=832721236]
+[node name="BeamReloadingEffect" parent="TurretPivot/player_vehbryo" unique_id=1896162745 instance=ExtResource("6_765w1")]
 transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, 0.2, 0, -0.2, -8.742278e-09, 0, 1.7566593, -2.349183)
-mesh = SubResource("SphereMesh_7tbbo")
-script = ExtResource("7_qnqlf")
-
-[node name="CPUParticles3D" type="CPUParticles3D" parent="TurretPivot/player_vehbryo/BeamReloadingEffect" unique_id=175704787]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10653508, 0)
-cast_shadow = 0
-emitting = false
-amount = 40
-lifetime = 5.0
-one_shot = true
-explosiveness = 1.0
-randomness = 0.5
-lifetime_randomness = 0.9
-fixed_fps = 30
-fract_delta = false
-mesh = SubResource("QuadMesh_2gaq3")
-emission_shape = 1
-emission_sphere_radius = 2.5
-direction = Vector3(0, 1, 0)
-gravity = Vector3(0, 0.1, 0)
-initial_velocity_min = 0.5
-initial_velocity_max = 1.5
-angular_velocity_min = -10.0
-angular_velocity_max = 10.0
-angular_velocity_curve = SubResource("Curve_4f14w")
-angle_min = -90.0
-angle_max = 90.0
-scale_amount_min = 0.0
-scale_amount_max = 3.0
-scale_amount_curve = SubResource("Curve_1dsib")
-color_ramp = SubResource("Gradient_2gaq3")
-script = ExtResource("9_1dsib")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1486092495]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0301299, 0)

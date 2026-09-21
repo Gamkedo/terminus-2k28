@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dhipins3g8vxu"]
+
+[ext_resource type="Texture2D" uid="uid://dviy8rpoi0v3y" path="res://Sprites/FX/green_projectile_32x32.png" id="1_i4gqn"]
+[ext_resource type="Script" uid="uid://dtd1pss0l34nx" path="res://Scenes - Objects/rapid_spin.gd" id="2_5yhiw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5qfa"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1, 1, 1, 0.47058824)
+albedo_texture = ExtResource("1_i4gqn")
+
+[sub_resource type="SphereMesh" id="SphereMesh_7tbbo"]
+material = SubResource("StandardMaterial3D_y5qfa")
+
+[node name="BeamReloadingEffect" type="MeshInstance3D" unique_id=1896162745]
+transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, 0.2, 0, -0.2, -8.742278e-09, 0, 0, 0)
+mesh = SubResource("SphereMesh_7tbbo")
+script = ExtResource("2_5yhiw")

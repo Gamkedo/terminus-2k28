@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cr0e2cljp0lx3" path="res://Sprites/robodog.png" id="13_87kcf"]
 [ext_resource type="Theme" uid="uid://do4s6nqfelees" path="res://Scenes - UI/menu_theme.tres" id="13_n38p7"]
 [ext_resource type="Texture2D" uid="uid://cyo5rvku750pi" path="res://Sprites/android.png" id="14_010tg"]
+[ext_resource type="PackedScene" uid="uid://dhipins3g8vxu" path="res://Scenes - Objects/beam_reloading_effect.tscn" id="14_ls6tb"]
 [ext_resource type="Texture2D" uid="uid://b6hp37kontti2" path="res://Sprites/shieldbot.png" id="14_rx83g"]
 [ext_resource type="Texture2D" uid="uid://dva4iw1cm5glk" path="res://Sprites/dogelisk.png" id="15_010tg"]
 [ext_resource type="PackedScene" uid="uid://fg0o0lx1c3d8" path="res://Scenes - Particles/explosion_particle_effect.tscn" id="17_mhfku"]
@@ -58,6 +59,12 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5qfa"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7tbbo"]
+material = SubResource("StandardMaterial3D_y5qfa")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7tbbo"]
 bg_color = Color(0.18, 0.18, 0.18, 1)
@@ -285,6 +292,23 @@ metadata/_custom_type_script = "uid://bv8ijbramquuc"
 [node name="CacheAttempt" type="Node3D" parent="." unique_id=209399095]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8557644, 4.7253313)
 
+[node name="DeathExplosionParticles" parent="CacheAttempt" unique_id=1803962668 instance=ExtResource("33_5g6mr")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 5.828229, -1.8557644, -8.600762)
+emitting = true
+one_shot = false
+
+[node name="CacheRescue" type="Node3D" parent="CacheAttempt/DeathExplosionParticles" unique_id=965004941]
+transform = Transform3D(0.11111111, 0, 0, 0, 0.11111111, 0, 0, 0, 0.11111111, -0.647581, 0.20619604, 0.95564026)
+
+[node name="Depth2" type="Node3D" parent="CacheAttempt/DeathExplosionParticles/CacheRescue" unique_id=386932775]
+
+[node name="Depth3" type="Node3D" parent="CacheAttempt/DeathExplosionParticles/CacheRescue/Depth2" unique_id=1839545804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.298836, -16.909134, -101.17752)
+
+[node name="AnimationPlayer" parent="CacheAttempt/DeathExplosionParticles/CacheRescue/Depth2/Depth3" unique_id=1591960597 instance=ExtResource("33_gtp82")]
+root_node = NodePath("../../../../../../pickup_aircraft/animated_fighter")
+script = ExtResource("37_2pq4h")
+
 [node name="FakeLightningFire" type="Node3D" parent="CacheAttempt" unique_id=669778000 node_paths=PackedStringArray("light_fake")]
 script = ExtResource("9_mlgtu")
 cache_fire_on_start = true
@@ -360,6 +384,15 @@ visible = true
 [node name="EnemyDestroyedGeneric" parent="CacheAttempt" unique_id=1114350921 instance=ExtResource("33_3wssx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.3423634)
 
+[node name="BeamReloadingEffect" parent="CacheAttempt" unique_id=1896162745 instance=ExtResource("14_ls6tb")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.52921647, -0.5263145, -1.4738781)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CacheAttempt" unique_id=789586394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7658936, -1.1780841, -2.389629)
+mesh = SubResource("BoxMesh_7tbbo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CacheAttempt/MeshInstance3D" unique_id=1971065341]
+
 [node name="Loading Panel" type="Panel" parent="." unique_id=1242562350]
 offset_right = 1152.0
 offset_bottom = 652.0
@@ -402,23 +435,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8557644, 4.7253313)
 
 [node name="TimerScript" type="Node3D" parent="SurvivorMode TimerAndEndingAnim" unique_id=1600809362]
 script = ExtResource("34_0hm4u")
-
-[node name="DeathExplosionParticles" parent="." unique_id=1803962668 instance=ExtResource("33_5g6mr")]
-transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 5.828229, 0, -3.875431)
-emitting = true
-one_shot = false
-
-[node name="CacheRescue" type="Node3D" parent="DeathExplosionParticles" unique_id=965004941]
-transform = Transform3D(0.11111111, 0, 0, 0, 0.11111111, 0, 0, 0, 0.11111111, -0.647581, 0.20619604, 0.95564026)
-
-[node name="Depth2" type="Node3D" parent="DeathExplosionParticles/CacheRescue" unique_id=386932775]
-
-[node name="Depth3" type="Node3D" parent="DeathExplosionParticles/CacheRescue/Depth2" unique_id=1839545804]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.298836, -16.909134, -101.17752)
-
-[node name="AnimationPlayer" parent="DeathExplosionParticles/CacheRescue/Depth2/Depth3" unique_id=1591960597 instance=ExtResource("33_gtp82")]
-root_node = NodePath("../../../../../pickup_aircraft/animated_fighter")
-script = ExtResource("37_2pq4h")
 
 [connection signal="pressed" from="ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer/Arcade Container/AreaA Arcade" to="." method="_on_area_a_pressed"]
 [connection signal="pressed" from="ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer/Survivor Container/AreaB Survivor" to="." method="_on_area_b_pressed"]
