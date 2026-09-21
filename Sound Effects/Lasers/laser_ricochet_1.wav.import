@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c4u2efx12lo3b"
+path="res://.godot/imported/laser_ricochet_1.wav-885cce516e822257390a4a2d0ebdc08b.sample"
+
+[deps]
+
+source_file="res://Sound Effects/Lasers/laser_ricochet_1.wav"
+dest_files=["res://.godot/imported/laser_ricochet_1.wav-885cce516e822257390a4a2d0ebdc08b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

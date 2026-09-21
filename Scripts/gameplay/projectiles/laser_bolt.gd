@@ -42,6 +42,7 @@ func _on_area_entered(area: Area3D) -> void:
 			global_basis = global_basis.rotated(Vector3.UP, deviate_amount)
 			deviate_amount = randf_range(-max_deviate, max_deviate)
 			global_basis = global_basis.rotated(Vector3.RIGHT, deviate_amount)
+			AudioStreamManager.play_sfx("res://Sound Effects/Lasers/laser_ricochet_1.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
 
 func _on_body_entered(_body: Node3D) -> void:
 	# print(body.name)
