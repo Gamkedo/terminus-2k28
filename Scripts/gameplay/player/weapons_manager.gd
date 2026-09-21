@@ -57,9 +57,12 @@ func fire_power_level(wep, pos, rot) -> void:
 					weapons[wep].fire_rate = 0.22 / float(weapons[wep].power_level)
 			# note: the above should be defined const/enum BUT:
 			# the ordering is not guaranteed, it's based on arrangement in the
-			# player.tscn, and, importantly, this game ships tomorrow ;)
+			# player.tscn, and, importantly, this game ships today ;)
 			# (so it's both unlikely to change and not worth a bigger refactor
 			# to ensure they keep a given order)
+
+func armed_with_beam() -> bool:
+	return active_weapon == 2 # 2 refers to beam. see comment directly above
 
 func fire(pos, rot) -> void:
 	fire_power_level(active_weapon,pos, rot)

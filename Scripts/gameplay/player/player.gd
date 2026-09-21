@@ -50,6 +50,7 @@ var weapons_manager: WeaponsManager
 @onready var death_explosion_particles: CPUParticles3D = $DeathExplosionParticles
 @onready var sprite_away := $TurretPivot/player_vehbryo/BillboardBack
 @onready var sprite_toward := $TurretPivot/player_vehbryo/BillboardFront
+@onready var beam_recharging := $TurretPivot/player_vehbryo/BeamReloadingEffect
 
 # signals
 
@@ -59,6 +60,7 @@ signal health_at_max ## health completely full
 
 func _ready() -> void:
 	GameGlobal.player_ref = self
+	beam_recharging.visible = false
 	if camera.has_method("set_player"): # not currently needed in all scenes
 		camera.set_player(self)
 	
@@ -69,6 +71,10 @@ func _process(delta: float) -> void:
 	reload_time -= delta
 
 	handle_aiming(delta)
+	
+	# 2 is beam. should be a const/enum but depends on child order in Player.tscn. game releases
+	# today so nobody sneeze and this'll be juuuuust fine 
+	beam_recharging.visible = weapons_manager != null && weapons_manager.armed_with_beam() && weapons_manager.can_fire() == false
 
 	if auto_fire and not aim_dot.global_position.is_equal_approx(global_position) and weapons_manager.can_fire():
 		fire()

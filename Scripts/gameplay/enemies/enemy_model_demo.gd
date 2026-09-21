@@ -80,10 +80,10 @@ func _collision_detected(body: Node3D) -> void:
 		attack_timer = attack_timer_max
 
 func death_explosion() -> void:
-	var death_group = get_node("DeathExplosion")
-	if death_group == null:
+	if has_node("DeathExplosion") == null:
 		generic_explode()
 		return
+	var death_group = get_node("DeathExplosion")
 	var death_anim = death_group.get_node("BillboardFront")
 	var death_explosion_particles = death_group.get_node("DeathExplosionParticles")
 	death_anim.show()

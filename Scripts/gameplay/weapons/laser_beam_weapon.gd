@@ -35,7 +35,6 @@ func _process(delta: float) -> void:
 	if beam_proj != null:
 		reload_time = 1.0 # block duration catching up to reload time
 		beam_timer += delta
-		print(beam_dur)
 		if beam_timer >= beam_dur: # beam done, start reload delay
 			beam_timer = 0.0
 			reload_time = fire_rate # reload time between beams
