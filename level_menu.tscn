@@ -240,7 +240,7 @@ text = "• Chris DeLeon: Project lead, base gamplay, general game structure, in
 • Michael Buslik: Robodog, obelisk spawner, turret enemy, orbit shield bots, randomized environment placement, beam weapon, destructible truck, survivor mode enemy edge spawner/looping, quadcopter enemy, explosive barrels, sprite flipping
 • Juan Luiz R: Environment art (fence, tree, hydrant, rock, bush, wheel), explosion animation, song2k28, projectiles, effects (explosion, smoke, wind/leafs), prop tuning
 • wolscott: Movement and aim input fixes, gamepad support (including menus), loading screens, collision improvements, assorted bug fixes and optimizations
-• Tanner G: Sound lead (UI audio, electric attacks, explosions, weapons, robot voice modulation, pickups, new wave, rescue plane) with integration, pitch system fix
+• Tanner Gallella: Lead Sound Designer, voiceover designer, audio integration, dialogue writer (UI audio, explosions, electric attacks, weapons, robot voice modulation, pickups, new wave, rescue plane), pitch system fix
 • Mark Guinn: Surivor mode autotargeting and autofire, health bar with animated effects, screenshake and flashes, player death explosion, weapon icons
 • Shane B.: Level boundaries, rescue aircraft model, robotank model, volume slider, escape menu with settings, visual effects slider, auto targeting fix
 • azzysteel: Level manager, wave managers, wave authoring, round stat tracking, dynamic sound pitch
