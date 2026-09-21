@@ -18,6 +18,7 @@ func _ready() -> void:
 		for i in range(weapons_manager.weapons.size()):
 			_add_icon(i, weapons_manager.weapons[i].label_text)
 			_dim_icon(i)
+		weapons_manager.weapons[3].power_level = 2 # stronger lightning for immersive mode
 	_on_weapon_activated.call_deferred(0)
 
 
