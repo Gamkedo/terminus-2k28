@@ -22,8 +22,8 @@ const LIGHTNING_VOL_CHANGE_PACE = 2.5 # multiplier on delta towards or down from
 
 enum PlaybackMode {STANDARD, RANDOM_PITCH, ASCENDING_PITCH, DESCENDING_PITCH}
 
-var num_players := 7 # maximum sfx that can play at once
-var max_in_queue := 10 # more than 20 sounds in queue will drop the last sound
+var num_players := 17 # maximum sfx that can play at once
+var max_in_queue := 20 # more than 20 sounds in queue will drop the last sound
 
 var bgm_player: AudioStreamPlayer
 var game_over_player: AudioStreamPlayer
