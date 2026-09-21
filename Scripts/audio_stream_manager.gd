@@ -187,7 +187,8 @@ func _process(_delta: float):
 		available[0].stream = load(sound["sound_path"])
 		match sound["playback_mode"]:
 			PlaybackMode.STANDARD:
-				pass
+				# pass
+				available[0].pitch_scale = 1
 			## Play sfx with a random pitch
 			PlaybackMode.RANDOM_PITCH:
 				available[0].pitch_scale = randf_range(0.8,1.2)
