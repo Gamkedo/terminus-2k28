@@ -34,6 +34,7 @@ func _on_area_entered(area: Area3D) -> void:
 		var enemy := area.get_parent() as Enemy
 		if bounce_off_powerful_enemy == false || enemy.get_max_health() < 500:
 			Utils.damage_enemy(enemy, damage_component.amount)
+			AudioStreamManager.play_sfx("res://Sound Effects/Enemy/hitsound.wav", AudioStreamManager.PlaybackMode.STANDARD)
 			explode_and_remove()
 		else: # richochet, target too powerful
 			global_basis.z = -global_basis.z
