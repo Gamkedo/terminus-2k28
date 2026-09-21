@@ -236,18 +236,18 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 13
-text = "• Chris DeLeon: Project lead, base gamplay, general game structure, initial billboard and 3d enemy types, immersive obstacles, win conditions, survivors rescue sequence, weapon power level, precaching, immersive mode fog/layout, additional particle explosions, assorted bug fixes and optimizations
+text = "• Chris DeLeon: Project lead, base gameplay, general game structure, initial billboard and 3d enemy types, immersive obstacles, win conditions, survivors rescue sequence, weapon power level, precaching, immersive mode fog/layout, additional particle explosions, assorted bug fixes and optimizations
 • Michael Buslik: Robodog, obelisk spawner, turret enemy, orbit shield bots, randomized environment placement, beam weapon, destructible truck, survivor mode enemy edge spawner/looping, quadcopter enemy, explosive barrels, sprite flipping
 • Juan Luiz R: Environment art (fence, tree, hydrant, rock, bush, wheel), explosion animation, song2k28, projectiles, effects (explosion, smoke, wind/leafs), prop tuning
 • wolscott: Movement and aim input fixes, gamepad support (including menus), loading screens, collision improvements, assorted bug fixes and optimizations
 • Tanner Gallella: Lead Sound Designer, voiceover designer, audio integration, dialogue writer (UI audio, explosions, electric attacks, weapons, robot voice modulation, pickups, new wave, rescue plane), pitch system fix
-• Mark Guinn: Surivor mode autotargeting and autofire, weapon pickups/icons/UI (art and code), health bar with effects, screenshake and flashes, player death sequence
+• Mark Guinn: Survivor mode autotargeting and autofire, weapon pickups/icons/UI (art and code), health bar with effects, screenshake and flashes, player death sequence
 • Shane B.: Level boundaries, rescue aircraft model, robotank model, volume slider, escape menu with settings, visual effects slider, auto targeting fix
 • azzysteel: Level manager, wave managers, wave authoring, round stat tracking, dynamic sound pitch
-• Dávid Tóth: Lightning bolts weapon (incl. optimizations), player model, roombye robot, song selector
+• Dávid Tóth: Lightning bolts weapon (incl. optimizations), player model, \"roombye\" robot, song selector
 • Raymond Zegles: Nuclear power plant, game over menu, GUI wave counter, credits panel toggle
 • Lenny Morayniss: Audio manager with stream queue limits, weapon switching, weapon stacking, spread shot, damage support
-• Christer Kaitila: Ambience song, title logo, CRT effect, muzzle flashes, weapon switch, GUI font selection, score/combo gui
+• Christer Kaitila: Ambience song, title logo, CRT effect, muzzle flashes, weapon switch, GUI font selection, score/combo GUI
 • Jalent (Jason W): Player concept art, terminus1 song
 • Amanda Stanley: Robot voice acting
 • Belén Albeza: Pickup system (incl. health boost, enemy drops)
