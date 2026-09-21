@@ -240,18 +240,18 @@ text = "• Chris DeLeon: Project lead, base gamplay, general game structure, in
 • Michael Buslik: Robodog, obelisk spawner, turret enemy, orbit shield bots, randomized environment placement, beam weapon, destructible truck, survivor mode enemy edge spawner/looping, quadcopter enemy, explosive barrels, sprite flipping
 • Juan Luiz R: Environment art (fence, tree, hydrant, rock, bush, wheel), explosion animation, song2k28, projectiles, effects (explosion, smoke, wind/leafs), prop tuning
 • wolscott: Movement and aim input fixes, gamepad support (including menus), loading screens, collision improvements, assorted bug fixes and optimizations
-• Tanner G: Sound lead (UI audio, drone hum, electric attacks, explosions, lasers, spreadshot, robot voice modulation, pickups, new wave, rescue plane) including integration
+• Tanner G: Sound lead (UI audio, electric attacks, explosions, weapons, robot voice modulation, pickups, new wave, rescue plane) with integration, pitch system fix
 • Mark Guinn: Surivor mode autotargeting and autofire, health bar with animated effects, screenshake and flashes, player death explosion, weapon icons
 • Shane B.: Level boundaries, rescue aircraft model, robotank model, volume slider, escape menu with settings, visual effects slider, auto targeting fix
 • azzysteel: Level manager, wave managers, wave authoring, round stat tracking, dynamic sound pitch
 • Dávid Tóth: Lightning bolts weapon (incl. optimizations), player model, roombye robot, song selector
-• Raymond Zegles: Nuclear power planet, game over menu, GUI wave counter, credits panel toggle
+• Raymond Zegles: Nuclear power plant, game over menu, GUI wave counter, credits panel toggle
 • Lenny Morayniss: Audio manager with stream queue limits, weapon switching, weapon stacking, spread shot, damage support
 • Christer Kaitila: Ambience song, title logo, CRT effect, muzzle flashes, weapon switch, GUI font selection, score/combo gui
 • Jalent (Jason W): Player concept art, terminus1 song
 • Amanda Stanley: Robot voice acting
 • Belén Albeza: Pickup system (incl. health boost, enemy drops)
-• Justin Montgomery: Enemy perception, nav mesh, seek and wander, related optimizations
+• Justin Montgomery: Enemy perception, nav mesh, seek and wander, advanced optimizations
 • APV: Game story
 • Pretty Parsable: Sergeant V. Wakefield player sprite
 • L: Game over sound (and implementation), pause key toggle
@@ -294,6 +294,7 @@ projectile_scene = ExtResource("22_yy2u2")
 [node name="LightningLightFake" parent="CacheAttempt/FakeLightningFire" unique_id=501714576 instance=ExtResource("9_ek6xb")]
 transform = Transform3D(0.040757015, 0, 0.037019063, 0, 0.055059467, 0, -0.037019063, 0, 0.040757015, -0.06448603, -1.8557644, -5.470521)
 visible = true
+surface_material_override/0 = null
 
 [node name="LaserHit" parent="CacheAttempt" unique_id=2136184369 instance=ExtResource("11_fgiea")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34036565, -1.8557646, -5.7631936)
