@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bbs8ywa4dr8qy"
+path="res://.godot/imported/hitsound_2.wav-6180fe3afb26a3cfef489ae66ef04d95.sample"
+
+[deps]
+
+source_file="res://Sound Effects/Enemy/hitsound_2.wav"
+dest_files=["res://.godot/imported/hitsound_2.wav-6180fe3afb26a3cfef489ae66ef04d95.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
