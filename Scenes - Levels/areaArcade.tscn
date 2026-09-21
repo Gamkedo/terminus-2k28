@@ -184,6 +184,14 @@ script = ExtResource("11_w71ke")
 weapon_number = 3
 metadata/_custom_type_script = "uid://fr2qc6q15f8p"
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkn2u"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_hbmba"]
+material = SubResource("StandardMaterial3D_mkn2u")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkn2u"]
 bg_color = Color(0, 0, 0, 1)
 
@@ -217,10 +225,8 @@ environment = SubResource("Environment_ocn12")
 projection = 1
 size = 64.0
 
-[node name="Player" parent="." unique_id=935553468 instance=ExtResource("2_hwtxp")]
-rotation_speed = 2.0
-default_aim_range = 240.0
-auto_fire = false
+[node name="Player" parent="." unique_id=935553468 node_paths=PackedStringArray("aim_dot") instance=ExtResource("2_hwtxp")]
+aim_dot = NodePath("BigAimDot")
 
 [node name="AimComponent" type="Node" parent="Player" unique_id=145682983]
 script = ExtResource("7_tefx3")
@@ -249,6 +255,10 @@ effect = SubResource("Resource_4hlq1")
 
 [node name="Electricity" parent="Player/PickupSpawner" unique_id=119951235 instance=ExtResource("10_fyjty")]
 effect = SubResource("Resource_6bdme")
+
+[node name="BigAimDot" type="MeshInstance3D" parent="Player" unique_id=1912610740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9059591, -5.797306)
+mesh = SubResource("SphereMesh_hbmba")
 
 [node name="ScreenBezelCorners" parent="." unique_id=121658769 instance=ExtResource("8_b4wml")]
 

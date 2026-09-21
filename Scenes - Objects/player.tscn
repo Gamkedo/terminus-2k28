@@ -65,7 +65,7 @@ albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
 emission = Color(1, 0, 0, 1)
 
-[node name="Player" type="CharacterBody3D" unique_id=997444506 node_paths=PackedStringArray("follow_cam_move_to", "follow_cam_point_at") groups=["player"]]
+[node name="Player" type="CharacterBody3D" unique_id=997444506 node_paths=PackedStringArray("follow_cam_move_to", "follow_cam_point_at", "aim_dot") groups=["player"]]
 collision_layer = 4
 collision_mask = 131
 axis_lock_angular_x = true
@@ -75,6 +75,7 @@ script = ExtResource("1_4flbx")
 aim_dead_zone = 0.05
 follow_cam_move_to = NodePath("TurretPivot/Turret/NonIsoCameraMoveToward")
 follow_cam_point_at = NodePath("AimDot")
+aim_dot = NodePath("AimDot")
 
 [node name="Legs" type="MeshInstance3D" parent="." unique_id=1286979195]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49009085, 0)
@@ -154,6 +155,7 @@ shape = SubResource("CylinderShape3D_7tbbo")
 
 [node name="AimDot" type="MeshInstance3D" parent="." unique_id=249952343]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.30974174, 0.93932295, -6.3473606)
+visible = false
 cast_shadow = 0
 mesh = SubResource("SphereMesh_4flbx")
 surface_material_override/0 = SubResource("StandardMaterial3D_onrkg")

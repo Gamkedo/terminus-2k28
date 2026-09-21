@@ -3,6 +3,8 @@ class_name AimComponent extends Node
 @export var aim_dead_zone := 0.01
 @export var default_aim_range := 24
 
+var mouse_input: Vector2
+
 
 func _ready() -> void:
 	var player := get_parent() as Player
@@ -16,6 +18,15 @@ func handle_aiming(player: Player, _delta: float) -> void:
 
 
 func look_at_cursor(player: Player):
+	if mouse_input:
+		aim_dot_to_cursor(player)
+		mouse_input = Vector2.ZERO
+	
+	player.aim_dot.global_position.y = player.turret_pivot.global_position.y
+	player.turret_pivot.look_at(player.aim_dot.global_position)
+
+
+func aim_dot_to_cursor(player: Player) -> void:
 	var target_plane_mouse := Plane(Vector3.UP, player.turret_pivot.position.y)
 	var ray_length := 1000
 	var mouse_position := get_viewport().get_mouse_position()
@@ -26,11 +37,8 @@ func look_at_cursor(player: Player):
 
 	if cursor_position_on_plane:
 		player.aim_dot.global_position = cursor_position_on_plane
-		player.turret_pivot.look_at(cursor_position_on_plane, Vector3.UP, 0)
 	else:
 		player.aim_dot.global_position = to
-		player.turret_pivot.look_at(to)
-
 
 ## Returns a Vector2 from the aim direction inputs
 func get_joypad_aim_vector() -> Vector2:
@@ -46,4 +54,9 @@ func joypad_aim(player: Player) -> void:
 	var aim_vector_3d = Vector3(aim_vector.x, 0, aim_vector.y) * default_aim_range
 	var aim_point = player.camera.unproject_position(player.turret.global_position + aim_vector_3d)
 
-	get_viewport().warp_mouse(aim_point)
+	#get_viewport().warp_mouse(aim_point)
+	player.aim_dot.global_position = player.turret.global_position + aim_vector_3d
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		mouse_input += event.relative

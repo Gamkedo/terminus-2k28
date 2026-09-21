@@ -37,6 +37,7 @@ const LASER_TSCN: PackedScene = preload("res://Scenes - Objects/laser_bolt.tscn"
 @export var follow_cam_point_at: Node3D
 var aim_componant: AimComponent
 var weapons_manager: WeaponsManager
+@export var aim_dot: Node3D
 
 # internal references
 @onready var legs: Node = $Legs
@@ -44,7 +45,6 @@ var weapons_manager: WeaponsManager
 @onready var turret_pivot: Node = %TurretPivot
 @onready var muzzleA: Node = %FireFromA
 @onready var muzzleB: Node = %FireFromB
-@onready var aim_dot: Node3D = $AimDot
 @onready var aim_ray_cast_3d: RayCast3D = %AimRayCast3D
 @onready var death_explosion: AnimatedSprite3D = $DeathExplosion
 @onready var death_explosion_particles: CPUParticles3D = $DeathExplosionParticles
@@ -63,6 +63,8 @@ func _ready() -> void:
 	beam_recharging.visible = false
 	if camera.has_method("set_player"): # not currently needed in all scenes
 		camera.set_player(self)
+	
+	aim_dot.show()
 	
 func _process(delta: float) -> void:
 	if already_rescued || has_died:

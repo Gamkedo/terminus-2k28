@@ -17,7 +17,7 @@ var real_sensitivity: float:
 @export var invert_v: bool = false
 
 # Mouse Settings
-var mouse_input: Vector2
+#var mouse_input: Vector2
 @export var mouse_sensitivity: float = 3
 ## this is to make the other sensitivity values more human readable. They are divided by this
 @export var mouse_sense_modifier: float = 1000.0
