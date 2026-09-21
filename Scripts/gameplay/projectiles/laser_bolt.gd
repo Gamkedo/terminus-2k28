@@ -37,12 +37,12 @@ func _on_area_entered(area: Area3D) -> void:
 			explode_and_remove()
 		else: # richochet, target too powerful
 			global_basis.z = -global_basis.z
+			AudioStreamManager.play_sfx("res://Sound Effects/Lasers/laser_ricochet_1.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
 			var max_deviate = deg_to_rad(30.0)
 			var deviate_amount = randf_range(-max_deviate, max_deviate)
 			global_basis = global_basis.rotated(Vector3.UP, deviate_amount)
 			deviate_amount = randf_range(-max_deviate, max_deviate)
 			global_basis = global_basis.rotated(Vector3.RIGHT, deviate_amount)
-			AudioStreamManager.play_sfx("res://Sound Effects/Lasers/laser_ricochet_1.wav", AudioStreamManager.PlaybackMode.RANDOM_PITCH)
 
 func _on_body_entered(_body: Node3D) -> void:
 	# print(body.name)
