@@ -12,6 +12,7 @@ const DEF_EXPLODE_TSCN: PackedScene = preload("res://Scenes - Particles/enemy_de
 ## Default to this much health if no health component found
 const default_health: float = 50.0
 
+var direction := Vector3.ZERO
 var dead := false
 var count_kill_for_wave : bool = true
 

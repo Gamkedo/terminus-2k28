@@ -9,7 +9,6 @@ var speed := randf_range(speed_min, speed_max)
 
 @export var drift_time := 1.5
 
-var direction := Vector3.ZERO
 var time_left := 0.0
 
 var attack_power: float = 10.00

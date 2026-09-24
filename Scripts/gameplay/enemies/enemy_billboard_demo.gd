@@ -3,7 +3,6 @@ extends Enemy
 var speed := 2.0
 var drift_time := 1.5
 
-var direction := Vector3.ZERO
 var time_left := 0.0
 
 var attack_power: float = 10.00

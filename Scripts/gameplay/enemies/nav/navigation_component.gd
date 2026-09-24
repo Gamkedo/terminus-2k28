@@ -20,6 +20,7 @@ var _enemy:Enemy
 var _target_position:Vector3 = Vector3.INF
 var _target_path_position:Vector3
 var _target_projected:bool
+var _last_valid_path_pos: Vector3 = Vector3.ZERO
 
 var enabled:bool:
 	set(value):
@@ -45,7 +46,22 @@ func _ready() -> void:
 	navigation_agent.max_speed = movement_handler.get_max_movement_speed()
 	
 	enabled = false
+	_validate_initial_position.call_deferred()
 
+func _validate_initial_position() -> void:
+	var navigation_map: RID = navigation_agent.get_navigation_map()
+	
+	while true:
+		if NavigationServer3D.map_get_iteration_id(navigation_map) > 0:
+			break
+		await get_tree().physics_frame
+		
+	var global_spawn_pos: Vector3 = _enemy.global_position
+	var closest_point_global: Vector3 = NavigationServer3D.map_get_closest_point(navigation_map, global_spawn_pos)
+	
+	if global_spawn_pos.distance_to(closest_point_global) > 0.05:
+		_enemy.global_position = closest_point_global
+		
 func set_target(target: Vector3):
 	if _target_position != Vector3.INF:
 		target_canceled.emit(_target_position)
@@ -85,10 +101,24 @@ func _physics_process(delta):
 		navigation_agent.set_velocity(new_velocity)
 	else:
 		_on_velocity_computed(new_velocity)
-
+	
 func _on_velocity_computed(safe_velocity: Vector3) -> void:
+	var navigation_map: RID = navigation_agent.get_navigation_map()
+	var horizontal_velocity: Vector3 = Vector3(safe_velocity.x, 0, safe_velocity.z)
+	var projected_pos: Vector3 = _enemy.global_position + (horizontal_velocity * physics_delta)
+	
+	var closest_point: Vector3 = NavigationServer3D.map_get_closest_point(navigation_map, projected_pos)
+	var flat_projected: Vector2 = Vector2(projected_pos.x, projected_pos.z)
+	var flat_closest: Vector2 = Vector2(closest_point.x, closest_point.z)
+	
+	var final_velocity: Vector3 = safe_velocity
+	if flat_projected.distance_to(flat_closest) > 0.1:
+		var current_closest: Vector3 = NavigationServer3D.map_get_closest_point(navigation_map, _enemy.global_position)
+		var return_dir: Vector3 = (current_closest - _enemy.global_position).normalized()
+		final_velocity = return_dir * movement_handler.get_current_movement_speed()
+		
 	movement_handler.active = true
-	movement_handler.move(safe_velocity, physics_delta)
+	movement_handler.move(final_velocity, physics_delta)
 	
 func _on_navigation_finished() -> void:
 	if navigation_agent.is_target_reached():
