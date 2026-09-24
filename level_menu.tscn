@@ -41,6 +41,8 @@
 [ext_resource type="PackedScene" uid="uid://dgefm5eu8sdkx" path="res://Scenes - Objects/pickup_aircraft.tscn" id="34_bt5xx"]
 [ext_resource type="Script" uid="uid://bvq76ulmwjxfx" path="res://cache_anim_player.gd" id="34_sxltc"]
 [ext_resource type="Script" uid="uid://ck818phlto22l" path="res://Scenes - Objects/cache_rescue_autoplay.gd" id="37_2pq4h"]
+[ext_resource type="PackedScene" uid="uid://bxd6ficqxaen1" path="res://Scenes - Particles/enemy_spawned_generic.tscn" id="38_68glb"]
+[ext_resource type="PackedScene" uid="uid://bkdyxkd503fgb" path="res://Scenes - Particles/enemy_spawned_retro.tscn" id="39_8dcfn"]
 
 [sub_resource type="Gradient" id="Gradient_lnidy"]
 colors = PackedColorArray(0, 0, 0, 1, 0.5210963, 0.19145256, 0.020658007, 1)
@@ -74,6 +76,7 @@ script = ExtResource("1_lnidy")
 starting_focus = NodePath("ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer/Survivor Container/AreaB Survivor")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1069375977]
+visible = false
 position = Vector2(576, 466)
 scale = Vector2(5, 1024)
 texture = SubResource("GradientTexture1D_kdu0b")
@@ -327,7 +330,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34036565, -1.8557646, -5.76
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24188566, -1.8557644, -5.878141)
 
 [node name="LaserBeamProjectile" parent="CacheAttempt" unique_id=1654714350 instance=ExtResource("7_y1rhc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08533096, -1.8557644, -3.7136064)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25095606, -3.1960728, -1.125732)
 
 [node name="Robodog" type="Sprite3D" parent="CacheAttempt" unique_id=200677660]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35843492, 0, -1.5395246)
@@ -392,6 +395,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7658936, -1.1780841, -2.38
 mesh = SubResource("BoxMesh_7tbbo")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="CacheAttempt/MeshInstance3D" unique_id=1971065341]
+
+[node name="EnemySpawnedGeneric" parent="CacheAttempt" unique_id=1376039122 instance=ExtResource("38_68glb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.5675402)
+
+[node name="EnemySpawnedRetro" parent="CacheAttempt" unique_id=1579566739 instance=ExtResource("39_8dcfn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.5675402)
 
 [node name="Loading Panel" type="Panel" parent="." unique_id=1242562350]
 offset_right = 1152.0

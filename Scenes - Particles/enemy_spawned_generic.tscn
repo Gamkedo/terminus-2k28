@@ -30,7 +30,7 @@ point_count = 4
 offsets = PackedFloat32Array(0, 0.51941746, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0.57254905, 0, 0, 0, 0)
 
-[node name="EnemyDestroyedGeneric" type="Node3D" unique_id=2136184369 groups=["Precompilation"]]
+[node name="EnemySpawnedGeneric" type="Node3D" unique_id=2136184369 groups=["Precompilation"]]
 script = ExtResource("1_rv1r2")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1386045124]
