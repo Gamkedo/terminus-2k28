@@ -3,6 +3,7 @@ extends Node
 signal enemy_spawned
 
 @export var player : Node3D
+@export var spawn_effect : PackedScene
 
 var enemy_scene_paths: Dictionary = {
 	"ROBODOG": "res://Scenes - Objects/enemy_robodog.tscn",
@@ -20,9 +21,17 @@ func spawn(enemy, spawn_amount) -> void:
 	for amount in spawn_amount:
 		var resource = load(enemy_scene_paths[enemy])
 		var instance = resource.instantiate()
-		instance.position = _get_random_spawn_vector()
+		var spawnPos = _get_random_spawn_vector()
+		instance.position = spawnPos
 		add_child(instance)
 		enemy_spawned.emit()
+		if spawn_effect != null:
+			instance.enforce_boundary()
+			spawnPos = instance.position
+			# reusing, isntance will now be the effect
+			instance = spawn_effect.instantiate()
+			instance.position = spawnPos
+			add_child(instance)
 
 
 func _get_random_spawn_vector() -> Vector3:
