@@ -60,7 +60,10 @@ signal health_at_max ## health completely full
 
 func _ready() -> void:
 	GameGlobal.player_ref = self
-	beam_recharging.visible = false
+	
+	# important: don't set false here, or it won't cache!
+	# beam_recharging.visible = false
+	
 	if camera.has_method("set_player"): # not currently needed in all scenes
 		camera.set_player(self)
 	

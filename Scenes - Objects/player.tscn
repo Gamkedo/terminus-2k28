@@ -135,6 +135,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3085973, 0)
 [node name="LightningLightFake" parent="TurretPivot/player_vehbryo" unique_id=501714576 instance=ExtResource("3_t14tu")]
 unique_name_in_owner = true
 transform = Transform3D(0.040757015, 0, 0.037019063, 0, 0.055059467, 0, -0.037019063, 0, 0.040757015, 0.009577632, 2.4496105, 0)
+surface_material_override/0 = null
 
 [node name="BillboardFront" type="MeshInstance3D" parent="TurretPivot/player_vehbryo" unique_id=410453551]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
