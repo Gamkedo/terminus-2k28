@@ -4,12 +4,16 @@ extends Enemy
 @export var speed_max := 4.0
 var speed := randf_range(speed_min, speed_max)
 
-@onready var graphic_toward = $BillboardFront
-@onready var graphic_away = $BillboardBack
+@onready var graphic_toward: SpriteBase3D = $BillboardFront
+@onready var graphic_away: SpriteBase3D = $BillboardBack
+var real_color: Color # set from the sprite's inspector value in ready
+var wall_phasing_color := Color(0.3, 0.3, 1.0, 0.35)
+var wall_phase_cooloff := 0.0
 
 @export var drift_time := 1.5
 
 var time_left := 0.0
+var was_passing_through_wall: bool = false
 
 var attack_power: float = 10.00
 var attack_timer_max: float = 1.00 ## attack cooldown timer in seconds
@@ -24,6 +28,7 @@ var nav_movement_handler:NavigationMovementHandler
 
 func _ready():
 	super._ready()
+	real_color = graphic_toward.modulate
 	
 	pick_new_direction()
 	
@@ -43,6 +48,22 @@ func _process(delta):
 			pick_new_direction()
 	global_position += direction * speed * delta
 	rotation.y = lerp_angle(rotation.y, atan2(-direction.x, -direction.z), delta * rotation_speed)
+
+	if bool_passing_through_wall:
+		wall_phase_cooloff = 2.0
+	else:
+		wall_phase_cooloff -= delta
+
+	#if wall_phase_cooloff>0:
+		#if graphic_toward.modulate != wall_phasing_color:
+			#graphic_toward.modulate = wall_phasing_color
+			#graphic_away.modulate = wall_phasing_color
+	#else:
+		#if graphic_toward.modulate != real_color:
+			#graphic_toward.modulate = real_color
+			#graphic_away.modulate = real_color
+
+
 
 	Utils.apply_billboard_flip_graphics(graphic_toward, graphic_away, direction)
 	

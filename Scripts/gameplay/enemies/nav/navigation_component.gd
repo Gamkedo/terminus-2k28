@@ -95,6 +95,11 @@ func _physics_process(delta):
 	if navigation_agent.is_navigation_finished():
 		return
 	
+	var closest_point: Vector3 = NavigationServer3D.map_get_closest_point(navigation_agent.get_navigation_map(), _enemy.global_position)
+	_enemy.bool_passing_through_wall = closest_point.distance_to(_enemy.global_position) > 0.01
+	if _enemy.bool_passing_through_wall:
+		_enemy.global_position = closest_point
+	
 	var next_path_position: Vector3 = navigation_agent.get_next_path_position()
 	var new_velocity: Vector3 = _enemy.global_position.direction_to(next_path_position) * movement_handler.get_current_movement_speed()
 	if navigation_agent.avoidance_enabled:

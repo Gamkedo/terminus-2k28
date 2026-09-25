@@ -6,6 +6,7 @@ extends Node3D
 @export var scoreValue: int = 100
 @export var enemy_type : GameGlobal.EnemyTypes
 @export var stun_time: float = 0.0
+@export var bool_passing_through_wall: bool = false # for final droids
 
 const DEF_EXPLODE_TSCN: PackedScene = preload("res://Scenes - Particles/enemy_destroyed_generic.tscn")
 @onready var health_component := $HealthComponent
