@@ -76,7 +76,6 @@ script = ExtResource("1_lnidy")
 starting_focus = NodePath("ButtonsAndTextWithMargins/VBoxContainer/HBoxContainer/Survivor Container/AreaB Survivor")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1069375977]
-visible = false
 position = Vector2(576, 466)
 scale = Vector2(5, 1024)
 texture = SubResource("GradientTexture1D_kdu0b")
